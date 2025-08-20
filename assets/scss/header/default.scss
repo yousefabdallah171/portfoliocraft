@@ -1,0 +1,32 @@
+// Header Default
+#pxl-header-default {
+	position: relative;
+	z-index: 999;
+	background-color: #fff;
+	@include box-shadow(0px 10px 30px 0px rgba(0,0,0,0.05));
+	.container {
+		max-width: 1720px;
+		.pxl-menu-primary {
+			> li {
+				@media #{$min-xl} {
+					line-height: 80px;
+				}
+				> a {
+					display: inline-flex;
+					position: relative;
+					line-height: 1;
+					font-size: 18px;
+					font-weight: 600;
+					text-transform: capitalize;
+					font-family: var(--secondary-font);
+				}
+			}
+		}
+	}
+	.pxl-toggle-menu {
+		display: none;
+		@media #{$max-lg} {
+			display: block;
+		}
+	}
+}

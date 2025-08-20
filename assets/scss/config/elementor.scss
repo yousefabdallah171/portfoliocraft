@@ -1,0 +1,137 @@
+// Responsive
+// .elementor {
+// 	.elementor-hidden-mobile,
+// 	.elementor-hidden-mobile_extra,
+// 	.elementor-hidden-tablet, 
+// 	.elementor-hidden-tablet_extra, 
+// 	.elementor-hidden-laptop, 
+// 	.elementor-hidden-desktop  {
+// 		display: block;
+// 		&.elementor-column {
+// 			display: flex;
+// 		}
+// 	}
+// }
+.elementor {
+	position: relative;
+}
+
+// Responsive Breakpoint
+@media #{$max-xs} {
+	.elementor .elementor-hidden-mobile, .pxl-hidden-xs {
+		display: none !important;
+	}
+}
+@media #{$mm-sm} {
+	.elementor .elementor-hidden-mobile_extra, .pxl-hidden-sm {
+		display: none !important;
+	}
+}
+@media #{$mm-md} {
+	.elementor .elementor-hidden-tablet, .pxl-hidden-md {
+		display: none !important;
+	}
+}
+@media #{$mm-lg} {
+	.elementor .elementor-hidden-tablet_extra, .pxl-hidden-lg {
+		display: none !important;
+	}
+}
+@media #{$mm-xl} {
+	.elementor .elementor-hidden-laptop, .pxl-hidden-xl {
+		display: none !important;
+	}
+}
+@media #{$min-xxl} {
+	.elementor .elementor-hidden-desktop, .pxl-hidden-xxl {
+		display: none !important;
+	}
+}
+
+.e-con-background-parallax {
+	position: absolute;
+	inset: 0;
+	background: center center / cover no-repeat;
+	// z-index: -1;
+}
+
+.elementor-editor-preview, .elementor-editor-active {
+	.pxl-slider {
+		opacity: 1;
+	}
+	.e-con-overlay {
+		z-index: 0;
+	}
+	.pxl-template-overlay  {
+		z-index: -1;
+		// opacity: 1;
+	}
+	&.single-pxl-template {
+		// background-color: rgba($color: #000000, $alpha: .1);
+		background-color: rgba($color: #000000, $alpha: 0.1);
+
+	}
+}
+.elementor-editor-active {
+	.pxl-header {
+		display: none !important;
+	}
+	.pxl-footer {
+		display: none !important;
+	}
+	.pxl-primary-menu {
+		.sub-menu {
+			display: none;
+		}
+	}
+}
+.elementor-editor-preview {
+	.pxl-header {
+		display: block !important;
+	}
+	.pxl-footer {
+		display: block !important;
+	}
+}
+.e-con-overlay {
+	@extend .pxl-absolute-full;
+	background-color: var(--pxl-background-color);
+	&.cursor-spotlight {
+		--pxl-box-size: 0px;
+		background-color: transparent;
+		background-image: radial-gradient(circle var(--pxl-box-size) at var(--pxl-translate-x) var(--pxl-translate-y), transparent 0px, var(--pxl-background-color));
+	}
+}
+
+.e-con-layer {
+	position: absolute;
+}
+
+.elementor-element {
+	background: center center / cover no-repeat;
+}
+
+.elementor-shape {
+	position: absolute;
+	width: 100%;
+	left: 0;
+	&.elementor-shape-top {
+		top: 0;
+	}
+	&.elementor-shape-bottom {
+		bottom: 0;
+		transform: scaleY(-1);
+	}
+}
+
+.elementor-editor-active .visibility-hidden {
+	visibility: visible;
+}
+
+.elementor-editor-active #pxl-main .elementor-section-wrap.ui-sortable {
+	margin: 0;
+}
+
+.e-con-slide {
+	min-width: 100%;
+}

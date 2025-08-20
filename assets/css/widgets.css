@@ -1,0 +1,86 @@
+/* Search Widget Styles */
+.widget_search,
+.wp-block-search {
+    margin-bottom: 30px;
+}
+
+.search-form,
+.wp-block-search__inside-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.search-field,
+.wp-block-search__input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    background-color: #fff;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+.search-field:focus,
+.wp-block-search__input:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.1);
+}
+
+.search-submit,
+.wp-block-search__button {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 8px 15px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.search-submit:hover,
+.wp-block-search__button:hover {
+    background-color: #0056b3;
+}
+
+.search-submit i {
+    font-size: 14px;
+}
+
+/* Widget Title */
+.widget-title {
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Widget Container */
+.widget {
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.wp-block-search__label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.wp-block-search__button svg {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+} 

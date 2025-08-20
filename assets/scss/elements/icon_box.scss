@@ -1,0 +1,169 @@
+// Iconbox Single
+.pxl-icon-box-wrapper {
+    display: flex;
+    gap: 30px;
+    .pxl-icon-box-content {
+        position: relative;
+    }
+    &.icon-box-default {
+
+    }
+    &.icon-box-style1 {
+        @media #{$max-xs} {
+            flex-direction: column;
+        }
+        background-color: #FFF;
+        border-radius: 20px;
+        @include box-shadow(6px 6px 0px 0px #DCCDBF);
+        padding: 49px 80px 53px 50px;
+        @include transition(all .25s ease);
+        @media #{$max-lg} {
+            padding: 50px 80px 50px 30px;
+        } 
+        @media #{$max-sm} {
+            padding: 35px 80px 35px 30px;
+        } 
+        @media #{$max-xs} {
+            padding: 30px;
+        }
+        .pxl-icon-box-icon {
+            color: #000;
+            .pxl-icon {
+                --pxl-box-size: 74px;
+                @extend .pxl-round-box;
+                @extend .pxl-flex-center;
+                background-color: #FFCD4D;
+            }
+            svg {
+                height: 40px;
+                width: auto;
+            }
+        }
+        
+        .pxl-icon-box-title {
+            color: #010101;
+            font-family: 'Inter';
+            font-size: 28px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 1.21429;
+            margin-block: 7px 23px;
+            letter-spacing: 0;
+            .pxl-title-text {
+                --pxl-height: 2px;
+                @extend .text-underline;
+            }
+            &:hover {
+                pointer-events: none;
+            }
+            @media #{$max-xl} {
+                font-size: 26px;
+            }
+            @media #{$max-sm} {
+                font-size: 24px;
+            } 
+            @media #{$max-sm} {
+                font-size: 22px;
+            } 
+        }
+        .pxl-icon-box-description {
+            color: #555;
+            font-family: "Plus Jakarta Sans";
+            font-size: 17px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 1.76471;
+        }
+        .pxl-icon-box-index {
+            position: absolute;
+            color: #121212;
+            font-family: "Plus Jakarta Sans";
+            font-size: 17px;
+            font-style: normal;
+            font-weight: 400;
+            top: 53px;
+            right: 68px;
+            line-height: 1.76471;
+            @media #{$max-lg} {
+                top: 53px;
+                right: 30px;
+            } 
+        }
+        &:hover {
+            @include box-shadow(0px 0px 0px 0px #DCCDBF);
+            transform: translate(6px, 6px);
+        }
+    }
+}
+
+// Iconbox Carousel
+.pxl-icon-box-carousel  {
+    .pxl-icon-box-wrapper {
+        --pxl-flex-direction: column;
+        display: inline-flex;
+        width: 100%;
+        gap: 30px;
+        flex-direction: var(--pxl-flex-direction);
+        text-align: center;
+        .pxl-item-icon {
+            width: 100%;
+            svg {
+                width: auto;
+            }
+        }
+        .pxl-item-content {
+            text-align: inherit;
+        }
+    }
+    &.pxl-icon-box-carousel1 {
+        .pxl-icon-box-wrapper  {
+            flex-direction: column;
+            justify-content: start;
+            align-items: start;
+            text-align: left;
+            gap: 42px;
+        }
+        &.icon-box-default {            
+            .pxl-icon-box-icon {
+                position: relative;
+                .pxl-item-line {
+                    position: absolute;
+                    left: 0;
+                    top: 50%;
+                    width: 100%;
+                    height: 1px;
+                    transform: translateY(-50%);
+                    background-color: rgba($color: #FFF, $alpha: .09);
+                }
+                .pxl-icon-inner {
+                    display: inline-block;
+                    background-color: rgba($color: #FFF, $alpha: .15);
+                    color: #FFF;
+                    text-align: center;
+                    font-family: var(--secondary-font);
+                    font-size: 20px;
+                    font-weight: 500;
+                    line-height: 48px;
+                    width: 48px;
+                    text-align: center;
+                    border-radius: 48px;
+                }
+            }
+            .pxl-icon-box-title {
+                color:#FFF;
+                font-family: var(--secondary-font);
+                font-size: 21px;
+                font-weight: 600;
+                line-height: 1.479;
+                margin-bottom: 20px;
+                letter-spacing: 0;
+            }
+            .pxl-icon-box-description {
+                color: #FFF;
+                font-size: 15px;
+                font-weight: 300;
+                line-height: 1.66667;
+            }
+        }
+    }
+}

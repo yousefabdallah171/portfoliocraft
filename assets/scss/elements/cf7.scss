@@ -1,0 +1,198 @@
+.wpcf7 {
+    form {
+        --width-xs : 100%;
+        --width-sm : 100%;
+        --width-md : 100%;
+        --width-lg : 100%;
+        --width-xl : 100%;
+        --width-xxl: 100%;
+        .cf7-hidden-submit, .wpcf7-spinner, br {
+            display: none;
+        }
+        .wpcf7-not-valid-tip {
+            font-weight: 300;
+            font-size: 15px;
+            margin-top: 5px;
+        }
+        .wpcf7-response-output {
+            display: none;
+            margin: 30px 0 15px;
+            background-color: #FFF;
+            font-size: 18px;
+            color: #010101;
+            font-weight: 300;
+            border: none;
+        }
+        p {
+            display: flex;
+            flex-wrap: wrap;
+            margin-inline: calc(-1 * var(--pxl-spacing-inline));
+            .wpcf7-form-control-wrap {
+                display: flex;
+                flex-wrap: wrap;
+                width: 100%;
+                padding-inline: var(--pxl-spacing-inline);
+                &:last-of-type {
+                    margin: 0 !important;
+                    flex-basis: 100% ;
+                    max-width: 100% ; 
+                }
+                input, textarea {
+                    width: 100%;
+                }
+                @media #{$min-xxl} {
+                    flex-basis: var(--width-xxl);
+                    max-width: var(--width-xxl);
+                }
+                @media #{$max-xl} {
+                    flex-basis: var(--width-xl);
+                    max-width: var(--width-xl);
+                }
+                @media #{$max-lg} {
+                    flex-basis: var(--width-lg);
+                    max-width: var(--width-lg);
+                }
+                @media #{$max-md} {
+                    flex-basis: var(--width-md);
+                    max-width: var(--width-md);
+                }
+                @media #{$max-sm} {
+                    flex-basis: var(--width-sm);
+                    max-width: var(--width-sm);
+                }
+                @media #{$max-xs} {
+                    flex-basis: var(--width-xs);
+                    max-width: var(--width-xs);
+                }
+            }
+        }
+        &.form-style1 {
+            input, textarea {
+                background-color: transparent;
+                border: none;
+                border-bottom: 1px solid #5F5F5F;
+                padding: 0 76px 21px 1px;
+                color:#4B4B4B;
+                font-family: var(--primary-font);
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 300;
+                line-height: 24px;
+                letter-spacing: -0.16px;
+            }
+        }
+        &.form-style2 {
+            input, textarea {
+                background-color: transparent;
+                border: none;
+                border-bottom: 1px solid #B2B2B2;
+                padding-bottom: 14px;
+                color: #191919;
+                font-family: var(--primary-font);
+                font-size: 15px;
+                font-style: normal;
+                font-weight: 300;
+                line-height: 1; 
+                letter-spacing: -0.3px;
+            }
+            textarea {
+                height: 36px;
+            }
+        }
+        &.form-style3 {
+            input, textarea {
+                padding: 19.5px 192px 20.5px 32px;
+                border-radius: 100px;
+                background-color: #FFF;
+                color: #121212;
+                font-family: "Plus Jakarta Sans";
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 1.75;
+                height: 60px;
+                letter-spacing: -0.16px;
+                border: none;
+            }
+            textarea {
+                height: auto;
+            }
+        }
+        &.form-style4 {
+            input, textarea {
+                height: 57px;
+                padding: 18px 28px;
+                border-radius: 100px;
+                border: 1px solid #4B4B4B;
+                background-color: rgba($color: #FFF, $alpha: .12);
+                color: #FFF;
+                font-family: "Plus Jakarta Sans";
+                font-size: 15px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 1.6;
+            }
+            textarea {
+                height: 200px;
+                padding: 18px 27px;
+                border-radius: 30px;
+            }
+        }
+        &.form-style5 {
+            input, textarea {
+                padding-block: 4px 17px;
+                color: #010101;
+                font-family: 'Inter';
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 18.2px; 
+                border: none;
+                outline: none;
+                border-bottom: thin solid rgba($color: #000000, $alpha: .16);
+            }
+            textarea {
+                height: 102px;
+            }
+        }
+        &.pxl-wpcf7-3426 {
+            --width-xs : 100%;
+            --width-sm : 50%;
+            --width-md : 50%;
+            --width-lg : 50%;
+            --width-xl : 50%;
+            --width-xxl: 50%;
+            p {
+                --pxl-spacing-inline: 21.5px;
+                .wpcf7-form-control-wrap {
+                    margin-bottom: 94px;
+                    &:nth-last-of-type(1) {
+                        flex-basis: 100%;
+                        max-width: 100%;
+                    }
+                    @media #{$max-xs} {
+                        margin-bottom: 50px;
+                    }
+                }
+            }
+        }
+        &.pxl-wpcf7-4794 {
+            --width-xs : 100%;
+            --width-sm : 50%;
+            --width-md : 100%;
+            --width-lg : 50%;
+            --width-xl : 50%;
+            --width-xxl: 50%;
+            p {
+                --pxl-spacing-inline: 12px;
+                .wpcf7-form-control-wrap {
+                    margin-bottom: 25px;
+                    &:nth-last-of-type(1), &:nth-last-of-type(2) {
+                        flex-basis: 100%;
+                        max-width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

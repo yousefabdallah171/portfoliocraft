@@ -1,0 +1,308 @@
+.pxl-item-link, .pxl-box-link {
+    @extend .pxl-absolute-full;
+    z-index: 99;
+}
+
+.overflow-hidden-y {
+    overflow-y: hidden;
+}
+
+.pxl-line-wrap {
+    overflow: hidden !important;
+}
+
+.pxl-backdrop-filter {
+    backdrop-filter: blur(5px);
+}
+.text-gradient {
+    background: linear-gradient(90deg, #4776E6 0%, #8E54E9 100%) !important;
+    background: -webkit-linear-gradient(90deg, #4776E6 0%, #8E54E9 100%) !important;
+    background-clip: text !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+}
+
+.hover-link-parent-temporary {
+    &:hover {
+        .pxl-icon-wrapper {
+            .pxl-icon-item {
+                background-color: #3B44CD !important;
+            }
+        }
+    }
+}
+
+.pxl-post-item {
+    position: relative;
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        background-color: transparent;
+        z-index: 0;
+        opacity: 0;
+        transition: opacity .25s linear;
+        pointer-events: none;
+        z-index: -1;
+    }
+    &:hover, &.active {
+        &::before {
+            opacity: 1;
+        }
+    }
+}
+
+// .text-gradient {
+//     --gradient-color-from: #4776E6;
+//     --gradient-color-to: #8E54E9;
+//     background: linear-gradient(180deg, var(--gradient-color-from), var(--gradient-color-to));
+//     -webkit-background-clip: text;
+//     -webkit-text-fill-color: transparent;
+    
+// }
+
+.pxl-icon--plus {
+    height: 10px;
+    width: 10px;
+    position: relative;
+    cursor: pointer;
+    &:before, &:after {
+        content: '';
+        background-color: #122a00;
+        position: absolute;
+        @include transition(all .25s cubic-bezier(.645,.045,.355,1));
+    }
+    &:before {
+        width: 10px;
+        height: 2px;
+        top: 4px;
+        left: 0;
+    }
+    &:after {
+        width: 2px;
+        height: 10px;
+        left: 4px;
+        top: 0;
+    }
+
+}
+.pxl-icon--minus {
+    height: 10px;
+    width: 10px;
+    position: relative;
+    cursor: pointer;
+    &:before {
+        content: '';
+        background-color: #122a00;
+        position: absolute;
+        @include transition(all .25s cubic-bezier(.645,.045,.355,1));
+    }
+    &:before {
+        width: 10px;
+        height: 2px;
+        top: 4px;
+        left: 0;
+    }
+}
+
+.pxl-close {
+    @include border-radius(50%);
+    background: rgba(255,255,255,0.7);
+    border: 6px solid transparent;
+    color: #777;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    &:before, &:after {
+        content: '';
+        position: absolute;
+        height: 2px;
+        width: 100%;
+        top: 50%;
+        left: 0;
+        margin-top: -1px;
+        transform-origin: 50% 50%;
+        @include transition(all .25s cubic-bezier(.645,.045,.355,1));
+        background-color: #1b1b1b;
+    }
+    &:before {
+        @include transform(rotate(45deg));
+    }
+    &:after {
+        @include transform(rotate(-45deg));
+    }
+    &:hover {
+        &:before, &:after {
+            @include transform(rotate(0deg));
+        }
+    }
+}
+
+.pxl-flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.pxl-flex-jc-start {
+    display: flex;
+    justify-content: start;
+}
+.pxl-flex-jc-center {
+    display: flex;
+    justify-content: center;
+}
+.pxl-flex-jc-around {
+    display: flex;
+    justify-content: space-around;
+}
+.pxl-flex-jc-evenly {
+    display: flex;
+    justify-content: space-evenly;
+}
+.pxl-flex-jc-between {
+    display: flex;
+    justify-content: space-between;
+}
+
+.pxl-flex-ai-start {
+    display: flex;
+    align-items: start;
+}
+
+.pxl-flex-ai-center {
+    display: flex;
+    align-items: center;
+}
+
+.pxl-flex-ai-end {
+    display: flex;
+    align-items: end;
+}
+
+.pxl-absolute-full {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.pxl-absolute-center {
+    --pxl-translate-x: -50%;
+    --pxl-translate-y: -50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(var(--pxl-translate-x), var(--pxl-translate-y));
+}
+
+.pxl-absolute-tl {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.pxl-absolute-bl {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.pxl-absolute-br {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.pxl-absolute-tr {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.pxl-round-box {
+    width: var(--pxl-box-size);
+    min-width: var(--pxl-box-size);
+    height: var(--pxl-box-size);
+    border-radius: 50%;
+}
+
+.pxl-square-box {
+    width: var(--pxl-box-size);
+    min-width: var(--pxl-box-size);
+    height: var(--pxl-box-size);
+}
+
+.pxl-background-center {
+    background: center center / cover no-repeat;
+}
+
+.pxl-transform {
+    transform: 
+        perspective(var(--pxl-perspective))
+        translateX(var(--pxl-translate-x)) 
+        translateY(var(--pxl-translate-y)) 
+        translateZ(var(--pxl-translate-z)) 
+        scale(--pxl-scale) 
+        scale3d(var(--pxl-scale-x), var(--pxl-scale-y), var(--pxl-scale-z)) 
+        rotate(var(--pxl-rotate))
+        rotateX(var(--pxl-rotate-x)) 
+        rotateY(var(--pxl-rotate-y)) 
+        rotateZ(var(--pxl-rotate-z)) 
+        skew(var(--pxl-skew))
+        skewX(var(--pxl-skew-x)) 
+        skewY(var(--pxl-skew-y)) 
+        matrix(var(--pxl-matrix-a), var(--pxl-matrix-b), var(--pxl-matrix-c), var(--pxl-matrix-d), var(--pxl-matrix-e), var(--pxl-matrix-f));
+}
+
+.pxl-overflow-hidden {
+    overflow: hidden;
+}
+
+.pxl-text-hidden {
+    display: none;
+}
+
+.pxl-line {
+    perspective: 400px;
+}
+
+.visibility-hidden {
+    // visibility: hidden;
+}
+
+@include keyframes(underline-slide-restart) {
+    0%, 100% {
+        background-size: 100%;
+    }25%, 50% {
+        background-size: 0%;
+    }
+}
+.text-underline {
+    --pxl-height: 1px;
+    display: inline;
+    background-image: linear-gradient(
+        transparent calc(100% - var(--pxl-height)),currentcolor 0px,
+    );
+    background-size: 100%;
+    background-repeat: no-repeat;
+    &:hover {
+        animation: underline-slide-restart 1s ease forwards;
+    }
+}
+
+// .elementor-element::before {
+//     --x: 50%;
+//     --y: 50%;
+//     --pxl
+//     background-image: radial-gradient(circle 150px at var(--x) var(--y), transparent 50px, #000) !important;
+// }
+
+.scroll-parallax-item {
+    position: absolute;
+    inset: 0;
+}

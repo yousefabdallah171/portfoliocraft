@@ -1,0 +1,15 @@
+= 1.0.0 - 2024-03-20 =
+* Initial release
+* Added Elementor integration
+* Added WooCommerce support
+* Added dark mode functionality
+* Added custom post types
+* Added theme options panel
+* Added responsive design
+* Added RTL support
+* Added translation ready files
+* Added documentation
+* Added demo content
+* Added required plugins
+* Added security measures
+* Added theme check compliance 

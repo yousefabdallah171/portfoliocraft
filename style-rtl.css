@@ -1,0 +1,522 @@
+/*
+Theme Name: portfoliocraft
+Theme URI: https://themeforest.net/item/portfoliocraft-multipurpose-wordpress-theme
+Author: portfoliocraft-Themes
+Author URI: https://themeforest.net/user/rakmyat-themes
+Description: portfoliocraft is a modern, multipurpose WordPress theme designed for businesses, portfolios, and e-commerce websites. Built with Elementor page builder integration, WooCommerce compatibility, and a powerful theme options panel. Features include responsive design, dark mode support, custom post types, and extensive customization options.
+Version: 1.0.0
+Requires at least: 5.8
+Tested up to: 6.4
+Requires PHP: 7.4
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: portfoliocraft
+Tags: blog, custom-background, custom-colors, custom-logo, custom-menu, editor-style, featured-images, footer-widgets, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, block-styles, wide-blocks, accessibility-ready, e-commerce, portfolio, elementor, woocommerce, responsive, dark-mode
+
+RTL (Right-to-Left) Language Support Stylesheet
+This file provides comprehensive RTL support for Arabic, Hebrew, and other RTL languages.
+*/
+
+/* ==========================================================================
+   Base RTL Support
+   ========================================================================== */
+
+/* Document direction and text handling */
+body {
+  direction: rtl;
+  unicode-bidi: embed;
+}
+
+html[dir="rtl"] body {
+  direction: rtl;
+  text-align: right;
+}
+
+/* ==========================================================================
+   Text Alignment
+   ========================================================================== */
+
+.text-left {
+  text-align: right !important;
+}
+
+.text-right {
+  text-align: left !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+/* ==========================================================================
+   Layout and Positioning
+   ========================================================================== */
+
+/* Float adjustments */
+.float-left {
+  float: right !important;
+}
+
+.float-right {
+  float: left !important;
+}
+
+.pull-left {
+  float: right !important;
+}
+
+.pull-right {
+  float: left !important;
+}
+
+/* Clear adjustments */
+.clearfix::after {
+  clear: both;
+}
+
+/* ==========================================================================
+   Spacing (Margins and Paddings)
+   ========================================================================== */
+
+/* Auto margins */
+.ml-auto {
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+
+.mr-auto {
+  margin-right: 0 !important;
+  margin-left: auto !important;
+}
+
+/* Margin left/right swaps */
+.ml-1 {
+  margin-left: 0 !important;
+  margin-right: 0.25rem !important;
+}
+.ml-2 {
+  margin-left: 0 !important;
+  margin-right: 0.5rem !important;
+}
+.ml-3 {
+  margin-left: 0 !important;
+  margin-right: 1rem !important;
+}
+.ml-4 {
+  margin-left: 0 !important;
+  margin-right: 1.5rem !important;
+}
+.ml-5 {
+  margin-left: 0 !important;
+  margin-right: 3rem !important;
+}
+
+.mr-1 {
+  margin-right: 0 !important;
+  margin-left: 0.25rem !important;
+}
+.mr-2 {
+  margin-right: 0 !important;
+  margin-left: 0.5rem !important;
+}
+.mr-3 {
+  margin-right: 0 !important;
+  margin-left: 1rem !important;
+}
+.mr-4 {
+  margin-right: 0 !important;
+  margin-left: 1.5rem !important;
+}
+.mr-5 {
+  margin-right: 0 !important;
+  margin-left: 3rem !important;
+}
+
+/* Padding left/right swaps */
+.pl-1 {
+  padding-left: 0 !important;
+  padding-right: 0.25rem !important;
+}
+.pl-2 {
+  padding-left: 0 !important;
+  padding-right: 0.5rem !important;
+}
+.pl-3 {
+  padding-left: 0 !important;
+  padding-right: 1rem !important;
+}
+.pl-4 {
+  padding-left: 0 !important;
+  padding-right: 1.5rem !important;
+}
+.pl-5 {
+  padding-left: 0 !important;
+  padding-right: 3rem !important;
+}
+
+.pr-1 {
+  padding-right: 0 !important;
+  padding-left: 0.25rem !important;
+}
+.pr-2 {
+  padding-right: 0 !important;
+  padding-left: 0.5rem !important;
+}
+.pr-3 {
+  padding-right: 0 !important;
+  padding-left: 1rem !important;
+}
+.pr-4 {
+  padding-right: 0 !important;
+  padding-left: 1.5rem !important;
+}
+.pr-5 {
+  padding-right: 0 !important;
+  padding-left: 3rem !important;
+}
+
+/* ==========================================================================
+   Navigation and Menus
+   ========================================================================== */
+
+/* Main navigation */
+.main-navigation ul {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.main-navigation ul ul {
+  left: auto;
+  right: 0;
+}
+
+.main-navigation li {
+  float: right;
+}
+
+.main-navigation ul ul ul {
+  left: auto;
+  right: 100%;
+}
+
+/* Menu items */
+.menu-item {
+  float: right;
+}
+
+.menu-item-has-children > a::after {
+  margin-left: 0;
+  margin-right: 0.5rem;
+}
+
+/* Dropdown indicators */
+.dropdown-toggle::after {
+  margin-left: 0;
+  margin-right: 0.5rem;
+}
+
+/* ==========================================================================
+   Forms and Inputs
+   ========================================================================== */
+
+/* Input fields */
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+textarea,
+select {
+  text-align: right;
+  direction: rtl;
+}
+
+/* Search forms */
+.search-form {
+  direction: rtl;
+}
+
+.search-field {
+  text-align: right;
+  direction: rtl;
+}
+
+.search-submit {
+  left: auto;
+  right: 0;
+}
+
+/* ==========================================================================
+   WooCommerce RTL Support
+   ========================================================================== */
+
+/* Product listings */
+.woocommerce ul.products li.product,
+.woocommerce-page ul.products li.product {
+  float: right;
+  text-align: right;
+}
+
+.woocommerce ul.products li.product:nth-child(2n + 1),
+.woocommerce-page ul.products li.product:nth-child(2n + 1) {
+  clear: right;
+}
+
+.woocommerce ul.products li.product:nth-child(2n),
+.woocommerce-page ul.products li.product:nth-child(2n) {
+  clear: none;
+}
+
+/* Product details */
+.woocommerce div.product div.images,
+.woocommerce #content div.product div.images {
+  float: right;
+}
+
+.woocommerce div.product div.summary,
+.woocommerce #content div.product div.summary {
+  float: left;
+}
+
+/* Cart and checkout */
+.woocommerce table.cart td.actions .coupon {
+  float: right;
+}
+
+.woocommerce table.cart td.actions .button {
+  float: left;
+}
+
+/* ==========================================================================
+   Elementor RTL Support
+   ========================================================================== */
+
+/* Elementor containers */
+.elementor-widget-container {
+  direction: rtl;
+}
+
+.elementor-column {
+  direction: rtl;
+}
+
+.elementor-row {
+  direction: rtl;
+}
+
+/* Elementor text widgets */
+.elementor-widget-text-editor {
+  text-align: right;
+}
+
+.elementor-widget-heading .elementor-heading-title {
+  text-align: right;
+}
+
+/* ==========================================================================
+   Custom Theme Classes
+   ========================================================================== */
+
+/* Menu items */
+.pxl-menu-item {
+  margin-right: 0;
+  margin-left: 1rem;
+}
+
+.pxl-menu-item:first-child {
+  margin-left: 0;
+}
+
+.pxl-menu-item:last-child {
+  margin-left: 1rem;
+  margin-right: 0;
+}
+
+/* Input fields */
+.pxl-input {
+  text-align: right;
+  direction: rtl;
+}
+
+/* Buttons */
+.pxl-btn {
+  text-align: center;
+}
+
+.pxl-btn-icon {
+  margin-left: 0;
+  margin-right: 0.5rem;
+}
+
+/* Content areas */
+.pxl-content-area {
+  direction: rtl;
+}
+
+.pxl-sidebar-area {
+  direction: rtl;
+}
+
+/* ==========================================================================
+   Comments RTL Support
+   ========================================================================== */
+
+.comment-list {
+  text-align: right;
+}
+
+.comment-list .children {
+  margin-left: 0;
+  margin-right: 2rem;
+}
+
+.comment-meta {
+  text-align: right;
+}
+
+.comment-author {
+  float: right;
+}
+
+.comment-metadata {
+  float: left;
+}
+
+/* ==========================================================================
+   Dark Mode RTL Support
+   ========================================================================== */
+
+body.dark-mode {
+  direction: rtl;
+}
+
+body.dark-mode .pxl-input {
+  text-align: right;
+}
+
+body.dark-mode .search-field {
+  text-align: right;
+}
+
+/* ==========================================================================
+   Responsive RTL Support
+   ========================================================================== */
+
+/* Tablet styles */
+@media (max-width: 1024px) {
+  .pxl-menu-item {
+    margin-left: 0.75rem;
+  }
+
+  .woocommerce ul.products li.product {
+    width: 48%;
+    margin-left: 0;
+    margin-right: 4%;
+  }
+
+  .woocommerce ul.products li.product:nth-child(2n) {
+    margin-right: 0;
+    clear: right;
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .pxl-menu-item {
+    margin-left: 0;
+    margin-right: 0.5rem;
+  }
+
+  .main-navigation li {
+    float: none;
+    text-align: right;
+  }
+
+  .woocommerce ul.products li.product {
+    width: 100%;
+    margin-right: 0;
+    float: none;
+  }
+
+  .woocommerce div.product div.images,
+  .woocommerce div.product div.summary {
+    float: none;
+    width: 100%;
+  }
+}
+
+/* Small mobile styles */
+@media (max-width: 480px) {
+  .pxl-menu-item {
+    margin-left: 0;
+    margin-right: 0.25rem;
+  }
+
+  .comment-list .children {
+    margin-right: 1rem;
+  }
+
+  .pxl-btn-icon {
+    margin-right: 0.25rem;
+  }
+}
+
+/* ==========================================================================
+   Print Styles RTL
+   ========================================================================== */
+
+@media print {
+  body {
+    direction: rtl;
+    text-align: right;
+  }
+
+  .main-navigation,
+  .pxl-sidebar-area {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   Accessibility RTL Support
+   ========================================================================== */
+
+/* Screen reader text */
+.screen-reader-text {
+  text-align: right;
+}
+
+/* Focus styles */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline-offset: 2px;
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  body {
+    direction: rtl;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

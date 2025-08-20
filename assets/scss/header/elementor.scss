@@ -1,0 +1,18 @@
+// Header Elementor
+#pxl-header-elementor {
+	min-height: auto !important;
+	#pxl-header-desktop {
+		@media #{$max-lg} {
+			display: none;
+		}
+	}
+	#pxl-header-mobile {
+		display: none;
+		@media #{$max-lg} {
+			display: block;
+		}
+        .pxl-header-inner {
+            padding-inline: 15px;
+        }
+	}
+}

@@ -1,0 +1,106 @@
+/*  
+    Text Marquee
+*/
+@include keyframes(marquee-animation) {
+    from {
+        transform: translateX(0) translateY(0);
+    }to{
+        transform: translateX(var(--pxl-translate-x)) translateY(var(--pxl-translate-y));
+    }
+}
+
+.marquee-animation {
+    --pxl-translate-x: -100%;
+    --pxl-duration: 20s;
+    @include animation(marquee-animation var(--pxl-duration) linear infinite);
+}
+
+.pxl-text-marquee-wrapper {
+    --pxl-spacing: 30px;
+    display: flex;
+    width: 100%;
+    overflow-x: clip;
+    .pxl-text-marquee-item {
+        --pxl-translate-x: calc(-100% - (var(--pxl-spacing)/2));
+        white-space: nowrap;
+        @extend .marquee-animation;
+        color:#010101;
+        font-family: var(--secondary-font);
+        font-size: 125px;
+        font-weight: 700;
+        line-height: 1;
+        letter-spacing: 2.4px;
+        p {
+            width: 100%;
+        }
+        &.main {
+            padding-right: calc(var(--pxl-spacing)/2);
+        }
+        &.duplicated {
+            padding-left: calc(var(--pxl-spacing)/2);
+        }
+        .pxl-text-highlight {
+            color: transparent;
+            stroke: 2px #010101;
+            -webkit-text-stroke: 2px #010101;
+        }
+        @media #{$max-xl} {
+            font-size: 115px;
+        }
+        @media #{$max-lg} {
+            font-size: 105px;
+        }
+        @media #{$max-md} {
+            font-size: 95px;
+        }
+        @media #{$max-sm} {
+            font-size: 80px;
+        }
+        @media #{$max-xs} {
+            font-size: 70px;
+        }
+    }
+    &.ltr {
+        justify-content: end;
+        .pxl-text-marquee-item {
+            --pxl-translate-x: calc(100% + (var(--pxl-spacing)/2));
+        }
+    }
+    &.scroll-marquee-animation {
+        --pxl-spacing: 0;
+        .pxl-text-marquee-item {
+            @include animation(none);
+        }
+    }
+}
+
+
+// Image Marquee
+.pxl-image-marquee-wrapper {
+    --pxl-spacing: 30px;
+    display: flex;
+    width: 100%;
+    overflow-x: clip;
+    .pxl-image-marquee-item {
+        display: flex;
+        align-items: start;
+        min-width: 100%;
+        --pxl-translate-x: calc(-100% - (var(--pxl-spacing)/2));
+        @extend .marquee-animation;
+        img {
+            width: auto;
+        }
+        &.main {
+            padding-right: calc(var(--pxl-spacing)/2);
+        }
+        &.duplicated {
+            padding-left: calc(var(--pxl-spacing)/2);
+        }
+    }
+    &.ltr {
+        justify-content: end;
+        .pxl-image-marquee-item {
+            --pxl-translate-x: calc(100% + (var(--pxl-spacing)/2));
+        }
+    }
+}

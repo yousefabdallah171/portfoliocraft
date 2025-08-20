@@ -1,0 +1,60 @@
+/* 
+    Common
+*/
+@import 'common/mixins';
+@import 'common/default';
+@import 'common/grid';
+@import 'common/layout';
+@import 'common/class';
+@import 'common/forms';
+@import 'common/animation';
+@import 'common/wow.scss';
+@import 'common/effects';
+@import 'common/hover.scss';
+/* 
+    Config
+*/
+// @import 'config/header.scss';
+@import 'config/widgets.scss';
+@import 'config/elementor.scss';
+@import 'config/swiper.scss';
+/*
+    Header
+*/
+@import 'header/common.scss';
+@import 'header/default.scss';
+@import 'header/elementor.scss';
+/* 
+    Elements
+*/
+@import 'elements/all.scss';
+@import 'elements/buttons.scss';
+@import 'elements/heading.scss';
+@import 'elements/marquee.scss';
+@import 'elements/icon_box.scss';
+@import 'elements/counter.scss';
+@import 'elements/testimonial.scss';
+@import 'elements/icon.scss';
+@import 'elements/link.scss';
+@import 'elements/cf7.scss';
+
+/*
+    Posts
+*/
+@import 'posts/post.scss';
+@import 'posts/portfolio.scss';
+@import 'posts/service.scss';
+@import 'posts/standard.scss';
+@import 'posts/team.scss';
+@import 'posts/single.scss';
+
+/*
+    Woocommerce
+*/
+@import 'woocommerce/woocommerce.scss';
+@import 'woocommerce/shop.scss';
+@import 'woocommerce/single_product.scss';
+@import 'woocommerce/cart.scss';
+@import 'woocommerce/checkout.scss';
+@import 'woocommerce/wishlist.scss';
+@import 'woocommerce/my_account.scss';

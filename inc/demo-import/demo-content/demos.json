@@ -1,0 +1,80 @@
+{
+  "version": "1.0",
+  "created": "2025-08-20",
+  "author": "portfoliocraft Theme",
+  "description": "Demo configurations for portfoliocraft theme - works both locally and remotely",
+  "demos": [
+    {
+      "folder": "portfolio",
+      "name": "Portfolio Demo local ",
+      "description": "Creative portfolio showcase with modern design and smooth animations. Perfect for designers, photographers, and creative professionals.",
+      "preview_url": "https://portfoliocraft.rakmyat.com/portfolio",
+      "category": "portfolio",
+      "tags": [
+        "creative",
+        "portfolio",
+        "modern",
+        "photography"
+      ],
+      "featured": true,
+      "requirements": {
+        "plugins": [
+          "elementor",
+          "rakmyat-core"
+        ],
+        "php_version": "7.4",
+        "wp_version": "5.0"
+      },
+      "files": {
+        "content": "content.xml",
+        "theme_options": "theme-options.json",
+        "elementor_settings": "site-settings.json",
+        "screenshot": "screenshot.png"
+      }
+    },
+    {
+      "folder": "demo1",
+      "name": "Business Pro",
+      "description": "Professional business website template with corporate design, service pages, and contact forms. Ideal for consulting firms and agencies.",
+      "preview_url": "https://portfolio2craft.rakmyat.com/business",
+      "category": "business",
+      "tags": [
+        "business",
+        "professional",
+        "corporate",
+        "services"
+      ],
+      "featured": false,
+      "requirements": {
+        "plugins": [
+          "elementor",
+          "rakmyat-core",
+          "contact-form-7"
+        ],
+        "php_version": "7.4",
+        "wp_version": "5.0"
+      },
+      "files": {
+        "content": "content.xml",
+        "theme_options": "theme-options.json",
+        "elementor_settings": "site-settings.json",
+        "screenshot": "screenshot.png"
+      }
+    }
+  ],
+  "settings": {
+    "cache_duration": 3600,
+    "enable_preview": true,
+    "enable_categories": true,
+    "enable_tags": true,
+    "default_category": "portfolio",
+    "supported_file_types": [
+      "xml",
+      "json",
+      "wie",
+      "dat",
+      "png",
+      "jpg"
+    ]
+  }
+}
