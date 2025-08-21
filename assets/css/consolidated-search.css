@@ -1,0 +1,1471 @@
+/**
+ * Consolidated Search Styling - All search-related CSS in one file
+ * Uses only existing theme option variables for complete control
+ * Includes: Search page, Search forms, Search widgets, and all search-related elements
+ */
+
+/* ==========================================================================
+   CSS VARIABLES & FALLBACKS
+   ========================================================================== */
+
+:root {
+    /* Ensure all theme variables have fallbacks */
+    --primary-color: var(--primary-color, #FF3D00);
+    --secondary-color: var(--secondary-color, #010101);
+    --third-color: var(--third-color, #00c5fe);
+    --body-bg-color: var(--body-bg-color, #ffffff);
+    --white-text-color: var(--white-text-color, #ffffff);
+    --light-text-color: var(--light-text-color, #f5f5f5);
+    --off-white-color: var(--off-white-color, #fafafa);
+    --light-gray-text-color: var(--light-gray-text-color, #e0e0e0);
+    --body-text-color: var(--body-text-color, #333333);
+    --heading-text-color: var(--heading-text-color, #1a1a1a);
+    --post-title-color: var(--post-title-color, #1a1a1a);
+    --subtitle-text-color: var(--subtitle-text-color, #666666);
+    --meta-text-color: var(--meta-text-color, #999999);
+    --comments-title-color: var(--comments-title-color, #1a1a1a);
+    --comment-author-color: var(--comment-author-color, #333333);
+    --comment-text-color: var(--comment-text-color, #555555);
+    --comment-meta-color: var(--comment-meta-color, #999999);
+}
+
+/* ==========================================================================
+   SEARCH PAGE LAYOUT & STRUCTURE
+   ========================================================================== */
+
+/* Main Search Page Layout */
+.search #pxl-main {
+    padding-block: 176px 179px;
+}
+
+@media screen and (max-width: 1199px) {
+    .search #pxl-main {
+        padding-block: 150px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .search #pxl-main {
+        padding-block: 100px;
+    }
+}
+
+/* Search Results Layout */
+.search.search-results #pxl-main {
+    padding-block: 176px 179px;
+}
+
+@media screen and (max-width: 1199px) {
+    .search.search-results #pxl-main {
+        padding-block: 150px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .search.search-results #pxl-main {
+        padding-block: 100px;
+    }
+}
+
+/* No Sidebar Layout - Full Width */
+.no-sidebar #pxl-content-area,
+.search .no-sidebar #pxl-content-area {
+    width: 100% !important;
+    max-width: none !important;
+    flex: none !important;
+}
+
+.no-sidebar .inner,
+.search .no-sidebar .inner {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 0 2rem;
+    width: 100% !important;
+}
+
+@media screen and (max-width: 768px) {
+    .no-sidebar .inner,
+    .search .no-sidebar .inner {
+        padding: 0 1rem;
+    }
+}
+
+/* ==========================================================================
+   SEARCH PAGE HEADER
+   ========================================================================== */
+
+.portfoliocraft-search-header {
+    padding: 3rem 0 2rem;
+    text-align: center;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: var(--white-text-color);
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 3rem;
+}
+
+.portfoliocraft-search-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.portfoliocraft-search-header > * {
+    position: relative;
+    z-index: 2;
+}
+
+.portfoliocraft-search-info {
+    margin-bottom: 2rem;
+}
+
+.portfoliocraft-search-title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+    color: var(--white-text-color) !important;
+}
+
+.portfoliocraft-search-title .search-query {
+    color: var(--off-white-color);
+    font-style: italic;
+    text-decoration: underline;
+    text-decoration-color: rgba(255, 255, 255, 0.5);
+    text-underline-offset: 4px;
+}
+
+.portfoliocraft-search-count {
+    font-size: 1.2rem;
+    margin: 0;
+    opacity: 0.9;
+    color: var(--light-text-color);
+}
+
+/* Search Form in Header */
+.portfoliocraft-search-form-wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.portfoliocraft-search-form-wrapper .search-form,
+.portfoliocraft-search-form-wrapper .portfoliocraft-search-form {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    padding: 0.75rem;
+    display: flex;
+    gap: 0.5rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    align-items: center;
+}
+
+.portfoliocraft-search-form-wrapper .search-field,
+.portfoliocraft-search-form .search-field {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: var(--body-text-color);
+    font-size: 1.1rem;
+    padding: 0.75rem 1rem;
+    outline: none;
+    width: 100%;
+}
+
+.portfoliocraft-search-form-wrapper .search-field::placeholder,
+.portfoliocraft-search-form .search-field::placeholder {
+    color: var(--meta-text-color);
+}
+
+.portfoliocraft-search-form-wrapper .search-submit,
+.portfoliocraft-search-form .search-submit {
+    background: var(--primary-color);
+    color: var(--white-text-color);
+    border: none;
+    border-radius: 8px;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.portfoliocraft-search-form-wrapper .search-submit:hover,
+.portfoliocraft-search-form .search-submit:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+/* Custom Search Form Structure */
+.portfoliocraft-search-form {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    padding: 0.75rem;
+    display: flex;
+    gap: 0.5rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    align-items: center;
+    position: relative;
+}
+
+.search-field-wrapper {
+    flex: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-field-wrapper .search-field {
+    width: 100%;
+    background: transparent;
+    border: none;
+    color: var(--body-text-color);
+    font-size: 1.1rem;
+    padding: 0.75rem 3rem 0.75rem 1rem;
+    outline: none;
+}
+
+.search-field-wrapper .search-field::placeholder {
+    color: var(--meta-text-color);
+}
+
+.search-field-wrapper .search-field:focus {
+    outline: none;
+    color: var(--body-text-color);
+}
+
+.search-clear {
+    position: absolute;
+    right: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--meta-text-color);
+    cursor: pointer;
+    padding: 0.25rem;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.search-clear:hover {
+    color: var(--primary-color);
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.search-field:not(:placeholder-shown) + .search-clear {
+    opacity: 1;
+    visibility: visible;
+}
+
+.search-submit .search-text {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.search-submit i {
+    font-size: 0.9rem;
+}
+
+.screen-reader-text {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+/* Mobile responsive header */
+@media (max-width: 768px) {
+    .portfoliocraft-search-header {
+        padding: 2rem 1rem 1.5rem;
+    }
+    
+    .portfoliocraft-search-title {
+        font-size: 2rem;
+    }
+    
+    .portfoliocraft-search-form-wrapper {
+        margin-top: 1.5rem;
+    }
+    
+    .portfoliocraft-search-form-wrapper .search-form {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .portfoliocraft-search-form-wrapper .search-submit {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .portfoliocraft-search-title {
+        font-size: 1.75rem;
+    }
+    
+    .portfoliocraft-search-title .search-query {
+        display: block;
+        margin-top: 0.5rem;
+    }
+}
+
+/* ==========================================================================
+   SEARCH RESULTS
+   ========================================================================== */
+
+.portfoliocraft-search-results {
+    padding: 0;
+}
+
+/* Search Result Items */
+.search-result-item,
+.portfoliocraft-search-results article,
+.search .pxl-post-item {
+    background: var(--body-bg-color);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.search-result-item:hover,
+.portfoliocraft-search-results article:hover,
+.search .pxl-post-item:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    transform: translateY(-4px);
+    border-color: var(--primary-color);
+}
+
+.search-result-item::before,
+.portfoliocraft-search-results article::before,
+.search .pxl-post-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--primary-color);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.search-result-item:hover::before,
+.portfoliocraft-search-results article:hover::before,
+.search .pxl-post-item:hover::before {
+    opacity: 1;
+}
+
+/* Search Result Meta */
+.search-result-meta,
+.portfoliocraft-search-results .entry-meta,
+.search .pxl-post-date {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    font-size: 0.875rem;
+    color: var(--meta-text-color);
+    flex-wrap: wrap;
+}
+
+.search-result-meta .post-type {
+    background: var(--third-color);
+    color: var(--white-text-color);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+}
+
+.search-result-meta .post-date,
+.portfoliocraft-search-results .entry-meta .post-date,
+.search .pxl-post-date span {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    color: var(--meta-text-color);
+}
+
+/* Search Result Titles */
+.search-result-item .pxl-post-title,
+.search-result-item .entry-title,
+.portfoliocraft-search-results .pxl-post-title,
+.portfoliocraft-search-results .entry-title,
+.search .pxl-post-title {
+    margin-bottom: 1rem !important;
+}
+
+.search-result-item .pxl-title-text,
+.search-result-item .entry-title a,
+.portfoliocraft-search-results .pxl-title-text,
+.portfoliocraft-search-results .entry-title a,
+.search .pxl-post-title a,
+.search .pxl-title-text {
+    color: var(--post-title-color) !important;
+    text-decoration: none;
+    font-size: 1.5rem !important;
+    font-weight: 700 !important;
+    line-height: 1.3;
+    transition: color 0.3s ease;
+    display: block;
+}
+
+.search-result-item .pxl-title-text:hover,
+.search-result-item .entry-title a:hover,
+.portfoliocraft-search-results .pxl-title-text:hover,
+.portfoliocraft-search-results .entry-title a:hover,
+.search .pxl-post-title a:hover,
+.search .pxl-title-text:hover {
+    color: var(--primary-color) !important;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+/* Search Result Content */
+.search-result-excerpt,
+.search-result-content,
+.portfoliocraft-search-results .entry-summary,
+.portfoliocraft-search-results .entry-content,
+.search .pxl-post-excerpt {
+    color: var(--body-text-color);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+}
+
+/* Search Result Footer */
+.search-result-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap;
+}
+
+.search-result-categories,
+.portfoliocraft-search-results .entry-categories {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.search-result-categories a,
+.portfoliocraft-search-results .entry-categories a {
+    background: var(--body-bg-color);
+    color: var(--meta-text-color);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 0.875rem;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.search-result-categories a:hover,
+.portfoliocraft-search-results .entry-categories a:hover {
+    background: var(--primary-color);
+    color: var(--white-text-color);
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.search-result-read-more {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    font-size: 0.875rem;
+}
+
+.search-result-read-more:hover {
+    color: var(--secondary-color);
+    text-decoration: underline;
+    transform: translateX(4px);
+}
+
+/* Mobile responsive results */
+@media (max-width: 768px) {
+    .search-result-item,
+    .portfoliocraft-search-results article,
+    .search .pxl-post-item {
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .search-result-item .pxl-title-text,
+    .search-result-item .entry-title a,
+    .portfoliocraft-search-results .pxl-title-text,
+    .portfoliocraft-search-results .entry-title a,
+    .search .pxl-post-title a,
+    .search .pxl-title-text {
+        font-size: 1.25rem !important;
+    }
+    
+    .search-result-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .search-result-meta,
+    .portfoliocraft-search-results .entry-meta,
+    .search .pxl-post-date {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+}
+
+/* ==========================================================================
+   NO SEARCH RESULTS
+   ========================================================================== */
+
+.search.search-no-results #pxl-main {
+    padding-block: 176px 176px;
+}
+
+@media screen and (max-width: 1199px) {
+    .search.search-no-results #pxl-main {
+        padding-block: 150px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .search.search-no-results #pxl-main {
+        padding-block: 100px;
+    }
+}
+
+.search.search-no-results .no-results.not-found,
+.portfoliocraft-no-results,
+.no-results,
+.not-found {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: var(--body-bg-color);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    margin: 2rem auto;
+    max-width: 726px;
+    width: 100%;
+}
+
+/* No Results Page Titles */
+.search.search-no-results .page-title,
+.portfoliocraft-no-results .page-title,
+.no-results .page-title,
+.not-found .page-title,
+.search .page-title {
+    color: var(--heading-text-color);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.search.search-no-results .page-content,
+.portfoliocraft-no-results .page-content,
+.no-results .page-content,
+.not-found .page-content,
+.search .page-content {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.search.search-no-results .page-content > p,
+.portfoliocraft-no-results .page-content > p,
+.no-results .page-content > p,
+.not-found .page-content > p,
+.search .page-content > p {
+    font-weight: 300;
+    margin-bottom: 15px;
+    color: var(--body-text-color);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+    text-align: center;
+}
+
+/* No Results Search Form */
+.search.search-no-results .search-form-control {
+    position: relative;
+}
+
+.search.search-no-results .search-form-control .search-submit {
+    --pxl-box-size: 56px;
+    background-color: var(--primary-color);
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    color: var(--white-text-color);
+    font-size: 18px;
+    transform: translateY(-50%);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.search.search-no-results .search-form-control .search-submit:before,
+.search.search-no-results .search-form-control .search-submit:after {
+    display: none;
+}
+
+.search.search-no-results .search-form-control .search-submit:hover {
+    background-color: var(--secondary-color);
+    color: var(--white-text-color);
+}
+
+.search.search-no-results .search-form-control .search-field {
+    background-color: var(--body-bg-color);
+    border-radius: 100px;
+    font-size: 16px;
+    padding-block: 15px;
+    padding-inline-end: 70px;
+    padding-inline-start: 22px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    width: 100%;
+    color: var(--body-text-color);
+}
+
+.search.search-no-results .search-form-control .search-field::placeholder {
+    color: var(--meta-text-color);
+    font-size: 15px;
+}
+
+.search.search-no-results .search-form-control .search-field:focus {
+    border-color: var(--primary-color);
+    color: var(--body-text-color);
+    outline: none;
+}
+
+/* Search Suggestions */
+.portfoliocraft-search-suggestions {
+    margin-top: 2rem;
+    text-align: left;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.suggestions-title {
+    color: var(--heading-text-color);
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.suggestions-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2rem;
+}
+
+.suggestions-list li {
+    color: var(--body-text-color);
+    padding: 0.5rem 0;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.suggestions-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* Popular Content */
+.portfoliocraft-popular-content {
+    margin-top: 2rem;
+}
+
+.portfoliocraft-popular-content h4 {
+    color: var(--heading-text-color);
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.popular-categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+}
+
+.category-link {
+    background: var(--primary-color);
+    color: var(--white-text-color);
+    padding: 0.75rem 1.25rem;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.category-link:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.category-link .post-count {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.25rem 0.5rem;
+    border-radius: 12px;
+    font-size: 0.875rem;
+}
+
+@media (max-width: 768px) {
+    .popular-categories {
+        justify-content: flex-start;
+    }
+}
+
+/* ==========================================================================
+   PAGINATION
+   ========================================================================== */
+
+.portfoliocraft-search-results + nav,
+.search-pagination,
+.pagination,
+.search .pxl-pagination-wrap {
+    margin: 3rem 0;
+    text-align: center;
+}
+
+.page-numbers {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    height: 44px;
+    margin: 0 0.25rem;
+    background: var(--body-bg-color);
+    color: var(--body-text-color);
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.page-numbers:hover,
+.page-numbers.current {
+    background: var(--primary-color);
+    color: var(--white-text-color);
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.page-numbers.prev,
+.page-numbers.next {
+    padding: 0 1rem;
+    font-size: 0.875rem;
+}
+
+/* ==========================================================================
+   SEARCH FORMS & WIDGETS
+   ========================================================================== */
+
+/* Widget Search Forms */
+.widget.widget_search {
+    background: none !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+}
+
+.widget.widget_search .search-form-control {
+    position: relative;
+}
+
+.widget.widget_search .search-submit {
+    --pxl-box-size: 56px;
+    background-color: var(--primary-color);
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    color: var(--white-text-color);
+    font-size: 18px;
+    transform: translateY(-50%);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.widget.widget_search .search-submit:before,
+.widget.widget_search .search-submit:after {
+    display: none;
+}
+
+.widget.widget_search .search-submit:hover {
+    background-color: var(--secondary-color);
+    color: var(--white-text-color);
+}
+
+.widget.widget_search .search-field {
+    background-color: var(--body-bg-color);
+    border-radius: 100px;
+    font-size: 16px;
+    padding-block: 15px;
+    padding-inline-end: 70px;
+    padding-inline-start: 22px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    width: 100%;
+    color: var(--body-text-color);
+}
+
+.widget.widget_search .search-field::placeholder {
+    color: var(--meta-text-color);
+    font-size: 15px;
+}
+
+.widget.widget_search .search-field:focus {
+    border-color: var(--primary-color);
+    color: var(--body-text-color);
+    outline: none;
+}
+
+/* Block Search Widget */
+.widget_block.widget_search .wp-block-search__label {
+    display: none;
+}
+
+.widget_block.widget_search .wp-block-search__inside-wrapper {
+    position: relative;
+}
+
+.widget_block.widget_search .wp-block-search__inside-wrapper .wp-block-search__button {
+    --pxl-box-size: 56px;
+    background-color: var(--primary-color);
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    color: var(--white-text-color);
+    font-size: 0px;
+    transform: translateY(-50%);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 56px;
+    height: 56px;
+}
+
+.widget_block.widget_search .wp-block-search__inside-wrapper .wp-block-search__button::after {
+    display: none;
+}
+
+.widget_block.widget_search .wp-block-search__inside-wrapper .wp-block-search__button:before {
+    content: "\f002";
+    font-family: "Font Awesome 6 Free";
+    font-size: 16px;
+    font-weight: 900;
+    color: var(--white-text-color);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.widget_block.widget_search .wp-block-search__inside-wrapper .wp-block-search__button:hover {
+    background-color: var(--secondary-color);
+    color: var(--white-text-color);
+}
+
+.widget_block.widget_search .wp-block-search__inside-wrapper .wp-block-search__button:focus {
+    border-color: var(--primary-color);
+    color: var(--white-text-color);
+    outline: none;
+}
+
+.widget_block.widget_search .wp-block-search__inside-wrapper .wp-block-search__input {
+    background-color: var(--body-bg-color);
+    border-radius: 100px;
+    font-size: 16px;
+    padding-block: 15px;
+    padding-inline-end: 70px;
+    padding-inline-start: 22px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    width: 100%;
+    color: var(--body-text-color);
+}
+
+.widget_block.widget_search .wp-block-search__inside-wrapper .wp-block-search__input::placeholder {
+    color: var(--meta-text-color);
+    font-size: 15px;
+}
+
+.widget_block.widget_search .wp-block-search__inside-wrapper .wp-block-search__input:focus {
+    border-color: var(--primary-color);
+    color: var(--body-text-color);
+    outline: none;
+}
+
+/* Header Search */
+.pxl-header .pxl-header-search {
+    margin-bottom: 30px;
+}
+
+.pxl-header .pxl-header-search form {
+    position: relative;
+}
+
+.pxl-header .pxl-header-search .search-field {
+    line-height: 48px;
+    border: thin solid #d5d5d5;
+    font-size: 14px;
+    border-radius: 6px;
+    color: var(--body-text-color);
+    background: var(--body-bg-color);
+    padding-inline: 10px;
+    padding-block: 0;
+}
+
+.pxl-header .pxl-header-search .search-field:hover,
+.pxl-header .pxl-header-search .search-field:focus {
+    border-color: var(--primary-color);
+    color: var(--body-text-color);
+    outline: none;
+}
+
+.pxl-header .pxl-header-search .search-submit {
+    --pxl-box-size: 50px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: var(--primary-color);
+    color: var(--white-text-color);
+    border: thin solid var(--primary-color);
+    transition: background-color 0.3s linear;
+    border-radius: 6px;
+}
+
+.pxl-header .pxl-header-search .search-submit:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+/* PXL Search Form Wrapper */
+.pxl-search-form-wrapper .search-form {
+    position: relative;
+}
+
+.pxl-search-form-wrapper .search-field {
+    border: none;
+    border-bottom: thin solid var(--primary-color);
+    padding-block: 10px 15px;
+    padding-inline: 5px;
+    font-size: 18px;
+    background-color: transparent;
+    color: var(--body-text-color);
+}
+
+.pxl-search-form-wrapper .search-field:focus {
+    outline: none;
+    border-bottom-color: var(--secondary-color);
+}
+
+.pxl-search-form-wrapper .search-submit {
+    --pxl-box-size: 40px;
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--primary-color);
+    color: var(--white-text-color);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.25s linear;
+}
+
+.pxl-search-form-wrapper .search-submit:before {
+    content: '';
+    position: absolute;
+    inset: 1px;
+    width: calc(100% - 2px);
+    height: calc(100% - 2px);
+    background-color: var(--body-bg-color);
+    border-radius: inherit;
+    scale: 0;
+    transition: scale 0.25s linear;
+}
+
+.pxl-search-form-wrapper .search-submit:hover {
+    color: var(--primary-color);
+}
+
+.pxl-search-form-wrapper .search-submit:hover:before {
+    scale: 1;
+}
+
+.pxl-search-form-wrapper .search-submit:hover i {
+    animation: circular-motion 3.5s linear infinite;
+}
+
+/* Search Button */
+.btn.pxl-search-button,
+button.pxl-search-button {
+    font-family: var(--secondary-font);
+    height: 26px;
+    gap: 7px;
+    background-color: transparent;
+    color: var(--body-text-color);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn.pxl-search-button:hover,
+button.pxl-search-button:hover {
+    color: var(--primary-color);
+}
+
+.btn.pxl-search-button .pxl-btn-icon,
+button.pxl-search-button .pxl-btn-icon {
+    --pxl-translate-x: 5px;
+    --pxl-translate-y: 5px;
+    --pxl-rotate: 0deg;
+    transition: transform 0.3s ease;
+}
+
+.btn.pxl-search-button:hover .pxl-btn-icon,
+button.pxl-search-button:hover .pxl-btn-icon {
+    animation: circular-motion 3.5s linear infinite;
+}
+
+/* ==========================================================================
+   WOOCOMMERCE SEARCH
+   ========================================================================== */
+
+.woocommerce #pxl-sidebar-area .widget_product_search button {
+    padding: 0;
+    width: 53px;
+    height: 50px;
+    background-color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    color: var(--white-text-color);
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: none;
+}
+
+.woocommerce #pxl-sidebar-area .widget_product_search button:after {
+    content: "\f002";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    font-size: 14px;
+    color: var(--white-text-color);
+    text-indent: 0px;
+}
+
+.woocommerce #pxl-sidebar-area .widget_product_search button:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    color: var(--white-text-color);
+}
+
+.woocommerce #pxl-sidebar-area .widget_product_search .search-field {
+    height: 50px;
+    color: var(--body-text-color);
+    border-color: #ececf0;
+    font-size: 15px;
+    background: var(--body-bg-color);
+}
+
+.woocommerce #pxl-sidebar-area .widget_product_search .search-field:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.woocommerce #pxl-sidebar-area .widget_product_search .search-field:focus + button {
+    border-color: var(--primary-color);
+}
+
+/* ==========================================================================
+   INPUT STYLING
+   ========================================================================== */
+
+input[type="search"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: var(--body-bg-color);
+    color: var(--body-text-color);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    padding: 10px 15px;
+    font-size: 16px;
+    line-height: 1.5;
+    transition: all 0.3s ease;
+}
+
+input[type="search"]:focus {
+    border-color: var(--primary-color);
+    color: var(--body-text-color);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(255, 61, 0, 0.1);
+}
+
+input[type="search"]:hover {
+    border-color: var(--primary-color);
+}
+
+input[type="search"]::placeholder {
+    color: var(--meta-text-color);
+    opacity: 1;
+}
+
+/* ==========================================================================
+   ACCESSIBILITY & FOCUS STATES
+   ========================================================================== */
+
+.search-result-item .pxl-title-text:focus,
+.search-result-item .entry-title a:focus,
+.portfoliocraft-search-results .pxl-title-text:focus,
+.portfoliocraft-search-results .entry-title a:focus,
+.search-result-read-more:focus,
+.category-link:focus,
+.page-numbers:focus,
+.search-submit:focus,
+.search-field:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* ==========================================================================
+   REDUCED MOTION
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    .search-result-item,
+    .portfoliocraft-search-results article,
+    .search-result-read-more,
+    .category-link,
+    .page-numbers,
+    .portfoliocraft-search-form-wrapper .search-submit,
+    .search-submit,
+    .pxl-search-form-wrapper .search-submit,
+    .btn.pxl-search-button,
+    button.pxl-search-button {
+        transition: none;
+        animation: none;
+    }
+    
+    .search-result-item:hover,
+    .portfoliocraft-search-results article:hover {
+        transform: none;
+    }
+    
+    .pxl-search-form-wrapper .search-submit:hover i,
+    .btn.pxl-search-button:hover .pxl-btn-icon,
+    button.pxl-search-button:hover .pxl-btn-icon {
+        animation: none;
+    }
+}
+
+/* ==========================================================================
+   ANIMATIONS
+   ========================================================================== */
+
+@keyframes circular-motion {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* ==========================================================================
+   DARK MODE SUPPORT
+   ========================================================================== */
+
+@media (prefers-color-scheme: dark) {
+    .portfoliocraft-search-form-wrapper .search-form {
+        background: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(10px);
+    }
+    
+    .search-result-item,
+    .portfoliocraft-search-results article,
+    .search .pxl-post-item {
+        background: rgba(255, 255, 255, 0.05);
+        border-color: rgba(255, 255, 255, 0.1);
+    }
+}
+
+/* ==========================================================================
+   HIGH CONTRAST MODE
+   ========================================================================== */
+
+@media (prefers-contrast: high) {
+    .search-result-item,
+    .portfoliocraft-search-results article,
+    .search .pxl-post-item,
+    .portfoliocraft-no-results,
+    .search.search-no-results .no-results.not-found {
+        border: 2px solid var(--primary-color);
+    }
+    
+    .search-submit,
+    .widget.widget_search .search-submit,
+    .widget_block.widget_search .wp-block-search__button,
+    .pxl-search-form-wrapper .search-submit {
+        border: 2px solid var(--white-text-color);
+    }
+}
+
+/* ==========================================================================
+   ADDITIONAL SEARCH FORM OVERRIDES
+   ========================================================================== */
+
+/* Ensure all search forms across the theme are styled consistently */
+form.search-form,
+form.portfoliocraft-search-form,
+.search-form,
+.portfoliocraft-search-form {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    padding: 0.75rem;
+    display: flex;
+    gap: 0.5rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    align-items: center;
+    position: relative;
+}
+
+/* Target any search field in any search form */
+.search-form .search-field,
+.portfoliocraft-search-form .search-field,
+form[role="search"] .search-field,
+input.search-field,
+input[type="search"] {
+    background: transparent !important;
+    border: none !important;
+    color: var(--body-text-color) !important;
+    font-size: 1.1rem !important;
+    padding: 0.75rem 1rem !important;
+    outline: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+
+.search-form .search-field::placeholder,
+.portfoliocraft-search-form .search-field::placeholder,
+form[role="search"] .search-field::placeholder,
+input.search-field::placeholder,
+input[type="search"]::placeholder {
+    color: var(--meta-text-color) !important;
+}
+
+/* Target any search submit button */
+.search-form .search-submit,
+.portfoliocraft-search-form .search-submit,
+form[role="search"] .search-submit,
+button.search-submit,
+input.search-submit,
+input[type="submit"].search-submit {
+    background: var(--primary-color) !important;
+    color: var(--white-text-color) !important;
+    border: none !important;
+    border-radius: 8px !important;
+    padding: 0.75rem 1.5rem !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+    box-shadow: none !important;
+}
+
+.search-form .search-submit:hover,
+.portfoliocraft-search-form .search-submit:hover,
+form[role="search"] .search-submit:hover,
+button.search-submit:hover,
+input.search-submit:hover,
+input[type="submit"].search-submit:hover {
+    background: var(--secondary-color) !important;
+    transform: translateY(-2px) !important;
+    color: var(--white-text-color) !important;
+}
+
+/* Header search form wrapper styling */
+.portfoliocraft-search-form-wrapper form,
+.portfoliocraft-search-form-wrapper .search-form,
+.portfoliocraft-search-form-wrapper .portfoliocraft-search-form {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+}
+
+/* Make sure the search form in header is properly styled */
+.portfoliocraft-search-header .portfoliocraft-search-form-wrapper form,
+.portfoliocraft-search-header .search-form,
+.portfoliocraft-search-header .portfoliocraft-search-form {
+    background: rgba(255, 255, 255, 0.95) !important;
+    border-radius: 12px !important;
+    padding: 0.75rem !important;
+    display: flex !important;
+    gap: 0.5rem !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2) !important;
+    backdrop-filter: blur(10px) !important;
+    align-items: center !important;
+}
+
+/* Target all forms with role="search" */
+form[role="search"] {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    padding: 0.75rem;
+    display: flex;
+    gap: 0.5rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    align-items: center;
+    position: relative;
+}
+
+/* Search field wrapper inside header */
+.portfoliocraft-search-header .search-field-wrapper {
+    flex: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.portfoliocraft-search-header .search-field-wrapper .search-field {
+    width: 100% !important;
+    background: transparent !important;
+    border: none !important;
+    color: var(--body-text-color) !important;
+    font-size: 1.1rem !important;
+    padding: 0.75rem 3rem 0.75rem 1rem !important;
+    outline: none !important;
+}
+
+.portfoliocraft-search-header .search-clear {
+    position: absolute;
+    right: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--meta-text-color);
+    cursor: pointer;
+    padding: 0.25rem;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.portfoliocraft-search-header .search-clear:hover {
+    color: var(--primary-color);
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.portfoliocraft-search-header .search-submit {
+    background: var(--primary-color) !important;
+    color: var(--white-text-color) !important;
+    border: none !important;
+    border-radius: 8px !important;
+    padding: 0.75rem 1.5rem !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+}
+
+.portfoliocraft-search-header .search-submit:hover {
+    background: var(--secondary-color) !important;
+    transform: translateY(-2px) !important;
+}
+
+.portfoliocraft-search-header .search-submit .search-text {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.portfoliocraft-search-header .search-submit i {
+    font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   FORCE OVERRIDES FOR THEME CONFLICTS
+   ========================================================================== */
+
+/* Ensure search content area is full width */
+.search .inner.no-sidebar {
+    width: 100% !important;
+    max-width: 1200px !important;
+}
+
+.search #pxl-content-area {
+    width: 100% !important;
+    flex: none !important;
+}
+
+/* Override any existing search result styling */
+.search .pxl-post-title,
+.search .entry-title {
+    margin-bottom: 1rem !important;
+}
+
+.search .pxl-post-title a,
+.search .entry-title a {
+    color: var(--post-title-color) !important;
+    font-size: 1.5rem !important;
+    font-weight: 700 !important;
+}
+
+.search .pxl-post-title a:hover,
+.search .entry-title a:hover {
+    color: var(--primary-color) !important;
+}
+
+/* Hide author info widget in search sidebar if it exists */
+.search.search-results #pxl-main .container #pxl-sidebar-area .widget_pxl_author_info {
+    display: none;
+}

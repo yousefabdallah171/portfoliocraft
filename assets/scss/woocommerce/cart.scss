@@ -409,7 +409,7 @@
                                         @extend .woocommerce-shipping-destination;
                                         color: #FFF;
                                         &:hover {
-                                            color: #FF3D00;
+                                            color: var(--subtitle-text-color);
                                         }
                                     }
                                     .selection {
@@ -461,7 +461,7 @@
                 padding: 0;
                 .button  {
                     border-radius: 100px;
-                    background-color: #FF3D00;
+                    background-color: var(--subtitle-text-color);
                     line-height: 42px;
                     width: 100%;
                     max-width: 259px;
@@ -475,7 +475,7 @@
                     border: thin solid #FF3D00;
                     &:hover {
                         background-color: #010101;
-                        color: #FF3D00;
+                        color: var(--subtitle-text-color);
                     }
                 }
             }

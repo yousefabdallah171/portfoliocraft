@@ -594,7 +594,7 @@
         border: thin solid rgba($color: #FFF, $alpha: .2);
         transition: .25s;
         &:hover {
-            background-color: #D7FF37;
+            background-color: var(--subtitle-text-color);
             .pxl-post-btn {
                 scale: 1;
                 opacity: 1;

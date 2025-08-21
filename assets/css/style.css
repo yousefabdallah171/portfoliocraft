@@ -51,7 +51,7 @@ html {
   --pxl-column: 3;
   --pxl-margin-top: 15px;
   --pxl-transition-duration: 0.25s;
-  --svg-color: #ff3d00;
+  --svg-color: var(--subtitle-text-color);
 }
 /* ========== BASE BODY STYLES ========== */
 /* Sets up the base font, background, and text smoothing for the body */
@@ -718,7 +718,7 @@ blockquote:not(.pxl-blockquote).wp-block-quote.has-text-align-right:before {
 .pxl-pagination-wrap .page-numbers:hover,
 .pxl-pagination-wrap .page-numbers.current {
   color: #010101;
-  background-color: #d7ff37;
+  background-color: var(--subtitle-text-color);
 }
 .pxl-load-more-wrapper {
   margin-top: 90px;
@@ -824,7 +824,7 @@ html {
   --pxl-column: 3;
   --pxl-margin-top: 15px;
   --pxl-transition-duration: 0.25s;
-  --svg-color: #ff3d00;
+  --svg-color: var(--subtitle-text-color);
 }
 /* ========== BASE BODY STYLES ========== */
 /* Sets up the base font, background, and text smoothing for the body */
@@ -1490,7 +1490,7 @@ blockquote:not(.pxl-blockquote).wp-block-quote.has-text-align-right:before {
 .pxl-pagination-wrap .page-numbers:hover,
 .pxl-pagination-wrap .page-numbers.current {
   color: #010101;
-  background-color: #d7ff37;
+  background-color: var(--subtitle-text-color);
 }
 .pxl-load-more-wrapper {
   margin-top: 90px;
@@ -6190,7 +6190,7 @@ button.pxl-btn-link.pxl-btn-link1.active::after,
   content: "";
   height: 3px;
   width: 32px;
-  background-color: #ff3d00;
+  background-color: var(--subtitle-text-color);
   border-radius: 1.5px;
   position: absolute;
   bottom: 0;
@@ -6220,7 +6220,7 @@ button.pxl-btn-link.pxl-btn-link1.active::after,
   display: none;
 }
 .widget.widget_search .search-submit:hover {
-  background-color: #ff3d00;
+  background-color: var(--subtitle-text-color);
   color: #fff;
 }
 .widget.widget_search .search-field {
@@ -6307,7 +6307,7 @@ button.pxl-btn-link.pxl-btn-link1.active::after,
   .pxl-post-item
   .pxl-post-content
   .pxl-post-title:hover {
-  color: #ff3d00;
+  color: var(--subtitle-text-color);
 }
 .widget.widget_pxl_recent_posts
   .pxl-post-item
@@ -6334,7 +6334,7 @@ button.pxl-btn-link.pxl-btn-link1.active::after,
   .pxl-category-item.current-category
   > a
   .pxl-category-count {
-  color: #ff3d00;
+  color: var(--subtitle-text-color);
 }
 .widget.widget_categories .pxl-category-item > a {
   display: flex;
@@ -6351,7 +6351,7 @@ button.pxl-btn-link.pxl-btn-link1.active::after,
   transition: color 0.25s;
 }
 .widget.widget_categories .pxl-category-item > a:hover .pxl-category-count {
-  color: #ff3d00;
+  color: var(--subtitle-text-color);
 }
 .widget.widget_tag_cloud .tagcloud {
   display: flex;
@@ -6373,7 +6373,7 @@ button.pxl-btn-link.pxl-btn-link1.active::after,
   border: thin solid #000;
 }
 .widget.widget_tag_cloud .tagcloud > a:hover {
-  background-color: #d7ff37;
+  background-color: var(--subtitle-text-color);
   border-color: #d7ff37;
 }
 .widget.widget_pxl_author_info .pxl-author-avatar {
@@ -6401,7 +6401,7 @@ button.pxl-btn-link.pxl-btn-link1.active::after,
 }
 .widget.widget_pxl_author_info .pxl-author-social > a {
   --pxl-box-size: 45px;
-  background-color: #d7ff37;
+  background-color: var(--subtitle-text-color);
   color: #000;
 }
 .widget.widget_pxl_author_info .pxl-author-social > a:hover {
@@ -6790,7 +6790,7 @@ button.pxl-btn-link.pxl-btn-link1.active::after,
 .widget_block.widget_search
   .wp-block-search__inside-wrapper
   .wp-block-search__button:hover {
-  background-color: #ff3d00;
+  background-color: var(--subtitle-text-color);
   color: #fff;
 }
 .widget_block.widget_search
@@ -8415,13 +8415,13 @@ button.pxl-btn-link.pxl-btn-link1.active::after,
 }
 .pxl-team-info .pxl-team-socials a {
   --pxl-box-size: 33px;
-  background-color: #ff3d00;
+  background-color: var(--subtitle-text-color);
   color: #fff;
   border: thin solid #ff3d00;
 }
 .pxl-team-info .pxl-team-socials a:hover {
   background-color: #fff;
-  color: #ff3d00;
+  color: var(--subtitle-text-color);
 }
 .pxl-team-info .pxl-team-socials a svg {
   height: 13px;
@@ -8658,7 +8658,7 @@ button.pxl-btn-link.pxl-btn-link1.active::after,
   position: relative;
   display: flex;
   border-radius: 50%;
-  background-color: #d7ff37;
+  background-color: var(--subtitle-text-color);
   padding: 5px;
   width: min-content;
 }
@@ -9363,7 +9363,7 @@ button.pxl-btn-link.pxl-btn-link1.active::after,
   --pxl-box-size: 128px;
   display: inline-block;
   position: relative;
-  background-color: #d7ff37;
+  background-color: var(--subtitle-text-color);
   -webkit-transition: all 0.25s linear;
   -khtml-transition: all 0.25s linear;
   -moz-transition: all 0.25s linear;
@@ -9859,7 +9859,7 @@ button.pxl-btn-link.pxl-btn-link1.active::after,
 }
 .pxl-post-info-wrapper .pxl-post-info-item .pxl-info-icon {
   --pxl-box-size: 50px;
-  background-color: #d7ff37;
+  background-color: var(--subtitle-text-color);
   color: #000;
 }
 .pxl-post-info-wrapper .pxl-post-info-item .pxl-info-title {
@@ -10127,7 +10127,7 @@ button.pxl-search-button .pxl-btn-icon {
 .pxl-heading-wrapper
   .pxl-heading-subtitle.heading-subtitle-default
   .pxl-text-highlight {
-  color: #ff3d00;
+  color: var(--subtitle-text-color);
 }
 .pxl-heading-wrapper .pxl-heading-subtitle.heading-subtitle-third {
   color: #fff;
@@ -10498,7 +10498,7 @@ button.pxl-search-button .pxl-btn-icon {
   content: "";
   height: 3px;
   width: 32px;
-  background-color: #d7ff37;
+  background-color: var(--subtitle-text-color);
   border-radius: 1.5px;
   position: absolute;
   bottom: 0;
@@ -13016,7 +13016,7 @@ button.pxl-search-button .pxl-btn-icon {
   transition: 0.25s;
 }
 .pxl-layout-portfolio4 .pxl-post-item:hover {
-  background-color: #d7ff37;
+  background-color: var(--subtitle-text-color);
 }
 .pxl-layout-portfolio4 .pxl-post-item:hover .pxl-post-btn {
   scale: 1;
@@ -13867,7 +13867,7 @@ button.pxl-search-button .pxl-btn-icon {
 }
 .pxl-layout-service5 .pxl-post-item.active .pxl-post-icon .pxl-icon,
 .pxl-layout-service5 .pxl-post-item:hover .pxl-post-icon .pxl-icon {
-  background-color: #d7ff37;
+  background-color: var(--subtitle-text-color);
 }
 .pxl-layout-service5 .pxl-post-item.active .pxl-post-index,
 .pxl-layout-service5 .pxl-post-item:hover .pxl-post-index {
@@ -14568,7 +14568,7 @@ button.pxl-search-button .pxl-btn-icon {
   display: none;
 }
 .search.search-no-results .search-form-control .search-submit:hover {
-  background-color: #ff3d00;
+  background-color: var(--subtitle-text-color);
   color: #fff;
 }
 .search.search-no-results .search-form-control .search-field {
@@ -14706,7 +14706,7 @@ button.pxl-search-button .pxl-btn-icon {
   }
 }
 .pxl-layout-team1 .pxl-post-socials .pxl-social-link:hover {
-  background-color: #d7ff37;
+  background-color: var(--subtitle-text-color);
 }
 .pxl-layout-team1 .pxl-grid-pagination {
   margin-top: 120px;
@@ -14925,7 +14925,7 @@ button.pxl-search-button .pxl-btn-icon {
   }
 }
 .pxl-layout-team3 .pxl-post-socials .pxl-social-link:hover {
-  background-color: #d7ff37;
+  background-color: var(--subtitle-text-color);
 }
 .pxl-layout-team3 .pxl-grid-pagination {
   margin-top: 152px;
@@ -14953,17 +14953,7 @@ button.pxl-search-button .pxl-btn-icon {
     padding-block: 100px;
   }
 }
-.single.single-portfolio #pxl-main .container,
-.single.single-service #pxl-main .container,
-.single.single-team #pxl-main .container {
-  max-width: 100%;
-  padding: 0;
-}
-.single.single-portfolio #pxl-main .container .pxl-content-area,
-.single.single-service #pxl-main .container .pxl-content-area,
-.single.single-team #pxl-main .container .pxl-content-area {
-  flex: 0 0 100%;
-}
+
 .single.single-post #pxl-content-area {
   padding-top: 17px;
 }
@@ -15028,13 +15018,13 @@ button.pxl-search-button .pxl-btn-icon {
   margin-bottom: 34px;
 }
 .single.single-post #pxl-content-area .pxl-post-metas .pxl-meta-info {
-  color: #010101;
+  color: var(--subtitle-text-color);
   display: flex;
   align-items: center;
   gap: 10px;
 }
 .single.single-post #pxl-content-area .pxl-post-metas .pxl-meta-info svg {
-  color: #ff3d00;
+  color: var(--subtitle-text-color);
 }
 .single.single-post
   #pxl-content-area
@@ -15050,7 +15040,7 @@ button.pxl-search-button .pxl-btn-icon {
   .pxl-post-metas
   .pxl-meta-info
   .pxl-meta-text.pxl-text-highlight {
-  color: #ff3d00;
+  color: var(--subtitle-text-color);
 }
 .single.single-post #pxl-content-area .pxl-post-metas .pxl-post-author img {
   --pxl-box-size: 36px;
@@ -15085,7 +15075,7 @@ button.pxl-search-button .pxl-btn-icon {
   display: inline-block;
   padding: 7px 18px;
   border-radius: 25px;
-  background-color: #d7ff37;
+  background-color: var(--subtitle-text-color);
   text-transform: uppercase;
 }
 .single.single-post
@@ -15174,7 +15164,7 @@ button.pxl-search-button .pxl-btn-icon {
   content: "";
   height: 3px;
   width: 32px;
-  background-color: #d7ff37;
+  background-color: var(--subtitle-text-color);
   border-radius: 1.5px;
   position: absolute;
   bottom: 0;
@@ -15335,7 +15325,7 @@ button.pxl-search-button .pxl-btn-icon {
   .comment-box
   .comment-reply
   > a {
-  color: #ff3d00;
+  color: var(--subtitle-text-color);
   font-family: "Roboto";
   font-size: 12px;
   line-height: 1.83333;
@@ -15366,7 +15356,7 @@ button.pxl-search-button .pxl-btn-icon {
   content: "";
   height: 3px;
   width: 32px;
-  background-color: #d7ff37;
+  background-color: var(--subtitle-text-color);
   border-radius: 1.5px;
   position: absolute;
   bottom: 0;
@@ -15483,7 +15473,7 @@ button.pxl-search-button .pxl-btn-icon {
   margin-top: 21px;
 }
 .single.single-post #comments #respond .form-submit .btn {
-  --pxl-background-color: #d7ff37;
+  --pxl-background-color: var(--subtitle-text-color);
 }
 .error404 .pxl-footer {
   display: none;
@@ -15549,7 +15539,7 @@ button.pxl-search-button .pxl-btn-icon {
   font-size: 0px;
   width: 36px;
   height: 36px;
-  background-color: #ff3d00;
+  background-color: var(--subtitle-text-color);
   border-radius: 100%;
   position: relative;
 }
@@ -15589,7 +15579,7 @@ button.pxl-search-button .pxl-btn-icon {
 }
 .product-remove a.remove:hover:before,
 .product-remove a.remove:hover:after {
-  background-color: #ff3d00;
+  background-color: var(--subtitle-text-color);
   -webkit-transform: rotate(0deg);
   -khtml-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
@@ -16114,7 +16104,7 @@ button.pxl-search-button .pxl-btn-icon {
 }
 .woocommerce .woocommerce-pagination .page-numbers:hover,
 .woocommerce .woocommerce-pagination .page-numbers.current {
-  background-color: #d7ff37;
+  background-color: var(--subtitle-text-color);
 }
 .pswp {
   z-index: 999999;
@@ -17455,7 +17445,7 @@ body
   width: 32px;
   height: 32px;
   border-radius: 32px;
-  background-color: #ff3d00;
+  background-color: var(--subtitle-text-color);
   color: #010101;
   font-size: 14px;
 }
@@ -17467,7 +17457,7 @@ body
   > div
   .woocomerce-social-item:hover {
   background-color: #010101;
-  color: #ff3d00;
+  color: var(--subtitle-text-color);
 }
 .single.single-product .product .product-details .woocommerce-tabs {
   flex: 1 0 100%;
@@ -17947,7 +17937,7 @@ body
   > p
   label
   .required {
-  color: #ff3d00;
+  color: var(--subtitle-text-color);
 }
 .single.single-product
   .product
@@ -18891,7 +18881,7 @@ body
   td
   form.woocommerce-shipping-calculator
   .shipping-calculator-button:hover {
-  color: #ff3d00;
+  color: var(--subtitle-text-color);
 }
 .woocommerce-cart
   .cart-collaterals
@@ -18975,7 +18965,7 @@ body
   .wc-proceed-to-checkout
   .button {
   border-radius: 100px;
-  background-color: #ff3d00;
+  background-color: var(--subtitle-text-color);
   line-height: 42px;
   width: 100%;
   max-width: 259px;
@@ -18994,7 +18984,7 @@ body
   .wc-proceed-to-checkout
   .button:hover {
   background-color: #010101;
-  color: #ff3d00;
+  color: var(--subtitle-text-color);
 }
 .woocommerce-cart .wp-block-woocommerce-cart .wc-block-cart {
   margin: 0;
@@ -19543,7 +19533,7 @@ body
 .woocommerce-checkout .woocommerce .checkout_coupon > p.form-row-last .button {
   line-height: 43px;
   border-radius: 100px;
-  background-color: #ff3d00;
+  background-color: var(--subtitle-text-color);
   color: #010101;
   font-family: var(--primary-font);
   font-size: 12px;
@@ -19560,7 +19550,7 @@ body
   > p.form-row-last
   .button:hover {
   background-color: #010101;
-  color: #ff3d00;
+  color: var(--subtitle-text-color);
 }
 .woocommerce-checkout .woocommerce form.checkout {
   display: flex;

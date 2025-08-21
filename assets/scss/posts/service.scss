@@ -637,7 +637,7 @@
 //                     color: #FFF;
 //                 }
 //                 .pxl-post-icon {
-//                     background-color: #D7FF37;
+//                     background-color: var(--subtitle-text-color);
 //                     color: #191919;
 //                 }
 //                 .pxl-post-index {
@@ -693,7 +693,7 @@
             .pxl-post-icon {
                 color: #191919;
                 .pxl-icon {                    
-                    background-color: #D7FF37;
+                    background-color: var(--subtitle-text-color);
                 }
             }
             .pxl-post-index {

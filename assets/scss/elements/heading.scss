@@ -16,7 +16,7 @@
             text-transform: uppercase;
             margin-bottom: 29px;
             .pxl-text-highlight {
-                color: #FF3D00;
+                color: var(--subtitle-text-color);
             }
         }
         &.heading-subtitle-primary {
@@ -308,7 +308,7 @@
                 content: '';
                 height: 3px;
                 width: 32px;
-                background-color: #D7FF37;
+                background-color: var(--subtitle-text-color);
                 border-radius: 1.5px;
                 position: absolute;
                 bottom: 0;

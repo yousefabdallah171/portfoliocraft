@@ -25,7 +25,7 @@
 			content: '';
 			height: 3px;
 			width: 32px;
-			background-color: #FF3D00;
+			background-color: var(--subtitle-text-color);
 			border-radius: 1.5px;
 			position: absolute;
 			bottom: 0;
@@ -55,7 +55,7 @@
 				display: none;
 			}
 			&:hover {
-				background-color: #FF3D00;
+				background-color: var(--subtitle-text-color);
 				color: #FFF;
 			}
 		}
@@ -131,7 +131,7 @@
 						transition: 0s;
 					}
 					&:hover {
-						color: #FF3D00;
+						color: var(--subtitle-text-color);
 					}
 				}
 				.pxl-post-date {
@@ -165,7 +165,7 @@
 			&.current-category {
 				> a {
 					.pxl-category-count { 
-						color: #FF3D00;
+						color: var(--subtitle-text-color);
 					}
 				}
 			}
@@ -185,7 +185,7 @@
 				}
 				&:hover {
 					.pxl-category-count { 
-						color: #FF3D00;
+						color: var(--subtitle-text-color);
 					}
 				}
 			}
@@ -211,7 +211,7 @@
 				border-radius: 25px;
 				border: thin solid #000;
 				&:hover {
-					background-color: #D7FF37;
+					background-color: var(--subtitle-text-color);
 					border-color: #D7FF37;
 				}
 			}
@@ -245,7 +245,7 @@
 				--pxl-box-size: 45px;
 				@extend .pxl-round-box;
 				@extend .pxl-flex-center;
-				background-color: #D7FF37;
+				background-color: var(--subtitle-text-color);
 				color: #000;
 				&:hover {
 					background-color: #000;
@@ -582,7 +582,7 @@
                     @include transform(translate(-50%, -50%));
                 }
 				&:hover {
-					background-color: #FF3D00;
+					background-color: var(--subtitle-text-color);
 					color: #FFF;
 				}
 				&:focus {

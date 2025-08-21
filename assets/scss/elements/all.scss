@@ -295,12 +295,12 @@
             --pxl-box-size: 33px;
             @extend .pxl-round-box;
             @extend .pxl-flex-center;
-            background-color: #FF3D00;
+            background-color: var(--subtitle-text-color);
             color: #FFF;
             border: thin solid #FF3D00;
             &:hover {
                 background-color: #FFF;
-                color: #FF3D00;
+                color: var(--subtitle-text-color);
             }
             svg {
                 height: 13px;
@@ -525,7 +525,7 @@
     position: relative;
     display: flex;
     border-radius: 50%;
-    background-color: #D7FF37;
+    background-color: var(--subtitle-text-color);
     padding: 5px;
     width: min-content;
     .pxl-circular-text-item {
@@ -1286,7 +1286,7 @@
         @extend .pxl-round-box;
         display: inline-block;
         position: relative;
-        background-color: #D7FF37;
+        background-color: var(--subtitle-text-color);
         @include transition(all .25s linear);
         z-index: 9;
         cursor: pointer;
@@ -1798,7 +1798,7 @@
             --pxl-box-size: 50px;
             @extend .pxl-round-box;
             @extend .pxl-flex-center;
-            background-color: #D7FF37;
+            background-color: var(--subtitle-text-color);
             color: #000;
         }
         .pxl-info-title {

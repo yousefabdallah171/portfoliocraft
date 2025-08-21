@@ -394,7 +394,7 @@
 
 .rakmyat-category-tag:hover {
   background: var(--primary-color);
-  color: white;
+  color: var(--white-text-color, #ffffff);
   border-color: var(--primary-color);
   transform: translateY(-2px);
 }
@@ -408,7 +408,7 @@
   align-items: center;
   gap: var(--space-2);
   background: var(--gradient-primary);
-  color: white;
+  color: var(--white-text-color, #ffffff);
   padding: var(--space-3) var(--space-6);
   border-radius: var(--radius-full);
   text-decoration: none;
@@ -440,7 +440,7 @@
 .rakmyat-read-more:hover {
   transform: translateY(-3px);
   box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
-  color: white;
+  color: var(--white-text-color, #ffffff);
 }
 
 .rakmyat-read-more svg {
@@ -500,7 +500,7 @@
 .rakmyat-pagination .page-numbers:hover,
 .rakmyat-pagination .page-numbers.current {
   background: var(--gradient-primary);
-  color: white;
+  color: var(--white-text-color, #ffffff);
   border-color: transparent;
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
@@ -799,12 +799,12 @@
 
 ::selection {
   background: var(--primary-light);
-  color: white;
+  color: var(--white-text-color, #ffffff);
   text-shadow: none;
 }
 
 ::-moz-selection {
   background: var(--primary-light);
-  color: white;
+  color: var(--white-text-color, #ffffff);
   text-shadow: none;
 }

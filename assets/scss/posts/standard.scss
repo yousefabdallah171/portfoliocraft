@@ -176,7 +176,7 @@
 				display: none;
 			}
 			&:hover {
-				background-color: #FF3D00;
+				background-color: var(--subtitle-text-color);
 				color: #FFF;
 			}
 		}

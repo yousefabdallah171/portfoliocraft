@@ -129,7 +129,7 @@
         }
         &:hover, &.current {
             color: #010101;
-            background-color: #D7FF37;
+            background-color: var(--subtitle-text-color);
         }
     }
 

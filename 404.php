@@ -18,7 +18,8 @@ if (!defined('ABSPATH')) {
 get_header();
 
 // Enqueue 404 page specific styles
-wp_enqueue_style('portfoliocraft-404', get_template_directory_uri() . '/assets/css/404.css', array('portfoliocraft-style'), '1.0.0');
+wp_enqueue_style('portfoliocraft-404', get_template_directory_uri() . '/assets/css/404.css', array('pxl-style'), '1.0.0');
+wp_add_inline_style('portfoliocraft-404', portfoliocraft_inline_styles());
 
 // Get custom 404 page ID from theme options
 $page_id = portfoliocraft()->get_theme_opt('404_page', '');
@@ -36,8 +37,19 @@ $page_id = portfoliocraft()->get_theme_opt('404_page', '');
 <?php else : ?>
     <!-- Default 404 page layout when no custom page is set -->
     <div class="container">
-        <div class="inner">
+        <div class="inner-">
             <div class="portfoliocraft-404-wrapper">
+                
+                <!-- Floating decorative elements -->
+                <div class="floating-element floating-element-1">
+                    <i class="fas fa-question-circle"></i>
+                </div>
+                <div class="floating-element floating-element-2">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="floating-element floating-element-3">
+                    <i class="fas fa-home"></i>
+                </div>
                 
                 <!-- 404 Error number -->
                 <div class="portfoliocraft-404-number">

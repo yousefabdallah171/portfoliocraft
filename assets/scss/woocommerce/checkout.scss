@@ -104,7 +104,7 @@
                     .button {
                         line-height: 43px;
                         border-radius: 100px;
-                        background-color: #FF3D00;
+                        background-color: var(--subtitle-text-color);
                         color: #010101;
                         font-family: var(--primary-font);
                         font-size: 12px;
@@ -116,7 +116,7 @@
                         justify-self: end;
                         &:hover {
                             background-color: #010101;
-                            color: #FF3D00;
+                            color: var(--subtitle-text-color);
                         }
                     }
                 }

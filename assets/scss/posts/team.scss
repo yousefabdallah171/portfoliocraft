@@ -142,7 +142,7 @@
                 gap: 7px;
             }
             &:hover {
-                background-color: #D7FF37;
+                background-color: var(--subtitle-text-color);
             }
         }
     }
@@ -354,7 +354,7 @@
                 gap: 7px;
             }
             &:hover {
-                background-color: #D7FF37;
+                background-color: var(--subtitle-text-color);
             }
         }
     }

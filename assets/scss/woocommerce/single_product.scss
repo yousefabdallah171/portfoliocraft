@@ -441,12 +441,12 @@
                             width: 32px;
                             height: 32px;
                             border-radius: 32px;
-                            background-color: #FF3D00;
+                            background-color: var(--subtitle-text-color);
                             color: #010101;
                             font-size: 14px;
                             &:hover {
                                 background-color: #010101;
-                                color: #FF3D00;
+                                color: var(--subtitle-text-color);
                             }
                         }
                     }
@@ -594,7 +594,7 @@
                                     label {
                                         display: flex;
                                         .required {
-                                            color: #FF3D00;
+                                            color: var(--subtitle-text-color);
                                         }
                                     }
                                     &.comment-form-cookies-consent {

@@ -1,0 +1,356 @@
+/**
+ * Text Color Variables Implementation
+ * 
+ * This file applies the new text color variables to all text elements throughout the theme.
+ * All these colors can be customized from Theme Options → Global Colors.
+ * 
+ * Available Variables:
+ * --body-text-color: Main body text
+ * --heading-text-color: All headings and titles  
+ * --post-title-color: Post titles specifically
+ * --subtitle-text-color: Subtitles and secondary text
+ * --meta-text-color: Meta information (dates, authors, etc.)
+ * --comments-title-color: Comments section titles
+ * --comment-author-color: Comment author names
+ * --comment-text-color: Comment content text
+ * --comment-meta-color: Comment meta information
+ */
+
+/* ==========================================================================
+   Body Text
+   ========================================================================== */
+
+body,
+p,
+.entry-content,
+.widget-content,
+.post-content,
+.pxl-post-content {
+    color: var(--body-text-color, #333333);
+}
+
+/* ==========================================================================
+   Headings and Titles
+   ========================================================================== */
+
+/* All headings */
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+    color: var(--heading-text-color, #1a1a1a);
+}
+
+/* Specific heading elements */
+.pxl-heading-wrapper .pxl-heading-title,
+.heading-title,
+.section-title,
+.widget-title {
+    color: var(--heading-text-color, #1a1a1a);
+}
+
+/* ==========================================================================
+   Post Titles (The main issue you mentioned)
+   ========================================================================== */
+
+/* Post title wrapper and text */
+.pxl-post-title,
+.pxl-post-title a,
+.post-title,
+.entry-title,
+.entry-title a {
+    color: var(--post-title-color, #1a1a1a) !important;
+}
+
+/* Specific post title text spans */
+.pxl-title-text,
+.title-text {
+    color: var(--post-title-color, #1a1a1a) !important;
+}
+
+/* Post title in different contexts */
+.pxl-single-post .pxl-post-title .pxl-title-text,
+.post-item .post-title .pxl-title-text,
+.archive-post .post-title .pxl-title-text {
+    color: var(--post-title-color, #1a1a1a) !important;
+}
+
+/* Hover states for post titles */
+.pxl-post-title a:hover,
+.post-title a:hover,
+.entry-title a:hover,
+.pxl-title-text:hover {
+    color: var(--primary-color, #667eea) !important;
+}
+
+/* ==========================================================================
+   Subtitles and Secondary Text
+   ========================================================================== */
+
+.pxl-subtitle-text,
+.subtitle,
+.post-subtitle,
+.entry-subtitle,
+.pxl-heading-wrapper .pxl-heading-subtitle {
+    color: var(--subtitle-text-color, #666666);
+}
+
+/* ==========================================================================
+   Meta Information
+   ========================================================================== */
+
+.post-meta,
+.entry-meta,
+.pxl-post-meta,
+.post-date,
+.post-author,
+.post-category,
+.post-tags,
+.meta-item,
+.meta-text {
+    color: var(--meta-text-color, #999999);
+}
+
+.post-meta a,
+.entry-meta a,
+.pxl-post-meta a {
+    color: var(--meta-text-color, #999999);
+}
+
+.post-meta a:hover,
+.entry-meta a:hover,
+.pxl-post-meta a:hover {
+    color: var(--primary-color, #667eea);
+}
+
+/* ==========================================================================
+   Comments Section (The specific issue you mentioned)
+   ========================================================================== */
+
+/* Comments title - "One Comment", "Leave a Comment", etc. */
+.comment-title,
+.comment-title .title-text,
+.comments-title,
+.comment-reply-title,
+h3#reply-title {
+    color: var(--comments-title-color, #1a1a1a) !important;
+}
+
+/* Comment author names */
+.comment-author,
+.comment-author .fn,
+.comment-author a,
+.comment-meta .author,
+.commentmetadata .author {
+    color: var(--comment-author-color, #333333) !important;
+}
+
+/* Comment text content */
+.comment-content,
+.comment-text,
+.comment p,
+.comment-body p {
+    color: var(--comment-text-color, #555555);
+}
+
+/* Comment meta (dates, reply links, etc.) */
+.comment-meta,
+.comment-date,
+.reply,
+.comment-reply-link,
+.commentmetadata,
+.comment-edit-link {
+    color: var(--comment-meta-color, #999999);
+}
+
+.comment-meta a,
+.comment-reply-link,
+.comment-edit-link {
+    color: var(--comment-meta-color, #999999);
+}
+
+.comment-meta a:hover,
+.comment-reply-link:hover,
+.comment-edit-link:hover {
+    color: var(--primary-color, #667eea);
+}
+
+/* ==========================================================================
+   Archive and Blog Listings
+   ========================================================================== */
+
+.blog-post .post-title,
+.archive-post .post-title,
+.search-results .post-title {
+    color: var(--post-title-color, #1a1a1a);
+}
+
+.blog-post .post-excerpt,
+.archive-post .post-excerpt {
+    color: var(--body-text-color, #333333);
+}
+
+/* ==========================================================================
+   Widget Areas
+   ========================================================================== */
+
+.widget {
+    color: var(--body-text-color, #333333);
+}
+
+.widget-title {
+    color: var(--heading-text-color, #1a1a1a);
+}
+
+.widget ul li {
+    color: var(--body-text-color, #333333);
+}
+
+.widget ul li a {
+    color: var(--body-text-color, #333333);
+}
+
+.widget ul li a:hover {
+    color: var(--primary-color, #667eea);
+}
+
+/* ==========================================================================
+   Form Elements
+   ========================================================================== */
+
+.form-group label,
+.comment-form label,
+input[type="text"],
+input[type="email"],
+input[type="url"],
+textarea {
+    color: var(--body-text-color, #333333);
+}
+
+.form-group label,
+.comment-form label {
+    color: var(--heading-text-color, #1a1a1a);
+}
+
+/* ==========================================================================
+   Breadcrumbs
+   ========================================================================== */
+
+.breadcrumb,
+.breadcrumbs,
+.pxl-breadcrumb {
+    color: var(--meta-text-color, #999999);
+}
+
+.breadcrumb a,
+.breadcrumbs a,
+.pxl-breadcrumb a {
+    color: var(--meta-text-color, #999999);
+}
+
+.breadcrumb a:hover,
+.breadcrumbs a:hover,
+.pxl-breadcrumb a:hover {
+    color: var(--primary-color, #667eea);
+}
+
+/* ==========================================================================
+   Search Results
+   ========================================================================== */
+
+.search-results .entry-title,
+.search-results .pxl-title-text {
+    color: var(--post-title-color, #1a1a1a);
+}
+
+.search-results .entry-excerpt {
+    color: var(--body-text-color, #333333);
+}
+
+/* ==========================================================================
+   Archive Pages
+   ========================================================================== */
+
+.archive-title,
+.page-title,
+.archive-description {
+    color: var(--heading-text-color, #1a1a1a);
+}
+
+/* ==========================================================================
+   Navigation Elements
+   ========================================================================== */
+
+.post-navigation,
+.posts-navigation,
+.pagination {
+    color: var(--body-text-color, #333333);
+}
+
+.post-navigation a,
+.posts-navigation a,
+.pagination a {
+    color: var(--body-text-color, #333333);
+}
+
+.post-navigation a:hover,
+.posts-navigation a:hover,
+.pagination a:hover {
+    color: var(--primary-color, #667eea);
+}
+
+/* ==========================================================================
+   Icon Box and Content Blocks
+   ========================================================================== */
+
+.pxl-icon-box-wrapper .pxl-icon-box-title .pxl-title-text {
+    color: var(--heading-text-color, #1a1a1a) !important;
+}
+
+.pxl-icon-box-wrapper .pxl-icon-box-content {
+    color: var(--body-text-color, #333333);
+}
+
+/* ==========================================================================
+   Responsive Adjustments
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    /* Ensure mobile title visibility */
+    .pxl-title-text,
+    .title-text,
+    .pxl-post-title {
+        color: var(--post-title-color, #1a1a1a) !important;
+    }
+    
+    /* Mobile comment styles */
+    .comment-reply-title {
+        color: var(--comments-title-color, #1a1a1a) !important;
+    }
+}
+
+/* ==========================================================================
+   High Specificity Overrides (for stubborn elements)
+   ========================================================================== */
+
+/* Force post title colors */
+.pxl-single-post .pxl-post-header .pxl-post-title .pxl-title-text,
+.single-post .pxl-post-title .pxl-title-text,
+article .pxl-post-title .pxl-title-text {
+    color: var(--post-title-color, #1a1a1a) !important;
+}
+
+/* Force comment title colors */
+.comments-area .comment-title .title-text,
+.comments-area #reply-title,
+.comment-reply-title {
+    color: var(--comments-title-color, #1a1a1a) !important;
+}
+
+/* Force heading colors */
+.pxl-heading-wrapper .pxl-heading-title h1,
+.pxl-heading-wrapper .pxl-heading-title h2,
+.pxl-heading-wrapper .pxl-heading-title h3,
+.pxl-heading-wrapper .pxl-heading-title h4,
+.pxl-heading-wrapper .pxl-heading-title h5,
+.pxl-heading-wrapper .pxl-heading-title h6 {
+    color: var(--heading-text-color, #1a1a1a) !important;
+}

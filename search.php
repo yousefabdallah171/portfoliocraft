@@ -17,11 +17,9 @@ if (!defined('ABSPATH')) {
 // Include header template
 get_header();
 
-// Enqueue search-specific styles
-wp_enqueue_style('portfoliocraft-search', get_template_directory_uri() . '/assets/css/search.css', array('portfoliocraft-style'), '1.0.0');
-
-// Get sidebar configuration for search page
-$sidebar = portfoliocraft()->get_sidebar_value('search');
+// Enqueue consolidated search styles (includes all search-related CSS from entire theme)
+wp_enqueue_style('portfoliocraft-consolidated-search', get_template_directory_uri() . '/assets/css/consolidated-search.css', array('pxl-style'), '1.0.1');
+wp_add_inline_style('portfoliocraft-consolidated-search', portfoliocraft_inline_styles());
 
 // Get search query for display
 $search_query = get_search_query();
@@ -64,8 +62,8 @@ $search_count = $wp_query->found_posts;
         </div>
     </div>
     
-    <!-- Main content area with conditional sidebar -->
-    <div class="inner <?php echo esc_attr($sidebar['sidebar_class']); ?>">
+    <!-- Main content area without sidebar -->
+    <div class="inner no-sidebar">
         
         <!-- Primary content area -->
         <section id="pxl-content-area" class="pxl-content-area">
@@ -131,15 +129,6 @@ $search_count = $wp_query->found_posts;
                 
             </main>
         </section>
-        
-        <!-- Conditional sidebar area -->
-        <?php if ($sidebar['is_sidebar'] === true) : ?>
-            <div id="pxl-sidebar-area" class="pxl-sidebar-area">
-                <div class="pxl-sidebar-content">
-                    <?php get_sidebar(); ?>
-                </div>
-            </div>
-        <?php endif; ?>
         
     </div>
 </div>

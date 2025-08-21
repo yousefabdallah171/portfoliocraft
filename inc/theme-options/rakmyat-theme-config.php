@@ -46,6 +46,61 @@ if (!function_exists('portfoliocraft_configs')) {
                     'title' => esc_html__('Body Background Color', 'portfoliocraft'), 
                     'value' => portfoliocraft()->get_page_opt('body_bg_color', '#fff')
                 ],
+                // White and light text colors
+                'white-text' => [
+                    'title' => esc_html__('White Text', 'portfoliocraft'),
+                    'value' => portfoliocraft()->get_opt('white_text_color', '#ffffff')
+                ],
+                'light-text' => [
+                    'title' => esc_html__('Light Text', 'portfoliocraft'),
+                    'value' => portfoliocraft()->get_opt('light_text_color', '#f5f5f5')
+                ],
+                'off-white' => [
+                    'title' => esc_html__('Off White', 'portfoliocraft'),
+                    'value' => portfoliocraft()->get_opt('off_white_color', '#fafafa')
+                ],
+                'light-gray-text' => [
+                    'title' => esc_html__('Light Gray Text', 'portfoliocraft'),
+                    'value' => portfoliocraft()->get_opt('light_gray_text_color', '#e0e0e0')
+                ],
+                // Main text colors
+                'body-text' => [
+                    'title' => esc_html__('Body Text', 'portfoliocraft'),
+                    'value' => portfoliocraft()->get_opt('body_text_color', '#333333')
+                ],
+                'heading-text' => [
+                    'title' => esc_html__('Heading Text', 'portfoliocraft'),
+                    'value' => portfoliocraft()->get_opt('heading_text_color', '#1a1a1a')
+                ],
+                'post-title' => [
+                    'title' => esc_html__('Post Title', 'portfoliocraft'),
+                    'value' => portfoliocraft()->get_opt('post_title_color', '#1a1a1a')
+                ],
+                'subtitle-text' => [
+                    'title' => esc_html__('Subtitle Text', 'portfoliocraft'),
+                    'value' => portfoliocraft()->get_opt('subtitle_text_color', '#666666')
+                ],
+                'meta-text' => [
+                    'title' => esc_html__('Meta Text', 'portfoliocraft'),
+                    'value' => portfoliocraft()->get_opt('meta_text_color', '#999999')
+                ],
+                // Comments section colors
+                'comments-title' => [
+                    'title' => esc_html__('Comments Title', 'portfoliocraft'),
+                    'value' => portfoliocraft()->get_opt('comments_title_color', '#1a1a1a')
+                ],
+                'comment-author' => [
+                    'title' => esc_html__('Comment Author', 'portfoliocraft'),
+                    'value' => portfoliocraft()->get_opt('comment_author_color', '#333333')
+                ],
+                'comment-text' => [
+                    'title' => esc_html__('Comment Text', 'portfoliocraft'),
+                    'value' => portfoliocraft()->get_opt('comment_text_color', '#555555')
+                ],
+                'comment-meta' => [
+                    'title' => esc_html__('Comment Meta', 'portfoliocraft'),
+                    'value' => portfoliocraft()->get_opt('comment_meta_color', '#999999')
+                ],
             ],
             // Link color states configuration
             'link' => [

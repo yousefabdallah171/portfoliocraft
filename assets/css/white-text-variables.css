@@ -1,0 +1,242 @@
+/**
+ * White Text Color Variables Usage Examples
+ * 
+ * This file demonstrates how to use the new white text color variables
+ * throughout the theme. Replace hardcoded white colors with these variables
+ * for consistent and customizable styling.
+ * 
+ * Available Variables:
+ * --white-text-color: Primary white text (default: #ffffff)
+ * --light-text-color: Light gray text (default: #f5f5f5)  
+ * --off-white-color: Off-white color (default: #fafafa)
+ * --light-gray-text-color: Light gray text (default: #e0e0e0)
+ */
+
+/* ==========================================================================
+   Header and Navigation
+   ========================================================================== */
+
+/* Replace: color: #fff; */
+.header-dark .main-navigation a,
+.header-dark .site-title,
+.mobile-menu-dark a {
+    color: var(--white-text-color, #ffffff);
+}
+
+/* Replace: color: white; */
+.header-overlay .menu-item:hover a,
+.header-transparent.scrolled .menu-toggle {
+    color: var(--white-text-color, #ffffff);
+}
+
+/* ==========================================================================
+   Buttons and Interactive Elements  
+   ========================================================================== */
+
+/* Replace: color: #ffffff; */
+.btn-primary,
+.button.primary,
+.wp-block-button__link {
+    color: var(--white-text-color, #ffffff);
+}
+
+/* Secondary buttons with light text */
+.btn-secondary:hover,
+.button.secondary:hover {
+    color: var(--light-text-color, #f5f5f5);
+}
+
+/* ==========================================================================
+   Dark Background Sections
+   ========================================================================== */
+
+/* Replace: color: white; */
+.dark-section,
+.hero-section.dark,
+.footer-dark {
+    color: var(--white-text-color, #ffffff);
+}
+
+/* Secondary text in dark sections */
+.dark-section .subtitle,
+.hero-section.dark .description,
+.footer-dark .copyright {
+    color: var(--light-text-color, #f5f5f5);
+}
+
+/* Muted text in dark sections */
+.dark-section .meta,
+.footer-dark .meta,
+.dark-overlay .caption {
+    color: var(--light-gray-text-color, #e0e0e0);
+}
+
+/* ==========================================================================
+   Forms and Input Fields
+   ========================================================================== */
+
+/* Dark form elements */
+.form-dark input::placeholder,
+.form-dark textarea::placeholder {
+    color: var(--light-gray-text-color, #e0e0e0);
+}
+
+.form-dark label,
+.search-form-dark label {
+    color: var(--light-text-color, #f5f5f5);
+}
+
+/* ==========================================================================
+   Overlay and Modal Elements
+   ========================================================================== */
+
+/* Replace: color: #fff; */
+.modal-overlay,
+.popup-content.dark,
+.overlay-content {
+    color: var(--white-text-color, #ffffff);
+}
+
+/* Overlay text variations */
+.image-overlay .title {
+    color: var(--white-text-color, #ffffff);
+}
+
+.image-overlay .subtitle {
+    color: var(--off-white-color, #fafafa);
+}
+
+.image-overlay .description {
+    color: var(--light-gray-text-color, #e0e0e0);
+}
+
+/* ==========================================================================
+   Portfolio and Gallery Elements
+   ========================================================================== */
+
+.portfolio-overlay,
+.gallery-overlay {
+    color: var(--white-text-color, #ffffff);
+}
+
+.portfolio-overlay .meta,
+.gallery-overlay .category {
+    color: var(--light-text-color, #f5f5f5);
+}
+
+/* ==========================================================================
+   Blog and Post Elements
+   ========================================================================== */
+
+/* Dark post cards */
+.post-card.dark .title,
+.blog-overlay .post-title {
+    color: var(--white-text-color, #ffffff);
+}
+
+.post-card.dark .excerpt,
+.blog-overlay .post-excerpt {
+    color: var(--light-text-color, #f5f5f5);
+}
+
+.post-card.dark .meta,
+.blog-overlay .post-meta {
+    color: var(--light-gray-text-color, #e0e0e0);
+}
+
+/* ==========================================================================
+   Widget Areas
+   ========================================================================== */
+
+/* Dark widgets */
+.widget-dark,
+.sidebar-dark .widget {
+    color: var(--white-text-color, #ffffff);
+}
+
+.widget-dark .widget-title,
+.sidebar-dark .widget-title {
+    color: var(--white-text-color, #ffffff);
+}
+
+.widget-dark ul li,
+.sidebar-dark .widget ul li {
+    color: var(--light-text-color, #f5f5f5);
+}
+
+/* ==========================================================================
+   Responsive and Utility Classes
+   ========================================================================== */
+
+/* Utility classes for white text */
+.text-white {
+    color: var(--white-text-color, #ffffff) !important;
+}
+
+.text-light {
+    color: var(--light-text-color, #f5f5f5) !important;
+}
+
+.text-off-white {
+    color: var(--off-white-color, #fafafa) !important;
+}
+
+.text-light-gray {
+    color: var(--light-gray-text-color, #e0e0e0) !important;
+}
+
+/* ==========================================================================
+   Back to Top Button (Example from existing code)
+   ========================================================================== */
+
+.back-to-top {
+    color: var(--white-text-color, #ffffff);
+    background-color: var(--primary-color, #667eea);
+}
+
+.back-to-top:hover {
+    color: var(--white-text-color, #ffffff);
+    background-color: var(--secondary-color, #764ba2);
+}
+
+/* ==========================================================================
+   WooCommerce Elements  
+   ========================================================================== */
+
+/* Dark shop elements */
+.woocommerce .product-dark .price,
+.woocommerce .cart-dark .total {
+    color: var(--white-text-color, #ffffff);
+}
+
+.woocommerce .product-dark .description,
+.woocommerce .cart-dark .item-details {
+    color: var(--light-text-color, #f5f5f5);
+}
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    /* Mobile-specific white text adjustments */
+    .mobile-menu-dark,
+    .mobile-header-dark {
+        color: var(--white-text-color, #ffffff);
+    }
+    
+    .mobile-menu-dark .sub-menu a {
+        color: var(--light-text-color, #f5f5f5);
+    }
+}
+
+@media (max-width: 480px) {
+    /* Small mobile adjustments */
+    .hero-mobile.dark .title {
+        color: var(--white-text-color, #ffffff);
+    }
+    
+    .hero-mobile.dark .subtitle {
+        color: var(--light-gray-text-color, #e0e0e0);
+    }
+}

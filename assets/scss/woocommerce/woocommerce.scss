@@ -48,7 +48,7 @@
 		font-size: 0px;
 		width: 36px;
 		height: 36px;
-		background-color: #FF3D00;
+		background-color: var(--subtitle-text-color);
 		border-radius: 100%;
 		position: relative;
 		&:before, &:after {
@@ -74,7 +74,7 @@
 	    &:hover {
 	    	background-color: #010101;
 	        &:before, &:after {
-				background-color: #FF3D00;
+				background-color: var(--subtitle-text-color);
 	            @include transform(rotate(0deg));
 	        }
 	    }
@@ -540,7 +540,7 @@
 				cursor: not-allowed;
 			}
 			&:hover, &.current {
-				background-color: #D7FF37;
+				background-color: var(--subtitle-text-color);
 			}
 		}
 	

@@ -193,6 +193,11 @@ function portfoliocraft_scripts() {
     wp_enqueue_style('pxl-grid', get_template_directory_uri() . '/assets/css/grid.css', array(), $portfoliocraft_version->get('Version'));
     wp_enqueue_style('pxl-style', get_template_directory_uri() . '/assets/css/style.css', array(), $r);
     wp_add_inline_style('pxl-style', portfoliocraft_inline_styles());
+    
+    // Enqueue text color variables CSS
+    wp_enqueue_style('portfoliocraft-text-colors', get_template_directory_uri() . '/assets/css/text-color-variables.css', array('pxl-style'), $portfoliocraft_version->get('Version'));
+    wp_add_inline_style('portfoliocraft-text-colors', portfoliocraft_inline_styles());
+    
     wp_enqueue_style('pxl-base', get_template_directory_uri() . '/style.css', array(), $portfoliocraft_version->get('Version'));
     wp_enqueue_style('pxl-google-fonts', portfoliocraft_fonts_url(), array(), null);
 
@@ -565,3 +570,27 @@ add_action('wp_head', function() {
         echo '<style>:root{--pxl-back-to-top-bg:' . esc_attr($bg) . ';--pxl-back-to-top-color:' . esc_attr($color) . ';--pxl-back-to-top-bg-hover:' . esc_attr($bg_hover) . ';--pxl-back-to-top-color-hover:' . esc_attr($color_hover) . ';--pxl-back-to-top-width:' . esc_attr($width) . ';--pxl-back-to-top-height:' . esc_attr($height) . ';--pxl-back-to-top-side:' . esc_attr($side) . ';}</style>';
     }
 });
+
+// Unify body classes for CPT singles with post singles
+if (!function_exists('portfoliocraft_unify_body_classes_for_cpt')) {
+    add_filter('body_class', function(array $classes) {
+        if (is_singular(['portfolio', 'services'])) {
+            $classes[] = 'single-post';
+            $classes[] = 'post-template-default';
+            $classes[] = 'single-format-standard';
+        }
+        return array_values(array_unique($classes));
+    });
+}
+
+// Unify post classes for CPT singles with post singles
+if (!function_exists('portfoliocraft_unify_post_classes_for_cpt')) {
+    add_filter('post_class', function(array $classes, $class = '', $post_id = 0) {
+        if (is_singular(['portfolio', 'services'])) {
+            $classes[] = 'post';
+            $classes[] = 'type-post';
+            $classes[] = 'format-standard';
+        }
+        return array_values(array_unique($classes));
+    }, 10, 3);
+}

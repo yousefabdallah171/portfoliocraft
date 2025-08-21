@@ -1,0 +1,589 @@
+/**
+ * Search Page Styling - Updated to use existing theme option variables
+ * Uses only the CSS variables that are already available from theme options
+ * No sidebar layout - full width design
+ */
+
+/* ==========================================================================
+   Search Header Section
+   ========================================================================== */
+
+.portfoliocraft-search-header {
+    padding: 3rem 0 2rem;
+    text-align: center;
+    background: linear-gradient(135deg, var(--primary-color, #FF3D00) 0%, var(--secondary-color, #010101) 100%);
+    color: var(--white-text-color, #ffffff);
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 3rem;
+}
+
+.portfoliocraft-search-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.portfoliocraft-search-header > * {
+    position: relative;
+    z-index: 2;
+}
+
+.portfoliocraft-search-info {
+    margin-bottom: 2rem;
+}
+
+.portfoliocraft-search-title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+    color: var(--white-text-color, #ffffff) !important;
+}
+
+.portfoliocraft-search-title .search-query {
+    color: var(--off-white-color, #fafafa);
+    font-style: italic;
+    text-decoration: underline;
+    text-decoration-color: rgba(255, 255, 255, 0.5);
+    text-underline-offset: 4px;
+}
+
+.portfoliocraft-search-count {
+    font-size: 1.2rem;
+    margin: 0;
+    opacity: 0.9;
+    color: var(--light-text-color, #f5f5f5);
+}
+
+/* Search Form in Header */
+.portfoliocraft-search-form-wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.portfoliocraft-search-form-wrapper .search-form {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    padding: 0.75rem;
+    display: flex;
+    gap: 0.5rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.portfoliocraft-search-form-wrapper .search-field {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: var(--body-text-color, #333333);
+    font-size: 1.1rem;
+    padding: 0.75rem 1rem;
+    outline: none;
+}
+
+.portfoliocraft-search-form-wrapper .search-field::placeholder {
+    color: var(--meta-text-color, #999999);
+}
+
+.portfoliocraft-search-form-wrapper .search-submit {
+    background: var(--primary-color, #FF3D00);
+    color: var(--white-text-color, #ffffff);
+    border: none;
+    border-radius: 8px;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.portfoliocraft-search-form-wrapper .search-submit:hover {
+    background: var(--secondary-color, #010101);
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   Main Content Area (No Sidebar)
+   ========================================================================== */
+
+.no-sidebar #pxl-content-area {
+    width: 100%;
+    max-width: none;
+}
+
+.no-sidebar .inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* ==========================================================================
+   Search Results Container
+   ========================================================================== */
+
+.portfoliocraft-search-results {
+    padding: 0;
+}
+
+/* Search Result Item */
+.search-result-item,
+.portfoliocraft-search-results article {
+    background: var(--body-bg-color, #fff);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.search-result-item:hover,
+.portfoliocraft-search-results article:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    transform: translateY(-4px);
+    border-color: var(--primary-color, #FF3D00);
+}
+
+.search-result-item::before,
+.portfoliocraft-search-results article::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--primary-color, #FF3D00);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.search-result-item:hover::before,
+.portfoliocraft-search-results article:hover::before {
+    opacity: 1;
+}
+
+/* Search Result Meta */
+.search-result-meta,
+.portfoliocraft-search-results .entry-meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    font-size: 0.875rem;
+    color: var(--meta-text-color, #999999);
+    flex-wrap: wrap;
+}
+
+.search-result-meta .post-type {
+    background: var(--third-color, #00c5fe);
+    color: var(--white-text-color, #ffffff);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+}
+
+.search-result-meta .post-date,
+.portfoliocraft-search-results .entry-meta .post-date {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    color: var(--meta-text-color, #999999);
+}
+
+/* Search Result Title */
+.search-result-item .pxl-post-title,
+.search-result-item .entry-title,
+.portfoliocraft-search-results .pxl-post-title,
+.portfoliocraft-search-results .entry-title {
+    margin-bottom: 1rem;
+}
+
+.search-result-item .pxl-title-text,
+.search-result-item .entry-title a,
+.portfoliocraft-search-results .pxl-title-text,
+.portfoliocraft-search-results .entry-title a {
+    color: var(--post-title-color, #1a1a1a) !important;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.3;
+    transition: color 0.3s ease;
+    display: block;
+}
+
+.search-result-item .pxl-title-text:hover,
+.search-result-item .entry-title a:hover,
+.portfoliocraft-search-results .pxl-title-text:hover,
+.portfoliocraft-search-results .entry-title a:hover {
+    color: var(--primary-color, #FF3D00) !important;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+/* Search Result Excerpt */
+.search-result-excerpt,
+.search-result-content,
+.portfoliocraft-search-results .entry-summary,
+.portfoliocraft-search-results .entry-content {
+    color: var(--body-text-color, #333333);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+}
+
+/* Search Result Footer */
+.search-result-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap;
+}
+
+.search-result-categories,
+.portfoliocraft-search-results .entry-categories {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.search-result-categories a,
+.portfoliocraft-search-results .entry-categories a {
+    background: var(--body-bg-color, #fff);
+    color: var(--meta-text-color, #999999);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 0.875rem;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.search-result-categories a:hover,
+.portfoliocraft-search-results .entry-categories a:hover {
+    background: var(--primary-color, #FF3D00);
+    color: var(--white-text-color, #ffffff);
+    border-color: var(--primary-color, #FF3D00);
+    transform: translateY(-2px);
+}
+
+.search-result-read-more {
+    color: var(--primary-color, #FF3D00);
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    font-size: 0.875rem;
+}
+
+.search-result-read-more:hover {
+    color: var(--secondary-color, #010101);
+    text-decoration: underline;
+    transform: translateX(4px);
+}
+
+/* ==========================================================================
+   No Results Section
+   ========================================================================== */
+
+.portfoliocraft-no-results {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: var(--body-bg-color, #fff);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    margin: 2rem 0;
+}
+
+.portfoliocraft-no-results .page-title {
+    color: var(--heading-text-color, #1a1a1a);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.portfoliocraft-no-results .page-content p {
+    color: var(--body-text-color, #333333);
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+/* Search Suggestions */
+.portfoliocraft-search-suggestions {
+    margin-top: 2rem;
+    text-align: left;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.suggestions-title {
+    color: var(--heading-text-color, #1a1a1a);
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.suggestions-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2rem;
+}
+
+.suggestions-list li {
+    color: var(--body-text-color, #333333);
+    padding: 0.5rem 0;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.suggestions-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color, #FF3D00);
+    font-weight: bold;
+}
+
+/* Popular Content */
+.portfoliocraft-popular-content {
+    margin-top: 2rem;
+}
+
+.portfoliocraft-popular-content h4 {
+    color: var(--heading-text-color, #1a1a1a);
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.popular-categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+}
+
+.category-link {
+    background: var(--primary-color, #FF3D00);
+    color: var(--white-text-color, #ffffff);
+    padding: 0.75rem 1.25rem;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.category-link:hover {
+    background: var(--secondary-color, #010101);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.category-link .post-count {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.25rem 0.5rem;
+    border-radius: 12px;
+    font-size: 0.875rem;
+}
+
+/* ==========================================================================
+   Pagination
+   ========================================================================== */
+
+.portfoliocraft-search-results + nav,
+.search-pagination,
+.pagination {
+    margin: 3rem 0;
+    text-align: center;
+}
+
+.page-numbers {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    height: 44px;
+    margin: 0 0.25rem;
+    background: var(--body-bg-color, #fff);
+    color: var(--body-text-color, #333333);
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.page-numbers:hover,
+.page-numbers.current {
+    background: var(--primary-color, #FF3D00);
+    color: var(--white-text-color, #ffffff);
+    border-color: var(--primary-color, #FF3D00);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.page-numbers.prev,
+.page-numbers.next {
+    padding: 0 1rem;
+    font-size: 0.875rem;
+}
+
+/* ==========================================================================
+   Override any theme conflicts
+   ========================================================================== */
+
+/* Ensure search page content is full width */
+.search .inner.no-sidebar {
+    width: 100% !important;
+    max-width: 1200px !important;
+}
+
+.search #pxl-content-area {
+    width: 100% !important;
+    flex: none !important;
+}
+
+/* Override any existing search result styling */
+.search .pxl-post-title,
+.search .entry-title {
+    margin-bottom: 1rem !important;
+}
+
+.search .pxl-post-title a,
+.search .entry-title a {
+    color: var(--post-title-color, #1a1a1a) !important;
+    font-size: 1.5rem !important;
+    font-weight: 700 !important;
+}
+
+.search .pxl-post-title a:hover,
+.search .entry-title a:hover {
+    color: var(--primary-color, #FF3D00) !important;
+}
+
+/* ==========================================================================
+   Responsive Design
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    .portfoliocraft-search-header {
+        padding: 2rem 1rem 1.5rem;
+    }
+    
+    .portfoliocraft-search-title {
+        font-size: 2rem;
+    }
+    
+    .portfoliocraft-search-form-wrapper {
+        margin-top: 1.5rem;
+    }
+    
+    .search-result-item,
+    .portfoliocraft-search-results article {
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .search-result-item .pxl-title-text,
+    .search-result-item .entry-title a,
+    .portfoliocraft-search-results .pxl-title-text,
+    .portfoliocraft-search-results .entry-title a {
+        font-size: 1.25rem;
+    }
+    
+    .search-result-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .popular-categories {
+        justify-content: flex-start;
+    }
+    
+    .no-sidebar .inner {
+        padding: 0 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .portfoliocraft-search-title {
+        font-size: 1.75rem;
+    }
+    
+    .portfoliocraft-search-title .search-query {
+        display: block;
+        margin-top: 0.5rem;
+    }
+    
+    .search-result-meta,
+    .portfoliocraft-search-results .entry-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .portfoliocraft-search-form-wrapper .search-form {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .portfoliocraft-search-form-wrapper .search-submit {
+        width: 100%;
+    }
+}
+
+/* ==========================================================================
+   Accessibility
+   ========================================================================== */
+
+/* Focus states */
+.search-result-item .pxl-title-text:focus,
+.search-result-item .entry-title a:focus,
+.portfoliocraft-search-results .pxl-title-text:focus,
+.portfoliocraft-search-results .entry-title a:focus,
+.search-result-read-more:focus,
+.category-link:focus,
+.page-numbers:focus {
+    outline: 2px solid var(--primary-color, #FF3D00);
+    outline-offset: 2px;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .search-result-item,
+    .portfoliocraft-search-results article,
+    .search-result-read-more,
+    .category-link,
+    .page-numbers,
+    .portfoliocraft-search-form-wrapper .search-submit {
+        transition: none;
+    }
+    
+    .search-result-item:hover,
+    .portfoliocraft-search-results article:hover {
+        transform: none;
+    }
+}

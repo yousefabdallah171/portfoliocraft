@@ -33,7 +33,7 @@ $pxl-text-align: left;
     --pxl-column: 3;
     --pxl-margin-top: 15px;
     --pxl-transition-duration: .25s;
-    --svg-color: #FF3D00;
+    --svg-color: var(--subtitle-text-color);
 }
 
 body {
