@@ -57,6 +57,12 @@ function portfoliocraft_enqueue_scripts() {
     if (is_front_page() || is_page_template('home.php')) {
         wp_enqueue_style('portfoliocraft-homepage', get_template_directory_uri() . '/assets/css/home.css', array('portfoliocraft-style'), '1.0.0');
     }
+    
+    // Enqueue WooCommerce color controls CSS on all WooCommerce pages
+    if (class_exists('WooCommerce') && (is_woocommerce() || is_shop() || is_product_category() || is_product_tag() || is_product() || is_cart() || is_checkout() || is_account_page())) {
+        wp_enqueue_style('portfoliocraft-woocommerce-colors', get_template_directory_uri() . '/assets/css/woocommerce-colors.css', array('portfoliocraft-style'), '1.0.1');
+        wp_add_inline_style('portfoliocraft-woocommerce-colors', portfoliocraft_inline_styles());
+    }
 }
 add_action('wp_enqueue_scripts', 'portfoliocraft_enqueue_scripts');
 

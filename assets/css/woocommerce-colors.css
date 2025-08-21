@@ -1,0 +1,806 @@
+/**
+ * WooCommerce Product Page Color Controls
+ * Uses existing theme option variables for complete customization
+ * Handles: product categories, tabs, meta information, and dark mode support
+ */
+
+/* ==========================================================================
+   CSS VARIABLES & FALLBACKS
+   ========================================================================== */
+
+:root {
+    /* Ensure all theme variables have fallbacks */
+    --primary-color: var(--primary-color, #FF3D00);
+    --secondary-color: var(--secondary-color, #010101);
+    --third-color: var(--third-color, #00c5fe);
+    --body-bg-color: var(--body-bg-color, #ffffff);
+    --white-text-color: var(--white-text-color, #ffffff);
+    --light-text-color: var(--light-text-color, #f5f5f5);
+    --off-white-color: var(--off-white-color, #fafafa);
+    --light-gray-text-color: var(--light-gray-text-color, #e0e0e0);
+    --body-text-color: var(--body-text-color, #333333);
+    --heading-text-color: var(--heading-text-color, #1a1a1a);
+    --post-title-color: var(--post-title-color, #1a1a1a);
+    --subtitle-text-color: var(--subtitle-text-color, #666666);
+    --meta-text-color: var(--meta-text-color, #999999);
+}
+
+/* ==========================================================================
+   PRODUCT CATEGORY STYLING
+   ========================================================================== */
+
+/* Product Category "posted_in" styling */
+.posted_in,
+.woocommerce .posted_in,
+.single-product .posted_in,
+.product .posted_in {
+    color: var(--body-text-color) !important;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+    background: transparent !important;
+}
+
+.posted_in a,
+.woocommerce .posted_in a,
+.single-product .posted_in a,
+.product .posted_in a {
+    color: var(--primary-color) !important;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    background: transparent !important;
+}
+
+.posted_in a:hover,
+.woocommerce .posted_in a:hover,
+.single-product .posted_in a:hover,
+.product .posted_in a:hover {
+    color: var(--secondary-color) !important;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+/* WooCommerce product category links */
+.woocommerce .woocommerce-product-category,
+.woocommerce-product-category {
+    font-size: 14px;
+    color: var(--body-text-color) !important;
+    margin-bottom: 3px;
+    background: transparent !important;
+}
+
+.woocommerce .woocommerce-product-category a,
+.woocommerce-product-category a {
+    color: var(--primary-color) !important;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.woocommerce .woocommerce-product-category a:hover,
+.woocommerce-product-category a:hover {
+    color: var(--secondary-color) !important;
+    text-decoration: underline;
+}
+
+/* Product meta information */
+.woocommerce-product-meta,
+.product .woocommerce-product-meta,
+.single-product .woocommerce-product-meta {
+    background: transparent !important;
+    border: none !important;
+    padding: 0;
+    margin-top: 1rem;
+}
+
+.woocommerce-product-meta > span,
+.product .woocommerce-product-meta > span,
+.single-product .woocommerce-product-meta > span {
+    color: var(--body-text-color) !important;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+    display: block;
+    background: transparent !important;
+}
+
+.woocommerce-product-meta a,
+.product .woocommerce-product-meta a,
+.single-product .woocommerce-product-meta a {
+    color: var(--primary-color) !important;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.woocommerce-product-meta a:hover,
+.product .woocommerce-product-meta a:hover,
+.single-product .woocommerce-product-meta a:hover {
+    color: var(--secondary-color) !important;
+    text-decoration: underline;
+}
+
+/* SKU, Tags, Category styling */
+.sku_wrapper,
+.tagged_as,
+.posted_in {
+    background: transparent !important;
+    border: none !important;
+    color: var(--body-text-color) !important;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.sku,
+.sku_wrapper .sku {
+    color: var(--meta-text-color) !important;
+    font-weight: 500;
+    background: transparent !important;
+}
+
+/* Stock Status Styling */
+.stock,
+p.stock,
+.stock.in-stock,
+.stock.out-of-stock,
+.stock.available-on-backorder {
+    background: transparent !important;
+    border: none !important;
+    color: var(--body-text-color) !important;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+    padding: 0 !important;
+}
+
+.stock.in-stock,
+p.stock.in-stock {
+    color: var(--primary-color) !important;
+}
+
+.stock.out-of-stock,
+p.stock.out-of-stock {
+    color: var(--secondary-color) !important;
+}
+
+.stock.available-on-backorder,
+p.stock.available-on-backorder {
+    color: var(--meta-text-color) !important;
+}
+
+/* ==========================================================================
+   PRODUCT TABS STYLING
+   ========================================================================== */
+
+/* Main tabs container */
+.woocommerce-tabs,
+.single-product .woocommerce-tabs,
+.product .woocommerce-tabs {
+    background: transparent !important;
+    border: none !important;
+    margin-top: 2rem;
+}
+
+/* Tabs navigation */
+.woocommerce-tabs ul.wc-tabs,
+.woocommerce-tabs .tabs.wc-tabs,
+ul.tabs.wc-tabs,
+.tabs.wc-tabs {
+    background: transparent !important;
+    border: none !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 2rem !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+}
+
+.woocommerce-tabs ul.wc-tabs::before,
+.woocommerce-tabs ul.wc-tabs::after,
+.woocommerce-tabs .tabs.wc-tabs::before,
+.woocommerce-tabs .tabs.wc-tabs::after,
+ul.tabs.wc-tabs::before,
+ul.tabs.wc-tabs::after,
+.tabs.wc-tabs::before,
+.tabs.wc-tabs::after {
+    display: none !important;
+}
+
+/* Individual tab items */
+.woocommerce-tabs ul.wc-tabs > li,
+.woocommerce-tabs .tabs.wc-tabs > li,
+ul.tabs.wc-tabs > li,
+.tabs.wc-tabs > li,
+.wc-tabs li,
+.description_tab,
+.reviews_tab,
+.additional_information_tab {
+    background: transparent !important;
+    border: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    position: relative !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+
+.woocommerce-tabs ul.wc-tabs > li::before,
+.woocommerce-tabs ul.wc-tabs > li::after,
+.woocommerce-tabs .tabs.wc-tabs > li::before,
+.woocommerce-tabs .tabs.wc-tabs > li::after,
+ul.tabs.wc-tabs > li::before,
+ul.tabs.wc-tabs > li::after,
+.tabs.wc-tabs > li::before,
+.tabs.wc-tabs > li::after {
+    display: none !important;
+}
+
+/* Tab links */
+.woocommerce-tabs ul.wc-tabs > li a,
+.woocommerce-tabs .tabs.wc-tabs > li a,
+ul.tabs.wc-tabs > li a,
+.tabs.wc-tabs > li a,
+.wc-tabs li a {
+    color: var(--meta-text-color) !important;
+    background: transparent !important;
+    border: none !important;
+    padding: 1rem 0 !important;
+    font-size: 1.1rem !important;
+    font-weight: 500 !important;
+    text-decoration: none !important;
+    transition: all 0.3s ease !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    display: block !important;
+    position: relative !important;
+}
+
+.woocommerce-tabs ul.wc-tabs > li a:hover,
+.woocommerce-tabs .tabs.wc-tabs > li a:hover,
+ul.tabs.wc-tabs > li a:hover,
+.tabs.wc-tabs > li a:hover,
+.wc-tabs li a:hover {
+    color: var(--primary-color) !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* Active tab styling */
+.woocommerce-tabs ul.wc-tabs > li.active a,
+.woocommerce-tabs .tabs.wc-tabs > li.active a,
+ul.tabs.wc-tabs > li.active a,
+.tabs.wc-tabs > li.active a,
+.wc-tabs li.active a,
+.description_tab.active a,
+.reviews_tab.active a,
+.additional_information_tab.active a {
+    color: var(--heading-text-color) !important;
+    background: transparent !important;
+    border: none !important;
+    border-bottom: 2px solid var(--primary-color) !important;
+    font-weight: 600 !important;
+    box-shadow: none !important;
+}
+
+/* Tab content panels */
+.woocommerce-tabs .woocommerce-Tabs-panel,
+.woocommerce-Tabs-panel,
+.wc-tab,
+#tab-description,
+#tab-reviews,
+#tab-additional_information {
+    background: transparent !important;
+    border: none !important;
+    padding: 2rem 0 !important;
+    margin-top: 1rem !important;
+    color: var(--body-text-color) !important;
+    box-shadow: none !important;
+}
+
+.woocommerce-tabs .woocommerce-Tabs-panel h2,
+.woocommerce-Tabs-panel h2,
+.wc-tab h2 {
+    color: var(--heading-text-color) !important;
+    font-size: 1.5rem !important;
+    font-weight: 600 !important;
+    margin-bottom: 1rem !important;
+    border: none !important;
+    background: transparent !important;
+}
+
+.woocommerce-tabs .woocommerce-Tabs-panel p,
+.woocommerce-Tabs-panel p,
+.wc-tab p {
+    color: var(--body-text-color) !important;
+    line-height: 1.6 !important;
+    margin-bottom: 1rem !important;
+}
+
+/* ==========================================================================
+   REVIEWS TAB SPECIFIC STYLING
+   ========================================================================== */
+
+#reviews,
+.woocommerce-Reviews,
+#tab-reviews {
+    background: transparent !important;
+    border: none !important;
+    color: var(--body-text-color) !important;
+}
+
+#reviews h2,
+.woocommerce-Reviews h2,
+#tab-reviews h2 {
+    color: var(--heading-text-color) !important;
+    background: transparent !important;
+    border: none !important;
+}
+
+.woocommerce-Reviews-title,
+#reviews .woocommerce-Reviews-title {
+    color: var(--heading-text-color) !important;
+    background: transparent !important;
+    border: none !important;
+}
+
+.comment-list,
+.woocommerce-Reviews .comment-list {
+    background: transparent !important;
+    border: none !important;
+}
+
+.comment-list .comment,
+.woocommerce-Reviews .comment {
+    background: transparent !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
+    color: var(--body-text-color) !important;
+}
+
+.comment-author,
+.woocommerce-Reviews .comment-author {
+    color: var(--heading-text-color) !important;
+}
+
+.comment-text,
+.woocommerce-Reviews .comment-text {
+    color: var(--body-text-color) !important;
+    background: transparent !important;
+}
+
+/* ==========================================================================
+   REVIEW FORM STYLING
+   ========================================================================== */
+
+/* Review Form Container */
+#review_form_wrapper,
+#review_form,
+#respond.comment-respond {
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    margin-top: 2rem !important;
+}
+
+/* Review Form Title */
+#reply-title.comment-reply-title,
+.comment-reply-title {
+    color: var(--heading-text-color) !important;
+    font-size: 1.5rem !important;
+    font-weight: 600 !important;
+    margin-bottom: 1.5rem !important;
+    background: transparent !important;
+    border: none !important;
+}
+
+#reply-title small,
+.comment-reply-title small {
+    font-size: 0.875rem !important;
+    font-weight: 400 !important;
+}
+
+#reply-title small a,
+.comment-reply-title small a {
+    color: var(--primary-color) !important;
+    text-decoration: none !important;
+    transition: color 0.3s ease !important;
+}
+
+#reply-title small a:hover,
+.comment-reply-title small a:hover {
+    color: var(--secondary-color) !important;
+    text-decoration: underline !important;
+}
+
+/* Comment Form */
+#commentform.comment-form,
+.comment-form {
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* Rating Section */
+.comment-form-rating {
+    background: transparent !important;
+    border: none !important;
+    margin-bottom: 1.5rem !important;
+    padding: 0 !important;
+}
+
+#comment-form-rating-label,
+.comment-form-rating label {
+    color: var(--body-text-color) !important;
+    font-size: 1rem !important;
+    font-weight: 500 !important;
+    margin-bottom: 0.5rem !important;
+    display: block !important;
+    background: transparent !important;
+}
+
+.comment-form-rating .required {
+    color: var(--primary-color) !important;
+}
+
+/* Star Rating */
+.comment-form-rating .stars,
+p.stars {
+    background: transparent !important;
+    margin: 0.5rem 0 !important;
+    padding: 0 !important;
+}
+
+.stars span[role="group"] {
+    display: flex !important;
+    gap: 0.25rem !important;
+    align-items: center !important;
+}
+
+.stars a[role="radio"],
+.stars a.star-1,
+.stars a.star-2,
+.stars a.star-3,
+.stars a.star-4,
+.stars a.star-5 {
+    color: var(--meta-text-color) !important;
+    font-size: 1.2rem !important;
+    text-decoration: none !important;
+    transition: color 0.3s ease !important;
+    background: transparent !important;
+    border: none !important;
+    padding: 0.25rem !important;
+    border-radius: 4px !important;
+}
+
+.stars a[role="radio"]:hover,
+.stars a[role="radio"][aria-checked="true"],
+.stars a.star-1:hover,
+.stars a.star-2:hover,
+.stars a.star-3:hover,
+.stars a.star-4:hover,
+.stars a.star-5:hover {
+    color: var(--primary-color) !important;
+    background: rgba(0, 0, 0, 0.05) !important;
+}
+
+.stars a[role="radio"]:focus,
+.stars a.star-1:focus,
+.stars a.star-2:focus,
+.stars a.star-3:focus,
+.stars a.star-4:focus,
+.stars a.star-5:focus {
+    outline: 2px solid var(--primary-color) !important;
+    outline-offset: 2px !important;
+}
+
+/* Comment Form Fields */
+.comment-form-comment,
+p.comment-form-comment {
+    background: transparent !important;
+    border: none !important;
+    margin-bottom: 1.5rem !important;
+    padding: 0 !important;
+}
+
+.comment-form-comment label,
+p.comment-form-comment label {
+    color: var(--body-text-color) !important;
+    font-size: 1rem !important;
+    font-weight: 500 !important;
+    margin-bottom: 0.5rem !important;
+    display: block !important;
+    background: transparent !important;
+}
+
+.comment-form-comment .required,
+p.comment-form-comment .required {
+    color: var(--primary-color) !important;
+}
+
+/* Textarea Styling */
+#comment,
+.comment-form textarea,
+textarea#comment {
+    background: var(--body-bg-color) !important;
+    border: 2px solid rgba(0, 0, 0, 0.1) !important;
+    border-radius: 8px !important;
+    color: var(--body-text-color) !important;
+    font-size: 1rem !important;
+    font-family: inherit !important;
+    line-height: 1.6 !important;
+    padding: 1rem !important;
+    width: 100% !important;
+    min-height: 120px !important;
+    resize: vertical !important;
+    transition: all 0.3s ease !important;
+    box-shadow: none !important;
+}
+
+#comment:focus,
+.comment-form textarea:focus,
+textarea#comment:focus {
+    border-color: var(--primary-color) !important;
+    outline: none !important;
+    box-shadow: 0 0 0 3px rgba(255, 61, 0, 0.1) !important;
+}
+
+#comment::placeholder,
+.comment-form textarea::placeholder,
+textarea#comment::placeholder {
+    color: var(--meta-text-color) !important;
+    opacity: 1 !important;
+}
+
+/* Submit Button */
+.form-submit,
+p.form-submit {
+    background: transparent !important;
+    border: none !important;
+    margin: 1.5rem 0 0 0 !important;
+    padding: 0 !important;
+}
+
+#submit.submit,
+.form-submit input[type="submit"],
+input.submit,
+button.submit {
+    background: var(--primary-color) !important;
+    color: var(--white-text-color) !important;
+    border: none !important;
+    border-radius: 8px !important;
+    padding: 1rem 2rem !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    font-family: inherit !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+    text-transform: none !important;
+    letter-spacing: normal !important;
+}
+
+#submit.submit:hover,
+.form-submit input[type="submit"]:hover,
+input.submit:hover,
+button.submit:hover {
+    background: var(--secondary-color) !important;
+    color: var(--white-text-color) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15) !important;
+}
+
+#submit.submit:focus,
+.form-submit input[type="submit"]:focus,
+input.submit:focus,
+button.submit:focus {
+    outline: 2px solid var(--primary-color) !important;
+    outline-offset: 2px !important;
+}
+
+#submit.submit:active,
+.form-submit input[type="submit"]:active,
+input.submit:active,
+button.submit:active {
+    transform: translateY(0) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Hidden inputs styling */
+input[type="hidden"] {
+    display: none !important;
+}
+
+/* Rating Select (hidden but accessible) */
+#rating {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+/* ==========================================================================
+   PRODUCT CATEGORY ARCHIVE PAGES
+   ========================================================================== */
+
+.woocommerce.archive .woocommerce-products-header,
+.woocommerce-shop .woocommerce-products-header {
+    background: transparent !important;
+    border: none !important;
+    color: var(--body-text-color) !important;
+}
+
+.woocommerce-products-header .woocommerce-products-header__title,
+.page-title {
+    color: var(--heading-text-color) !important;
+    background: transparent !important;
+}
+
+.term-description,
+.woocommerce-products-header .term-description {
+    color: var(--body-text-color) !important;
+    background: transparent !important;
+}
+
+/* ==========================================================================
+   DARK MODE SUPPORT
+   ========================================================================== */
+
+@media (prefers-color-scheme: dark) {
+    .woocommerce-tabs ul.wc-tabs,
+    .tabs.wc-tabs {
+        border-bottom-color: rgba(255, 255, 255, 0.1) !important;
+    }
+    
+    .comment-list .comment,
+    .woocommerce-Reviews .comment {
+        border-bottom-color: rgba(255, 255, 255, 0.1) !important;
+    }
+}
+
+/* ==========================================================================
+   MOBILE RESPONSIVE
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    .woocommerce-tabs ul.wc-tabs,
+    .tabs.wc-tabs {
+        gap: 1rem !important;
+        flex-direction: column !important;
+    }
+    
+    .woocommerce-tabs ul.wc-tabs > li a,
+    .tabs.wc-tabs > li a {
+        font-size: 1rem !important;
+        padding: 0.75rem 0 !important;
+    }
+    
+    .woocommerce-tabs .woocommerce-Tabs-panel,
+    .wc-tab {
+        padding: 1.5rem 0 !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .posted_in,
+    .woocommerce-product-meta > span {
+        font-size: 13px !important;
+    }
+    
+    .woocommerce-tabs ul.wc-tabs > li a,
+    .tabs.wc-tabs > li a {
+        font-size: 0.95rem !important;
+    }
+}
+
+/* ==========================================================================
+   FORCE OVERRIDES FOR THEME CONFLICTS
+   ========================================================================== */
+
+/* Ensure transparent backgrounds override any theme styling */
+.single.single-product .product .product-details .woocommerce-tabs,
+.single.single-product .product .product-details .woocommerce-tabs ul.wc-tabs,
+.single.single-product .product .product-details .woocommerce-tabs ul.wc-tabs > li,
+.single.single-product .product .product-details .woocommerce-tabs ul.wc-tabs > li a {
+    background: transparent !important;
+    border-color: transparent !important;
+}
+
+.single.single-product .product .product-details .woocommerce-tabs ul.wc-tabs {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
+}
+
+.single.single-product .product .product-details .woocommerce-tabs ul.wc-tabs > li.active a {
+    border-bottom: 2px solid var(--primary-color) !important;
+    background: transparent !important;
+}
+
+/* Remove any existing styling that might conflict */
+.woocommerce-tabs *,
+.wc-tabs *,
+.posted_in *,
+.woocommerce-product-meta * {
+    box-shadow: none !important;
+}
+
+/* Ensure all links use theme colors */
+.woocommerce a,
+.single-product a,
+.product a {
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+.woocommerce a:hover,
+.single-product a:hover,
+.product a:hover {
+    color: var(--secondary-color);
+}
+
+/* Category and tag links specific styling */
+.posted_in a,
+.tagged_as a,
+.woocommerce-product-meta a {
+    color: var(--primary-color) !important;
+    background: transparent !important;
+    border: none !important;
+    text-decoration: none !important;
+    font-weight: 500 !important;
+    transition: all 0.3s ease !important;
+}
+
+.posted_in a:hover,
+.tagged_as a:hover,
+.woocommerce-product-meta a:hover {
+    color: var(--secondary-color) !important;
+    text-decoration: underline !important;
+    text-underline-offset: 2px !important;
+}
+
+/* ==========================================================================
+   ACCESSIBILITY
+   ========================================================================== */
+
+.woocommerce-tabs ul.wc-tabs > li a:focus,
+.tabs.wc-tabs > li a:focus,
+.posted_in a:focus,
+.woocommerce-product-meta a:focus {
+    outline: 2px solid var(--primary-color) !important;
+    outline-offset: 2px !important;
+}
+
+/* ==========================================================================
+   HIGH CONTRAST MODE
+   ========================================================================== */
+
+@media (prefers-contrast: high) {
+    .woocommerce-tabs ul.wc-tabs,
+    .tabs.wc-tabs {
+        border-bottom: 2px solid var(--primary-color) !important;
+    }
+    
+    .woocommerce-tabs ul.wc-tabs > li.active a,
+    .tabs.wc-tabs > li.active a {
+        border-bottom: 3px solid var(--primary-color) !important;
+    }
+    
+    .posted_in,
+    .woocommerce-product-meta > span {
+        border: 1px solid rgba(0, 0, 0, 0.2) !important;
+        padding: 0.25rem 0.5rem !important;
+        border-radius: 4px !important;
+    }
+}

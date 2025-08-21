@@ -1591,7 +1591,6 @@ blockquote:not(.pxl-blockquote).wp-block-quote.has-text-align-right:before {
   max-width: 1330px;
 }
 #pxl-main .inner {
-  display: flex;
   justify-content: space-between;
   column-gap: 30px;
   row-gap: 100px;
@@ -17311,7 +17310,19 @@ body
   text-transform: uppercase;
   padding: 0;
   transition: 0.3s;
-  border: thin solid #010101;
+  border: thin solid white;
+}
+.single.single-product .product .product-details .woocommerce-tabs .woocommerce-Tabs-panel #reviews #review_form_wrapper form.comment-form .form-submit .submit {
+  color: #fff ! IMPORTANT;
+  padding: 10px 15px !important;
+  }
+
+
+  .single.single-product .product .product-details .woocommerce-tabs .woocommerce-Tabs-panel #reviews #review_form_wrapper form.comment-form .comment-form-comment textarea  {
+    border-color: var(--primary-color) !important; 
+}
+.single.single-product .product .product-details .woocommerce-tabs .woocommerce-Tabs-panel #reviews #review_form_wrapper form.comment-form .comment-form-comment textarea {
+background: transparent !important;
 }
 .single.single-product
   .product
