@@ -21,11 +21,20 @@
    ========================================================================== */
 
 body,
-p,
 .entry-content,
 .widget-content,
 .post-content,
 .pxl-post-content {
+    color: var(--body-text-color, #333333);
+}
+
+/* Apply body text color to p tags only in specific contexts, not globally */
+.entry-content p,
+.widget-content p,
+.post-content p,
+.pxl-post-content p,
+.widget p,
+.sidebar p {
     color: var(--body-text-color, #333333);
 }
 
