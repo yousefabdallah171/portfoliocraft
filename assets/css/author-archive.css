@@ -1,0 +1,67 @@
+/**
+ * Author Archive Page Styles
+ * 
+ * Styles for the author archive template
+ * Part of PortfolioCraft theme
+ * 
+ * @package PortfolioCraft
+ */
+
+.author-archive-header {
+    background: var(--portfoliocraft-background-color, #f5f6f6);
+    padding: 40px 0 24px 0;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+}
+
+.author-archive-header .author-avatar {
+    border-radius: 50%;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    display: inline-block;
+}
+
+.author-archive-header .author-name {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: var(--portfoliocraft-primary-color, #667eea);
+}
+
+.author-archive-header .author-desc {
+    font-size: 1rem;
+    color: #666;
+    max-width: 420px;
+    margin: 0 auto;
+    opacity: 0.85;
+}
+
+.author-archive-posts {
+    background: #fff;
+    padding: 32px 0;
+}
+
+.author-archive-posts .posts-list {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 32px;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .author-archive-header {
+        padding: 30px 15px 20px;
+    }
+    
+    .author-archive-header .author-name {
+        font-size: 1.25rem;
+    }
+    
+    .author-archive-posts .posts-list {
+        padding: 0 15px;
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+}

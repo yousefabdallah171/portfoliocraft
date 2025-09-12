@@ -1,4 +1,7 @@
 <?php
+nif (!defined("ABSPATH")) {
+    exit;
+}
 /**
  * Template part for displaying a message that posts cannot be found
  *

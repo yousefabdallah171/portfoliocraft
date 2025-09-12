@@ -1,4 +1,7 @@
 <?php
+nif (!defined("ABSPATH")) {
+    exit;
+}
 /**
  * @package portfoliocraft-Themes
  */

@@ -1,4 +1,7 @@
 <?php
+nif (!defined("ABSPATH")) {
+    exit;
+}
 /**
  * Template part for displaying posts in loop
  *

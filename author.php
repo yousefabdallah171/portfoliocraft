@@ -13,54 +13,26 @@ if (!defined('ABSPATH')) {
 
 get_header();
 
-// Get theme color options (example: primary, secondary, background)
+// Enqueue author archive styles
+wp_enqueue_style('portfoliocraft-author-archive', get_template_directory_uri() . '/assets/css/author-archive.css', array('pxl-style'), wp_get_theme()->get('Version'));
+
+// Get theme color options and set CSS variables
 $primary_color = portfoliocraft()->get_theme_opt('primary_color', '#667eea');
 $background_color = portfoliocraft()->get_theme_opt('background_color', '#f5f6f6');
+
+// Add inline CSS variables for dynamic colors
+wp_add_inline_style('portfoliocraft-author-archive', "
+    :root {
+        --portfoliocraft-primary-color: {$primary_color};
+        --portfoliocraft-background-color: {$background_color};
+    }
+");
 
 $author = get_queried_object();
 $author_avatar = get_avatar($author->ID, 80);
 $author_name = get_the_author_meta('display_name', $author->ID);
 $author_desc = get_the_author_meta('description', $author->ID);
 ?>
-
-<style>
-.author-archive-header {
-    background: <?php echo esc_attr($background_color); ?>;
-    padding: 40px 0 24px 0;
-    text-align: center;
-    border-bottom: 1px solid #eee;
-}
-.author-archive-header .author-avatar {
-    border-radius: 50%;
-    margin-bottom: 12px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-    display: inline-block;
-}
-.author-archive-header .author-name {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 6px;
-    color: <?php echo esc_attr($primary_color); ?>;
-}
-.author-archive-header .author-desc {
-    font-size: 1rem;
-    color: #666;
-    max-width: 420px;
-    margin: 0 auto;
-    opacity: 0.85;
-}
-.author-archive-posts {
-    background: #fff;
-    padding: 32px 0;
-}
-.author-archive-posts .posts-list {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 32px;
-}
-</style>
 
 <div class="author-archive-header">
     <div class="author-avatar"><?php echo $author_avatar; ?></div>

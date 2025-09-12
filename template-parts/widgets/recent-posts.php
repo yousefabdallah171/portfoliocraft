@@ -1,4 +1,7 @@
 <?php defined( 'ABSPATH' ) or exit( -1 );
+nif (!defined("ABSPATH")) {
+    exit;
+}
 /**
  * Recent Posts widgets
  * @package portfoliocraft-Themes

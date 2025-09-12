@@ -1,4 +1,7 @@
 <?php 
+nif (!defined("ABSPATH")) {
+    exit;
+}
 $logo_m = portfoliocraft()->get_opt( 'logo_m', ['url' => get_template_directory_uri().'/assets/img/logo.png', 'id' => 'null'] );
 $logo_light_m = portfoliocraft()->get_opt( 'logo_light_m', ['url' => get_template_directory_uri().'/assets/img/logo.png', 'id' => 'null'] );
 $p_menu = portfoliocraft()->get_page_opt('p_menu');

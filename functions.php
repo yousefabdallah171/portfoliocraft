@@ -9,6 +9,11 @@
  * @since 1.0
  */
 
+// Prevent direct access
+if (!defined('ABSPATH')) {
+    exit;
+}
+
 // Load theme text domain for translations
 // This function loads the translation files for the theme to enable localization
 add_action('init', 'portfoliocraft_load_theme_textdomain');

@@ -123,12 +123,12 @@ class Theme_Demo_Controller {
         if (!function_exists('rakmyat_get_theme_demos')) {
             function rakmyat_get_theme_demos() {
                 $demos = Theme_Demo_Controller::get_instance()->get_all_demos();
-                error_log('THEME CONTROLLER: rakmyat_get_theme_demos called - returning ' . count($demos) . ' demos');
+                
                 return $demos;
             }
-            error_log('THEME CONTROLLER: rakmyat_get_theme_demos function registered successfully');
+            
         } else {
-            error_log('THEME CONTROLLER: rakmyat_get_theme_demos function already exists');
+            
         }
     }
     
@@ -897,7 +897,7 @@ class Theme_Demo_Controller {
      */
     private function log_debug($message) {
         if (defined('WP_DEBUG') && WP_DEBUG) {
-            error_log('Theme Demo Controller: ' . $message);
+            
         }
     }
 }

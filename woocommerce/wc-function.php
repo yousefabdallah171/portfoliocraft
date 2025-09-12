@@ -182,22 +182,20 @@ function custom_place_order_button_html($button) {
 }
 add_filter('woocommerce_order_button_html', 'custom_place_order_button_html');
 
-add_action('wp_footer', 'portfoliocraft_custom_login_placeholders');
-function portfoliocraft_custom_login_placeholders() {
-	if (is_account_page()) {
-		?>
-		<script>
-			jQuery(document).ready(function($) {
-				$('#customer_login #username').attr("placeholder", "Username or email address");
-				$('#customer_login #password').attr("placeholder", "Password");
-				$('#customer_login #reg_email').attr("placeholder", "Email address");
-				$('#customer_login #reg_username').attr("placeholder", "Username");
-				$('#customer_login #reg_password').attr("placeholder", "Password");
-				$('.lost_reset_password #user_login').attr("placeholder", "Username or email");
-			});
-		</script>
-		<?php
-	}
+/**
+ * Enqueue WooCommerce custom placeholder script
+ */
+add_action('wp_enqueue_scripts', 'portfoliocraft_enqueue_woocommerce_placeholders');
+function portfoliocraft_enqueue_woocommerce_placeholders() {
+    if (is_account_page()) {
+        wp_enqueue_script(
+            'portfoliocraft-woo-placeholders', 
+            get_template_directory_uri() . '/assets/js/woocommerce-placeholders.js', 
+            array('jquery'), 
+            wp_get_theme()->get('Version'), 
+            true
+        );
+    }
 }
 
 

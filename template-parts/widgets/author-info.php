@@ -1,4 +1,7 @@
 <?php 
+nif (!defined("ABSPATH")) {
+    exit;
+}
 class portfoliocraft_Author_Info extends WP_Widget {
     function __construct() {
         parent::__construct(

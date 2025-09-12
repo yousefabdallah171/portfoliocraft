@@ -1,4 +1,7 @@
 <?php
+nif (!defined("ABSPATH")) {
+    exit;
+}
 /**
 * Template Name: Blog Classic
 * @package portfoliocraft-Themes

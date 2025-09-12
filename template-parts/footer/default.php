@@ -1,4 +1,15 @@
-<footer id="pxl-footer-default"> 
+<?php
+/**
+ * Default Footer Template
+ * 
+ * @package PortfolioCraft
+ */
+
+if (!defined('ABSPATH')) {
+    exit;
+}
+?>
+<footer id="pxl-footer-default">
     <div class="container">
         <div class="row">
             <div class="col-12">

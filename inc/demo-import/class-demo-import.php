@@ -675,7 +675,7 @@ class Universal_Demo_Import {
      */
     private function log_debug($message) {
         if (defined('WP_DEBUG') && WP_DEBUG) {
-            error_log('Universal Demo Import: ' . $message);
+            
         }
     }
 }

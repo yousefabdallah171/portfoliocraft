@@ -7,6 +7,10 @@
  * @package portfoliocraft-Themes
  * @since portfoliocraft 1.0
  */
+
+if (!defined('ABSPATH')) {
+    exit;
+}
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
