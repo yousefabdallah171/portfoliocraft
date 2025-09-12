@@ -28,15 +28,14 @@ body,
     color: var(--body-text-color, #333333);
 }
 
-/* Apply body text color to p tags only in specific contexts, not globally */
-.entry-content p,
-.widget-content p,
-.post-content p,
-.pxl-post-content p,
-.widget p,
-.sidebar p {
-    color: var(--body-text-color, #333333);
-}
+/* 
+ * Removed global p tag color rules to allow Elementor templates 
+ * to override paragraph colors without interference from Redux panel.
+ * 
+ * If specific p tag color control is needed in the future, 
+ * add more targeted selectors like:
+ * .blog-content p, .post-excerpt p, etc.
+ */
 
 /* ==========================================================================
    Headings and Titles
