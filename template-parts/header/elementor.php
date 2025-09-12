@@ -1,5 +1,5 @@
 <?php 
-nif (!defined("ABSPATH")) {
+if (!defined("ABSPATH")) {
     exit;
 }
 $logo_m = portfoliocraft()->get_opt( 'logo_m', ['url' => get_template_directory_uri().'/assets/img/logo.png', 'id' => 'null'] );
