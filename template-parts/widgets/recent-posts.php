@@ -1,5 +1,5 @@
-<?php defined( 'ABSPATH' ) or exit( -1 );
-nif (!defined("ABSPATH")) {
+<?php 
+if (!defined("ABSPATH")) {
     exit;
 }
 /**

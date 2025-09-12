@@ -1,5 +1,5 @@
 <?php 
-nif (!defined("ABSPATH")) {
+if (!defined("ABSPATH")) {
     exit;
 }
 class portfoliocraft_Author_Info extends WP_Widget {
