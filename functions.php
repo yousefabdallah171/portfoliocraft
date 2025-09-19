@@ -58,6 +58,9 @@ function portfoliocraft_enqueue_scripts() {
     // Enqueue widgets CSS with async loading for non-critical CSS
     wp_enqueue_style('portfoliocraft-widgets', get_template_directory_uri() . '/assets/css/widgets.css', array('portfoliocraft-style'), '1.0.0', 'all');
 
+    // Enqueue custom mobile header CSS to remove white space
+    wp_enqueue_style('portfoliocraft-mobile-header', get_template_directory_uri() . '/assets/css/custom-mobile-header.css', array('portfoliocraft-style'), '1.0.0', 'all');
+
     // Conditionally enqueue homepage-specific styles if on the homepage or using the home template
     if (is_front_page() || is_page_template('home.php')) {
         wp_enqueue_style('portfoliocraft-homepage', get_template_directory_uri() . '/assets/css/home.css', array('portfoliocraft-style'), '1.0.0');

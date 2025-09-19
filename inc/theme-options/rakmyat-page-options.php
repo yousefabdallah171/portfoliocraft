@@ -38,7 +38,7 @@ function portfoliocraft_page_options_register($metabox) {
     $post_types = get_post_types(array('public' => true), 'names');
     
     // Remove unwanted post types from metabox registration
-    $excluded_types = array('attachment', 'elementor_library', 'pxl-template');
+    $excluded_types = array('attachment', 'elementor_library', 'rmt-template');
     foreach ($excluded_types as $excluded_type) {
         if (isset($post_types[$excluded_type])) {
             unset($post_types[$excluded_type]);
@@ -77,10 +77,6 @@ function portfoliocraft_page_options_register($metabox) {
                     'fields' => array_merge(
                         // Main header and mobile header layout options
                         portfoliocraft_header_opts(array(
-                            'default'         => true,
-                            'default_value'   => '-1'
-                        )),
-                        portfoliocraft_header_mobile_opts(array(
                             'default'         => true,
                             'default_value'   => '-1'
                         )),
@@ -156,7 +152,7 @@ function portfoliocraft_page_options_register($metabox) {
                                 'desc'     => esc_html__('Set custom margin for header element', 'portfoliocraft'),
                                 'width'    => false,
                                 'unit'     => 'px',
-                                'output'   => array('#pxl-header-elementor .pxl-header-elementor-main'),
+                                'output'   => array('#rmt-header-elementor .rmt-header-elementor-main'),
                             ),
                         )
                     )
@@ -206,7 +202,7 @@ function portfoliocraft_page_options_register($metabox) {
                             'type'           => 'spacing',
                             'title'          => esc_html__('Content Spacing Top/Bottom', 'portfoliocraft'),
                             'desc'           => esc_html__('Set custom padding for main content area', 'portfoliocraft'),
-                            'output'         => array('#pxl-wrapper #pxl-main'),
+                            'output'         => array('#rmt-wrapper #rmt-main'),
                             'right'          => false,
                             'left'           => false,
                             'mode'           => 'padding',

@@ -1,0 +1,52 @@
+/* Fix white space around dark header in mobile */
+@media screen and (max-width: 1199px) {
+    /* Remove wrapper spacing */
+    #pxl-header-mobile {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    #pxl-header-mobile .pxl-header-main {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    #pxl-header-mobile .pxl-header-inner {
+        padding: 15px !important;
+        margin: 0 !important;
+    }
+
+    /* Remove spacing from Elementor wrapper */
+    #pxl-header-mobile .elementor-110 {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* Target the main container that's causing white space */
+    #pxl-header-mobile .elementor-element-19d7982d {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* Target the dark header container specifically */
+    #pxl-header-mobile .elementor-element-2eb222d9 {
+        margin: 0 !important;
+        padding-top: 10px !important;
+        padding-bottom: 10px !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+
+    /* Remove white space from all containers before/after dark header */
+    #pxl-header-mobile .e-con,
+    #pxl-header-mobile .elementor-element {
+        margin: 0 !important;
+    }
+
+    /* Make header background transparent to use Elementor's background dynamically */
+    #pxl-header-mobile,
+    #pxl-header-mobile .pxl-header-main,
+    #pxl-header-mobile .pxl-header-inner {
+        background-color: transparent !important;
+    }
+}

@@ -692,7 +692,7 @@ Redux::setSection($opt_name, array(
             'font-size'   => true,
             'text-align'  => false,
             'color'       => false,
-            'output'      => array('.pxl-cookie-policy .pxl-item--description'),
+            'output'      => array('.rmt-cookie-policy .rmt-item--description'),
             'units'       => 'px',
             'required'    => array('cookie_policy', 'equals', 'show'),
         ),
@@ -768,83 +768,80 @@ Redux::setSection($opt_name, array(
  * - Mobile navigation customizations
  */
 Redux::setSection($opt_name, array(
-    'title'      => esc_html__('Mobile Header', 'portfoliocraft'),
+    'title'      => esc_html__('Mobile Options', 'portfoliocraft'),
     'icon'       => 'el el-circle-arrow-right',
     'subsection' => true,
-    'desc'       => esc_html__('Configure mobile-specific header settings and responsive behavior.', 'portfoliocraft'),
-    'fields'     => array_merge(
-        portfoliocraft_header_mobile_opts(), // Include mobile header options
+    'desc'       => esc_html__('Configure mobile-specific settings. Header layout is now unified - use responsive controls in your header template.', 'portfoliocraft'),
+    'fields'     => array(
         array(
-            array(
-                'id'       => 'mobile_display',
-                'type'     => 'button_set',
-                'title'    => esc_html__('Mobile Header Display', 'portfoliocraft'),
-                'subtitle' => esc_html__('Control mobile header visibility.', 'portfoliocraft'),
-                'options'  => array(
-                    'show' => esc_html__('Show', 'portfoliocraft'),
-                    'hide' => esc_html__('Hide', 'portfoliocraft'),
-                ),
-                'default'  => 'show'
+            'id'       => 'mobile_display',
+            'type'     => 'button_set',
+            'title'    => esc_html__('Mobile Header Display', 'portfoliocraft'),
+            'subtitle' => esc_html__('Control mobile header visibility.', 'portfoliocraft'),
+            'options'  => array(
+                'show' => esc_html__('Show', 'portfoliocraft'),
+                'hide' => esc_html__('Hide', 'portfoliocraft'),
             ),
-            array(
-                'id'       => 'logo_m',
-                'type'     => 'media',
-                'title'    => esc_html__('Mobile Logo (Dark)', 'portfoliocraft'),
-                'subtitle' => esc_html__('Logo displayed in mobile menu sidebar (dark version).', 'portfoliocraft'),
-                'default'  => array(
-                    'url' => get_template_directory_uri() . '/assets/img/logo.png'
-                ),
-                'url'      => false,
-                'required' => array('mobile_display', 'equals', 'show'),
-                'desc'     => sprintf(
-                    esc_html__('You can also set page-specific logos in Page Options. %sView Instructions%s', 'portfoliocraft'),
-                    '<a class="pxl-admin-popup" href="' . esc_url(get_template_directory_uri()) . '/inc/theme-options/instruct/logo_m_page.png">',
-                    '</a>'
-                ),
+            'default'  => 'show'
+        ),
+        array(
+            'id'       => 'logo_m',
+            'type'     => 'media',
+            'title'    => esc_html__('Mobile Logo (Dark)', 'portfoliocraft'),
+            'subtitle' => esc_html__('Logo displayed in mobile menu sidebar (dark version).', 'portfoliocraft'),
+            'default'  => array(
+                'url' => get_template_directory_uri() . '/assets/img/logo.png'
             ),
-            array(
-                'id'       => 'logo_light_m',
-                'type'     => 'media',
-                'title'    => esc_html__('Mobile Logo (Light)', 'portfoliocraft'),
-                'subtitle' => esc_html__('Logo displayed in mobile menu sidebar (light version).', 'portfoliocraft'),
-                'default'  => array(
-                    'url' => get_template_directory_uri() . '/assets/img/logo.png'
-                ),
-                'url'      => false,
-                'required' => array('mobile_display', 'equals', 'show'),
+            'url'      => false,
+            'required' => array('mobile_display', 'equals', 'show'),
+            'desc'     => sprintf(
+                esc_html__('You can also set page-specific logos in Page Options. %sView Instructions%s', 'portfoliocraft'),
+                '<a class="rmt-admin-popup" href="' . esc_url(get_template_directory_uri()) . '/inc/theme-options/instruct/logo_m_page.png">',
+                '</a>'
             ),
-            array(
-                'id'       => 'logo_height',
-                'type'     => 'dimensions',
-                'title'    => esc_html__('Mobile Logo Height', 'portfoliocraft'),
-                'subtitle' => esc_html__('Set the height for mobile logos.', 'portfoliocraft'),
-                'width'    => false,
-                'unit'     => 'px',
-                'output'   => array(
-                    '#pxl-header-default .pxl-header-branding img',
-                    '#pxl-header-default #pxl-header-mobile .pxl-header-branding img',
-                    '#pxl-header-elementor #pxl-header-mobile .pxl-header-branding img',
-                    '.pxl-logo-mobile img'
-                ),
-                'required' => array('mobile_display', 'equals', 'show'),
-                'default'  => array('height' => '40px'),
+        ),
+        array(
+            'id'       => 'logo_light_m',
+            'type'     => 'media',
+            'title'    => esc_html__('Mobile Logo (Light)', 'portfoliocraft'),
+            'subtitle' => esc_html__('Logo displayed in mobile menu sidebar (light version).', 'portfoliocraft'),
+            'default'  => array(
+                'url' => get_template_directory_uri() . '/assets/img/logo.png'
             ),
-            array(
-                'id'       => 'search_mobile',
-                'type'     => 'switch',
-                'title'    => esc_html__('Mobile Search Form', 'portfoliocraft'),
-                'subtitle' => esc_html__('Display search form in mobile header.', 'portfoliocraft'),
-                'default'  => true,
-                'required' => array('mobile_display', 'equals', 'show'),
+            'url'      => false,
+            'required' => array('mobile_display', 'equals', 'show'),
+        ),
+        array(
+            'id'       => 'logo_height',
+            'type'     => 'dimensions',
+            'title'    => esc_html__('Mobile Logo Height', 'portfoliocraft'),
+            'subtitle' => esc_html__('Set the height for mobile logos.', 'portfoliocraft'),
+            'width'    => false,
+            'unit'     => 'px',
+            'output'   => array(
+                '#rmt-header-default .rmt-header-branding img',
+                '#rmt-header-default #rmt-header-mobile .rmt-header-branding img',
+                '#rmt-header-elementor #rmt-header-mobile .rmt-header-branding img',
+                '.rmt-logo-mobile img'
             ),
-            array(
-                'id'       => 'search_placeholder_mobile',
-                'type'     => 'text',
-                'title'    => esc_html__('Mobile Search Placeholder', 'portfoliocraft'),
-                'subtitle' => esc_html__('Placeholder text for mobile search input.', 'portfoliocraft'),
-                'default'  => esc_html__('Search...', 'portfoliocraft'),
-                'required' => array('search_mobile', 'equals', true),
-            )
+            'required' => array('mobile_display', 'equals', 'show'),
+            'default'  => array('height' => '40px'),
+        ),
+        array(
+            'id'       => 'search_mobile',
+            'type'     => 'switch',
+            'title'    => esc_html__('Mobile Search Form', 'portfoliocraft'),
+            'subtitle' => esc_html__('Display search form in mobile header.', 'portfoliocraft'),
+            'default'  => true,
+            'required' => array('mobile_display', 'equals', 'show'),
+        ),
+        array(
+            'id'       => 'search_placeholder_mobile',
+            'type'     => 'text',
+            'title'    => esc_html__('Mobile Search Placeholder', 'portfoliocraft'),
+            'subtitle' => esc_html__('Placeholder text for mobile search input.', 'portfoliocraft'),
+            'default'  => esc_html__('Search...', 'portfoliocraft'),
+            'required' => array('search_mobile', 'equals', true),
         )
     )
 ));
@@ -1672,7 +1669,7 @@ Redux::setSection($opt_name, array(
             'title' => esc_html__('Enable Cache System', 'portfoliocraft'),
             'subtitle' => esc_html__('Turn on/off the entire cache management system.', 'portfoliocraft'),
             'desc' => esc_html__('When enabled, the cache system will store demo imports, Elementor data, and other frequently accessed content to improve performance.', 'portfoliocraft'),
-            'default' => true,
+            'default' => false,
         ),
         array(
             'id' => 'cache_show_admin_bar',
@@ -1887,7 +1884,7 @@ Redux::setSection($opt_name, array(
             'id' => 'post_views_info',
             'type' => 'info',
             'title' => esc_html__('View Counter Information', 'portfoliocraft'),
-            'desc' => esc_html__('<strong>Performance:</strong> The view counter is highly optimized and uses direct database updates to minimize performance impact. Views are tracked only for anonymous visitors by default.<br><br><strong>Admin Display:</strong> View counts appear as a column in the post/page admin lists. You can show/hide this column using the "Screen Options" tab at the top of admin pages.<br><br><strong>Frontend Display:</strong> Use <code>PXL_Post_Views::display_post_views()</code> in your theme templates to show view counts on the frontend.', 'portfoliocraft'),
+            'desc' => esc_html__('<strong>Performance:</strong> The view counter is highly optimized and uses direct database updates to minimize performance impact. Views are tracked only for anonymous visitors by default.<br><br><strong>Admin Display:</strong> View counts appear as a column in the post/page admin lists. You can show/hide this column using the "Screen Options" tab at the top of admin pages.<br><br><strong>Frontend Display:</strong> Use <code>RMT_Post_Views::display_post_views()</code> in your theme templates to show view counts on the frontend.', 'portfoliocraft'),
         ),
     )
 ));

@@ -15,9 +15,6 @@ $header_type = get_post_meta( $post_header->ID, 'header_type', true );
 $header_sidebar_style = get_post_meta( $post_header->ID, 'header_sidebar_style', true );
 $page_mobile_style = portfoliocraft()->get_page_opt('page_mobile_style');
 $mobile_display = portfoliocraft()->get_opt('mobile_display');
-$header_mobile_layout = portfoliocraft()->get_opt('header_mobile_layout');
-$header_mobile_layout_count = (int)portfoliocraft()->get_opt('header_mobile_layout');
-$post_header_mobile = get_post($header_mobile_layout);
 
 $has_header_sticky = isset($args['header_layout_sticky']) && $args['header_layout_sticky'] > 0 || false;
 ?>
@@ -42,7 +39,9 @@ $has_header_sticky = isset($args['header_layout_sticky']) && $args['header_layou
         <div id="pxl-header-mobile" class="pxl-header-mobile">
             <div class="pxl-header-main">
                 <div class="pxl-header-inner">
-                    <?php if ($header_mobile_layout_count <= 0 || !class_exists('pxltheme_Core') || !is_callable( 'Elementor\Plugin::instance' )) : ?>
+                    <?php if(isset($args['header_layout']) && $args['header_layout'] > 0) : ?>
+                        <?php echo Elementor\Plugin::$instance->frontend->get_builder_content_for_display( $args['header_layout'] ); ?>
+                    <?php else : ?>
                         <div class="pxl-header-logo">
                             <?php
                                 if ($logo_m['url']) {
@@ -62,8 +61,6 @@ $has_header_sticky = isset($args['header_layout_sticky']) && $args['header_layou
                                 <span class="pxl-icon-line pxl-icon-line3"></span>
                             </div>
                         </div>
-                    <?php else : ?>
-                            <?php echo Elementor\Plugin::$instance->frontend->get_builder_content_for_display( $header_mobile_layout ); ?>
                     <?php endif; ?>
                     <div class="pxl-sidebar-menu">
                         <div class="pxl-sidebar-box">

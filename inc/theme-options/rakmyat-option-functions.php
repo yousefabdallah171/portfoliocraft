@@ -94,7 +94,7 @@ if (!function_exists('portfoliocraft_get_templates_option')) {
         
         // Query template posts with security checks
         $args = array(
-            'post_type' => 'pxl-template',
+            'post_type' => 'rmt-template',
             'posts_per_page' => -1,
             'orderby' => 'date',
             'order' => 'ASC',
@@ -150,7 +150,7 @@ if (!function_exists('portfoliocraft_get_templates_slug')) {
         
         // Query posts with proper validation
         $posts = get_posts(array(
-            'post_type' => 'pxl-template', 
+            'post_type' => 'rmt-template', 
             'orderby' => 'date', 
             'order' => 'ASC', 
             'posts_per_page' => -1,
@@ -220,7 +220,7 @@ if (!function_exists('portfoliocraft_header_opts')) {
                 'title' => esc_html__('Main Header Layout', 'portfoliocraft'),
                 'desc' => sprintf(
                     esc_html__('Please create your layout before choosing. %sClick Here%s', 'portfoliocraft'),
-                    '<a href="' . esc_url(admin_url('edit.php?post_type=pxl-template')) . '">',
+                    '<a href="' . esc_url(admin_url('edit.php?post_type=rmt-template')) . '">',
                     '</a>'
                 ),
                 'options' => portfoliocraft_get_templates_option('header', $args['default']),
@@ -232,7 +232,7 @@ if (!function_exists('portfoliocraft_header_opts')) {
                 'title' => esc_html__('Sticky Header Layout', 'portfoliocraft'),
                 'desc' => sprintf(
                     esc_html__('Please create your layout before choosing. %sClick Here%s', 'portfoliocraft'),
-                    '<a href="' . esc_url(admin_url('edit.php?post_type=pxl-template')) . '">',
+                    '<a href="' . esc_url(admin_url('edit.php?post_type=rmt-template')) . '">',
                     '</a>'
                 ),
                 'options' => portfoliocraft_get_templates_option('header', $args['default']),
@@ -244,42 +244,6 @@ if (!function_exists('portfoliocraft_header_opts')) {
     }
 }
 
-/**
- * Generate Mobile Header Layout Options
- * 
- * Creates configuration for mobile-specific header layouts
- * 
- * @param array $args Configuration arguments
- * @return array Mobile header options configuration
- */
-if (!function_exists('portfoliocraft_header_mobile_opts')) {
-    function portfoliocraft_header_mobile_opts($args = array()) {
-        $args = wp_parse_args($args, array(
-            'default' => false,
-            'default_value' => ''
-        ));
-        
-        // Sanitize default value
-        $default_value = sanitize_text_field($args['default_value']);
-         
-        $opts = array(
-            array(
-                'id' => 'header_mobile_layout',
-                'type' => 'select',
-                'title' => esc_html__('Mobile Header Layout', 'portfoliocraft'),
-                'desc' => sprintf(
-                    esc_html__('Please create your layout before choosing. %sClick Here%s', 'portfoliocraft'),
-                    '<a href="' . esc_url(admin_url('edit.php?post_type=pxl-template')) . '">',
-                    '</a>'
-                ),
-                'options' => portfoliocraft_get_templates_option('header-mobile', $args['default']),
-                'default' => $default_value
-            ),
-        );
- 
-        return $opts;
-    }
-}
 /**
  * Generate Page Title Options
  * 
@@ -330,7 +294,7 @@ if (!function_exists('portfoliocraft_page_title_opts')) {
                 'title' => esc_html__('Page Title Layout', 'portfoliocraft'),
                 'desc' => sprintf(
                     esc_html__('Please create your layout before choosing. %sClick Here%s', 'portfoliocraft'),
-                    '<a href="' . esc_url(admin_url('edit.php?post_type=pxl-template')) . '">',
+                    '<a href="' . esc_url(admin_url('edit.php?post_type=rmt-template')) . '">',
                     '</a>'
                 ),
                 'options' => portfoliocraft_get_templates_option('page-title', false),
@@ -398,7 +362,7 @@ if (!function_exists('portfoliocraft_post_title_opts')) {
                 'title' => esc_html__('Post Title Layout', 'portfoliocraft'),
                 'desc' => sprintf(
                     esc_html__('Please create your layout before choosing. %sClick Here%s', 'portfoliocraft'),
-                    '<a href="' . esc_url(admin_url('edit.php?post_type=pxl-template')) . '">',
+                    '<a href="' . esc_url(admin_url('edit.php?post_type=rmt-template')) . '">',
                     '</a>'
                 ),
                 'options' => portfoliocraft_get_templates_option('post-title', false),
@@ -436,7 +400,7 @@ if (!function_exists('portfoliocraft_footer_opts')) {
                 'title' => esc_html__('Footer Layout', 'portfoliocraft'),
                 'desc' => sprintf(
                     esc_html__('Please create your layout before choosing. %sClick Here%s', 'portfoliocraft'),
-                    '<a href="' . esc_url(admin_url('edit.php?post_type=pxl-template')) . '">',
+                    '<a href="' . esc_url(admin_url('edit.php?post_type=rmt-template')) . '">',
                     '</a>'
                 ),
                 'options' => portfoliocraft_get_templates_option('footer', $args['default']),
