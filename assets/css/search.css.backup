@@ -111,7 +111,7 @@
    Main Content Area (No Sidebar)
    ========================================================================== */
 
-.no-sidebar #pxl-content-area {
+.no-sidebar #rmt-content-area {
     width: 100%;
     max-width: none;
 }
@@ -201,16 +201,16 @@
 }
 
 /* Search Result Title */
-.search-result-item .pxl-post-title,
+.search-result-item .rmt-post-title,
 .search-result-item .entry-title,
-.portfoliocraft-search-results .pxl-post-title,
+.portfoliocraft-search-results .rmt-post-title,
 .portfoliocraft-search-results .entry-title {
     margin-bottom: 1rem;
 }
 
-.search-result-item .pxl-title-text,
+.search-result-item .rmt-title-text,
 .search-result-item .entry-title a,
-.portfoliocraft-search-results .pxl-title-text,
+.portfoliocraft-search-results .rmt-title-text,
 .portfoliocraft-search-results .entry-title a {
     color: var(--post-title-color, #1a1a1a) !important;
     text-decoration: none;
@@ -221,9 +221,9 @@
     display: block;
 }
 
-.search-result-item .pxl-title-text:hover,
+.search-result-item .rmt-title-text:hover,
 .search-result-item .entry-title a:hover,
-.portfoliocraft-search-results .pxl-title-text:hover,
+.portfoliocraft-search-results .rmt-title-text:hover,
 .portfoliocraft-search-results .entry-title a:hover {
     color: var(--primary-color, #FF3D00) !important;
     text-decoration: underline;
@@ -460,25 +460,25 @@
     max-width: 1200px !important;
 }
 
-.search #pxl-content-area {
+.search #rmt-content-area {
     width: 100% !important;
     flex: none !important;
 }
 
 /* Override any existing search result styling */
-.search .pxl-post-title,
+.search .rmt-post-title,
 .search .entry-title {
     margin-bottom: 1rem !important;
 }
 
-.search .pxl-post-title a,
+.search .rmt-post-title a,
 .search .entry-title a {
     color: var(--post-title-color, #1a1a1a) !important;
     font-size: 1.5rem !important;
     font-weight: 700 !important;
 }
 
-.search .pxl-post-title a:hover,
+.search .rmt-post-title a:hover,
 .search .entry-title a:hover {
     color: var(--primary-color, #FF3D00) !important;
 }
@@ -506,9 +506,9 @@
         margin-bottom: 1.5rem;
     }
     
-    .search-result-item .pxl-title-text,
+    .search-result-item .rmt-title-text,
     .search-result-item .entry-title a,
-    .portfoliocraft-search-results .pxl-title-text,
+    .portfoliocraft-search-results .rmt-title-text,
     .portfoliocraft-search-results .entry-title a {
         font-size: 1.25rem;
     }
@@ -560,9 +560,9 @@
    ========================================================================== */
 
 /* Focus states */
-.search-result-item .pxl-title-text:focus,
+.search-result-item .rmt-title-text:focus,
 .search-result-item .entry-title a:focus,
-.portfoliocraft-search-results .pxl-title-text:focus,
+.portfoliocraft-search-results .rmt-title-text:focus,
 .portfoliocraft-search-results .entry-title a:focus,
 .search-result-read-more:focus,
 .category-link:focus,

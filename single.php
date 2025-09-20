@@ -28,8 +28,8 @@ $sidebar = portfoliocraft()->get_sidebar_value('post');
     <div class="inner <?php echo esc_attr($sidebar['sidebar_class']); ?>">
         
         <!-- Primary content area -->
-        <div id="pxl-content-area" class="pxl-content-area">
-            <main id="pxl-content-main">
+        <div id="rmt-content-area" class="rmt-content-area">
+            <main id="rmt-content-main">
                 
                 <?php while (have_posts()) : ?>
                     <?php the_post(); ?>
@@ -51,8 +51,8 @@ $sidebar = portfoliocraft()->get_sidebar_value('post');
         
         <!-- Conditional sidebar area -->
         <?php if ($sidebar['is_sidebar'] === true) : ?>
-            <div id="pxl-sidebar-area" class="pxl-sidebar-area">
-                <div class="pxl-sidebar-content">
+            <div id="rmt-sidebar-area" class="rmt-sidebar-area">
+                <div class="rmt-sidebar-content">
                     <?php get_sidebar(); ?>
                 </div>
             </div>

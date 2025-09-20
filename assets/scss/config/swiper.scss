@@ -1,14 +1,14 @@
 @mixin navigation-show-on-hover {
-    .pxl-swiper-button {
-        --pxl-translate-x: 50px;
+    .rmt-swiper-button {
+        --rmt-translate-x: 50px;
         opacity: 0 !important;
-        transform: translateX(var(--pxl-translate-x));
+        transform: translateX(var(--rmt-translate-x));
         &.swiper-button-prev {
-            transform: translateX(calc(-1 * var(--pxl-translate-x)));
+            transform: translateX(calc(-1 * var(--rmt-translate-x)));
         }
     }
     &:hover {
-        .pxl-swiper-button {
+        .rmt-swiper-button {
             transform: translateX(0);
             opacity: 1 !important;
         }
@@ -22,7 +22,7 @@
 }
 
 // Swiper
-.pxl-swiper {
+.rmt-swiper {
 	// opacity: 0;
     transition: height .25s linear;
 	.swiper-slide {
@@ -102,15 +102,15 @@
     &.swiper-navigation-hidden {
         display: none;
     }
-    &.pxl-navigation-carousel {
+    &.rmt-navigation-carousel {
         gap: 35px;
         margin-top: 0;
     }
-    .pxl-swiper-button {
+    .rmt-swiper-button {
         position: relative;
-        --pxl-box-size: 63px;
-        @extend .pxl-round-box;
-        @extend .pxl-flex-center;
+        --rmt-box-size: 63px;
+        @extend .rmt-round-box;
+        @extend .rmt-flex-center;
         color: #FFF;
         transition: .25s linear;
         border: thin dashed currentColor;
@@ -132,20 +132,20 @@
         &:hover {
             color: #000;
         }
-        .pxl-icon {
+        .rmt-icon {
             display: inline-flex;
         }
         &.swiper-button-default {
-            .pxl-icon {
-                --pxl-translate-x: -40%;
-                transform: translateX(var(--pxl-translate-x));
+            .rmt-icon {
+                --rmt-translate-x: -40%;
+                transform: translateX(var(--rmt-translate-x));
                 &.icon-prev {
-                    transform: translateX(calc(-1 * var(--pxl-translate-x)));
+                    transform: translateX(calc(-1 * var(--rmt-translate-x)));
                 }
             }
         }
         &.swiper-button-primary {
-            --pxl-box-size: 68px;
+            --rmt-box-size: 68px;
         }
     }
 }

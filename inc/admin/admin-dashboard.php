@@ -12,7 +12,7 @@ class portfoliocraft_Admin_Dashboard extends portfoliocraft_Admin_Page {
 	protected $menu_title = null;
 	public $position = null;
 	public function __construct() {
-		$this->id = 'pxlart';
+		$this->id = 'rmtart';
 		$this->page_title = portfoliocraft()->get_name();
 		$this->menu_title = portfoliocraft()->get_name();
 		$this->position = '50';

@@ -22,7 +22,7 @@
  * @param string $size Size string from PHP ini settings (e.g., "64M", "2G")
  * @return int Size converted to bytes
  */
-function pxl_convert_to_byte($size) {
+function rmt_convert_to_byte($size) {
     // Extract the numeric value and unit label
     $label = substr($size, -1);
     $num = substr($size, 0, -1);
@@ -53,7 +53,7 @@ function pxl_convert_to_byte($size) {
  * 
  * @return array Array of system status items with title and status
  */
-function pxl_get_system_info() {
+function rmt_get_system_info() {
     $system_info = array();
 
     /**
@@ -63,7 +63,7 @@ function pxl_get_system_info() {
      * Important for media uploads and demo content import
      */
     $upload_max_size = ini_get('upload_max_filesize');
-    $upload_max_size_to_byte = pxl_convert_to_byte($upload_max_size);
+    $upload_max_size_to_byte = rmt_convert_to_byte($upload_max_size);
     
     array_push(
         $system_info,
@@ -80,7 +80,7 @@ function pxl_get_system_info() {
      * Critical for theme functionality and plugin compatibility
      */
     $memory_limit = ini_get('memory_limit');
-    $memory_limit_to_byte = pxl_convert_to_byte($memory_limit);
+    $memory_limit_to_byte = rmt_convert_to_byte($memory_limit);
 
     array_push(
         $system_info,
@@ -97,7 +97,7 @@ function pxl_get_system_info() {
      * Essential for form submissions and admin operations
      */
     $post_maxsite = ini_get('post_max_size');
-    $post_maxsite_to_byte = pxl_convert_to_byte($post_maxsite);
+    $post_maxsite_to_byte = rmt_convert_to_byte($post_maxsite);
 
     array_push(
         $system_info,
@@ -144,7 +144,7 @@ function pxl_get_system_info() {
  * Generates the visual display of system status checks
  * with appropriate icons and styling based on pass/fail status
  */
-$system_status = pxl_get_system_info();
+$system_status = rmt_get_system_info();
 
 foreach ($system_status as $item) :
 ?>
@@ -154,7 +154,7 @@ foreach ($system_status as $item) :
         Individual status check display with icon and description
         Uses different icons based on whether requirement is met
     -->
-    <div class="pxl-iconbox">
+    <div class="rmt-iconbox">
         
         <!-- 
             Status Icon Container
@@ -162,7 +162,7 @@ foreach ($system_status as $item) :
             Displays check mark for passed requirements
             or crossed icon for failed requirements
         -->
-        <div class="pxl-icon-container">
+        <div class="rmt-icon-container">
             <?php if ($item['status']) : ?>
                 <!-- Success icon for met requirements -->
                 <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/check.png'); ?>" 
@@ -180,7 +180,7 @@ foreach ($system_status as $item) :
             Contains the requirement description with minimum values
             Helps users understand what needs to be configured
         -->
-        <div class="pxl-iconbox-contents">
+        <div class="rmt-iconbox-contents">
             <span class="status-item-title">
                 <?php echo esc_html($item['title']); ?>
             </span>

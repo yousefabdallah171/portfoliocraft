@@ -46,7 +46,7 @@ $register = new portfoliocraft_Register;
  * Defines support and documentation URLs with filter support
  * for customization by child themes or plugins
  */
-$pxl_server_info = apply_filters('pxl_server_info', [
+$rmt_server_info = apply_filters('rmt_server_info', [
     'docs_url' => 'https://doc.portfoliocraft-themes.net/', 
     'support_url' => 'https://portfoliocraft-themes.ticksy.com/'
 ]);
@@ -59,7 +59,7 @@ $pxl_server_info = apply_filters('pxl_server_info', [
         Displayed when theme is successfully registered and activated
         Shows confirmation message and provides deactivation option
     -->
-    <div class="pxl-dsb-box-head"> 
+    <div class="rmt-dsb-box-head"> 
         
         <!-- 
             Success Confirmation Section
@@ -67,11 +67,11 @@ $pxl_server_info = apply_filters('pxl_server_info', [
             Displays positive confirmation message with support link
             Reassures user that activation was successful
         -->
-        <div class="pxl-dsb-confirmation success">
+        <div class="rmt-dsb-confirmation success">
             <h6><?php echo esc_html__('Thanks for the verification!', 'portfoliocraft'); ?></h6>
             <p>
                 <?php echo esc_html__('You can now enjoy and build great websites. Looking for help? Visit', 'portfoliocraft'); ?> 
-                <a href="<?php echo esc_url($pxl_server_info['support_url']); ?>" target="_blank">
+                <a href="<?php echo esc_url($rmt_server_info['support_url']); ?>" target="_blank">
                     <?php echo esc_html__('submit a ticket', 'portfoliocraft'); ?>
                 </a>.
             </p>
@@ -83,8 +83,8 @@ $pxl_server_info = apply_filters('pxl_server_info', [
             Provides option to remove purchase code and deactivate theme
             Uses secure form with hidden action field and nonce protection
         -->
-        <div class="pxl-dsb-deactive">
-            <form method="POST" action="<?php echo admin_url('admin.php?page=pxlart'); ?>">
+        <div class="rmt-dsb-deactive">
+            <form method="POST" action="<?php echo admin_url('admin.php?page=rmtart'); ?>">
                 <!-- Hidden field to specify the deactivation action -->
                 <input type="hidden" name="action" value="removekey"/>
                 

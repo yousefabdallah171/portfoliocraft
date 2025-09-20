@@ -105,7 +105,7 @@
                 }
             }
             .product-title {
-                --pxl-height: 2px;
+                --rmt-height: 2px;
                 color: #000;
                 font-family: var(--secondary-font);
                 font-size: 20px;
@@ -168,7 +168,7 @@
                         display: none;
                     }
                     &::after {
-                        --pxl-rotate: 360deg;
+                        --rmt-rotate: 360deg;
                         animation: spin .5s linear infinite;
                     }
                 }

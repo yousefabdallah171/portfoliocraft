@@ -9,7 +9,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 ?>
-<footer id="pxl-footer-default">
+<footer id="rmt-footer-default">
     <div class="container">
         <div class="row">
             <div class="col-12">

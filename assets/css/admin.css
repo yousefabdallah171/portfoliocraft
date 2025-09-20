@@ -41,7 +41,7 @@
 	background-color: rgba(26,161,241, 1);
 	color: #fff;
 }
-.pxl-postbox .icons-selector .fip-box {
+.rmt-postbox .icons-selector .fip-box {
 	width: 100px;
 	height: 50px;
 	line-height: 48px;
@@ -79,13 +79,13 @@
 	max-width: 300px;
 }
 
-.postbox.pxl-postbox .redux-container .form-table th, 
-.postbox.pxl-postbox .redux-container .form-table td {
+.postbox.rmt-postbox .redux-container .form-table th, 
+.postbox.rmt-postbox .redux-container .form-table td {
 	padding-top: 15px;
 	padding-bottom: 15px;
 }
 
-.pxl-btn {
+.rmt-btn {
 	position: relative;
     display: inline-flex;
     align-items: center;
@@ -122,9 +122,9 @@
     -o-transition: all 300ms linear 0s;
     transition: all 300ms linear 0s;
 }
-.pxl-btn:hover,
-.pxl-btn:active,
-.pxl-btn:focus{
+.rmt-btn:hover,
+.rmt-btn:active,
+.rmt-btn:focus{
 	color: #ffffff;
     outline: medium none;
     text-decoration: none;

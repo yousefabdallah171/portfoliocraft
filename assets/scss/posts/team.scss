@@ -1,24 +1,24 @@
-.pxl-layout-team {
-    .pxl-post-featured {
+.rmt-layout-team {
+    .rmt-post-featured {
         overflow: hidden;
         // transition: .5s;
     }
-    .pxl-post-title {
+    .rmt-post-title {
         transition: .25s;
         a {
             transition: none;
             color: inherit;
         }
     }
-    .pxl-post-position {
+    .rmt-post-position {
         display: block;
     }
-    .pxl-post-item {
-        .pxl-post-socials {
+    .rmt-post-item {
+        .rmt-post-socials {
             z-index: 9;
         }
         .show-social-default {
-            .pxl-social-item {
+            .rmt-social-item {
                 opacity: 0;
                 transform: translateY(125%);
                 transition: .5s;
@@ -26,26 +26,26 @@
         }
 
         .show-social-zoom-in {
-            .pxl-social-item {
+            .rmt-social-item {
                 scale: 0;
                 opacity: 0;
                 transition: .5s;
             }
         }
         .show-social-radial {
-            .pxl-social-item {
+            .rmt-social-item {
                 overflow: hidden;            
             }
         }
         &:hover {
             .show-social-default {
-                .pxl-social-item {
+                .rmt-social-item {
                     transform: translateY(0);
                     opacity: 1;
                 }
             }
             .show-social-zoom-in {
-                .pxl-social-item {
+                .rmt-social-item {
                     scale: 1;
                     opacity: 1;
                 }
@@ -53,21 +53,21 @@
         }
     }
 }
-.pxl-layout-team1 {
-    .pxl-grid-inner {
-        --pxl-spacing-inline: 16px;
-        --pxl-spacing-block: 43px;
+.rmt-layout-team1 {
+    .rmt-grid-inner {
+        --rmt-spacing-inline: 16px;
+        --rmt-spacing-block: 43px;
         @media #{$max-lg} {
-            --pxl-spacing-inline: 15px;
-            --pxl-spacing-block: 40px;
+            --rmt-spacing-inline: 15px;
+            --rmt-spacing-block: 40px;
         }
         @media #{$max-sm} {
-            --pxl-spacing-block: 30px;
+            --rmt-spacing-block: 30px;
         }
         &:hover {
-            .pxl-post-item {
+            .rmt-post-item {
                 &:not(:hover) {
-                    .pxl-post-featured {
+                    .rmt-post-featured {
                         filter: grayscale(100%);
                     }
                 }
@@ -76,16 +76,16 @@
     }
     .swiper-container {
         &:hover {
-            .pxl-post-item {
+            .rmt-post-item {
                 &:not(:hover) {
-                    .pxl-post-featured {
+                    .rmt-post-featured {
                         filter: grayscale(100%);
                     }
                 }
             }
         }
     }
-    .pxl-post-featured {
+    .rmt-post-featured {
         position: relative;
         display: block;
         border-radius: 20px;
@@ -97,24 +97,24 @@
             }
         }
     }
-    .pxl-post-content {
+    .rmt-post-content {
         position: relative;
         padding-top: 17px;
         text-align: center;
     }
-    .pxl-post-title {
+    .rmt-post-title {
         &.hover-3d-cube-flip::before {
             color: #121212;
         }
     }
-    .pxl-post-position {
+    .rmt-post-position {
         color: #3F3E3F;
         font-size: 16px;
         font-weight: 300;
         line-height: 1.35;
         letter-spacing: -0.16px;
     }
-    .pxl-post-socials {
+    .rmt-post-socials {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -123,11 +123,11 @@
         width: 100%;
         flex-wrap: wrap;
         gap: 10.5px;        
-        .pxl-social-link {
+        .rmt-social-link {
             position: relative;
-            --pxl-box-size: 42px;
-            @extend .pxl-round-box;
-            @extend .pxl-flex-center;
+            --rmt-box-size: 42px;
+            @extend .rmt-round-box;
+            @extend .rmt-flex-center;
             background-color: #FFF;
             color: #121212;
             gap: 10.5px;
@@ -138,7 +138,7 @@
                 z-index: 9;
             }
             @media #{$max-sm} {
-                --pxl-box-size: 40px;
+                --rmt-box-size: 40px;
                 gap: 7px;
             }
             &:hover {
@@ -146,7 +146,7 @@
             }
         }
     }
-    .pxl-grid-pagination {
+    .rmt-grid-pagination {
         margin-top: 120px;
         @media #{$max-lg} {
             margin-top: 100px;
@@ -154,7 +154,7 @@
         @media #{$max-sm} {
             margin-top: 85px;
         }
-        .pxl-pagination-wrap {
+        .rmt-pagination-wrap {
             .page-numbers {
                 color: #000;
             }
@@ -162,22 +162,22 @@
     }
 }
 
-.pxl-layout-team2 {
-    .pxl-grid-inner {
-        --pxl-spacing-inline: 23px;
+.rmt-layout-team2 {
+    .rmt-grid-inner {
+        --rmt-spacing-inline: 23px;
         @media #{$max-lg} {
-            --pxl-spacing-inline: 15px;
+            --rmt-spacing-inline: 15px;
         }
     }
     &:hover {
-        .pxl-post-item {
+        .rmt-post-item {
             &:hover {
-                .pxl-post-socials {
+                .rmt-post-socials {
                     opacity: 1;
                 }
             }
             &:not(:hover) {
-                .pxl-post-featured {
+                .rmt-post-featured {
                     img {
                         filter: grayscale(100%);
                     }
@@ -185,7 +185,7 @@
             }
         }
     }
-    .pxl-post-featured {
+    .rmt-post-featured {
         display: block;
         overflow: hidden;
         position: relative;
@@ -195,10 +195,10 @@
         }
     }
 
-    .pxl-post-content {
+    .rmt-post-content {
         text-align: center;
     }
-    .pxl-post-title {
+    .rmt-post-title {
         color: #121212;
         font-family: 'Inter';
         font-size: 24px;
@@ -208,7 +208,7 @@
             font-size: 22px;
         }
     }
-    .pxl-post-socials {
+    .rmt-post-socials {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -223,11 +223,11 @@
         bottom: 0;
         // transform: translateY(100%);
         opacity: 0;
-        .pxl-social-link  {
+        .rmt-social-link  {
             position: relative;
-            --pxl-box-size: 50px;
-            @extend .pxl-flex-center;
-            @extend .pxl-square-box;
+            --rmt-box-size: 50px;
+            @extend .rmt-flex-center;
+            @extend .rmt-square-box;
             border: 1px solid #555;
             animation-delay: .25s;
             @include box-shadow(0px 20px 30px 10px rgba(200, 208, 214, 0.25));
@@ -238,11 +238,11 @@
                 z-index: 9;
             }
             @media #{$max-md} {
-                --pxl-box-size: 45px;
+                --rmt-box-size: 45px;
             }
         }
     }
-    .pxl-post-position {
+    .rmt-post-position {
         color: #555;
         font-family: "Plus Jakarta Sans";
         font-size: 18px;
@@ -252,51 +252,51 @@
 }
 
 
-.pxl-layout-team3 {
+.rmt-layout-team3 {
     padding-top: 90px;
     @media #{$max-lg} {
         padding: 0px;
     }
-    .pxl-grid-inner {
-        --pxl-spacing-inline: 83.5px;
-        --pxl-spacing-block: 57px;
-        .pxl-grid-item {
+    .rmt-grid-inner {
+        --rmt-spacing-inline: 83.5px;
+        --rmt-spacing-block: 57px;
+        .rmt-grid-item {
             &.column-2 {
                 margin-top: -90px;
             }
         }
         @media #{$max-xl} {
-            --pxl-spacing-inline: 50px;
+            --rmt-spacing-inline: 50px;
         }
         @media #{$max-lg} {
-            --pxl-spacing-inline: 15px;
-            --pxl-spacing-block: 50px;
-            .pxl-grid-item {
+            --rmt-spacing-inline: 15px;
+            --rmt-spacing-block: 50px;
+            .rmt-grid-item {
                 &.column-2 {
                     margin-top: 0;
                 }
             }
         }
         @media #{$max-sm} {
-            --pxl-spacing-block: 30px;
+            --rmt-spacing-block: 30px;
         }
     }
-    .pxl-post-item {
+    .rmt-post-item {
         overflow: visible;
         &:hover {
-            .pxl-post-featured {
+            .rmt-post-featured {
                 filter: grayscale(0);
             }
         }
     }
-    .pxl-post-featured {
+    .rmt-post-featured {
         position: relative;
         display: block;
         overflow: hidden;
         filter: grayscale(100%);
         transition: .5s;
     }
-    .pxl-post-content {
+    .rmt-post-content {
         position: relative;
         text-align: center;
         padding-right: 32px;
@@ -305,7 +305,7 @@
             padding-right: 0px;
         }
     }
-    .pxl-post-title {
+    .rmt-post-title {
         width: 100%;
         color: #FFF;
         font-family: 'Teko';
@@ -321,12 +321,12 @@
             font-size: 30px;
         }
     }
-    .pxl-post-position {
+    .rmt-post-position {
         color:  #d5d5d5;
         font-weight: 300;
         line-height: 1.4444;
     }
-    .pxl-post-socials {
+    .rmt-post-socials {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -335,11 +335,11 @@
         width: 100%;
         flex-wrap: wrap;
         gap: 10.5px;        
-        .pxl-social-link {
+        .rmt-social-link {
             position: relative;
-            --pxl-box-size: 48px;
-            @extend .pxl-round-box;
-            @extend .pxl-flex-center;
+            --rmt-box-size: 48px;
+            @extend .rmt-round-box;
+            @extend .rmt-flex-center;
             background-color: #FFF;
             color: #121212;
             gap: 10.5px;
@@ -350,7 +350,7 @@
                 z-index: 9;
             }
             @media #{$max-sm} {
-                --pxl-box-size: 40px;
+                --rmt-box-size: 40px;
                 gap: 7px;
             }
             &:hover {
@@ -358,7 +358,7 @@
             }
         }
     }
-    .pxl-grid-pagination {
+    .rmt-grid-pagination {
         margin-top: 152px;
         @media #{$max-lg} {
             margin-top: 130px;

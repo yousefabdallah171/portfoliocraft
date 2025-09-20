@@ -1,10 +1,10 @@
-.pxl-link-box-wrapper {
+.rmt-link-box-wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 30px;
     @include transition(all .25s linear);
-    .pxl-link-box-content, .pxl-link-box-icon {
+    .rmt-link-box-content, .rmt-link-box-icon {
         position: relative;
         z-index: 9;
     }
@@ -20,7 +20,7 @@
             flex-direction: column;
             align-items: start;
         }
-        .pxl-link-box-title {
+        .rmt-link-box-title {
             color: #FFF;
             margin-bottom: 7px;
             @include transition(all .25s linear);
@@ -28,13 +28,13 @@
                 font-size: 20px;
             }
         }
-        .pxl-link-box-tags {
+        .rmt-link-box-tags {
             display: inline-flex;
             flex-wrap: wrap;
             list-style: none;
             margin: 0;
             gap: 9px;
-            .pxl-link-box-tag {
+            .rmt-link-box-tag {
                 color: #D5D5D5;
                 text-align: center;
                 font-size: 12px;
@@ -45,11 +45,11 @@
                 @include transition(all .25s linear);
             }
         }
-        .pxl-link-box-icon {
-            --pxl-box-size: 40px;
+        .rmt-link-box-icon {
+            --rmt-box-size: 40px;
             color: #FFF;
-            @extend .pxl-round-box;
-            @extend .pxl-flex-center;
+            @extend .rmt-round-box;
+            @extend .rmt-flex-center;
             font-size: 20px;
             border: 1px solid #FFF;
             transition: inherit;
@@ -58,7 +58,7 @@
             &:hover {
                 background-color: rgba($color: #FFF, $alpha: 0.07);
                 border-color: rgba($color: #FFF, $alpha: 0.07);
-                .pxl-link-box-icon { 
+                .rmt-link-box-icon { 
                     background-color: rgba($color: #FFF, $alpha: 0.28);
                     border-color: rgba($color: #FFF, $alpha: 0.28);
                 }

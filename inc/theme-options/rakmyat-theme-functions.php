@@ -339,7 +339,7 @@ function portfoliocraft_get_search_form() {
  */
 function portfoliocraft_header_mobile_search_form() {
     ?>
-    <div class="pxl-header-search">
+    <div class="rmt-header-search">
         <?php get_search_form(); ?>
     </div>
     <?php
@@ -350,7 +350,7 @@ function portfoliocraft_header_mobile_search_form() {
    ========================================================================== */
 
 // Text highlight shortcode
-if (function_exists('pxl_register_shortcode')) {
+if (function_exists('rmt_register_shortcode')) {
     /**
      * Text highlight shortcode
      * 
@@ -371,13 +371,13 @@ if (function_exists('pxl_register_shortcode')) {
             return '';
         }
 
-        return '<span class="pxl-text-highlight">' . wp_kses_post($atts['text']) . '</span>';
+        return '<span class="rmt-text-highlight">' . wp_kses_post($atts['text']) . '</span>';
     }
-    pxl_register_shortcode('highlight', 'portfoliocraft_text_highlight_shortcode');
+    rmt_register_shortcode('highlight', 'portfoliocraft_text_highlight_shortcode');
 }
 
 // Text hidden shortcode
-if (function_exists('pxl_register_shortcode')) {
+if (function_exists('rmt_register_shortcode')) {
     /**
      * Text hidden shortcode
      * 
@@ -398,13 +398,13 @@ if (function_exists('pxl_register_shortcode')) {
             return '';
         }
 
-        return '<span class="pxl-text-hidden">' . wp_kses_post($atts['text']) . '</span>';
+        return '<span class="rmt-text-hidden">' . wp_kses_post($atts['text']) . '</span>';
     }
-    pxl_register_shortcode('hidden_text', 'portfoliocraft_text_hidden_shortcode');
+    rmt_register_shortcode('hidden_text', 'portfoliocraft_text_hidden_shortcode');
 }
 
 // Image highlight shortcode
-if (function_exists('pxl_register_shortcode')) {
+if (function_exists('rmt_register_shortcode')) {
     /**
      * Image highlight shortcode
      * 
@@ -427,8 +427,8 @@ if (function_exists('pxl_register_shortcode')) {
 
         global $wp_filesystem;
         
-        if (function_exists('pxl_get_image_by_size')) {
-            $img = pxl_get_image_by_size(array(
+        if (function_exists('rmt_get_image_by_size')) {
+            $img = rmt_get_image_by_size(array(
                 'attach_id' => $atts['img_id'],
                 'thumb_size' => 'full',
             ));
@@ -447,14 +447,14 @@ if (function_exists('pxl_register_shortcode')) {
                         }
                     }
                 } else {
-                    return '<span class="pxl-image-highlight" style="background-image: url(' . esc_url($img['url']) . ');"></span>';
+                    return '<span class="rmt-image-highlight" style="background-image: url(' . esc_url($img['url']) . ');"></span>';
                 }
             }
         }
         
         return '';
     }
-    pxl_register_shortcode('highlight_image', 'portfoliocraft_image_highlight_shortcode');
+    rmt_register_shortcode('highlight_image', 'portfoliocraft_image_highlight_shortcode');
 }
 
 /* ==========================================================================
@@ -472,7 +472,7 @@ if (function_exists('pxl_register_shortcode')) {
  * @since 1.0.0
  */
 function portfoliocraft_wg_archive_count($links) {
-    $links = str_replace('</a>&nbsp;(', ' <span class="pxl-count">', $links);
+    $links = str_replace('</a>&nbsp;(', ' <span class="rmt-count">', $links);
     $links = str_replace(')', '</span></a>', $links);
     return $links;
 }
@@ -488,7 +488,7 @@ function portfoliocraft_wg_archive_count($links) {
  * @since 1.0.0
  */
 function portfoliocraft_wc_cat_count_span($links) {
-    $links = str_replace('</a> <span class="count">(', ' <span class="pxl-count">', $links);
+    $links = str_replace('</a> <span class="count">(', ' <span class="rmt-count">', $links);
     $links = str_replace(')</span>', '</span></a>', $links);
     return $links;
 }
@@ -519,8 +519,8 @@ function portfoliocraft_get_mega_menu_builder_id() {
                     $menu_items = wp_get_nav_menu_items($menu->term_id, array('update_post_term_cache' => false));
                     if ($menu_items) {
                         foreach ($menu_items as $menu_item) {
-                            if (!empty($menu_item->pxl_megaprofile)) {
-                                $mn_id[] = (int)$menu_item->pxl_megaprofile;
+                            if (!empty($menu_item->rmt_megaprofile)) {
+                                $mn_id[] = (int)$menu_item->rmt_megaprofile;
                             }
                         }
                     }
@@ -553,8 +553,8 @@ function portfoliocraft_get_page_popup_builder_id() {
                     $page_items = wp_get_nav_menu_items($page->term_id, array('update_post_term_cache' => false));
                     if ($page_items) {
                         foreach ($page_items as $page_item) {
-                            if (!empty($page_item->pxl_page_popup)) {
-                                $pp_id[] = (int)$page_item->pxl_page_popup;
+                            if (!empty($page_item->rmt_page_popup)) {
+                                $pp_id[] = (int)$page_item->rmt_page_popup;
                             }
                         }
                     }
@@ -584,12 +584,12 @@ function portfoliocraft_mouse_move_animation() {
     if ($mouse_move_animation == 'on') {
         wp_enqueue_script('portfoliocraft-cursor', get_template_directory_uri() . '/assets/js/libs/cursor.js', array('jquery'), '1.0.0', true); 
         ?>  
-        <div class="pxl-cursor pxl-js-cursor">
-            <div class="pxl-cursor-wrapper">
-                <div class="pxl-cursor--follower pxl-js-follower"></div>
-                <div class="pxl-cursor--label pxl-js-label"></div>
-                <div class="pxl-cursor--drap pxl-js-drap"></div>
-                <div class="pxl-cursor--icon pxl-js-icon"></div>
+        <div class="rmt-cursor rmt-js-cursor">
+            <div class="rmt-cursor-wrapper">
+                <div class="rmt-cursor--follower rmt-js-follower"></div>
+                <div class="rmt-cursor--label rmt-js-label"></div>
+                <div class="rmt-cursor--drap rmt-js-drap"></div>
+                <div class="rmt-cursor--icon rmt-js-icon"></div>
             </div>
         </div>
         <?php 
@@ -615,19 +615,19 @@ function portfoliocraft_cookie_policy() {
     $cookie_policy_btntext = portfoliocraft()->get_theme_opt('cookie_policy_btntext', __('Learn More', 'portfoliocraft'));
     $cookie_policy_link = get_permalink(portfoliocraft()->get_theme_opt('cookie_policy_link')); 
     
-    wp_enqueue_script('pxl-cookie');
+    wp_enqueue_script('rmt-cookie');
     
     if ($cookie_policy == 'show' && !empty($cookie_policy_description)) : ?>
-        <div class="pxl-cookie-policy" role="dialog" aria-labelledby="cookie-policy-title" aria-describedby="cookie-policy-desc">
-            <div class="pxl-item--icon pxl-mr-8">
+        <div class="rmt-cookie-policy" role="dialog" aria-labelledby="cookie-policy-title" aria-describedby="cookie-policy-desc">
+            <div class="rmt-item--icon rmt-mr-8">
                 <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/cookie.png'); ?>" 
                      alt="<?php esc_attr_e('Cookie', 'portfoliocraft'); ?>" 
                      loading="lazy" />
             </div>
-            <div class="pxl-item--description">
+            <div class="rmt-item--description">
                 <span id="cookie-policy-desc"><?php echo esc_html($cookie_policy_description); ?></span>
                 <?php if ($cookie_policy_link) : ?>
-                    <a class="pxl-item--link" 
+                    <a class="rmt-item--link" 
                        href="<?php echo esc_url($cookie_policy_link); ?>" 
                        target="_blank" 
                        rel="noopener noreferrer">
@@ -635,7 +635,7 @@ function portfoliocraft_cookie_policy() {
                     </a>
                 <?php endif; ?>
             </div>
-            <button class="pxl-item--close pxl-close" 
+            <button class="rmt-item--close rmt-close" 
                     aria-label="<?php esc_attr_e('Close cookie notice', 'portfoliocraft'); ?>">
                 <span aria-hidden="true">&times;</span>
             </button>
@@ -831,7 +831,7 @@ if (!function_exists('portfoliocraft_get_image_by_size')) {
         }
         
         // Apply filters and get image details
-        $img_id = apply_filters('pxl_object_id', $params['img_id']);
+        $img_id = apply_filters('rmt_object_id', $params['img_id']);
         $img_dimension = $params['img_dimension'] ?? 'thumbnail';
         $img_attr = $params['attr'] ?? array();
         
@@ -861,15 +861,15 @@ if (!function_exists('portfoliocraft_get_image_by_size')) {
             $img_h = $img_dimension['height'];
 
             // Use custom resize function if available
-            if (function_exists('pxl_resize')) {
-                $img_crop = pxl_resize($img_id, null, $img_w, $img_h, true);
+            if (function_exists('rmt_resize')) {
+                $img_crop = rmt_resize($img_id, null, $img_w, $img_h, true);
                 if (!isset($img_crop['url'])) {
                     return '';
                 }
                 
                 // Build attributes string
-                if (function_exists('pxl_stringify_attributes')) {
-                    $img_attr = pxl_stringify_attributes(array_merge(array(
+                if (function_exists('rmt_stringify_attributes')) {
+                    $img_attr = rmt_stringify_attributes(array_merge(array(
                         'src' => $img_crop['url'],
                         'width' => $img_w,
                         'height' => $img_h,

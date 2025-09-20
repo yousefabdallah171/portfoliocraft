@@ -32,22 +32,22 @@ class portfoliocraft_Admin extends portfoliocraft_Base{
 		require_once get_template_directory() . '/inc/admin/admin-page.php';
 		require_once get_template_directory() . '/inc/admin/admin-dashboard.php';
 		require_once get_template_directory() . '/inc/admin/admin-plugins.php' ;
-		if( class_exists('pxltheme_Core'))
+		if( class_exists('rmttheme_Core'))
 			require_once get_template_directory() . '/inc/admin/admin-templates.php' ;
 	}
  	
  	public function enqueue() {
-		$pxl_server_info = apply_filters( 'pxl_server_info', ['api_url' => ''] ) ;
-		wp_enqueue_style( 'pxlart-dashboard', get_template_directory_uri() . '/assets/css/dashboard.css' );
+		$rmt_server_info = apply_filters( 'rmt_server_info', ['api_url' => ''] ) ;
+		wp_enqueue_style( 'rmtart-dashboard', get_template_directory_uri() . '/assets/css/dashboard.css' );
 
 		if ( ! did_action( 'wp_enqueue_media' ) ) {
 	        wp_enqueue_media();
 	    }
-		wp_enqueue_script( 'pxlart-admin', get_template_directory_uri() . '/assets/js/admin.js', array( 'jquery'), false, true );
-		wp_localize_script( 'pxlart-admin', 'pxlart_admin', array(
+		wp_enqueue_script( 'rmtart-admin', get_template_directory_uri() . '/assets/js/admin.js', array( 'jquery'), false, true );
+		wp_localize_script( 'rmtart-admin', 'rmtart_admin', array(
 			'ajaxurl'        => admin_url( 'admin-ajax.php' ),
 			'wpnonce'        => wp_create_nonce( 'merlin_nonce' ),
-			'api_url' 		 => $pxl_server_info['api_url'],
+			'api_url' 		 => $rmt_server_info['api_url'],
 			'theme_slug'     => portfoliocraft()->get_slug()
 		));
 	}
@@ -60,9 +60,9 @@ class portfoliocraft_Admin extends portfoliocraft_Base{
         }
 
 		// Deactivate Plugin
-        if ( isset( $_GET['pxl-deactivate'] ) && 'deactivate-plugin' == sanitize_text_field($_GET['pxl-deactivate']) ) {
+        if ( isset( $_GET['rmt-deactivate'] ) && 'deactivate-plugin' == sanitize_text_field($_GET['rmt-deactivate']) ) {
 
-			check_admin_referer( 'pxl-deactivate', 'pxl-deactivate-nonce' );
+			check_admin_referer( 'rmt-deactivate', 'rmt-deactivate-nonce' );
 
 			$plugins = TGM_Plugin_Activation::$instance->plugins;
 
@@ -78,9 +78,9 @@ class portfoliocraft_Admin extends portfoliocraft_Base{
 		}
 
 		// Activate plugin
-		if ( isset( $_GET['pxl-activate'] ) && 'activate-plugin' == sanitize_text_field($_GET['pxl-activate']) ) {
+		if ( isset( $_GET['rmt-activate'] ) && 'activate-plugin' == sanitize_text_field($_GET['rmt-activate']) ) {
 
-			check_admin_referer( 'pxl-activate', 'pxl-activate-nonce' );
+			check_admin_referer( 'rmt-activate', 'rmt-activate-nonce' );
 
 			$plugins = TGM_Plugin_Activation::$instance->plugins;
 
@@ -104,7 +104,7 @@ class portfoliocraft_Admin extends portfoliocraft_Base{
 		 
 		global $submenu;
  
-		$submenu['pxlart'][0][0] = portfoliocraft()->get_name().' '.esc_html__( 'Dashboard', 'portfoliocraft' );
+		$submenu['rmtart'][0][0] = portfoliocraft()->get_name().' '.esc_html__( 'Dashboard', 'portfoliocraft' );
 
 		//remove_submenu_page( 'themes.php', 'tgmpa-install-plugins' );
 		remove_submenu_page( 'tools.php', 'redux-about' );
@@ -113,15 +113,15 @@ class portfoliocraft_Admin extends portfoliocraft_Base{
 	/**
 	 * Add Admin Navigation Tabs to Templates Page
 	 * 
-	 * Displays the admin navigation tabs on the pxl-template post type admin page
+	 * Displays the admin navigation tabs on the rmt-template post type admin page
 	 * for consistent navigation across all theme admin pages
 	 */
 	public function add_admin_tabs_to_templates_page() {
 		global $pagenow, $post_type;
 		
-		// Only add tabs on the pxl-template post type page
-		if ($pagenow === 'edit.php' && $post_type === 'pxl-template') {
-			echo '<div class="pxl-dashboard-wrap">';
+		// Only add tabs on the rmt-template post type page
+		if ($pagenow === 'edit.php' && $post_type === 'rmt-template') {
+			echo '<div class="rmt-dashboard-wrap">';
 			get_template_part('inc/admin/views/admin-tabs');
 			echo '</div>';
 		}
@@ -137,9 +137,9 @@ class portfoliocraft_Admin extends portfoliocraft_Base{
 		global $pagenow;
 		
 		// Only add tabs on the theme options page
-		if ($pagenow === 'admin.php' && isset($_GET['page']) && 'pxlart-theme-options' === sanitize_text_field($_GET['page'])) {
+		if ($pagenow === 'admin.php' && isset($_GET['page']) && 'rmtart-theme-options' === sanitize_text_field($_GET['page'])) {
 			// Output the navigation tabs at the top of the page
-			echo '<div class="pxl-dashboard-wrap" style="margin-bottom: 20px;">';
+			echo '<div class="rmt-dashboard-wrap" style="margin-bottom: 20px;">';
 			get_template_part('inc/admin/views/admin-tabs');
 			echo '</div>';
 		}
@@ -157,7 +157,7 @@ class portfoliocraft_Admin extends portfoliocraft_Base{
 		// Only add tabs on the system status page
 		if ($pagenow === 'admin.php' && isset($_GET['page']) && 'Rakmyat-system-status' === sanitize_text_field($_GET['page'])) {
 			// Output the navigation tabs at the top of the page
-			echo '<div class="pxl-dashboard-wrap" style="margin-bottom: 20px;">';
+			echo '<div class="rmt-dashboard-wrap" style="margin-bottom: 20px;">';
 			get_template_part('inc/admin/views/admin-tabs');
 			echo '</div>';
 		}
@@ -175,7 +175,7 @@ class portfoliocraft_Admin extends portfoliocraft_Base{
 		// Only add tabs on the OCDI page
 		if ($pagenow === 'themes.php' && isset($_GET['page']) && 'one-click-demo-import' === sanitize_text_field($_GET['page'])) {
 			// Output the navigation tabs at the top of the page
-			echo '<div class="pxl-dashboard-wrap" style="margin-bottom: 20px;">';
+			echo '<div class="rmt-dashboard-wrap" style="margin-bottom: 20px;">';
 			get_template_part('inc/admin/views/admin-tabs');
 			echo '</div>';
 		}

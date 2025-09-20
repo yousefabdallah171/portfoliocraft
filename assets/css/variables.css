@@ -87,18 +87,18 @@
 }
 
 /* Component-specific variables can be added here */
-.pxl-header {
+.rmt-header {
     --header-height: 80px;
     --header-bg: var(--bg-primary);
     --header-text: var(--text-color);
 }
 
-.pxl-footer {
+.rmt-footer {
     --footer-bg: var(--bg-dark);
     --footer-text: var(--text-white);
 }
 
-.pxl-mega-menu {
+.rmt-mega-menu {
     --mega-menu-bg: var(--bg-primary);
     --mega-menu-border: var(--border-color);
     --mega-menu-shadow: var(--shadow-lg);

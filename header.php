@@ -2,7 +2,7 @@
 /**
  * The header for our theme
  * 
- * This is the template that displays all of the <head> section and everything up until <div id="pxl-main">
+ * This is the template that displays all of the <head> section and everything up until <div id="rmt-main">
  *
  * @package portfoliocraft-Themes
  * @since portfoliocraft 1.0
@@ -30,10 +30,10 @@ if (!defined('ABSPATH')) {
         $smooth_scroll = portfoliocraft()->get_opt('smooth_scroll', 'off'); 
     ?>
     <!-- Skip to main content link for accessibility -->
-    <a class="skip-link screen-reader-text" href="#pxl-main"><?php esc_html_e('Skip to content', 'portfoliocraft'); ?></a>
+    <a class="skip-link screen-reader-text" href="#rmt-main"><?php esc_html_e('Skip to content', 'portfoliocraft'); ?></a>
     
     <!-- Main wrapper for the entire site -->
-    <div id="pxl-wrapper" class="pxl-wrapper">
+    <div id="rmt-wrapper" class="rmt-wrapper">
     <?php 
         // Display site loader if enabled
         portfoliocraft()->page->get_site_loader();
@@ -58,4 +58,4 @@ if (!defined('ABSPATH')) {
             }
         ?>
         <!-- Main content wrapper -->
-        <div id="pxl-main">
+        <div id="rmt-main">

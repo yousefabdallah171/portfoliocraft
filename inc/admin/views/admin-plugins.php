@@ -31,7 +31,7 @@ else if(!$status_ins && $status_act)
 ?>
 <main>
 
-	<div class="pxl-dashboard-wrap">
+	<div class="rmt-dashboard-wrap">
 
 		<?php get_template_part( 'inc/admin/views/admin-tabs' ); ?>
 
@@ -42,15 +42,15 @@ else if(!$status_ins && $status_act)
 		if ( 'valid' != get_option( portfoliocraft()->get_slug().'_purchase_code_status', false ) && !$dev_mode ) :
 			
 			echo '<div class="error"><p>' .
-					sprintf( wp_kses_post( esc_html__( 'The %s theme needs to be registered. %sRegister Now%s', 'portfoliocraft' ) ), portfoliocraft()->get_name(), '<a href="' . admin_url( 'admin.php?page=pxlart') . '">' , '</a>' ) . '</p></div>';
+					sprintf( wp_kses_post( esc_html__( 'The %s theme needs to be registered. %sRegister Now%s', 'portfoliocraft' ) ), portfoliocraft()->get_name(), '<a href="' . admin_url( 'admin.php?page=rmtart') . '">' , '</a>' ) . '</p></div>';
 			
 		else: ?>
 	
-		<header class="pxl-dsb-header admin-plugin">
-			<div class="pxl-dsb-header-inner">
+		<header class="rmt-dsb-header admin-plugin">
+			<div class="rmt-dsb-header-inner">
 				<h4><?php esc_html_e( 'Install Plugins', 'portfoliocraft' ); ?></h4>
 				<?php if(!$merlin_setup && ($status_ins || $status_act)): 
-					echo '<span class="pxl-install-all-plugin">'.$btn_text.'</span>';
+					echo '<span class="rmt-install-all-plugin">'.$btn_text.'</span>';
 					?>
 				<?php endif; ?>
 				
@@ -58,8 +58,8 @@ else if(!$status_ins && $status_act)
 			<p><?php esc_html_e( 'Make sure to activate required plugins prior to import a demo.', 'portfoliocraft' ); ?></p> 
 		</header>
 		  
-		<div class="pxl-solid-wrap">
-			<div class="pxl-row">
+		<div class="rmt-solid-wrap">
+			<div class="rmt-row">
 	        <?php
 		
 				foreach( $plugins as $plugin ) :
@@ -77,13 +77,13 @@ else if(!$status_ins && $status_act)
 					// Deactive
 					elseif( !is_plugin_inactive( $file_path ) ) {
 						$status = 'active';
-						$class = ' pxl-dsb-plugin-active';
+						$class = ' rmt-dsb-plugin-active';
 						$display_status = esc_html__( 'Active:', 'portfoliocraft' );
 					}
 			?>
-				<div class="pxl-col pxl-col-3">
-					<div class="pxl-dsb-plugin<?php echo esc_attr( $class ); ?>" data-slug="<?php echo esc_attr($plugin['slug']) ?>">
-					<span class="pxl-dsb-plugin-icon">
+				<div class="rmt-col rmt-col-3">
+					<div class="rmt-dsb-plugin<?php echo esc_attr( $class ); ?>" data-slug="<?php echo esc_attr($plugin['slug']) ?>">
+					<span class="rmt-dsb-plugin-icon">
 						<img src="<?php echo esc_url( $plugin['logo'] ); ?>" alt="<?php echo esc_attr( $plugin['name'] ) ?>">
 					</span>
 					<h3><?php printf( '<span>%s</span>', $display_status ); ?> <?php echo esc_html( $plugin['name'] ) ?></h3>

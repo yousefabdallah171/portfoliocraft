@@ -499,21 +499,21 @@ function portfoliocraft_get_nav_menu_slug() {
  */
 function portfoliocraft_get_menu_options() {
     $menus = get_terms('nav_menu', array('hide_empty' => false));
-    $pxl_menus = array();
+    $rmt_menus = array();
     
     if (is_array($menus) && !empty($menus)) {
-        $pxl_menus = array(
+        $rmt_menus = array(
             '' => esc_html__('Default', 'portfoliocraft')
         );
         
         foreach ($menus as $value) {
             if (is_object($value) && isset($value->name, $value->slug)) {
-                $pxl_menus[esc_attr($value->slug)] = esc_html($value->name);
+                $rmt_menus[esc_attr($value->slug)] = esc_html($value->name);
             }
         }
     }
     
-    return $pxl_menus;
+    return $rmt_menus;
 }
 
 /**

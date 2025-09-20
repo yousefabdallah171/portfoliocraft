@@ -42,13 +42,13 @@ Render `portfolio` and `services` single pages using the exact same structure, f
 
 4) CSS parity (if required by selectors)
 - File: `themes/portfoliocraf/assets/css/style.css`
-- If you have rules scoped to `.single-post` only, mirror them for `.single-portfolio` and `.single-services`, or refactor selectors to target shared classes like `.pxl-single-post` that are already in the markup.
+- If you have rules scoped to `.single-post` only, mirror them for `.single-portfolio` and `.single-services`, or refactor selectors to target shared classes like `.rmt-single-post` that are already in the markup.
 - Example (if needed):
   ```css
   /* Mirror single post styles for CPT singles */
-  .single-portfolio .pxl-single-post,
-  .single-services .pxl-single-post {
-    /* same rules as .single-post .pxl-single-post */
+  .single-portfolio .rmt-single-post,
+  .single-services .rmt-single-post {
+    /* same rules as .single-post .rmt-single-post */
   }
   ```
 

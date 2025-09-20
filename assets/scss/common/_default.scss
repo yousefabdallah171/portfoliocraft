@@ -2,37 +2,37 @@ html {
     box-sizing: border-box;
 }
 
-$pxl-duration: .3s;
-$pxl-transition-tf: linear;
-$pxl-flex-direction: row;
-$pxl-font-size: 18px;
-$pxl-text-align: left;
+$rmt-duration: .3s;
+$rmt-transition-tf: linear;
+$rmt-flex-direction: row;
+$rmt-font-size: 18px;
+$rmt-text-align: left;
 
 :root {
-	--pxl-background-position: center center;
-	--pxl-background-repeat: no-repeat;
-	--pxl-background-size: cover;
-    --pxl-spacing-inline: 15px;
-    --pxl-spacing-block: 15px;
-    --pxl-line-height: 1.5;
-    --pxl-color: #FFF;
-    --pxl-background-color: #000;
-    --pxl-box-size: 30px;
-    --pxl-translate-x: 0;
-    --pxl-translate-y: 0;
-    --pxl-translate-z: 0;
-    --pxl-rotate: 0;
-    --pxl-width: 100%;
-    --pxl-height: auto;
-    --pxl-right: 0;
-    --pxl-gap: 15px;
-    --pxl-transform-origin-y: center;
-    --pxl-transform-origin-x: center;
-    --pxl-scale: 1;
-    --pxl-spacing: 15px;
-    --pxl-column: 3;
-    --pxl-margin-top: 15px;
-    --pxl-transition-duration: .25s;
+	--rmt-background-position: center center;
+	--rmt-background-repeat: no-repeat;
+	--rmt-background-size: cover;
+    --rmt-spacing-inline: 15px;
+    --rmt-spacing-block: 15px;
+    --rmt-line-height: 1.5;
+    --rmt-color: #FFF;
+    --rmt-background-color: #000;
+    --rmt-box-size: 30px;
+    --rmt-translate-x: 0;
+    --rmt-translate-y: 0;
+    --rmt-translate-z: 0;
+    --rmt-rotate: 0;
+    --rmt-width: 100%;
+    --rmt-height: auto;
+    --rmt-right: 0;
+    --rmt-gap: 15px;
+    --rmt-transform-origin-y: center;
+    --rmt-transform-origin-x: center;
+    --rmt-scale: 1;
+    --rmt-spacing: 15px;
+    --rmt-column: 3;
+    --rmt-margin-top: 15px;
+    --rmt-transition-duration: .25s;
     --svg-color: var(--subtitle-text-color);
 }
 
@@ -68,13 +68,13 @@ body {
     }
 }
 
-.pxl-notification {
+.rmt-notification {
     width: 100%;
     text-align: center;
     padding: 10px 15px;
     background-color: #FFF;
 }
-.pxl-post-title {
+.rmt-post-title {
     a {
         color: inherit;
     }
@@ -306,7 +306,7 @@ dl + h2 + ul {
 .bypostauthor {
     display: block;
 }
-blockquote:not(.pxl-blockquote) {
+blockquote:not(.rmt-blockquote) {
     padding: 28px 30px;
     font-size: 20px;
     line-height: 1.5;
@@ -358,7 +358,7 @@ blockquote:not(.pxl-blockquote) {
             transform: translate(0, -50%);
         }
     }
-    .pxl-blockquote-icon {
+    .rmt-blockquote-icon {
         line-height: 1;
         font-size: 56px;
         position: absolute;
@@ -447,10 +447,10 @@ blockquote:not(.pxl-blockquote) {
 }
 
 // Custom 
-.pxl-post-item {
+.rmt-post-item {
     transition: .25s linear;
 }
-.pxl-post-title {
+.rmt-post-title {
     transition: .25s linear;
     a {
         color: inherit;

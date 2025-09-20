@@ -24,7 +24,7 @@ body,
 .entry-content,
 .widget-content,
 .post-content,
-.pxl-post-content {
+.rmt-post-content {
     color: var(--body-text-color, #333333);
 }
 
@@ -48,7 +48,7 @@ h1, h2, h3, h4, h5, h6,
 }
 
 /* Specific heading elements */
-.pxl-heading-wrapper .pxl-heading-title,
+.rmt-heading-wrapper .rmt-heading-title,
 .heading-title,
 .section-title,
 .widget-title {
@@ -60,8 +60,8 @@ h1, h2, h3, h4, h5, h6,
    ========================================================================== */
 
 /* Post title wrapper and text */
-.pxl-post-title,
-.pxl-post-title a,
+.rmt-post-title,
+.rmt-post-title a,
 .post-title,
 .entry-title,
 .entry-title a {
@@ -69,23 +69,23 @@ h1, h2, h3, h4, h5, h6,
 }
 
 /* Specific post title text spans */
-.pxl-title-text,
+.rmt-title-text,
 .title-text {
     color: var(--post-title-color, #1a1a1a) !important;
 }
 
 /* Post title in different contexts */
-.pxl-single-post .pxl-post-title .pxl-title-text,
-.post-item .post-title .pxl-title-text,
-.archive-post .post-title .pxl-title-text {
+.rmt-single-post .rmt-post-title .rmt-title-text,
+.post-item .post-title .rmt-title-text,
+.archive-post .post-title .rmt-title-text {
     color: var(--post-title-color, #1a1a1a) !important;
 }
 
 /* Hover states for post titles */
-.pxl-post-title a:hover,
+.rmt-post-title a:hover,
 .post-title a:hover,
 .entry-title a:hover,
-.pxl-title-text:hover {
+.rmt-title-text:hover {
     color: var(--primary-color, #667eea) !important;
 }
 
@@ -93,11 +93,11 @@ h1, h2, h3, h4, h5, h6,
    Subtitles and Secondary Text
    ========================================================================== */
 
-.pxl-subtitle-text,
+.rmt-subtitle-text,
 .subtitle,
 .post-subtitle,
 .entry-subtitle,
-.pxl-heading-wrapper .pxl-heading-subtitle {
+.rmt-heading-wrapper .rmt-heading-subtitle {
     color: var(--subtitle-text-color, #666666);
 }
 
@@ -107,7 +107,7 @@ h1, h2, h3, h4, h5, h6,
 
 .post-meta,
 .entry-meta,
-.pxl-post-meta,
+.rmt-post-meta,
 .post-date,
 .post-author,
 .post-category,
@@ -119,13 +119,13 @@ h1, h2, h3, h4, h5, h6,
 
 .post-meta a,
 .entry-meta a,
-.pxl-post-meta a {
+.rmt-post-meta a {
     color: var(--meta-text-color, #999999);
 }
 
 .post-meta a:hover,
 .entry-meta a:hover,
-.pxl-post-meta a:hover {
+.rmt-post-meta a:hover {
     color: var(--primary-color, #667eea);
 }
 
@@ -244,19 +244,19 @@ textarea {
 
 .breadcrumb,
 .breadcrumbs,
-.pxl-breadcrumb {
+.rmt-breadcrumb {
     color: var(--meta-text-color, #999999);
 }
 
 .breadcrumb a,
 .breadcrumbs a,
-.pxl-breadcrumb a {
+.rmt-breadcrumb a {
     color: var(--meta-text-color, #999999);
 }
 
 .breadcrumb a:hover,
 .breadcrumbs a:hover,
-.pxl-breadcrumb a:hover {
+.rmt-breadcrumb a:hover {
     color: var(--primary-color, #667eea);
 }
 
@@ -265,7 +265,7 @@ textarea {
    ========================================================================== */
 
 .search-results .entry-title,
-.search-results .pxl-title-text {
+.search-results .rmt-title-text {
     color: var(--post-title-color, #1a1a1a);
 }
 
@@ -309,11 +309,11 @@ textarea {
    Icon Box and Content Blocks
    ========================================================================== */
 
-.pxl-icon-box-wrapper .pxl-icon-box-title .pxl-title-text {
+.rmt-icon-box-wrapper .rmt-icon-box-title .rmt-title-text {
     color: var(--heading-text-color, #1a1a1a) !important;
 }
 
-.pxl-icon-box-wrapper .pxl-icon-box-content {
+.rmt-icon-box-wrapper .rmt-icon-box-content {
     color: var(--body-text-color, #333333);
 }
 
@@ -323,9 +323,9 @@ textarea {
 
 @media (max-width: 768px) {
     /* Ensure mobile title visibility */
-    .pxl-title-text,
+    .rmt-title-text,
     .title-text,
-    .pxl-post-title {
+    .rmt-post-title {
         color: var(--post-title-color, #1a1a1a) !important;
     }
     
@@ -340,9 +340,9 @@ textarea {
    ========================================================================== */
 
 /* Force post title colors */
-.pxl-single-post .pxl-post-header .pxl-post-title .pxl-title-text,
-.single-post .pxl-post-title .pxl-title-text,
-article .pxl-post-title .pxl-title-text {
+.rmt-single-post .rmt-post-header .rmt-post-title .rmt-title-text,
+.single-post .rmt-post-title .rmt-title-text,
+article .rmt-post-title .rmt-title-text {
     color: var(--post-title-color, #1a1a1a) !important;
 }
 
@@ -354,11 +354,11 @@ article .pxl-post-title .pxl-title-text {
 }
 
 /* Force heading colors */
-.pxl-heading-wrapper .pxl-heading-title h1,
-.pxl-heading-wrapper .pxl-heading-title h2,
-.pxl-heading-wrapper .pxl-heading-title h3,
-.pxl-heading-wrapper .pxl-heading-title h4,
-.pxl-heading-wrapper .pxl-heading-title h5,
-.pxl-heading-wrapper .pxl-heading-title h6 {
+.rmt-heading-wrapper .rmt-heading-title h1,
+.rmt-heading-wrapper .rmt-heading-title h2,
+.rmt-heading-wrapper .rmt-heading-title h3,
+.rmt-heading-wrapper .rmt-heading-title h4,
+.rmt-heading-wrapper .rmt-heading-title h5,
+.rmt-heading-wrapper .rmt-heading-title h6 {
     color: var(--heading-text-color, #1a1a1a) !important;
 }

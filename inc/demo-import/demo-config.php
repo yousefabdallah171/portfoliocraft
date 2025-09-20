@@ -24,7 +24,7 @@ function get_remote_demo_config() {
         'base_url' => 'https://portfoliocraft.rakmyat.com/demo-content',
         
         // STEP 2: Redux option name (will auto-detect if not specified)
-        'redux_option_name' => 'pxl_theme_options',
+        'redux_option_name' => 'rmt_theme_options',
         
         // STEP 3: Manual demo configuration (used if demos.json is not available)
         // The system will first try to load demos.json from your server

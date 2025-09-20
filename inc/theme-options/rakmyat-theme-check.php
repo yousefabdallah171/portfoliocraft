@@ -213,20 +213,20 @@ class portfoliocraft_Theme_Check {
                 'title'       => __('Hero Section', 'portfoliocraft'),
                 'description' => __('A hero section with title, description and button.', 'portfoliocraft'),
                 'categories'  => array('header'),
-                'content'     => '<!-- wp:group {"className":"pxl-hero-section"} -->
-                <div class="wp-block-group pxl-hero-section">
-                    <!-- wp:heading {"level":1,"className":"pxl-hero-title"} -->
-                    <h1 class="pxl-hero-title">Welcome to portfoliocraft</h1>
+                'content'     => '<!-- wp:group {"className":"rmt-hero-section"} -->
+                <div class="wp-block-group rmt-hero-section">
+                    <!-- wp:heading {"level":1,"className":"rmt-hero-title"} -->
+                    <h1 class="rmt-hero-title">Welcome to portfoliocraft</h1>
                     <!-- /wp:heading -->
                     
-                    <!-- wp:paragraph {"className":"pxl-hero-description"} -->
-                    <p class="pxl-hero-description">A modern WordPress theme for your business.</p>
+                    <!-- wp:paragraph {"className":"rmt-hero-description"} -->
+                    <p class="rmt-hero-description">A modern WordPress theme for your business.</p>
                     <!-- /wp:paragraph -->
                     
                     <!-- wp:buttons -->
                     <div class="wp-block-buttons">
-                        <!-- wp:button {"className":"pxl-hero-button"} -->
-                        <div class="wp-block-button pxl-hero-button">
+                        <!-- wp:button {"className":"rmt-hero-button"} -->
+                        <div class="wp-block-button rmt-hero-button">
                             <a class="wp-block-button__link">Get Started</a>
                         </div>
                         <!-- /wp:button -->

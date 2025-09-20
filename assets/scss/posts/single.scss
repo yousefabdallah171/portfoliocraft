@@ -1,5 +1,5 @@
 .single {
-    #pxl-main {
+    #rmt-main {
         padding-block: 173px;
         @media #{$max-lg} {
             padding-block: 130px;
@@ -9,18 +9,18 @@
         }
     }
     &.single-portfolio, &.single-service, &.single-team {
-        #pxl-main {
+        #rmt-main {
             .container {
                 max-width: 100%;
                 padding: 0;
-                .pxl-content-area {
+                .rmt-content-area {
                     flex: 0 0 100%;
                 }
             }
         }
     }
     &.single-post {
-        #pxl-content-area {
+        #rmt-content-area {
             // width: 100%;
             // flex: 0 1 860px;
             padding-top: 17px;
@@ -30,12 +30,12 @@
             @media #{$max-md} {
                 flex: 0 1 auto;
             }
-            .pxl-post-header {
+            .rmt-post-header {
                 margin-bottom: 30px;
                 -ms-word-wrap: break-word;
                 word-wrap: break-word;
             }
-            .pxl-post-title {
+            .rmt-post-title {
                 display: block;
                 width: 100%;
                 @extend .h10;
@@ -61,10 +61,10 @@
                     font-size: 26px;
                 }
             }
-            .pxl-post-group {
+            .rmt-post-group {
                 max-width: 808px;
             }
-            .pxl-post-metas {
+            .rmt-post-metas {
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -72,7 +72,7 @@
                 column-gap: 35px;
                 row-gap: 15px;
                 margin-bottom: 34px;
-                .pxl-meta-info {
+                .rmt-meta-info {
                     color: #010101;
                     display: flex;
                     align-items: center;
@@ -80,37 +80,37 @@
                     svg {
                         color: var(--subtitle-text-color);
                     }
-                    .pxl-meta-text {
+                    .rmt-meta-text {
                         font-family: 'Roboto';
                         font-size: 17px;
                         line-height: 1.76471;
-                        &.pxl-text-highlight {
+                        &.rmt-text-highlight {
                             color: var(--subtitle-text-color);
                         }
                     }
                 }
-                .pxl-post-author {
+                .rmt-post-author {
                     img {
-                        --pxl-box-size: 36px;
-                        @extend .pxl-round-box;
+                        --rmt-box-size: 36px;
+                        @extend .rmt-round-box;
                     }
                 }
             }
-            .pxl-post-social {
+            .rmt-post-social {
                 display: flex;
                 gap: 12px;
                 padding-block: 40px;
                 border-top: thin solid #EBF3EF;
                 border-bottom:  thin solid #EBF3EF;
                 margin-block: 40px 56px;1
-                .pxl-social-label {
+                .rmt-social-label {
                     @extend .h8;
                 }
-                .pxl-social-list {
+                .rmt-social-list {
                     display: flex;
                     flex-wrap: wrap;
                     gap: 9px;
-                    .pxl-social-item {
+                    .rmt-social-item {
                         cursor: pointer;
                         color: #010101;
                         font-family: "Public Sans";
@@ -132,7 +132,7 @@
                     }
                 }
             }
-            .pxl-post-author-box {
+            .rmt-post-author-box {
                 display: flex;
                 align-items: center;
                 gap: 28.5px;
@@ -144,12 +144,12 @@
                     justify-content: center;
                     text-align: center;
                 }
-                .pxl-author-avatar {
+                .rmt-author-avatar {
                     overflow: hidden;
-                    --pxl-box-size: 133px;
-                    @extend .pxl-round-box;
+                    --rmt-box-size: 133px;
+                    @extend .rmt-round-box;
                 }
-                .pxl-author-name {
+                .rmt-author-name {
                     font-family: 'Roboto';
                     font-size: 22px;
                     line-height: 35px;
@@ -160,7 +160,7 @@
                         color: inherit;
                     }
                 }
-                .pxl-author-description {
+                .rmt-author-description {
                     color: #5F5F5F;
                     font-family: var(--secondary-font);
                     font-size: 15px;
@@ -168,7 +168,7 @@
                     margin-bottom: 16px;
                     max-width: 550px;
                 }
-                .pxl-author-social {
+                .rmt-author-social {
                     display: flex;
                     gap: 20px;
                     > a {
@@ -182,7 +182,7 @@
                 }
             }
         }
-        // #pxl-sidebar-area {
+        // #rmt-sidebar-area {
         //     width: 100%;
         //     flex: 0 1 392px;
         //     @media #{$max-md} {
@@ -264,8 +264,8 @@
                             gap: 32px;
                             .comment-image {
                                 img {
-                                    --pxl-box-size: 98px;
-                                    @extend .pxl-round-box;
+                                    --rmt-box-size: 98px;
+                                    @extend .rmt-round-box;
                                 }
                             }
                             @media #{$max-xs} {
@@ -437,7 +437,7 @@
                 .form-submit {
                     margin-top: 21px;
                     .btn {
-                        --pxl-background-color: var(--subtitle-text-color);
+                        --rmt-background-color: var(--subtitle-text-color);
                     }
                 }
             }
@@ -447,7 +447,7 @@
 }
 
 .error404 {
-    .pxl-footer {
+    .rmt-footer {
         display: none;
     }
 }

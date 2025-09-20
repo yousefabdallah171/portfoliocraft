@@ -93,7 +93,7 @@ function Rakmyat_register_required_plugins() {
             'slug'        => 'rakmyat-core',
             'source'      => 'https://assets.Rakmyat.com/plugins/rakmyat-core.zip',
             'required'    => true,
-            'is_callable' => 'Pxltheme_Core',
+            'is_callable' => 'rmttheme_Core',
             'logo'        => $images . '/Rakmyat-core.png',
             'description' => esc_html__('Main process and Powerful Elements Plugin, exclusively for Rakmyat WordPress Theme.', 'portfoliocraft'),
         ),

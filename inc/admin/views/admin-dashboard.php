@@ -16,7 +16,7 @@
         Main wrapper for the entire dashboard interface
         Provides consistent spacing and layout structure
     -->
-    <div class="pxl-dashboard-wrap">
+    <div class="rmt-dashboard-wrap">
 
         <?php 
         /**
@@ -35,7 +35,7 @@
             Three-column responsive layout for organizing dashboard widgets
             Each column contains a specific functional area of the theme admin
         -->
-        <div class="pxl-row">
+        <div class="rmt-row">
             
             <!-- 
                 Premium Features Column
@@ -43,10 +43,10 @@
                 First column highlighting premium theme features and upgrades
                 Showcases advanced functionality available in pro version
             -->
-            <div class="pxl-col pxl-col-4">
-                <div class="pxl-dsb-box-wrap pxl-dsb-box featured-box">
+            <div class="rmt-col rmt-col-4">
+                <div class="rmt-dsb-box-wrap rmt-dsb-box featured-box">
                     <!-- Section heading for premium features -->
-                    <h4 class="pxl-dsb-title-heading">
+                    <h4 class="rmt-dsb-title-heading">
                         <?php esc_html_e('Unlock Premium Features', 'portfoliocraft'); ?>
                     </h4>
                     <?php 
@@ -67,10 +67,10 @@
                 Second column for theme license activation and registration
                 Handles theme validation, updates, and support access
             -->
-            <div class="pxl-col pxl-col-4">
-                <div class="pxl-dsb-box-wrap pxl-dsb-box activation-box">
+            <div class="rmt-col rmt-col-4">
+                <div class="rmt-dsb-box-wrap rmt-dsb-box activation-box">
                     <!-- Section heading for activation panel -->
-                    <h4 class="pxl-dsb-title-heading">
+                    <h4 class="rmt-dsb-title-heading">
                         <?php esc_html_e('Theme Activation', 'portfoliocraft'); ?>
                     </h4>
                     <?php 
@@ -94,10 +94,10 @@
                 Third column displaying technical system status and requirements
                 Helps diagnose compatibility issues and server configuration
             -->
-            <div class="pxl-col pxl-col-4">
-                <div class="pxl-dsb-box-wrap pxl-dsb-box system-info-box">
+            <div class="rmt-col rmt-col-4">
+                <div class="rmt-dsb-box-wrap rmt-dsb-box system-info-box">
                     <!-- Section heading for system status -->
-                    <h4 class="pxl-dsb-title-heading">
+                    <h4 class="rmt-dsb-title-heading">
                         <?php esc_html_e('System status', 'portfoliocraft'); ?>
                     </h4>
                     <?php 

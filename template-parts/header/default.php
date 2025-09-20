@@ -9,11 +9,11 @@ if (!defined("ABSPATH")) {
 $logo_m = portfoliocraft()->get_opt( 'logo_m', ['url' => get_template_directory_uri().'/assets/img/logo.png'] );
 $p_menu = portfoliocraft()->get_page_opt('p_menu');
 ?>
-<header id="pxl-header-default" class="pxl-header">
-    <div id="pxl-header-main" class="pxl-header-main">
+<header id="rmt-header-default" class="rmt-header">
+    <div id="rmt-header-main" class="rmt-header-main">
         <div class="container">
-            <div class="pxl-header-inner">
-                <div class="pxl-header-logo">
+            <div class="rmt-header-inner">
+                <div class="rmt-header-logo">
                     <?php
                         if ($logo_m['url']) {
                             printf(
@@ -25,9 +25,9 @@ $p_menu = portfoliocraft()->get_page_opt('p_menu');
                         }
                     ?>
                 </div>
-                <div class="pxl-sidebar-menu">
-                    <div class="pxl-sidebar-box">
-                        <div class="pxl-header-logo pxl-hide-xl">
+                <div class="rmt-sidebar-menu">
+                    <div class="rmt-sidebar-box">
+                        <div class="rmt-header-logo rmt-hide-xl">
                             <?php
                                 if ($logo_m['url']) {
                                     printf(
@@ -39,7 +39,7 @@ $p_menu = portfoliocraft()->get_page_opt('p_menu');
                                 }
                             ?>
                         </div>
-                        <nav class="pxl-header-nav">
+                        <nav class="rmt-header-nav">
                             <?php
                                 if ( has_nav_menu( 'primary' ) )
                                 {
@@ -48,10 +48,10 @@ $p_menu = portfoliocraft()->get_page_opt('p_menu');
                                         'theme_location' => 'primary', // Required: theme location must be specified
                                         'container'      => '',
                                         'menu_id'        => '',
-                                        'menu_class'     => 'pxl-menu-primary clearfix',
+                                        'menu_class'     => 'rmt-menu-primary clearfix',
                                         'link_before'    => '<span>',
                                         'link_after'     => '</span>',
-                                        'walker'         => class_exists( 'PXL_Mega_Menu_Walker' ) ? new PXL_Mega_Menu_Walker : '',
+                                        'walker'         => class_exists( 'rmt_Mega_Menu_Walker' ) ? new rmt_Mega_Menu_Walker : '',
                                     );
                                     
                                     // Override with specific menu if set in page options
@@ -70,7 +70,7 @@ $p_menu = portfoliocraft()->get_page_opt('p_menu');
                                     wp_nav_menu( $attr_menu );
                                 } else { 
                                     printf(
-                                        '<ul class="pxl-menu-primary pxl-primary-menu-not-set"><li><a href="%1$s">%2$s</a></li></ul>',
+                                        '<ul class="rmt-menu-primary rmt-primary-menu-not-set"><li><a href="%1$s">%2$s</a></li></ul>',
                                         esc_url( admin_url( 'nav-menus.php' ) ),
                                         esc_html__( 'Create New Menu', 'portfoliocraft' )
                                     );
@@ -79,14 +79,14 @@ $p_menu = portfoliocraft()->get_page_opt('p_menu');
                         </nav>
                     </div>
                 </div>
-                <div class="pxl-toggle-menu">
-                    <div class="nav-mobile-button pxl-anchor-divider pxl-cursor-cta">
-                        <span class="pxl-icon-line pxl-icon-line1"></span>
-                        <span class="pxl-icon-line pxl-icon-line2"></span>
-                        <span class="pxl-icon-line pxl-icon-line3"></span>
+                <div class="rmt-toggle-menu">
+                    <div class="nav-mobile-button rmt-anchor-divider rmt-cursor-cta">
+                        <span class="rmt-icon-line rmt-icon-line1"></span>
+                        <span class="rmt-icon-line rmt-icon-line2"></span>
+                        <span class="rmt-icon-line rmt-icon-line3"></span>
                     </div>
                 </div>
-                <div class="pxl-header-backdrop"></div>
+                <div class="rmt-header-backdrop"></div>
             </div>
         </div>
     </div>

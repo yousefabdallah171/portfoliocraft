@@ -28,8 +28,8 @@ $sidebar = portfoliocraft()->get_sidebar_value('shop');
     <div class="inner <?php echo esc_attr($sidebar['sidebar_class']); ?>">
         
         <!-- Primary content area for shop products -->
-        <div id="pxl-content-area" class="pxl-content-area">
-            <main id="pxl-content-main">
+        <div id="rmt-content-area" class="rmt-content-area">
+            <main id="rmt-content-main">
                 
                 <!-- WooCommerce shop content -->
                 <div class="woocommerce-shop-wrapper">
@@ -41,8 +41,8 @@ $sidebar = portfoliocraft()->get_sidebar_value('shop');
 
         <!-- Conditional sidebar area for shop filters and widgets -->
         <?php if ($sidebar['is_sidebar'] === true) : ?>
-            <aside id="pxl-sidebar-area" class="pxl-sidebar-area">
-                <div class="pxl-sidebar-content">
+            <aside id="rmt-sidebar-area" class="rmt-sidebar-area">
+                <div class="rmt-sidebar-content">
                     <?php get_sidebar(); ?>
                 </div>
             </aside>

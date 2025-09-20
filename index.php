@@ -28,28 +28,28 @@ $paragraph = esc_html__('portfoliocraft provides the best digital product design
 <div class="container">
     
     <!-- Page header section with title and description -->
-    <div class="pxl-content-header">
-        <div class="pxl-heading-wrapper">
+    <div class="rmt-content-header">
+        <div class="rmt-heading-wrapper">
             
             <!-- Subtitle section -->
-            <div class="pxl-heading-subtitle heading-subtitle-default">
-                <span class="pxl-subtitle-text">
-                    <span class="pxl-text-highlight"><?php echo esc_html__('//', 'portfoliocraft'); ?></span>
+            <div class="rmt-heading-subtitle heading-subtitle-default">
+                <span class="rmt-subtitle-text">
+                    <span class="rmt-text-highlight"><?php echo esc_html__('//', 'portfoliocraft'); ?></span>
                     <?php echo esc_html__('Latest news', 'portfoliocraft'); ?>
                 </span>
             </div>
             
             <!-- Main title section -->
-            <h2 class="pxl-heading-title heading-title-default">
-                <span class="pxl-title-text">
-                    <span class="pxl-text-highlight"><?php echo esc_html__('Amazing Research', 'portfoliocraft'); ?></span>
+            <h2 class="rmt-heading-title heading-title-default">
+                <span class="rmt-title-text">
+                    <span class="rmt-text-highlight"><?php echo esc_html__('Amazing Research', 'portfoliocraft'); ?></span>
                     <?php echo esc_html__('news & blogs', 'portfoliocraft'); ?>
                 </span>
             </h2>
         </div>
         
         <!-- Page description paragraph -->
-        <p class="pxl-text-paragraph">
+        <p class="rmt-text-paragraph">
             <?php echo $paragraph; ?>
         </p>
     </div>
@@ -58,8 +58,8 @@ $paragraph = esc_html__('portfoliocraft provides the best digital product design
     <div class="inner <?php echo esc_attr($sidebar['sidebar_class']); ?>">
         
         <!-- Primary content area -->
-        <div id="pxl-content-area" class="pxl-content-area">
-            <main id="pxl-content-main">
+        <div id="rmt-content-area" class="rmt-content-area">
+            <main id="rmt-content-main">
                 
                 <?php if (have_posts()) : ?>
                     <!-- Posts container -->
@@ -86,8 +86,8 @@ $paragraph = esc_html__('portfoliocraft provides the best digital product design
         
         <!-- Conditional sidebar area -->
         <?php if ($sidebar['is_sidebar'] === true) : ?>
-            <div id="pxl-sidebar-area" class="pxl-sidebar-area">
-                <div class="pxl-sidebar-content">
+            <div id="rmt-sidebar-area" class="rmt-sidebar-area">
+                <div class="rmt-sidebar-content">
                     <?php get_sidebar(); ?>
                 </div>
             </div>

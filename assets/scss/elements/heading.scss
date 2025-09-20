@@ -1,4 +1,4 @@
-.pxl-heading-wrapper {
+.rmt-heading-wrapper {
     display: flex;
     flex-direction: column;
     svg {
@@ -6,7 +6,7 @@
         height: 100%;
     }
 
-    .pxl-heading-subtitle {
+    .rmt-heading-subtitle {
         &.heading-subtitle-default {
             color: #4B4B4B;
             font-family: var(--primary-font);
@@ -15,7 +15,7 @@
             letter-spacing: 1.6px;
             text-transform: uppercase;
             margin-bottom: 29px;
-            .pxl-text-highlight {
+            .rmt-text-highlight {
                 color: var(--subtitle-text-color);
             }
         }
@@ -38,7 +38,7 @@
             font-weight: 500;
             line-height: 23px;
             text-transform: uppercase;
-            .pxl-subtitle-text {
+            .rmt-subtitle-text {
                 display: inline-block;
                 padding: 3px 16px;
                 border-radius: 100px;
@@ -95,14 +95,14 @@
             a {
                 color: inherit;
             }
-            .pxl-subtitle-text {
+            .rmt-subtitle-text {
                 display: inline-block;
                 vertical-align: middle;
             }
             &::before {
                 content: '';
-                --pxl-box-size: 7px;
-                @extend .pxl-round-box;
+                --rmt-box-size: 7px;
+                @extend .rmt-round-box;
                 background-color: #FFF;
                 display: inline-block;
                 vertical-align: middle;
@@ -110,7 +110,7 @@
             }
         }
     }
-    .pxl-heading-title {
+    .rmt-heading-title {
         perspective: 400px;
         &.heading-title-default {
             color: #010101;
@@ -119,7 +119,7 @@
             font-size: 48px;
             line-height: 1.04167;
             letter-spacing: -1.44px;
-            .pxl-text-highlight {
+            .rmt-text-highlight {
                 font-weight: 700;
             }
             @media #{$max-xl} {
@@ -141,7 +141,7 @@
             font-weight: 400;
             line-height: 1.28767;
             letter-spacing: -1.46px;
-            .pxl-text-highlight {
+            .rmt-text-highlight {
                 display: none;
             }
             @media #{$max-xl} {
@@ -158,7 +158,7 @@
             }
             @media #{$max-xs} {
                 font-size: 38px;
-                .pxl-text-highlight {
+                .rmt-text-highlight {
                     display: inline;
                 }
             }
@@ -168,7 +168,7 @@
             font-weight: 500;
             line-height: 1.04167;
             letter-spacing: -1.44px;
-            .pxl-text-highlight {
+            .rmt-text-highlight {
                 font-family: "Playfair Display";
                 font-weight: 700;
                 font-style: italic;
@@ -222,7 +222,7 @@
             font-weight: 500;
             line-height: 1.04167;
             letter-spacing: -1.44px;
-            .pxl-text-highlight {
+            .rmt-text-highlight {
                 font-family: "Playfair Display";
                 font-weight: 700;
                 font-style: italic;
@@ -241,23 +241,23 @@
             }
         }
         &.heading-title-underline {
-            --pxl-height: 3px;
+            --rmt-height: 3px;
             font-family: 'Inter';
             font-size: 44px;
             font-style: normal;
             font-weight: 600;
             line-height: 1.22727;
             letter-spacing: -0.88px;
-            .pxl-title-text {
+            .rmt-title-text {
                 display: inline !important;
                 background-image: linear-gradient(
-                    transparent calc(100% - var(--pxl-height)),currentColor 0px,
+                    transparent calc(100% - var(--rmt-height)),currentColor 0px,
                 );
                 background-size: 100%;
                 background-repeat: no-repeat;
             }
             &:hover {
-                .pxl-title-text {
+                .rmt-title-text {
                     animation: underline-slide-restart 1s ease forwards;
                 }
             }

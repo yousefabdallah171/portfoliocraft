@@ -15,28 +15,28 @@ $sg_post_title = portfoliocraft()->get_theme_opt('sg_post_title', 'default');
 $sg_featured_img_size = portfoliocraft()->get_theme_opt('sg_featured_img_size', '960x545');
 $post_video_link = get_post_meta(get_the_ID(), 'post_video_link', true);
 ?>
-<article id="pxl-post-<?php the_ID(); ?>" <?php post_class('pxl-single-post'); ?>>
+<article id="rmt-post-<?php the_ID(); ?>" <?php post_class('rmt-single-post'); ?>>
     <?php 
         $post_id = get_the_ID();
         $thumbnail = portfoliocraft_get_image_by_size([
             'img_dimension' => 'full' ,
             'attr' => [
-                'class' => 'pxl-post-featured',
+                'class' => 'rmt-post-featured',
             ],
         ], $post_id);
     ?>
-    <div class="pxl-post-header">
-        <h2 class="pxl-post-title">
-            <span class="pxl-title-text">
+    <div class="rmt-post-header">
+        <h2 class="rmt-post-title">
+            <span class="rmt-title-text">
                 <?php the_title(); ?>
             </span>
         </h2>
         <?php portfoliocraft()->blog->get_post_metas($post_id); ?>
-        <div class="pxl-post-featured">
+        <div class="rmt-post-featured">
             <?php echo wp_kses_post($thumbnail); ?>
         </div>
     </div>
-    <div class="pxl-post-content clearfix">
+    <div class="rmt-post-content clearfix">
         <?php
             the_content();
             wp_link_pages( array(
@@ -47,14 +47,14 @@ $post_video_link = get_post_meta(get_the_ID(), 'post_video_link', true);
             ) );
         ?>
     </div>
-    <div class="pxl-post-group">
+    <div class="rmt-post-group">
         <?php portfoliocraft()->blog->get_socials_share(); ?>
         <?php portfoliocraft()->blog->get_post_author_info($post_id); ?>
         
         <?php if ($post_tag && $tags_list) : ?>
-            <div class="pxl-post-tags">
-                <h4 class="pxl-tags-title"><?php esc_html_e('Tags:', 'portfoliocraft'); ?></h4>
-                <div class="pxl-tags-list">
+            <div class="rmt-post-tags">
+                <h4 class="rmt-tags-title"><?php esc_html_e('Tags:', 'portfoliocraft'); ?></h4>
+                <div class="rmt-tags-list">
                     <?php echo wp_kses_post($tags_list); ?>
                 </div>
             </div>

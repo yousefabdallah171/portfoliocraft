@@ -1,5 +1,5 @@
 .blog, .archive, .search.search-results {
-	#pxl-main { 
+	#rmt-main { 
 		padding-block: 176px 179px;
 		@media #{$max-lg} {
 			padding-block: 150px;
@@ -8,18 +8,18 @@
 			padding-block: 100px;
 		}
 		.container {
-			.pxl-content-header {
+			.rmt-content-header {
 				display: flex;
 				justify-content: space-between;
 				align-items: center;
 				gap: 30px;
 				margin-bottom: 63px;
 
-				.pxl-heading-wrapper {
+				.rmt-heading-wrapper {
 					width: 100%;
 					flex: 0 1 450px;
 				}
-				.pxl-text-paragraph {
+				.rmt-text-paragraph {
 					width: 100%;
 					flex: 0 1 486px;
 					color: #5F5F5F;
@@ -36,26 +36,26 @@
 					flex-direction: column;
 					justify-content: stretch;
 					align-items: start;
-					.pxl-heading-wrapper, .pxl-text-paragraph {
+					.rmt-heading-wrapper, .rmt-text-paragraph {
 						flex: 0 1 auto;
 					}
 
 				}
 			}
-			.pxl-content-area {
-				.pxl-post-item {
-					.pxl-post-featured {
-						--pxl-scale: 1.1;
+			.rmt-content-area {
+				.rmt-post-item {
+					.rmt-post-featured {
+						--rmt-scale: 1.1;
 						img {
 							width: 100%;
 							transition: scale .75s;
 						}
 					}
-					.pxl-post-content {
+					.rmt-post-content {
 						padding-inline: 30px;
 						background-color: #FFF;
 						@include box-shadow(0px 100.296px 167.159px 0px rgba(104, 104, 104, 0.07));
-						.pxl-content-container {
+						.rmt-content-container {
 							padding-block: 104px 98px;
 							max-width: 580px;
 							margin: 0 auto;
@@ -67,7 +67,7 @@
 								padding-block: 50px;
 							}
 						}
-						.pxl-post-date {
+						.rmt-post-date {
 							margin-bottom: 18px;
 							span {
 								display: inline-block;
@@ -83,8 +83,8 @@
 								text-transform: uppercase
 							}
 						}
-						.pxl-post-title {
-							--pxl-height: 2px;
+						.rmt-post-title {
+							--rmt-height: 2px;
 							@extend .h9;
 							letter-spacing: 0;
 							margin-bottom: 12px;
@@ -98,14 +98,14 @@
 								font-size: 24px;
 							}
 						}
-						.pxl-post-excerpt {
+						.rmt-post-excerpt {
 							color: #687276;
 							font-family: "Public Sans";
 							font-size: 20px;
 							font-weight: 300;
 							margin-bottom: 27px;
 						}
-						.pxl-post-author {
+						.rmt-post-author {
 							color: #010101;
 							font-family: 'Roboto';
 							font-size: 18px;
@@ -119,19 +119,19 @@
 							}
 						}
 					}
-					+ .pxl-post-item {
+					+ .rmt-post-item {
 						margin-top: 60px;
 					}
 				}
-				.pxl-pagination-wrap {
+				.rmt-pagination-wrap {
 					margin-top: 82px;
 					.page-numbers { 
 						color: #000;
 					}
 				}
 			}
-			#pxl-sidebar-area {
-				.widget_pxl_author_info {
+			#rmt-sidebar-area {
+				.widget_rmt_author_info {
 					display: none;
 				}
 			}
@@ -140,7 +140,7 @@
 }
 
 .search.search-no-results {
-	#pxl-main { 
+	#rmt-main { 
 		padding-block: 176px 176px;
 		@media #{$max-lg} {
 			padding-block: 150px;
@@ -161,9 +161,9 @@
 	.search-form-control {
 		position: relative;
 		.search-submit {
-			--pxl-box-size: 56px;
-			@extend .pxl-round-box;
-			@extend .pxl-flex-center;
+			--rmt-box-size: 56px;
+			@extend .rmt-round-box;
+			@extend .rmt-flex-center;
 			background-color: #000;
 			position: absolute;
 			right: 5px;

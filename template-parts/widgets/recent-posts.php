@@ -12,7 +12,7 @@ class portfoliocraft_Recent_Posts_Widget extends WP_Widget
     function __construct()
     {
         parent::__construct(
-            'pxl_recent_posts',
+            'rmt_recent_posts',
             esc_html__( 'portfoliocraft Recent Posts', 'portfoliocraft' ),
             array(
                 'description' => esc_html__( 'Your site’s most recent Posts.', 'portfoliocraft' ),
@@ -58,34 +58,34 @@ class portfoliocraft_Recent_Posts_Widget extends WP_Widget
         $i = 0;
 
         if ( $r->have_posts() ) : ?>
-            <div class="pxl-post-list">
+            <div class="rmt-post-list">
                 <?php while ( $r->have_posts() ) :
                     $r->the_post();
                     global $post; 
                     $thumbnail = portfoliocraft_get_image_by_size([
                         'img_dimension' => 'full' ,
                         'attr' => [
-                            'class' => 'pxl-image-featured'
+                            'class' => 'rmt-image-featured'
                         ]
                     ], $post->ID);
                     ?>
                     <?php if($i !== 0) : ?>
-                        <hr class="pxl-post-divider">
+                        <hr class="rmt-post-divider">
                     <?php endif;?>
-                    <div class="pxl-post-item">
-                        <div class="pxl-post-featured">
+                    <div class="rmt-post-item">
+                        <div class="rmt-post-featured">
                             <a href="<?php echo esc_url(get_permalink()); ?>">
                                 <?php echo wp_kses_post($thumbnail); ?>
                             </a>
                         </div>
-                        <div class="pxl-post-content">
+                        <div class="rmt-post-content">
                             <?php printf(
-                                '<h5 class="pxl-post-title"><a href="%1$s" title="%2$s">%3$s</a></h5>',
+                                '<h5 class="rmt-post-title"><a href="%1$s" title="%2$s">%3$s</a></h5>',
                                 esc_url( get_permalink() ),
                                 esc_attr( get_the_title() ),
                                 get_the_title()
                             ); ?>
-                            <div class="pxl-post-date">
+                            <div class="rmt-post-date">
                                 <?php echo get_the_date('F d, Y'); ?>
                             </div>
                         </div>
@@ -143,7 +143,7 @@ class portfoliocraft_Recent_Posts_Widget extends WP_Widget
 }
 add_action( 'widgets_init', 'portfoliocraft_register_recent_widget' );
 function portfoliocraft_register_recent_widget(){
-    if(function_exists('pxl_register_wp_widget')){
-        pxl_register_wp_widget( 'portfoliocraft_Recent_Posts_Widget' );
+    if(function_exists('rmt_register_wp_widget')){
+        rmt_register_wp_widget( 'portfoliocraft_Recent_Posts_Widget' );
     }
 }

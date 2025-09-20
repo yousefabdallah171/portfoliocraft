@@ -1,6 +1,6 @@
 <wpml-config>
     <admin-texts>
-        <key name="pxl_theme_options">
+        <key name="rmt_theme_options">
             <key name="cookie_policy_description" />
             <key name="cookie_policy_btntext" />
             <key name="sg_post_title_text" />

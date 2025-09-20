@@ -6,8 +6,8 @@ if (!defined("ABSPATH")) {
  * @package portfoliocraft-Themes
  */
 ?>
-<article id="pxl-post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    <div class="pxl-entry-content clearfix">
+<article id="rmt-post-<?php the_ID(); ?>" <?php post_class(); ?>>
+    <div class="rmt-entry-content clearfix">
         <?php
             the_content();
             portfoliocraft()->page->get_link_pages();

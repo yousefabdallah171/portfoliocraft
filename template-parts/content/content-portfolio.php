@@ -6,12 +6,12 @@ if (!defined("ABSPATH")) {
  * @package portfoliocraft-Themes
  */
 ?>
-<article id="pxl-post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    <div class="pxl-entry-content clearfix">
+<article id="rmt-post-<?php the_ID(); ?>" <?php post_class(); ?>>
+    <div class="rmt-entry-content clearfix">
         <?php
             the_content();
             wp_link_pages( array(
-                'before'      => '<div class="pxl-page-links">',
+                'before'      => '<div class="rmt-page-links">',
                 'after'       => '</div>',
                 'link_before' => '<span>',
                 'link_after'  => '</span>',

@@ -1,8 +1,8 @@
 // Iconbox Single
-.pxl-icon-box-wrapper {
+.rmt-icon-box-wrapper {
     display: flex;
     gap: 30px;
-    .pxl-icon-box-content {
+    .rmt-icon-box-content {
         position: relative;
     }
     &.icon-box-default {
@@ -26,12 +26,12 @@
         @media #{$max-xs} {
             padding: 30px;
         }
-        .pxl-icon-box-icon {
+        .rmt-icon-box-icon {
             color: #000;
-            .pxl-icon {
-                --pxl-box-size: 74px;
-                @extend .pxl-round-box;
-                @extend .pxl-flex-center;
+            .rmt-icon {
+                --rmt-box-size: 74px;
+                @extend .rmt-round-box;
+                @extend .rmt-flex-center;
                 background-color: #FFCD4D;
             }
             svg {
@@ -40,7 +40,7 @@
             }
         }
         
-        .pxl-icon-box-title {
+        .rmt-icon-box-title {
             color: #010101;
             font-family: 'Inter';
             font-size: 28px;
@@ -49,8 +49,8 @@
             line-height: 1.21429;
             margin-block: 7px 23px;
             letter-spacing: 0;
-            .pxl-title-text {
-                --pxl-height: 2px;
+            .rmt-title-text {
+                --rmt-height: 2px;
                 @extend .text-underline;
             }
             &:hover {
@@ -66,7 +66,7 @@
                 font-size: 22px;
             } 
         }
-        .pxl-icon-box-description {
+        .rmt-icon-box-description {
             color: #555;
             font-family: "Plus Jakarta Sans";
             font-size: 17px;
@@ -74,7 +74,7 @@
             font-weight: 400;
             line-height: 1.76471;
         }
-        .pxl-icon-box-index {
+        .rmt-icon-box-index {
             position: absolute;
             color: #121212;
             font-family: "Plus Jakarta Sans";
@@ -97,26 +97,26 @@
 }
 
 // Iconbox Carousel
-.pxl-icon-box-carousel  {
-    .pxl-icon-box-wrapper {
-        --pxl-flex-direction: column;
+.rmt-icon-box-carousel  {
+    .rmt-icon-box-wrapper {
+        --rmt-flex-direction: column;
         display: inline-flex;
         width: 100%;
         gap: 30px;
-        flex-direction: var(--pxl-flex-direction);
+        flex-direction: var(--rmt-flex-direction);
         text-align: center;
-        .pxl-item-icon {
+        .rmt-item-icon {
             width: 100%;
             svg {
                 width: auto;
             }
         }
-        .pxl-item-content {
+        .rmt-item-content {
             text-align: inherit;
         }
     }
-    &.pxl-icon-box-carousel1 {
-        .pxl-icon-box-wrapper  {
+    &.rmt-icon-box-carousel1 {
+        .rmt-icon-box-wrapper  {
             flex-direction: column;
             justify-content: start;
             align-items: start;
@@ -124,9 +124,9 @@
             gap: 42px;
         }
         &.icon-box-default {            
-            .pxl-icon-box-icon {
+            .rmt-icon-box-icon {
                 position: relative;
-                .pxl-item-line {
+                .rmt-item-line {
                     position: absolute;
                     left: 0;
                     top: 50%;
@@ -135,7 +135,7 @@
                     transform: translateY(-50%);
                     background-color: rgba($color: #FFF, $alpha: .09);
                 }
-                .pxl-icon-inner {
+                .rmt-icon-inner {
                     display: inline-block;
                     background-color: rgba($color: #FFF, $alpha: .15);
                     color: #FFF;
@@ -149,7 +149,7 @@
                     border-radius: 48px;
                 }
             }
-            .pxl-icon-box-title {
+            .rmt-icon-box-title {
                 color:#FFF;
                 font-family: var(--secondary-font);
                 font-size: 21px;
@@ -158,7 +158,7 @@
                 margin-bottom: 20px;
                 letter-spacing: 0;
             }
-            .pxl-icon-box-description {
+            .rmt-icon-box-description {
                 color: #FFF;
                 font-size: 15px;
                 font-weight: 300;

@@ -63,19 +63,19 @@ endif;
 // Helper Functions Section ---------------------------------------
 
 /**
- * PXL Action Helper Function
+ * rmt Action Helper Function
  * 
  * Provides a convenient way to trigger custom theme actions
- * Automatically prefixes action names with 'pxltheme_' for consistency
+ * Automatically prefixes action names with 'rmttheme_' for consistency
  * Supports variable number of arguments to pass to the action
  * 
- * Usage: pxl_action('init', $arg1, $arg2, ...);
- * This will trigger: do_action('pxltheme_init', $arg1, $arg2, ...);
+ * Usage: rmt_action('init', $arg1, $arg2, ...);
+ * This will trigger: do_action('rmttheme_init', $arg1, $arg2, ...);
  * 
  * @return void
  */
-if (!function_exists('pxl_action')) :
-    function pxl_action() {
+if (!function_exists('rmt_action')) :
+    function rmt_action() {
 
         // Get all arguments passed to this function
         $args = func_get_args();
@@ -86,7 +86,7 @@ if (!function_exists('pxl_action')) :
         }
 
         // Build the full action name with theme prefix
-        $action = 'pxltheme_' . $args[0];
+        $action = 'rmttheme_' . $args[0];
         
         // Remove the action name from arguments array
         // Remaining arguments will be passed to the action

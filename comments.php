@@ -79,7 +79,7 @@ wp_enqueue_style('portfoliocraft-comments', get_template_directory_uri() . '/ass
     $comment_form_args = array(
         'id_form'           => 'commentform',
         'id_submit'         => 'submit',
-        'class_submit'      => 'btn pxl-btn-split',
+        'class_submit'      => 'btn rmt-btn-split',
         'title_reply'       => esc_html__('Leave a Comment', 'portfoliocraft'),
         'title_reply_to'    => esc_html__('Leave a Reply to %s', 'portfoliocraft'),
         'cancel_reply_link' => esc_html__('Cancel Reply', 'portfoliocraft'),
@@ -87,13 +87,13 @@ wp_enqueue_style('portfoliocraft-comments', get_template_directory_uri() . '/ass
         
         // Custom submit button with SVG icons
         'submit_button'     => '<button name="%1$s" type="submit" id="%2$s" class="%3$s">
-            <span class="pxl-btn-icon icon-duplicated">
+            <span class="rmt-btn-icon icon-duplicated">
                 <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 38 38" fill="none">
                     <path d="M26.673 23.8894L26.5877 12.0397C26.5877 11.5282 26.1899 11.1304 25.6784 11.1304L13.8287 11.0451C13.3172 11.0451 12.9194 11.443 12.9194 11.9545C12.9194 12.466 13.3172 12.8638 13.8287 12.8638L23.4619 12.9491L11.3849 25.0261C11.0439 25.3671 11.0439 25.9354 11.3849 26.2764C11.7259 26.6174 12.3226 26.6458 12.6636 26.3048L24.7975 14.171L24.8828 23.9178C24.8828 24.1452 24.9964 24.3725 25.1669 24.543C25.3374 24.7135 25.5647 24.8272 25.8205 24.7988C26.2752 24.7988 26.7014 24.3725 26.673 23.8894Z" fill="currentcolor"/>
                 </svg>
             </span>
-            <span class="pxl-btn-text">' . esc_html__('Send Message', 'portfoliocraft') . '</span>
-            <span class="pxl-btn-icon icon-main">
+            <span class="rmt-btn-text">' . esc_html__('Send Message', 'portfoliocraft') . '</span>
+            <span class="rmt-btn-icon icon-main">
                 <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 38 38" fill="none">
                     <path d="M26.673 23.8894L26.5877 12.0397C26.5877 11.5282 26.1899 11.1304 25.6784 11.1304L13.8287 11.0451C13.3172 11.0451 12.9194 11.443 12.9194 11.9545C12.9194 12.466 13.3172 12.8638 13.8287 12.8638L23.4619 12.9491L11.3849 25.0261C11.0439 25.3671 11.0439 25.9354 11.3849 26.2764C11.7259 26.6174 12.3226 26.6458 12.6636 26.3048L24.7975 14.171L24.8828 23.9178C24.8828 24.1452 24.9964 24.3725 25.1669 24.543C25.3374 24.7135 25.5647 24.8272 25.8205 24.7988C26.2752 24.7988 26.7014 24.3725 26.673 23.8894Z" fill="currentcolor"/>
                 </svg>

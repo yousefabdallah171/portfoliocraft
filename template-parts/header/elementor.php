@@ -18,31 +18,31 @@ $mobile_display = portfoliocraft()->get_opt('mobile_display');
 
 $has_header_sticky = isset($args['header_layout_sticky']) && $args['header_layout_sticky'] > 0 || false;
 ?>
-<header id="pxl-header-elementor" class="pxl-header">
-    <div id="pxl-header-desktop" class="<?php echo esc_attr($header_type); ?>">
+<header id="rmt-header-elementor" class="rmt-header">
+    <div id="rmt-header-desktop" class="<?php echo esc_attr($header_type); ?>">
         <?php if(isset($args['header_layout']) && $args['header_layout'] > 0) : ?>
-            <div class="pxl-header-main">
-                <div class="pxl-header-inner">
+            <div class="rmt-header-main">
+                <div class="rmt-header-inner">
                     <?php echo Elementor\Plugin::$instance->frontend->get_builder_content_for_display( $args['header_layout']); ?>
                 </div>
             </div>
         <?php endif; ?>
     </div> 
     <?php if($has_header_sticky) : ?>
-        <div class="pxl-header-sticky pxl-onepage-sticky <?php echo esc_attr($sticky_scroll); ?>">
-            <div class="pxl-header-inner">
+        <div class="rmt-header-sticky rmt-onepage-sticky <?php echo esc_attr($sticky_scroll); ?>">
+            <div class="rmt-header-inner">
                 <?php echo Elementor\Plugin::$instance->frontend->get_builder_content_for_display( $args['header_layout_sticky']); ?>
             </div>
         </div>
     <?php endif; ?>
     <?php if($mobile_display == 'show') : ?>
-        <div id="pxl-header-mobile" class="pxl-header-mobile">
-            <div class="pxl-header-main">
-                <div class="pxl-header-inner">
+        <div id="rmt-header-mobile" class="rmt-header-mobile">
+            <div class="rmt-header-main">
+                <div class="rmt-header-inner">
                     <?php if(isset($args['header_layout']) && $args['header_layout'] > 0) : ?>
                         <?php echo Elementor\Plugin::$instance->frontend->get_builder_content_for_display( $args['header_layout'] ); ?>
                     <?php else : ?>
-                        <div class="pxl-header-logo">
+                        <div class="rmt-header-logo">
                             <?php
                                 if ($logo_m['url']) {
                                     printf(
@@ -54,21 +54,21 @@ $has_header_sticky = isset($args['header_layout_sticky']) && $args['header_layou
                                 }
                             ?>
                         </div>
-                        <div class="pxl-toggle-menu">
-                            <div class="nav-mobile-button pxl-anchor-divider pxl-cursor-cta">
-                                <span class="pxl-icon-line pxl-icon-line1"></span>
-                                <span class="pxl-icon-line pxl-icon-line2"></span>
-                                <span class="pxl-icon-line pxl-icon-line3"></span>
+                        <div class="rmt-toggle-menu">
+                            <div class="nav-mobile-button rmt-anchor-divider rmt-cursor-cta">
+                                <span class="rmt-icon-line rmt-icon-line1"></span>
+                                <span class="rmt-icon-line rmt-icon-line2"></span>
+                                <span class="rmt-icon-line rmt-icon-line3"></span>
                             </div>
                         </div>
                     <?php endif; ?>
-                    <div class="pxl-sidebar-menu">
-                        <div class="pxl-sidebar-box">
-                            <div class="pxl-header-logo pxl-hide-xl">
+                    <div class="rmt-sidebar-menu">
+                        <div class="rmt-sidebar-box">
+                            <div class="rmt-header-logo rmt-hide-xl">
                                 <?php
                                     if ($logo_m['url']) {
                                         printf(
-                                            '<a class="pxl-logo-dark" href="%1$s" title="%2$s" rel="home"><img src="%3$s" alt="%2$s"/></a>',
+                                            '<a class="rmt-logo-dark" href="%1$s" title="%2$s" rel="home"><img src="%3$s" alt="%2$s"/></a>',
                                             esc_url( home_url( '/' ) ),
                                             esc_attr( get_bloginfo( 'name' ) ),
                                             esc_url( $logo_m['url'] )
@@ -77,7 +77,7 @@ $has_header_sticky = isset($args['header_layout_sticky']) && $args['header_layou
                                 ?>
                             </div>
                             <?php portfoliocraft_header_mobile_search_form(); ?>
-                            <nav class="pxl-header-nav">
+                            <nav class="rmt-header-nav">
                                 <?php 
                                     if ( has_nav_menu( 'primary-mobile' ) )
                                     {
@@ -86,10 +86,10 @@ $has_header_sticky = isset($args['header_layout_sticky']) && $args['header_layou
                                             'theme_location' => 'primary-mobile', // Required: theme location must be specified
                                             'container'      => '',
                                             'menu_id'        => '',
-                                            'menu_class'     => 'pxl-menu-primary clearfix',
+                                            'menu_class'     => 'rmt-menu-primary clearfix',
                                             'link_before'    => '<span>',
                                             'link_after'     => '</span>',
-                                            'walker'         => class_exists( 'PXL_Mega_Menu_Walker' ) ? new PXL_Mega_Menu_Walker : '',
+                                            'walker'         => class_exists( 'rmt_Mega_Menu_Walker' ) ? new rmt_Mega_Menu_Walker : '',
                                         );
                                         
                                         // Override with specific menu if set in page options
@@ -113,10 +113,10 @@ $has_header_sticky = isset($args['header_layout_sticky']) && $args['header_layou
                                             'theme_location' => 'primary', // Required: theme location must be specified
                                             'container'      => '',
                                             'menu_id'        => '',
-                                            'menu_class'     => 'pxl-menu-primary clearfix',
+                                            'menu_class'     => 'rmt-menu-primary clearfix',
                                             'link_before'    => '<span>',
                                             'link_after'     => '</span>',
-                                            'walker'         => class_exists( 'PXL_Mega_Menu_Walker' ) ? new PXL_Mega_Menu_Walker : '',
+                                            'walker'         => class_exists( 'rmt_Mega_Menu_Walker' ) ? new rmt_Mega_Menu_Walker : '',
                                         );
                                         
                                         // Override with specific menu if set in page options
@@ -135,7 +135,7 @@ $has_header_sticky = isset($args['header_layout_sticky']) && $args['header_layou
                                         wp_nav_menu( $attr_menu );
     
                                     } else { ?>
-                                        <ul class="pxl-menu-primary">
+                                        <ul class="rmt-menu-primary">
                                             <?php wp_list_pages( array(
                                                 'depth'        => 0,
                                                 'show_date'    => '',
@@ -155,10 +155,10 @@ $has_header_sticky = isset($args['header_layout_sticky']) && $args['header_layou
                                     <?php }
                                 ?>
                             </nav>
-                            <div class="pxl-close-menu pxl-close-button"></div>
+                            <div class="rmt-close-menu rmt-close-button"></div>
                         </div>
                     </div>
-                    <div class="pxl-header-backdrop"></div>
+                    <div class="rmt-header-backdrop"></div>
                 </div>
             </div>
         </div>

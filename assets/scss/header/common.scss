@@ -1,5 +1,5 @@
 // Common
-.pxl-header {
+.rmt-header {
 	position: relative;
     .elementor-element {
         position: static;
@@ -11,21 +11,21 @@
 		list-style: none;
 		margin: 0;
 	}
-	.pxl-header-logo {
+	.rmt-header-logo {
 		display: flex;
 		align-items: center;
 		img {
 			height: 20px;
 		}
 	}
-	&#pxl-header-default {
-		.pxl-header-logo {
+	&#rmt-header-default {
+		.rmt-header-logo {
 			img {
 				height: 32px;
 			}
 		}
 	}
-	.pxl-header-search {
+	.rmt-header-search {
 		margin-bottom: 30px;
 		form {
 			position: relative;
@@ -44,8 +44,8 @@
 			}
 		}
 		.search-submit { 
-			--pxl-box-size: 50px;
-			@extend .pxl-square-box;
+			--rmt-box-size: 50px;
+			@extend .rmt-square-box;
 			position: absolute;
 			top: 0;
 			right: 0;
@@ -58,22 +58,22 @@
 			}
 		}
 	}
-    .pxl-menu-primary {
+    .rmt-menu-primary {
         li {
             position: relative;
-            &.pxl-megamenu {
+            &.rmt-megamenu {
                 position: static;
             }
         }
     }
-	.pxl-header-inner {
+	.rmt-header-inner {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
 		@media #{$max-lg} {
 			padding-block: 23px;
 		}
-		.pxl-sidebar-menu {
+		.rmt-sidebar-menu {
 			position: relative;
 			z-index: 9;
 			@media #{$max-lg} {
@@ -93,13 +93,13 @@
 					opacity: 1;
 					@include transform(translateX(0%));
 				}
-				.pxl-sidebar-box {
+				.rmt-sidebar-box {
 					position: relative;
 					height: 100%;
 					padding: 50px 30px;
 					overflow-y: scroll;
-					.pxl-close-menu {
-						--pxl-box-size: 50px;
+					.rmt-close-menu {
+						--rmt-box-size: 50px;
 						border-radius: 0;
 						position: absolute;
 						right: 0;
@@ -112,12 +112,12 @@
 						}
 					}
 				}
-				.pxl-header-logo { 
+				.rmt-header-logo { 
 					position: relative;
 					margin-bottom: 30px;
 				}
-				.pxl-menu-primary {
-					--pxl-spacing-inline: 0px;
+				.rmt-menu-primary {
+					--rmt-spacing-inline: 0px;
 					flex-direction: column;
 					align-items: stretch;
 					li {
@@ -163,7 +163,7 @@
 			width: 100%;
 		}
 	}
-	.pxl-header-transparent {
+	.rmt-header-transparent {
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -171,7 +171,7 @@
 		width: 100%;
 		z-index: 999;
 	}
-	.pxl-header-sticky {
+	.rmt-header-sticky {
 		display: block;
 		position: fixed;
 		top: 0;
@@ -184,7 +184,7 @@
 			display: none;
 		}
 	}
-	.pxl-header-backdrop {
+	.rmt-header-backdrop {
 		position: fixed;
 		inset: 0;
 		background-color: rgba($color: #000, $alpha: .75);
@@ -199,12 +199,12 @@
 		}
 	}
 }
-.pxl-header-mobile {
+.rmt-header-mobile {
 	background-color: #FFF;
-	.pxl-sidebar-menu {
-		.pxl-header-nav {
+	.rmt-sidebar-menu {
+		.rmt-header-nav {
 			overflow-y: scroll;
-			.pxl-menu-primary {
+			.rmt-menu-primary {
 				gap: 0;
 				li {
 					font-size: 17px;
@@ -294,7 +294,7 @@
 	}
 }
 @media #{$min-xl} {
-	.pxl-menu-primary {
+	.rmt-menu-primary {
 		.sub-menu, .children {
 			position: absolute;
 			top: 100%;
@@ -336,7 +336,7 @@
 					right: 100%;
 				}
 			}
-			&.pxl-mega-menu {
+			&.rmt-mega-menu {
 				background-color: transparent;
 				width: 100%;
 				margin: 30px auto 0;
@@ -351,13 +351,13 @@
 			}
 		}
 	}
-	.pxl-menu-primary {
+	.rmt-menu-primary {
 		display: flex;
 		align-items: center;
 		gap: 50px;
 		list-style: none;
 		margin: 0;
-		.pxl-menu-icon {
+		.rmt-menu-icon {
 			display: none;
 		}
 		.menu-item-has-children {
@@ -365,7 +365,7 @@
 				pointer-events: none;
 			}
 			> a {
-				.pxl-menu-icon {
+				.rmt-menu-icon {
 					display: inline-block;
 					vertical-align: middle;
 					margin-left: 10px;
@@ -378,7 +378,7 @@
 					pointer-events: visible;
 				}
 				> a {
-					.pxl-menu-icon {
+					.rmt-menu-icon {
 						transform: rotate(90deg) scaleX(-1);
 					}
 				}
@@ -393,7 +393,7 @@
 					width: 100%;
 					align-items: center;
 					justify-content: start;
-					.pxl-menu-icon {
+					.rmt-menu-icon {
 						position: absolute;
 						right: 20px;
 						top: 50%;
@@ -402,7 +402,7 @@
 				}
 				&:hover {
 					> a {
-						.pxl-menu-icon {
+						.rmt-menu-icon {
 							transform: translateY(-50%) rotate(90deg);
 						}
 					}
@@ -445,13 +445,13 @@
 
 
 // Anchor Button
-.pxl-anchor-divider {
+.rmt-anchor-divider {
 	overflow: hidden;
 	width: 30px;
 	height: 21px;
 	cursor: pointer;
 	position: relative;
-	.pxl-icon-line {
+	.rmt-icon-line {
 		height: 3px;
 		position: absolute;
 		right: 0;
@@ -475,24 +475,24 @@
 		&:after {
 			@include transform(translate3d(0,0,0));
 		}
-		&.pxl-icon-line1 {
+		&.rmt-icon-line1 {
 			top: 0;
 			width: 22px;
 		}
-		&.pxl-icon-line2 {
+		&.rmt-icon-line2 {
 			top: 50%;
 			width: 100%;
 			transform: translate(0, -50%);
 		}
-		&.pxl-icon-line3 {
+		&.rmt-icon-line3 {
 			width: 16px;
 			bottom: 0;
 		}
 	}
 }
 
-.pxl-anchor-divider:hover .pxl-icon-line, .pxl-anchor-button.type-menu-hidden:hover .pxl-icon-line, .pxl-menu-hidden-sidebar .pxl-menu-button:hover .pxl-icon-line {
-	&.pxl-icon-line1 {
+.rmt-anchor-divider:hover .rmt-icon-line, .rmt-anchor-button.type-menu-hidden:hover .rmt-icon-line, .rmt-menu-hidden-sidebar .rmt-menu-button:hover .rmt-icon-line {
+	&.rmt-icon-line1 {
 		&:before {
 			@include transform(translate3d(0,0,0));
 			opacity: 1;
@@ -504,7 +504,7 @@
 			@include transition(transform .6s cubic-bezier(.165,.84,.44,1) 0s,opacity .6s cubic-bezier(.165,.84,.44,1) 0s);
 		}
 	}
-	&.pxl-icon-line2 {
+	&.rmt-icon-line2 {
 		&:before {
 			@include transform(translate3d(0,0,0));
 			opacity: 1;
@@ -516,7 +516,7 @@
 			@include transition(transform .6s cubic-bezier(.165,.84,.44,1) 160ms,opacity .6s cubic-bezier(.165,.84,.44,1) 160ms);
 		}
 	}
-	&.pxl-icon-line3 {
+	&.rmt-icon-line3 {
 		&:before {
 			@include transform(translate3d(0,0,0));
 			opacity: 1;
@@ -530,7 +530,7 @@
 	}
 }
 
-@-moz-keyframes pxl_Header_SlideDown{
+@-moz-keyframes rmt_Header_SlideDown{
   0%{ 
     margin-top:-150px;
   }
@@ -538,7 +538,7 @@
     margin-top:0
   }
 }
-@-ms-keyframes pxl_Header_SlideDown{
+@-ms-keyframes rmt_Header_SlideDown{
   0%{ 
     margin-top:-150px;
   }
@@ -546,7 +546,7 @@
     margin-top:0
   }
 }
-@-webkit-keyframes pxl_Header_SlideDown{
+@-webkit-keyframes rmt_Header_SlideDown{
   0%{ 
     margin-top:-150px;
   }
@@ -554,7 +554,7 @@
     margin-top:0
   }
 }
-@keyframes pxl_Header_SlideDown{
+@keyframes rmt_Header_SlideDown{
   0%{ 
     margin-top:-150px;
   }
@@ -565,7 +565,7 @@
 
 
 @media #{$min-xl} {
-	.pxl-hide-xl {
+	.rmt-hide-xl {
 		display: none !important;
 	}
 }

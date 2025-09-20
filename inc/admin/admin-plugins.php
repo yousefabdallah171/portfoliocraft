@@ -13,10 +13,10 @@ class portfoliocraft_Admin_Plugins extends portfoliocraft_Admin_Page {
 	public $parent = null;
 	public function __construct() {
 
-		$this->id = 'pxlart-plugins';
+		$this->id = 'rmtart-plugins';
 		$this->page_title = esc_html__( 'Install Plugins', 'portfoliocraft' );
 		$this->menu_title = esc_html__( 'Install Plugins', 'portfoliocraft' );
-		$this->parent = 'pxlart';
+		$this->parent = 'rmtart';
 
 		parent::__construct();
 	}
@@ -30,7 +30,7 @@ class portfoliocraft_Admin_Plugins extends portfoliocraft_Admin_Page {
 		$btn_class = $btn_text = $nonce_url = '';
 		$page = admin_url( 'admin.php?page=' . sanitize_text_field($_GET['page']) );
 
-		$sts_cls = 'pxl-plugin-inst';
+		$sts_cls = 'rmt-plugin-inst';
 		switch( $status ) {
 			case 'not-installed':
 				$btn_class = 'white';
@@ -59,12 +59,12 @@ class portfoliocraft_Admin_Plugins extends portfoliocraft_Admin_Page {
 					add_query_arg(
 						array(
 							'plugin' => urlencode( $plugin['slug'] ),
-							'pxl-activate' => 'activate-plugin'
+							'rmt-activate' => 'activate-plugin'
 						),
 						$page
 					),
-					'pxl-activate',
-					'pxl-activate-nonce'
+					'rmt-activate',
+					'rmt-activate-nonce'
 				);
 				$sts_cls .=' installed';
 				break;
@@ -77,12 +77,12 @@ class portfoliocraft_Admin_Plugins extends portfoliocraft_Admin_Page {
 					add_query_arg(
 						array(
 							'plugin' => urlencode( $plugin['slug'] ),
-							'pxl-deactivate' => 'deactivate-plugin'
+							'rmt-deactivate' => 'deactivate-plugin'
 						),
 						$page
 					),
-					'pxl-deactivate',
-					'pxl-deactivate-nonce'
+					'rmt-deactivate',
+					'rmt-deactivate-nonce'
 				);
 				$sts_cls .=' active';
 				break;
@@ -92,17 +92,17 @@ class portfoliocraft_Admin_Plugins extends portfoliocraft_Admin_Page {
 			add_query_arg(
 				array(
 					'plugin' => urlencode( $plugin['slug'] ),
-					'pxl-deactivate' => 'deactivate-plugin'
+					'rmt-deactivate' => 'deactivate-plugin'
 				),
 				$page
 			),
-			'pxl-deactivate',
-			'pxl-deactivate-nonce'
+			'rmt-deactivate',
+			'rmt-deactivate-nonce'
 		);
 		$btn_text_active = esc_html_x( 'Deactivate', 'Plugin installation page.', 'portfoliocraft' );
 
 		printf(
-			'<a class="pxl-button '.$sts_cls.'" href="%4$s" title="%2$s %1$s" data-deactive-url="%5$s" data-text-active="%6$s"><span>%2$s</span></a>',
+			'<a class="rmt-button '.$sts_cls.'" href="%4$s" title="%2$s %1$s" data-deactive-url="%5$s" data-text-active="%6$s"><span>%2$s</span></a>',
 			$plugin['name'], $btn_text, $btn_class, esc_url( $nonce_url ), esc_url( $nonce_url_d ), $btn_text_active
 		);
 	}

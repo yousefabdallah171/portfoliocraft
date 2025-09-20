@@ -157,7 +157,7 @@ class portfoliocraft_Register {
         add_action('admin_init', array($this, 'register_option'), 12);
         add_action('admin_init', array($this, 'remove_key'), 13);
         add_action('admin_init', array($this, 'updater'), 14);
-        add_action('admin_init', array($this, 'pxl_notice'), 15);
+        add_action('admin_init', array($this, 'rmt_notice'), 15);
         add_filter('http_request_args', array($this, 'disable_wporg_request'), 5, 2);
     }
 
@@ -204,7 +204,7 @@ class portfoliocraft_Register {
      * @since 1.0.0
      * @return void
      */
-    public function pxl_notice() {
+    public function rmt_notice() {
         // Skip notices in development mode
         $dev_mode = (defined('DEV_MODE') && DEV_MODE);
         if ($dev_mode === true) return;
@@ -213,7 +213,7 @@ class portfoliocraft_Register {
         if ('valid' != get_option($this->theme_slug . '_purchase_code_status', false)) {
 
             // Show different notices based on current page
-            if ((!isset($_GET['page']) || 'pxlart' != sanitize_text_field($_GET['page']))) {
+            if ((!isset($_GET['page']) || 'rmtart' != sanitize_text_field($_GET['page']))) {
                 // Show error notice on other admin pages
                 add_action('admin_notices', array($this, 'admin_error'));
             } else {
@@ -236,7 +236,7 @@ class portfoliocraft_Register {
             sprintf(
                 wp_kses_post(esc_html__('The %s theme needs to be registered. %sRegister Now%s', 'portfoliocraft')), 
                 portfoliocraft()->get_name(), 
-                '<a href="' . admin_url('admin.php?page=pxlart') . '">', 
+                '<a href="' . admin_url('admin.php?page=rmtart') . '">', 
                 '</a>'
             ) . '</p></div>';
     }
@@ -270,13 +270,13 @@ class portfoliocraft_Register {
         if (!$purchase_code) {
             // Show registration form if no purchase code exists
             ?>
-            <div class="pxl-dsb-box-head-inner">
+            <div class="rmt-dsb-box-head-inner">
                 <h6><?php echo esc_html__('Register License', 'portfoliocraft'); ?></h6>
             </div>
             <?php 
             $this->form();
             ?>
-            <div class="pxl-dsb-box-foot">
+            <div class="rmt-dsb-box-foot">
                 <a href="https://help.market.envato.com/hc/en-us/articles/202822600-Where-Is-My-Purchase-Code-" target="_blank">
                     <?php esc_html_e('Can\'t find your purchase code?', 'portfoliocraft'); ?>
                 </a>
@@ -299,7 +299,7 @@ class portfoliocraft_Register {
      */
     function check_license($merlin) {
         // Get server information for support links
-        $pxl_server_info = apply_filters('pxl_server_info', [
+        $rmt_server_info = apply_filters('rmt_server_info', [
             'docs_url' => 'https://doc.portfoliocraft-themes.net/', 
             'support_url' => 'https://portfoliocraft-themes.ticksy.com/'
         ]);
@@ -338,14 +338,14 @@ class portfoliocraft_Register {
             
             // Display error message with support links
             ?>
-            <div class="pxl-dsb-confirmation fail">
+            <div class="rmt-dsb-confirmation fail">
                 <h6><?php echo esc_html__('Active false', 'portfoliocraft'); ?></h6>
                 <p>
                     <?php echo wp_kses_post($message); ?> 
-                    <a href="<?php echo esc_url($pxl_server_info['docs_url']); ?>" target="_blank">
+                    <a href="<?php echo esc_url($rmt_server_info['docs_url']); ?>" target="_blank">
                         <?php echo esc_html__('our help center', 'portfoliocraft'); ?>
                     </a> or 
-                    <a href="<?php echo esc_url($pxl_server_info['support_url']); ?>" target="_blank">
+                    <a href="<?php echo esc_url($rmt_server_info['support_url']); ?>" target="_blank">
                         <?php echo esc_html__('submit a ticket', 'portfoliocraft'); ?>
                     </a>
                 </p>
@@ -353,7 +353,7 @@ class portfoliocraft_Register {
             <?php 
             $this->form(); 
             ?>
-            <div class="pxl-dsb-box-foot">
+            <div class="rmt-dsb-box-foot">
                 <a href="https://help.market.envato.com/hc/en-us/articles/202822600-Where-Is-My-Purchase-Code-" target="_blank">
                     <?php esc_html_e('Can\'t find your purchase code?', 'portfoliocraft'); ?>
                 </a>
@@ -367,20 +367,20 @@ class portfoliocraft_Register {
                 
                 // Display success message with deactivation option
                 ?>
-                <div class="pxl-dsb-box-head"> 
-                    <div class="pxl-dsb-confirmation success">
+                <div class="rmt-dsb-box-head"> 
+                    <div class="rmt-dsb-confirmation success">
                         <h6><?php echo esc_html__('Thanks for the verification!', 'portfoliocraft'); ?></h6>
                         <p>
                             <?php echo esc_html__('You can now enjoy and build great websites. Looking for help? Visit', 'portfoliocraft'); ?> 
-                            <a href="<?php echo esc_url($pxl_server_info['support_url']); ?>" target="_blank">
+                            <a href="<?php echo esc_url($rmt_server_info['support_url']); ?>" target="_blank">
                                 <?php echo esc_html__('submit a ticket', 'portfoliocraft'); ?>
                             </a>.
                         </p>
                     </div>
                     
                     <!-- License removal form -->
-                    <div class="pxl-dsb-deactive">
-                        <form method="POST" action="<?php echo admin_url('admin.php?page=pxlart'); ?>">
+                    <div class="rmt-dsb-deactive">
+                        <form method="POST" action="<?php echo admin_url('admin.php?page=rmtart'); ?>">
                             <input type="hidden" name="action" value="removekey"/>
                             <button class="btn button" type="submit">
                                 <?php esc_html_e('Remove Purchase Code', 'portfoliocraft'); ?>
@@ -392,20 +392,20 @@ class portfoliocraft_Register {
                 
                 // Redirect to setup wizard if called from Merlin
                 if ($merlin) {
-                    wp_redirect(admin_url('admin.php?page=pxlart-setup&step=plugins'));
+                    wp_redirect(admin_url('admin.php?page=rmtart-setup&step=plugins'));
                 }
             } else {
                 // Handle unexpected response
                 $message = esc_html__('Response return null.', 'portfoliocraft');
                 ?>
-                <div class="pxl-dsb-confirmation fail">
+                <div class="rmt-dsb-confirmation fail">
                     <h6><?php echo esc_html__('Active false', 'portfoliocraft'); ?></h6>
                     <p>
                         <?php echo wp_kses_post($message); ?> 
-                        <a href="<?php echo esc_url($pxl_server_info['docs_url']); ?>" target="_blank">
+                        <a href="<?php echo esc_url($rmt_server_info['docs_url']); ?>" target="_blank">
                             <?php echo esc_html__('our help center', 'portfoliocraft'); ?>
                         </a> or 
-                        <a href="<?php echo esc_url($pxl_server_info['support_url']); ?>" target="_blank">
+                        <a href="<?php echo esc_url($rmt_server_info['support_url']); ?>" target="_blank">
                             <?php echo esc_html__('submit a ticket', 'portfoliocraft'); ?>
                         </a>
                     </p>
@@ -431,7 +431,7 @@ class portfoliocraft_Register {
         $status = get_option($this->theme_slug . '_purchase_code_status', false);
 
         ?>
-        <form action="options.php" method="post" class="pxl-dsb-register-form">
+        <form action="options.php" method="post" class="rmt-dsb-register-form">
             <?php settings_fields($this->theme_slug . '-license'); ?>
             
             <!-- Purchase code input field -->

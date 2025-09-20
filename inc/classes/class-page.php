@@ -54,10 +54,10 @@ if (!class_exists('portfoliocraft_Page')) {
                         <div class="split bottom"></div>
                     <?php else: ?>
                         <!-- Default bouncing loader -->
-                        <div class="pxl-loader-spinner">
-                            <div class="pxl-loader-bounce1"></div>
-                            <div class="pxl-loader-bounce2"></div>
-                            <div class="pxl-loader-bounce3"></div>
+                        <div class="rmt-loader-spinner">
+                            <div class="rmt-loader-bounce1"></div>
+                            <div class="rmt-loader-bounce2"></div>
+                            <div class="rmt-loader-bounce3"></div>
                         </div>
                     <?php endif; ?>
                 </div>
@@ -118,16 +118,16 @@ if (!class_exists('portfoliocraft_Page')) {
 
             // Determine if using builder mode
             $is_builder = false;
-            $id = 'pxl-post-title-default';
+            $id = 'rmt-post-title-default';
 
             if ($post_title_mode === 'builder' && $post_title_layout > 0 && 
-                class_exists('pxltheme_Core') && is_callable('Elementor\Plugin::instance')) {
+                class_exists('rmttheme_Core') && is_callable('Elementor\Plugin::instance')) {
                 $is_builder = true;
-                $id = 'pxl-post-title-builder';
+                $id = 'rmt-post-title-builder';
             }
             ?>
-            <section id="<?php echo esc_attr($id); ?>" class="pxl-post-title">
-                <div class="pxl-post-title-inner">
+            <section id="<?php echo esc_attr($id); ?>" class="rmt-post-title">
+                <div class="rmt-post-title-inner">
                     <?php if ($is_builder) : ?>
                         <!-- Render Elementor template -->
                         <?php echo Elementor\Plugin::$instance->frontend->get_builder_content_for_display($post_title_layout); ?>
@@ -137,8 +137,8 @@ if (!class_exists('portfoliocraft_Page')) {
                             $title = $this->get_title();
                             $post_title = $title['title'];    
                         ?>
-                        <h1 class="pxl-post-title">
-                            <span class="pxl-title-text">
+                        <h1 class="rmt-post-title">
+                            <span class="rmt-title-text">
                                 <?php echo esc_html($post_title); ?>
                             </span>
                         </h1>
@@ -165,17 +165,17 @@ if (!class_exists('portfoliocraft_Page')) {
             
             // Builder mode for regular pages
             if ($pt_mode == 'bd' && $ptitle_layout > 0 && 
-                class_exists('pxltheme_Core') && is_callable('Elementor\Plugin::instance')) { ?>
-                <div id="pxl-page-title-elementor">
+                class_exists('rmttheme_Core') && is_callable('Elementor\Plugin::instance')) { ?>
+                <div id="rmt-page-title-elementor">
                     <?php echo Elementor\Plugin::$instance->frontend->get_builder_content_for_display($ptitle_layout); ?>
                 </div>
                 <?php 
             } 
             // Builder mode for WooCommerce products
             elseif ($pt_mode_product == 'bd' && $ptitle_layout_product > 0 && 
-                    class_exists('pxltheme_Core') && is_callable('Elementor\Plugin::instance')) { ?>
+                    class_exists('rmttheme_Core') && is_callable('Elementor\Plugin::instance')) { ?>
                 <?php if (class_exists('WooCommerce') && (is_shop() || is_singular('product'))) : ?>
-                    <div id="pxl-page-title-elementor" class="pxl-page-title-shop">
+                    <div id="rmt-page-title-elementor" class="rmt-page-title-shop">
                         <?php echo Elementor\Plugin::$instance->frontend->get_builder_content_for_display($ptitle_layout_product); ?>
                     </div>
                 <?php endif; ?>
@@ -183,11 +183,11 @@ if (!class_exists('portfoliocraft_Page')) {
             // Default mode
             elseif ($pt_mode == 'df') {
                 $ptitle_breadcrumb_on = portfoliocraft()->get_opt('ptitle_breadcrumb_on', '1'); ?>
-                <div id="pxl-page-title-default">
+                <div id="rmt-page-title-default">
                     <div class="container">
                         <div class="row">
                             <div class="col-sm-12 col-md-6 col-lg-6">
-                                <h1 class="pxl-page-title"><?php echo portfoliocraft_html($titles['title']); ?></h1>
+                                <h1 class="rmt-page-title"><?php echo portfoliocraft_html($titles['title']); ?></h1>
                             </div>
                             <div class="ptitle-col-right col-sm-12 col-md-6 col-lg-6">
                                 <?php if ($ptitle_breadcrumb_on == '1') : ?>
@@ -324,7 +324,7 @@ if (!class_exists('portfoliocraft_Page')) {
                 // Render link or current item
                 if (!empty($entry['url'])) {
                     printf(
-                        '<a class="pxl-breadcrumb-link" href="%1$s">%2$s</a>',
+                        '<a class="rmt-breadcrumb-link" href="%1$s">%2$s</a>',
                         esc_url($entry['url']),
                         esc_html($entry_label)
                     );
@@ -356,17 +356,17 @@ if (!class_exists('portfoliocraft_Page')) {
                         $entry_label = $custom_single_post_title;
                     }
                     
-                    printf('<span class="pxl-breadcrumb-current">%s</span>', esc_html($entry_label));
+                    printf('<span class="rmt-breadcrumb-current">%s</span>', esc_html($entry_label));
                 }
 
                 echo '</li>';
-                echo '<li class="pxl-breadcrumb-separator">.</li>';
+                echo '<li class="rmt-breadcrumb-separator">.</li>';
             }
 
             $output = ob_get_clean();
 
             if ($output) {
-                printf('<ul class="pxl-breadcrumb">%s</ul>', wp_kses_post($output));
+                printf('<ul class="rmt-breadcrumb">%s</ul>', wp_kses_post($output));
             }
         }
 
@@ -449,7 +449,7 @@ if (!class_exists('portfoliocraft_Page')) {
             
             if ($links) :
             ?>
-            <nav class="pxl-pagination-wrap <?php echo esc_attr($ajax ? 'ajax' : ''); ?>">
+            <nav class="rmt-pagination-wrap <?php echo esc_attr($ajax ? 'ajax' : ''); ?>">
                 <?php echo wp_kses_post($links); ?>
             </nav>
             <?php

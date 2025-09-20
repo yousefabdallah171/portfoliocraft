@@ -26,45 +26,45 @@
     let scrollTop = $(this).scrollTop();
     if (scrollTop > 150 && windowWidth >= 1200) {
       if (scrollTop > lastScrollTop) {
-        $(".pxl-header-sticky.scroll-down").css("transform", "translateY(0)");
-        $(".pxl-header-sticky.scroll-up").css("transform", "translateY(-100%)");
+        $(".rmt-header-sticky.scroll-down").css("transform", "translateY(0)");
+        $(".rmt-header-sticky.scroll-up").css("transform", "translateY(-100%)");
       } else {
-        $(".pxl-header-sticky.scroll-up").css("transform", "translateY(0)");
-        $(".pxl-header-sticky.scroll-down").css(
+        $(".rmt-header-sticky.scroll-up").css("transform", "translateY(0)");
+        $(".rmt-header-sticky.scroll-down").css(
           "transform",
           "translateY(-100%)"
         );
       }
     } else if (scrollTop < 100 && windowWidth >= 1200) {
-      $(".pxl-header-sticky.scroll-up").css("transform", "translateY(-100%)");
+      $(".rmt-header-sticky.scroll-up").css("transform", "translateY(-100%)");
     }
     lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
   });
 
   // Toggle Mobile Menu
   function portfoliocraftToggleMobileMenu() {
-    $(".pxl-toggle-menu").on("click", function (e) {
+    $(".rmt-toggle-menu").on("click", function (e) {
       e.preventDefault();
-      $(this).siblings(".pxl-sidebar-menu").toggleClass("active");
-      $(this).siblings(".pxl-header-backdrop").toggleClass("active");
+      $(this).siblings(".rmt-sidebar-menu").toggleClass("active");
+      $(this).siblings(".rmt-header-backdrop").toggleClass("active");
       $("body").addClass("body-overflow");
     });
 
-    $(".pxl-header-backdrop").on("click", function (e) {
-      $(this).siblings(".pxl-sidebar-menu").toggleClass("active");
+    $(".rmt-header-backdrop").on("click", function (e) {
+      $(this).siblings(".rmt-sidebar-menu").toggleClass("active");
       $(this).toggleClass("active");
       $("body").removeClass("body-overflow");
     });
 
-    $(".pxl-header .pxl-close-menu").on("click", function () {
-      $(this).closest(".pxl-sidebar-menu").toggleClass("active");
+    $(".rmt-header .rmt-close-menu").on("click", function () {
+      $(this).closest(".rmt-sidebar-menu").toggleClass("active");
       $("body").removeClass("body-overflow");
-      $(".pxl-header .pxl-header-backdrop").toggleClass("active");
+      $(".rmt-header .rmt-header-backdrop").toggleClass("active");
     });
   }
   // Menu Responsive Dropdown
   function portfoliocraftHandleSubmenu() {
-    const menu_items = $(".pxl-header li.menu-item-has-children");
+    const menu_items = $(".rmt-header li.menu-item-has-children");
     if (!menu_items.length) return;
     menu_items.each(function (i, menu_item) {
       let submenu = $(menu_item).find("> .sub-menu").first();
@@ -102,7 +102,7 @@
   // Active menu to submenu
   function activeMenuToSubmenu() {
     let currentUrl = window.location.href;
-    let megaMenuItems = $(".pxl-menu-primary .sub-menu.pxl-mega-menu");
+    let megaMenuItems = $(".rmt-menu-primary .sub-menu.rmt-mega-menu");
     if (!megaMenuItems.length) return;
     megaMenuItems.each(function (i, menuItem) {
       const megaMenuItemLinks = $(menuItem).find("a");
@@ -112,7 +112,7 @@
         let menuItemLinkHref = String($(menuItemLink).attr("href") + "/");
         let currentUrlString = String(currentUrl);
         if (menuItemLinkHref === currentUrlString) {
-          $(currentMenuItem).parent(".pxl-megamenu").first().addClass("active");
+          $(currentMenuItem).parent(".rmt-megamenu").first().addClass("active");
         }
       });
     });

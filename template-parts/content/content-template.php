@@ -11,8 +11,8 @@ $portfoliocraft_sidebar = portfoliocraft()->get_sidebar_value(['type' => 'blog',
 ?>
 <div class="container">
     <div class="row <?php echo esc_attr($portfoliocraft_sidebar['wrap_class']) ?>" >
-        <div id="pxl-content-area" class="<?php echo esc_attr($portfoliocraft_sidebar['content_class']) ?>">
-            <main id="pxl-content-main">
+        <div id="rmt-content-area" class="<?php echo esc_attr($portfoliocraft_sidebar['content_class']) ?>">
+            <main id="rmt-content-main">
                 <?php if ( have_posts() ) {
                     while ( have_posts() ) {
                         the_post();
@@ -25,8 +25,8 @@ $portfoliocraft_sidebar = portfoliocraft()->get_sidebar_value(['type' => 'blog',
             </main>
         </div>
         <?php if ($portfoliocraft_sidebar['sidebar_class']) : ?>
-            <div id="pxl-sidebar-area" class="<?php echo esc_attr($portfoliocraft_sidebar['sidebar_class']) ?>">
-                <div class="pxl-sidebar-content">
+            <div id="rmt-sidebar-area" class="<?php echo esc_attr($portfoliocraft_sidebar['sidebar_class']) ?>">
+                <div class="rmt-sidebar-content">
                     <?php get_sidebar(); ?>
                 </div>
             </div>

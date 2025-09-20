@@ -40,7 +40,7 @@ input[type="time"],
 input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"],
-textarea, select, .pxl-select-higthlight, .nice-select {
+textarea, select, .rmt-select-higthlight, .nice-select {
     // background-color: #F8F8F8;
     // border: 1px solid #F8F8F8;
     // color: #454545;
@@ -73,15 +73,15 @@ select {
 }
 
 /* Select Style */
-.pxl-select {
+.rmt-select {
     width: 100%;
     position: relative;
-    .pxl-select-hidden {
+    .rmt-select-hidden {
         position: absolute;
         visibility: hidden;
         opacity: 0;
     }
-    .pxl-select-options {
+    .rmt-select-options {
         max-height: 282px;
         overflow-y: scroll;
         position: absolute;
@@ -118,7 +118,7 @@ select {
             }
         }
     }
-    .pxl-select-higthlight {
+    .rmt-select-higthlight {
         display: flex;
         align-items: center;
         cursor: pointer;
@@ -142,7 +142,7 @@ select {
         &.active {
             border-bottom-left-radius: 0px !important;
             border-bottom-right-radius: 0px !important;
-            + .pxl-select-options {
+            + .rmt-select-options {
                 opacity: 1;
                 margin-top: 0px;
                 visibility: visible;
@@ -326,7 +326,7 @@ body {
 }
 
 
-.pxl-file-upload-wrapper {
+.rmt-file-upload-wrapper {
     position: relative;
     display: inline-flex;
     flex-direction: row-reverse;
@@ -334,7 +334,7 @@ body {
     @media #{$max-sm} {
         display: block;
     }
-    .pxl-file-upload-button {
+    .rmt-file-upload-button {
         white-space: nowrap;
         line-height: 52px;
         font-size: 16px;
@@ -350,7 +350,7 @@ body {
             background: #222;
         }
     }
-    .pxl-file-upload-input {
+    .rmt-file-upload-input {
         width: auto;
         font-size: 16px;
         color: #0A1320;

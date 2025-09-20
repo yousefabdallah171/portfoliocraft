@@ -83,7 +83,7 @@ class portfoliocraft_Categories_Walker extends Walker_Category {
 
 
         $link .= '<span class="title">'.$cat_name.'</span>';
-        $link .= ' <span class="pxl-category-count">(' . $number_tmp . number_format_i18n( $category->count ) . '))</span>';
+        $link .= ' <span class="rmt-category-count">(' . $number_tmp . number_format_i18n( $category->count ) . '))</span>';
         $link .= '</a>';
 
 
@@ -120,10 +120,10 @@ class portfoliocraft_Categories_Walker extends Walker_Category {
         if ( 'list' == $args['style'] ) {
             $output .= "\t<li";
             $css_classes = array(
-                'pxl-category-item '.$active_class,
+                'rmt-category-item '.$active_class,
             );
             if($args['has_children']){
-                $css_classes[] =  'pxl-cat-parents';
+                $css_classes[] =  'rmt-cat-parents';
             }
             if ( ! empty( $args['current_category'] ) ) {
                 $_current_terms = get_terms( $category->taxonomy, array(
@@ -169,7 +169,7 @@ class portfoliocraft_Categories_Walker extends Walker_Category {
             $output .= "\t$link<br />\n";
         }
         if($args['has_children']){
-            $output .= '<span class="pxl-menu-toggle"></span>';
+            $output .= '<span class="rmt-menu-toggle"></span>';
         }
     }
 }
@@ -179,7 +179,7 @@ if(!function_exists('portfoliocraft_woocommerce_layered_nav_term_html')){
     add_filter('woocommerce_layered_nav_count', function (){ return '';});
     
     function portfoliocraft_woocommerce_layered_nav_term_html($term_html, $term, $link, $count){
-        $term_html = str_replace('<a rel="nofollow" href="' . esc_url( $link ) . '">' . esc_html( $term->name ) . '</a>', '<a rel="nofollow" href="' . esc_url( $link ) . '"><span class="title">' . esc_html( $term->name ) . '</span><span class="pxl-count"><span> ' . absint( $count ) . ' </span></span></a>' ,$term_html);
+        $term_html = str_replace('<a rel="nofollow" href="' . esc_url( $link ) . '">' . esc_html( $term->name ) . '</a>', '<a rel="nofollow" href="' . esc_url( $link ) . '"><span class="title">' . esc_html( $term->name ) . '</span><span class="rmt-count"><span> ' . absint( $count ) . ' </span></span></a>' ,$term_html);
         return $term_html;
     }
 }

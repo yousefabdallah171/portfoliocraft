@@ -86,12 +86,12 @@ $args = array(
     
     // Menu and Page Settings
     'page_priority'        => 80,
-    'page_parent'          => 'pxlart',
+    'page_parent'          => 'rmtart',
     'page_permissions'     => 'manage_options',
     'menu_icon'            => '',
     'last_tab'             => '',
     'page_icon'            => 'icon-themes',
-    'page_slug'            => 'pxlart-theme-options',
+    'page_slug'            => 'rmtart-theme-options',
     
     // Data Management
     'save_defaults'        => true,

@@ -18,7 +18,7 @@ if (!defined('ABSPATH')) {
 get_header();
 
 // Enqueue 404 page specific styles
-wp_enqueue_style('portfoliocraft-404', get_template_directory_uri() . '/assets/css/404.css', array('pxl-style'), '1.0.0');
+wp_enqueue_style('portfoliocraft-404', get_template_directory_uri() . '/assets/css/404.css', array('rmt-style'), '1.0.0');
 wp_add_inline_style('portfoliocraft-404', portfoliocraft_inline_styles());
 
 // Get custom 404 page ID from theme options

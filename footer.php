@@ -2,7 +2,7 @@
 /**
  * Footer Template
  *
- * Contains the closing of the #pxl-main div and all content after.
+ * Contains the closing of the #rmt-main div and all content after.
  * This template handles footer display, smooth scrolling, and back to top functionality.
  *
  * @package portfoliocraft-Themes
@@ -22,15 +22,15 @@ $back_to_top = portfoliocraft()->get_opt('back_to_top', false);
 $back_to_top_position = portfoliocraft()->get_opt('back_to_top_position', 'right');
 ?>
 
-		</div><!-- #pxl-main -->
+		</div><!-- #rmt-main -->
 		
 		<!-- Footer section -->
 		<?php portfoliocraft()->footer->getFooter(); ?>
 		
 		<!-- Back to Top Button -->
 		<?php if ($back_to_top) : ?>
-			<button id="pxl-back-to-top" class="pxl-back-to-top <?php echo esc_attr($back_to_top_position); ?>" aria-label="Back to top">
-				<span class="pxl-back-to-top__icon">&uarr;</span>
+			<button id="rmt-back-to-top" class="rmt-back-to-top <?php echo esc_attr($back_to_top_position); ?>" aria-label="Back to top">
+				<span class="rmt-back-to-top__icon">&uarr;</span>
 			</button>
 		<?php endif; ?>
 		
@@ -41,9 +41,9 @@ $back_to_top_position = portfoliocraft()->get_opt('back_to_top_position', 'right
 		<?php endif; ?>
 		
 		<!-- Anchor target hook for custom functionality -->
-		<?php do_action('pxl_anchor_target'); ?>
+		<?php do_action('rmt_anchor_target'); ?>
 		
-		</div><!-- #pxl-wrapper -->
+		</div><!-- #rmt-wrapper -->
 		
 	<!-- WordPress footer hook - Essential for plugins -->
 	<?php wp_footer(); ?>

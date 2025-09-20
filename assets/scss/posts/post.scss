@@ -1,10 +1,10 @@
-.pxl-layout-post {
+.rmt-layout-post {
     a {
         color: inherit;
         transition: 0s;
     }
-    .pxl-post-featured {
-        --pxl-transition-duration: .3s;
+    .rmt-post-featured {
+        --rmt-transition-duration: .3s;
         overflow: hidden;
         width: 100%;
         display: block;
@@ -17,37 +17,37 @@
             width: 100%;
         }
     }
-    .pxl-post-content {
+    .rmt-post-content {
         position: relative;
     }
-    .pxl-post-title, .pxl-post-date, .pxl-post-author {
+    .rmt-post-title, .rmt-post-date, .rmt-post-author {
         transition: .25s linear;
     }
-    .pxl-post-author {
+    .rmt-post-author {
         position: relative;
         z-index: 100;
     }
 }
-.pxl-layout-post1 {
+.rmt-layout-post1 {
     &.layout-post-default {
-        .pxl-grid-inner {
-            --pxl-spacing-inline: 16px;
-            --pxl-spacing-block: 46px;
+        .rmt-grid-inner {
+            --rmt-spacing-inline: 16px;
+            --rmt-spacing-block: 46px;
             @media #{$max-lg} {
-                --pxl-spacing-inline: 15px;
-                --pxl-spacing-block: 40px;
+                --rmt-spacing-inline: 15px;
+                --rmt-spacing-block: 40px;
             }
             @media #{$max-sm} {
-                --pxl-spacing-block: 30px;
+                --rmt-spacing-block: 30px;
             }
         }
-        .pxl-post-featured {
+        .rmt-post-featured {
             border-radius: 25px;
         }
-        .pxl-post-content {
+        .rmt-post-content {
             padding-top: 37px;
         }
-        .pxl-post-date {
+        .rmt-post-date {
             display: inline-block;
             border-radius: 110px;
             border: 1px solid #D5D5D5;
@@ -61,7 +61,7 @@
             line-height: 24px; 
             margin-bottom: 18px;
         }
-        .pxl-post-title {
+        .rmt-post-title {
             color: #000;
             margin-bottom: 17px;
             @media #{$max-lg} {
@@ -77,13 +77,13 @@
                 font-size: 20px;
             }
         }
-        .pxl-post-author {
+        .rmt-post-author {
             color: #010101;
             font-family: var(--secondary-font);
             font-size: 15px;
             line-height: 1.86667;
         }
-        .pxl-grid-pagination {
+        .rmt-grid-pagination {
             margin-top: 70px;
             .page-numbers {
                 color: #000
@@ -92,42 +92,42 @@
     }
     &.layout-post-style2 {
         @extend .layout-post-default;
-        .pxl-post-date {
+        .rmt-post-date {
             font-family: 'Inter';
         }
-        .pxl-post-title {
+        .rmt-post-title {
             font-family: 'Inter';
             color: #010101;
             margin-bottom: 19px;
             font-size: 26px;
             line-height: 1.30769;;
             a {
-                --pxl-height: 2px;
+                --rmt-height: 2px;
                 @extend .text-underline;
             }
             @media #{$max-sm} {
                 font-size: 24px;
             }
         }
-        .pxl-author-link {
+        .rmt-author-link {
             font-family: 'Plus Jakarta Sans';
         }
     }
     &.layout-post-style1 {
-        .pxl-grid-inner {
-            --pxl-spacing-inline: 20px;
-            --pxl-spacing-block: 36px;
+        .rmt-grid-inner {
+            --rmt-spacing-inline: 20px;
+            --rmt-spacing-block: 36px;
             @media #{$max-lg} {
-                --pxl-spacing-inline: 15px;
-                --pxl-spacing-block: 30px;
+                --rmt-spacing-inline: 15px;
+                --rmt-spacing-block: 30px;
             }
         }
-        .pxl-post-featured {
+        .rmt-post-featured {
             margin-bottom: 39px;
             border-radius: 25px;
             overflow: hidden;
         }
-        .pxl-post-date {
+        .rmt-post-date {
             display: inline-block;
             padding-inline: 18px;
             color: #4B4B4B;
@@ -141,7 +141,7 @@
             background: #F1F1F1;
             margin-bottom: 17px;
         }
-        .pxl-post-title {
+        .rmt-post-title {
             display: block;
             color: #000;
             @extend .h9;
@@ -156,14 +156,14 @@
                 font-size: 24px;
             }
         }
-        .pxl-post-author{
+        .rmt-post-author{
             display: block;
             color: #010101;
             font-family: 'Inter';
             font-size: 16px;
             line-height: 1.75;
         }
-        .pxl-grid-pagination {
+        .rmt-grid-pagination {
             margin-top: 72px;
             .page-numbers {
                 color: #000
@@ -172,19 +172,19 @@
     }
 }
 
-.pxl-layout-post2 { 
-    .pxl-grid-inner {
-        --pxl-spacing-inline: 11px;
-        --pxl-spacing-block: 56px;
+.rmt-layout-post2 { 
+    .rmt-grid-inner {
+        --rmt-spacing-inline: 11px;
+        --rmt-spacing-block: 56px;
         @media #{$max-lg} {
-            --pxl-spacing-inline: 11px;
-            --pxl-spacing-block: 50px;
+            --rmt-spacing-inline: 11px;
+            --rmt-spacing-block: 50px;
         }
         @media #{$max-sm} {
-            --pxl-spacing-block: 30px;
+            --rmt-spacing-block: 30px;
         }
     }
-    .pxl-post-content {
+    .rmt-post-content {
         text-align: center;
         padding-top: 43px;
         padding-inline: 30px;
@@ -193,7 +193,7 @@
             padding-top: 30px;
         }
     }
-    .pxl-post-title {
+    .rmt-post-title {
         color:#FFF;
         text-align: inherit;
         @extend .h9;
@@ -212,7 +212,7 @@
         }
     }
 
-    .pxl-post-meta {
+    .rmt-post-meta {
         position: relative;
         z-index: 100;
         display: flex;
@@ -222,30 +222,30 @@
         justify-content: center;
         flex-wrap: wrap;
         pointer-events: none;
-        .pxl-post-date, .pxl-post-category{
+        .rmt-post-date, .rmt-post-category{
             color: #B2B2B2;
             line-height: 1.444444;
         }
-        .pxl-post-category {
+        .rmt-post-category {
             pointer-events: visible;
         }
     }
 
 
-    .pxl-grid-pagination {
+    .rmt-grid-pagination {
         margin-top: 82px;
     }
 }
 
-.pxl-layout-post3 {
-    .pxl-grid-inner {
-        --pxl-spacing-block: 26px;
-        --pxl-spacing-inline: 46px;
+.rmt-layout-post3 {
+    .rmt-grid-inner {
+        --rmt-spacing-block: 26px;
+        --rmt-spacing-inline: 46px;
         @media #{$max-xl} {
-            --pxl-spacing-inline: 20px;
+            --rmt-spacing-inline: 20px;
         }
     }
-    .pxl-post-item {
+    .rmt-post-item {
         display: flex;
         gap: 35px;
         @media #{$max-xl} { 
@@ -255,7 +255,7 @@
             gap: 15px;
         }
     }
-    .pxl-post-featured {
+    .rmt-post-featured {
         flex-basis: 51.75%;
         @media #{$max-lg} {
             flex-basis: 45%;
@@ -269,7 +269,7 @@
             height: 100%;
         }
     }
-    .pxl-post-content {
+    .rmt-post-content {
         flex-basis: 48.25%;
         padding: 15px 0 18px;
         @media #{$max-lg} {
@@ -277,7 +277,7 @@
             flex-basis: 55%;
         }
     }
-    .pxl-post-date {
+    .rmt-post-date {
         display: inline-block;
         padding-inline: 13.5px;
         border-radius: 109px;
@@ -291,7 +291,7 @@
         margin-bottom: 18px;
         text-transform: uppercase;
     }
-    .pxl-post-title {
+    .rmt-post-title {
         margin-bottom: 12px;
         @media #{$max-lg} {
             font-size: 22px;
@@ -300,12 +300,12 @@
             font-size: 20px;
         }
     }
-    .pxl-posst-author {
+    .rmt-posst-author {
         color: #121212;
         line-height: 1.55556;
     }
 
-    .pxl-grid-pagination {
+    .rmt-grid-pagination {
         margin-top: 83px;
         .page-numbers {
             color: #000

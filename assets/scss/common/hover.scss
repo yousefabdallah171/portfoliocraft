@@ -2,17 +2,17 @@
 .hover-tilt {
     transform-style: preserve-3d;
     transform: perspective(500px);
-    transition: all var(--pxl-transition-duration) linear, transform 0s !important;
+    transition: all var(--rmt-transition-duration) linear, transform 0s !important;
     * {
         transform: translateZ(80px);
     }
 }
 .hover-3d-cube-flip {
-    --pxl-translate-z: 17px;
+    --rmt-translate-z: 17px;
     position: relative;
     transform-style: preserve-3d;
     transform: rotateX(-90deg) ;
-    transition: var(--pxl-transition-duration) linear;
+    transition: var(--rmt-transition-duration) linear;
     > a {
         display: block;
         position: relative;
@@ -34,11 +34,11 @@
     }
     &::before {
         color: #FFF;
-        transform: rotateX(90deg) translateZ(var(--pxl-translate-z));
+        transform: rotateX(90deg) translateZ(var(--rmt-translate-z));
     }
     &::after {
         color: #D7FF37;
-        transform: translateZ(var(--pxl-translate-z));
+        transform: translateZ(var(--rmt-translate-z));
     }
     &:hover,
     .hover-parent:hover &, 
@@ -55,14 +55,14 @@
 
 // Image
 .hover-image-zoom-in {
-    --pxl-scale: 1.1;
+    --rmt-scale: 1.1;
     overflow: hidden;
     img {
-        transition: var(--pxl-transition-duration) linear;
+        transition: var(--rmt-transition-duration) linear;
     }
     &:hover {
         img {
-            scale: var(--pxl-scale);
+            scale: var(--rmt-scale);
         }
     }
 }
@@ -205,11 +205,11 @@
     } 
 }
 .hover-text-underline {
-    --pxl-height: 2px;
+    --rmt-height: 2px;
     transition: .25s linear;
     &:hover, 
     .hover-parent:hover & {
-        text-decoration: underline var(--pxl-height) currentColor;
+        text-decoration: underline var(--rmt-height) currentColor;
     }
 }
 .hover-text-fill {
@@ -232,12 +232,12 @@
     }
 }
 .hover-text-underline--slide-ltr {
-    --pxl-height: 1px;
+    --rmt-height: 1px;
     > span, > a {
         transition: .5s;
         display: inline;
         background-image: linear-gradient(
-            transparent calc(100% - var(--pxl-height)),currentcolor 0px
+            transparent calc(100% - var(--rmt-height)),currentcolor 0px
         );
         background-size: 0% 100%;
         background-repeat: no-repeat;
@@ -251,12 +251,12 @@
     }
 }
 .hover-text-underline--slide-rtl {
-    --pxl-height: 1px;
+    --rmt-height: 1px;
     > span, > a {
         transition: .5s;
         display: inline;
         background-image: linear-gradient(
-            transparent calc(100% - var(--pxl-height)), currentcolor 0px
+            transparent calc(100% - var(--rmt-height)), currentcolor 0px
         );
         background-size: 0% 100%;
         background-repeat: no-repeat;
@@ -277,7 +277,7 @@
     }
 }
 .hover-translate3d-direction {
-    $pxl-transition-tf: ease;
+    $rmt-transition-tf: ease;
     position: relative;
     perspective: 400px;
     overflow: hidden;
@@ -287,7 +287,7 @@
     }
 }
 .hover-rotate3d-direction {
-    $pxl-transition-tf: ease;
+    $rmt-transition-tf: ease;
     perspective: 400px;
     overflow: hidden;
     .direction-item {
@@ -372,7 +372,7 @@
     .menu-item.active &,
     .current-menu-parent &,
     .current_page_item &,
-    .pxl-onepage-active &{
+    .rmt-onepage-active &{
         &::after {
             width: 100%;
             left: 0;
@@ -400,7 +400,7 @@
     .menu-item.active &,
     .current-menu-parent &,
     .current_page_item &,
-    .pxl-onepage-active & {
+    .rmt-onepage-active & {
         &::after {
             width: 100%;
             left: auto;
@@ -427,7 +427,7 @@
     .menu-item.active &,
     .current-menu-parent &,
     .current_page_item &,
-    .pxl-onepage-active & {
+    .rmt-onepage-active & {
         &::after {
             transform: translateX(-50%) scaleX(1);
         }
@@ -456,7 +456,7 @@
     .menu-item.active &,
     .current-menu-parent &,
     .current_page_item &,
-    .pxl-onepage-active & {
+    .rmt-onepage-active & {
         &::before, &::after {
             width: 51%;
         }
@@ -466,8 +466,8 @@
 .hover-popup-dot {
     position: relative;
     &::before {
-        --pxl-box-size: 8px;
-        @extend .pxl-round-box;
+        --rmt-box-size: 8px;
+        @extend .rmt-round-box;
         content: '';
         position: absolute;
         left: 0;
@@ -482,7 +482,7 @@
     .menu-item.active &,
     .current-menu-parent &,
     .current_page_item &,
-    .pxl-onepage-active & {
+    .rmt-onepage-active & {
         color: var(--link-color-hover);
         padding-left: 14px;
         &::before {
@@ -494,16 +494,16 @@
 .hover-box-shadow-underfoot {
     .box-item {
         position: relative;
-        --pxl-width: 100%;
-        --pxl-height: 30px;
-        --pxl-background-color: rgba(0, 0, 0, .25);
+        --rmt-width: 100%;
+        --rmt-height: 30px;
+        --rmt-background-color: rgba(0, 0, 0, .25);
         @include transition(opacity .25s linear, transform .25s linear);
         &::after {
             content: '';
-            width: var(--pxl-width);
-            height: var(--pxl-height);
+            width: var(--rmt-width);
+            height: var(--rmt-height);
             border-radius: 50%;
-            background-color: var(--pxl-background-color);
+            background-color: var(--rmt-background-color);
             filter: blur(5px);
             position: absolute;
             bottom: 0;
@@ -514,10 +514,10 @@
     }
     &:hover {
         .box-item {
-            transform: translateY(calc(-1 * var(--pxl-height)));
+            transform: translateY(calc(-1 * var(--rmt-height)));
             &::after {
                 opacity: 1;
-                transform: translateY(calc(5px + var(--pxl-height)));
+                transform: translateY(calc(5px + var(--rmt-height)));
             }
         }
     }
@@ -555,7 +555,7 @@
     }
     &::before {
         content: '';
-        @extend .pxl-absolute-full;
+        @extend .rmt-absolute-full;
         scale: 0;
         background-color: #fff;
         transition: inherit;
@@ -602,7 +602,7 @@
         height: 100%;
         pointer-events: none;
     }
-    .pxl-image-group {
+    .rmt-image-group {
         display: block;
         img {
             object-fit: cover;        

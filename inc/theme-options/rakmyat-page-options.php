@@ -18,7 +18,7 @@ if (!defined('ABSPATH')) {
 /**
  * Register Page Options Metaboxes
  * 
- * Hooks into the pxl_post_metabox_register action to register metabox options
+ * Hooks into the rmt_post_metabox_register action to register metabox options
  * for all public post types. Creates comprehensive page-level options including
  * header settings, page title configuration, content options, footer settings,
  * color customization, and extra features.
@@ -26,7 +26,7 @@ if (!defined('ABSPATH')) {
  * @param object $metabox The metabox registration object
  * @return void
  */
-add_action('pxl_post_metabox_register', 'portfoliocraft_page_options_register');
+add_action('rmt_post_metabox_register', 'portfoliocraft_page_options_register');
 function portfoliocraft_page_options_register($metabox) {
     
     // Security check: Ensure metabox object exists
@@ -60,7 +60,7 @@ function portfoliocraft_page_options_register($metabox) {
         
         // Build panel configuration for current post type
         $panels[$sanitized_post_type] = array(
-            'opt_name'            => 'pxl_' . $sanitized_post_type . '_options',
+            'opt_name'            => 'rmt_' . $sanitized_post_type . '_options',
             'display_name'        => sprintf(esc_html__('%s Options', 'portfoliocraft'), ucfirst($post_type)),
             'show_options_object' => false,
             'context'            => 'advanced',

@@ -10,7 +10,7 @@ if (!class_exists('portfoliocraft_Footer')) {
             
             $footer_layout = (int)portfoliocraft()->get_opt('footer_layout');
             
-            if ($footer_layout <= 0 || !class_exists('pxltheme_Core') || !is_callable( 'Elementor\Plugin::instance' )) {
+            if ($footer_layout <= 0 || !class_exists('rmttheme_Core') || !is_callable( 'Elementor\Plugin::instance' )) {
                 get_template_part( 'template-parts/footer/default');
             } else {
                 $args = [

@@ -711,7 +711,7 @@ class Theme_Demo_Controller {
         // Common Redux option names
         $theme_slug = get_option('stylesheet');
         $common_names = array(
-            'pxl_theme_options',
+            'rmt_theme_options',
             'theme_options',
             $theme_slug . '_options',
             'redux_options'
@@ -723,7 +723,7 @@ class Theme_Demo_Controller {
             }
         }
         
-        return 'pxl_theme_options'; // Default for portfoliocraft theme
+        return 'rmt_theme_options'; // Default for portfoliocraft theme
     }
     
     /**

@@ -1,4 +1,4 @@
-.pxl-button-wrapper {
+.rmt-button-wrapper {
     display: flex;
 }
 @keyframes scale-reverse {
@@ -26,7 +26,7 @@
     margin: 0;
     white-space: nowrap;
     @include transition(.25s linear);
-    .pxl-btn-icon, .pxl-btn-text {
+    .rmt-btn-icon, .rmt-btn-text {
         transition: inherit;
         display: inherit;
         align-items: center;
@@ -35,35 +35,35 @@
         z-index: 9;
     }
 
-    &.pxl-btn-normal {
+    &.rmt-btn-normal {
         border-radius: 100px;
         height: 60px;
         padding-inline: 41.5px;
         line-height: 1;
     }
-    &.pxl-btn-split {
-        --pxl-height: 60px;
-        --pxl-background-color: #FFCD4D;
-        height: var(--pxl-height);
+    &.rmt-btn-split {
+        --rmt-height: 60px;
+        --rmt-background-color: #FFCD4D;
+        height: var(--rmt-height);
         font-size: 14px;
         font-weight: 500;
         font-family: 'Inter';
         color: #010101;
         background-color: transparent;
-        padding-inline: 0 var(--pxl-height);
+        padding-inline: 0 var(--rmt-height);
         line-height: 1;
-        .pxl-btn-text {
+        .rmt-btn-text {
             position: relative;
             border-radius: 100px;
             height: 100%;
             padding-inline: 49.5px;
-            background-color: var(--pxl-background-color);
+            background-color: var(--rmt-background-color);
             z-index: 9;
         }
-        .pxl-btn-icon {
-            --pxl-box-size: var(--pxl-height);
-            @extend .pxl-round-box;
-            background-color: var(--pxl-background-color);
+        .rmt-btn-icon {
+            --rmt-box-size: var(--rmt-height);
+            @extend .rmt-round-box;
+            background-color: var(--rmt-background-color);
             position: absolute;
             right: 0;
             top: 0;
@@ -74,8 +74,8 @@
             }
         }
         &:hover {
-            padding-inline: var(--pxl-height) 0;
-            .pxl-btn-icon {
+            padding-inline: var(--rmt-height) 0;
+            .rmt-btn-icon {
                 &.icon-duplicated {
                     scale: 1;
                 }
@@ -86,9 +86,9 @@
         }
     }
     
-    &.pxl-btn-link {
+    &.rmt-btn-link {
         background-color: transparent;
-        &.pxl-btn-link1 {
+        &.rmt-btn-link1 {
             font-family: var(--primary-font);
             color: #010101;
             font-size: 16px;
@@ -96,13 +96,13 @@
             line-height: 33px;
             letter-spacing: 1.6px;
             gap: 5px;
-            .pxl-btn-icon {
+            .rmt-btn-icon {
                 color: #4B4B4B;
             }
             @extend .hover-underline-ltr;
             &:hover {
                 color: #FFF;
-                .pxl-btn-icon {
+                .rmt-btn-icon {
                     color: inherit;
                     transform: translateX(5px);
                 }
@@ -111,11 +111,11 @@
     }
 
 
-    &.pxl-cta-button {
-        &.pxl-cta-button1 {            
+    &.rmt-cta-button {
+        &.rmt-cta-button1 {            
             color: #FFF;
-            --pxl-box-size: 48px;
-            @extend .pxl-round-box;
+            --rmt-box-size: 48px;
+            @extend .rmt-round-box;
             background-color: rgba($color: #FFF, $alpha: .2);
             border: 1px solid rgba($color: #FFF, $alpha: .36);
             svg, i {
@@ -125,7 +125,7 @@
             &.hover-default {
                 &:hover {
                     svg {
-                        --pxl-rotate: 360deg;
+                        --rmt-rotate: 360deg;
                         @include animation('spin 5s linear infinite');
                     }
                 }
@@ -134,19 +134,19 @@
     }
 
     // Button Popup Search
-    &.pxl-search-button {
+    &.rmt-search-button {
         font-family: var(--secondary-font);
         height: 26px;
         gap: 7px;
         background-color: transparent;
-        .pxl-btn-icon {
-            --pxl-translate-x: 5px;
-            --pxl-translate-y: 5px;
-            --pxl-rotate: 0deg;
+        .rmt-btn-icon {
+            --rmt-translate-x: 5px;
+            --rmt-translate-y: 5px;
+            --rmt-rotate: 0deg;
         }
         &:hover {
-            .pxl-btn-icon {
-                @extend .pxl-circular-motion;
+            .rmt-btn-icon {
+                @extend .rmt-circular-motion;
             }
         }
     }
@@ -163,17 +163,17 @@
     }
 }
 
-.pxl-close-button {
+.rmt-close-button {
     position: relative;
-    --pxl-box-size: 50px;
-    @extend .pxl-round-box;
+    --rmt-box-size: 50px;
+    @extend .rmt-round-box;
     color: #FFF;
     border-color: thin solid currentColor;
     &:before, &::after {
         content: '';
         width: 30px;
         height: 2px;
-        @extend .pxl-absolute-center;
+        @extend .rmt-absolute-center;
         background-color: currentColor;
         transition: inherit;
     }

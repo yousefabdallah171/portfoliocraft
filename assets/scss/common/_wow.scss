@@ -67,7 +67,7 @@
 
 @include keyframes (rollingBounce) {
     0% {
-        transform: translateX(var(--pxl-translate-x)) translateY(var(--pxl-translate-y)) rotate(360deg);
+        transform: translateX(var(--rmt-translate-x)) translateY(var(--rmt-translate-y)) rotate(360deg);
         animation-timing-function: ease-in;
         opacity: 0;
     }
@@ -75,19 +75,19 @@
         opacity: 1;
     }
     40% {
-        transform: translateX(calc(var(--pxl-translate-x) / 6.25)) translateY(var(--pxl-translate-y)) rotate(180deg);
+        transform: translateX(calc(var(--rmt-translate-x) / 6.25)) translateY(var(--rmt-translate-y)) rotate(180deg);
         animation-timing-function: ease-in;
     }
     65% {
-        transform: translateX(calc(var(--pxl-translate-x) / 12.5)) translateY(var(--pxl-translate-y)) rotate(100deg);
+        transform: translateX(calc(var(--rmt-translate-x) / 12.5)) translateY(var(--rmt-translate-y)) rotate(100deg);
         animation-timing-function: ease-in;
     }
     82% {
-        transform: translateX((var(--pxl-translate-x) / 25)) translateY(var(--pxl-translate-y)) rotate(50deg);
+        transform: translateX((var(--rmt-translate-x) / 25)) translateY(var(--rmt-translate-y)) rotate(50deg);
         animation-timing-function: ease-in;
     }
     93% {
-        transform: translateX((var(--pxl-translate-x) / 50)) translateY(var(--pxl-translate-y)) rotate(30deg);
+        transform: translateX((var(--rmt-translate-x) / 50)) translateY(var(--rmt-translate-y)) rotate(30deg);
         animation-timing-function: ease-in;
     }
     25%, 55%, 75%, 90% {
@@ -106,79 +106,79 @@
     animation-duration: 2000ms;
     -webkit-animation-duration: 2000ms;
     &.ttb {
-        --pxl-translate-y: -200px;
+        --rmt-translate-y: -200px;
     }
     &.rtl {
-        --pxl-translate-x: 200px;
-        // --pxl-translate-y: ;
+        --rmt-translate-x: 200px;
+        // --rmt-translate-y: ;
     }
     &.btt {
-        --pxl-translate-y: 200px;
+        --rmt-translate-y: 200px;
     }
     &.ltr {
-        --pxl-translate-x: -200px;
+        --rmt-translate-x: -200px;
     }
 }
 
 // Zoom 
 @keyframes zoom {
     from {
-        transform: translate(var(--pxl-translate-x), var(--pxl-translate-y)) scale(0);
+        transform: translate(var(--rmt-translate-x), var(--rmt-translate-y)) scale(0);
     }to {
         transform: translate(0, 0) scale(1);
     }
 }
 .zoomInUp.animated {
-    --pxl-translate-x: 0;
-    --pxl-translate-y: 100%;
+    --rmt-translate-x: 0;
+    --rmt-translate-y: 100%;
     animation-name: zoom;
     -webkit-animation-name: zoom;
 }
 .zoomInDown.animated {
-    --pxl-translate-x: 0;
-    --pxl-translate-y: -100%;
+    --rmt-translate-x: 0;
+    --rmt-translate-y: -100%;
     animation-name: zoom;
     -webkit-animation-name: zoom;
 }
 
 .zoomInLeft.animated {
-    --pxl-translate-x: 100%;
-    --pxl-translate-y: 0;
+    --rmt-translate-x: 100%;
+    --rmt-translate-y: 0;
     animation-name: zoom;
     -webkit-animation-name: zoom;
 }
 
 .zoomInRight.animated {
-    --pxl-translate-x: -100%;
-    --pxl-translate-y: 0;
+    --rmt-translate-x: -100%;
+    --rmt-translate-y: 0;
     animation-name: zoom;
     -webkit-animation-name: zoom;
 }
 
 .zoomInUpLeft.animated {
-    --pxl-translate-x: 100%;
-    --pxl-translate-y: 100%;
+    --rmt-translate-x: 100%;
+    --rmt-translate-y: 100%;
     animation-name: zoom;
     -webkit-animation-name: zoom;
 }
 
 .zoomInUpRight.animated {
-    --pxl-translate-x: -100%;
-    --pxl-translate-y: 100%;
+    --rmt-translate-x: -100%;
+    --rmt-translate-y: 100%;
     animation-name: zoom;
     -webkit-animation-name: zoom;
 }
 
 .zoomInDownLeft.animated {
-    --pxl-translate-x: 100%;
-    --pxl-translate-y: -100%;
+    --rmt-translate-x: 100%;
+    --rmt-translate-y: -100%;
     animation-name: zoom;
     -webkit-animation-name: zoom;
 }
 
 .zoomInDownRight.animated {
-    --pxl-translate-x: -100%;
-    --pxl-translate-y: -100%;
+    --rmt-translate-x: -100%;
+    --rmt-translate-y: -100%;
     animation-name: zoom;
     -webkit-animation-name: zoom;
 }
@@ -186,7 +186,7 @@
 // Rolling
 @include keyframes(rolling) {
     from {
-        transform: translateX(var(--pxl-translate-x)) translateY(var(--pxl-translate-y)) rotate(var(--pxl-rotate));
+        transform: translateX(var(--rmt-translate-x)) translateY(var(--rmt-translate-y)) rotate(var(--rmt-rotate));
     } to {
         transform: translateX(0) rotate(0deg);
     }
@@ -196,26 +196,26 @@
     -webkit-animation-name: rolling;
 }
 .rollingInRight.animated {
-    --pxl-translate-x: 400%;
-    --pxl-rotate: 360deg;
+    --rmt-translate-x: 400%;
+    --rmt-rotate: 360deg;
     animation-name: rolling;
     -webkit-animation-name: rolling;
 }
 .rollingInLeft.animated {
-    --pxl-translate-x: -400%;
-    --pxl-rotate: -360deg;
+    --rmt-translate-x: -400%;
+    --rmt-rotate: -360deg;
     animation-name: rolling;
     -webkit-animation-name: rolling;
 }
 .rollingInUp.animated {
-    --pxl-translate-y: -400%;
-    --pxl-rotate: -360deg;
+    --rmt-translate-y: -400%;
+    --rmt-rotate: -360deg;
     animation-name: rolling;
     -webkit-animation-name: rolling;
 }
 .rollingInDown.animated {
-    --pxl-translate-y: 400%;
-    --pxl-rotate: 360deg;
+    --rmt-translate-y: 400%;
+    --rmt-rotate: 360deg;
     animation-name: rolling;
     -webkit-animation-name: rolling;
 }
@@ -420,35 +420,35 @@
 // Slide 
 @include keyframes(slide) {
     from {
-        transform: translate(var(--pxl-translate-x), var(--pxl-translate-y));
+        transform: translate(var(--rmt-translate-x), var(--rmt-translate-y));
     }to {
         transform: translate(0, 0);
     }
 }
 .slideUp.animated {
-    --pxl-translate-x: 0;
-    --pxl-translate-y: -100%;
+    --rmt-translate-x: 0;
+    --rmt-translate-y: -100%;
     animation-name: slide;
     -webkit-animation-name: slide;
 }
 
 .slideLeft.animated {
-    --pxl-translate-x: -100%;
-    --pxl-translate-y: 0;
+    --rmt-translate-x: -100%;
+    --rmt-translate-y: 0;
     animation-name: slide;
     -webkit-animation-name: slide;
 }
 
 .slideRight.animated {
-    --pxl-translate-x: 100%;
-    --pxl-translate-y: 0;
+    --rmt-translate-x: 100%;
+    --rmt-translate-y: 0;
     animation-name: slide;
     -webkit-animation-name: slide;
 }
 
 .slideDown.animated {
-    --pxl-translate-x: 0;
-    --pxl-translate-y: 100%;
+    --rmt-translate-x: 0;
+    --rmt-translate-y: 100%;
     animation-name: slide;
     -webkit-animation-name: slide;
 }

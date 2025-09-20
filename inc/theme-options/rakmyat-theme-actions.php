@@ -177,36 +177,36 @@ function portfoliocraft_scripts() {
     wp_enqueue_style('font-awesome', get_template_directory_uri() . '/assets/fonts/font-awesome/css/all.min.css', array(), $portfoliocraft_version->get('Version'));
 
     // Register additional utility scripts
-    wp_register_script('pxl-counter-slide', get_template_directory_uri() . '/assets/js/libs/counter-slide.min.js', array('jquery'), '1.0.0', true);
-    wp_register_script('pxl-easing', get_template_directory_uri() . '/assets/js/libs/easing.js', array('jquery'), '1.3.0', true);
+    wp_register_script('rmt-counter-slide', get_template_directory_uri() . '/assets/js/libs/counter-slide.min.js', array('jquery'), '1.0.0', true);
+    wp_register_script('rmt-easing', get_template_directory_uri() . '/assets/js/libs/easing.js', array('jquery'), '1.3.0', true);
 
     // Enqueue WooCommerce scripts if WooCommerce is active
     if (class_exists('WooCommerce')) {
-        wp_enqueue_script('pxl-woocommerce', get_template_directory_uri() . '/woocommerce/js/woocommerce.js', array('jquery'), $portfoliocraft_version->get('Version'), true);
+        wp_enqueue_script('rmt-woocommerce', get_template_directory_uri() . '/woocommerce/js/woocommerce.js', array('jquery'), $portfoliocraft_version->get('Version'), true);
     }
 
     // Register cookie handling script
-    wp_register_script('pxl-cookie', get_template_directory_uri() . '/assets/js/libs/cookie.js', array('jquery'), '1.4.1', true);
+    wp_register_script('rmt-cookie', get_template_directory_uri() . '/assets/js/libs/cookie.js', array('jquery'), '1.4.1', true);
 
     // Enqueue theme styles
     $r = rand();
-    wp_enqueue_style('pxl-grid', get_template_directory_uri() . '/assets/css/grid.css', array(), $portfoliocraft_version->get('Version'));
-    wp_enqueue_style('pxl-style', get_template_directory_uri() . '/assets/css/style.css', array(), $r);
-    wp_add_inline_style('pxl-style', portfoliocraft_inline_styles());
+    wp_enqueue_style('rmt-grid', get_template_directory_uri() . '/assets/css/grid.css', array(), $portfoliocraft_version->get('Version'));
+    wp_enqueue_style('rmt-style', get_template_directory_uri() . '/assets/css/style.css', array(), $r);
+    wp_add_inline_style('rmt-style', portfoliocraft_inline_styles());
     
     // Enqueue text color variables CSS
-    wp_enqueue_style('portfoliocraft-text-colors', get_template_directory_uri() . '/assets/css/text-color-variables.css', array('pxl-style'), $portfoliocraft_version->get('Version'));
+    wp_enqueue_style('portfoliocraft-text-colors', get_template_directory_uri() . '/assets/css/text-color-variables.css', array('rmt-style'), $portfoliocraft_version->get('Version'));
     wp_add_inline_style('portfoliocraft-text-colors', portfoliocraft_inline_styles());
     
-    wp_enqueue_style('pxl-base', get_template_directory_uri() . '/style.css', array(), $portfoliocraft_version->get('Version'));
-    wp_enqueue_style('pxl-google-fonts', portfoliocraft_fonts_url(), array(), null);
+    wp_enqueue_style('rmt-base', get_template_directory_uri() . '/style.css', array(), $portfoliocraft_version->get('Version'));
+    wp_enqueue_style('rmt-google-fonts', portfoliocraft_fonts_url(), array(), null);
 
     // Enqueue theme scripts
-    wp_enqueue_script('pxl-main', get_template_directory_uri() . '/assets/js/theme.js', array('jquery'), $portfoliocraft_version->get('Version'), true);
-    wp_enqueue_script('pxl-menu', get_template_directory_uri() . '/assets/js/menu.js', array('jquery'), $portfoliocraft_version->get('Version'), true);
+    wp_enqueue_script('rmt-main', get_template_directory_uri() . '/assets/js/theme.js', array('jquery'), $portfoliocraft_version->get('Version'), true);
+    wp_enqueue_script('rmt-menu', get_template_directory_uri() . '/assets/js/menu.js', array('jquery'), $portfoliocraft_version->get('Version'), true);
 
     // Localize script with AJAX URL
-    wp_localize_script('pxl-main', 'main_data', array('ajax_url' => admin_url('admin-ajax.php')));
+    wp_localize_script('rmt-main', 'main_data', array('ajax_url' => admin_url('admin-ajax.php')));
 
     // Enqueue comment reply script if needed
     if (is_singular() && comments_open() && get_option('thread_comments')) {
@@ -272,7 +272,7 @@ function portfoliocraft_pingback_header() {
  * 
  * @return void
  */
-add_action('pxl_anchor_target', 'portfoliocraft_hook_anchor_templates_hidden_panel');
+add_action('rmt_anchor_target', 'portfoliocraft_hook_anchor_templates_hidden_panel');
 function portfoliocraft_hook_anchor_templates_hidden_panel() {
     $hidden_templates = portfoliocraft_get_templates_slug('hidden-panel');
     if(empty($hidden_templates)) return;
@@ -297,8 +297,8 @@ function portfoliocraft_hook_anchor_hidden_panel($args) {
     $slug = $args['slug'];
     $post_id = $args['post_id'];
     ?>
-    <div id="<?php echo esc_attr($slug); ?>" class="pxl-hidden-panel">
-        <div class="pxl-hidden-panel-inner">
+    <div id="<?php echo esc_attr($slug); ?>" class="rmt-hidden-panel">
+        <div class="rmt-hidden-panel-inner">
             <?php echo \Elementor\Plugin::$instance->frontend->get_builder_content_for_display($post_id); ?>
         </div>
     </div>
@@ -313,7 +313,7 @@ function portfoliocraft_hook_anchor_hidden_panel($args) {
  * 
  * @return void
  */
-add_action('pxl_anchor_target', 'portfoliocraft_hook_anchor_templates_popup');
+add_action('rmt_anchor_target', 'portfoliocraft_hook_anchor_templates_popup');
 function portfoliocraft_hook_anchor_templates_popup() {
     $popup_templates = portfoliocraft_get_templates_slug('popup');
     if(empty($popup_templates)) return;
@@ -338,8 +338,8 @@ function portfoliocraft_hook_anchor_popup($args) {
     $slug = $args['slug'];
     $post_id = $args['post_id'];
     ?>
-    <div id="<?php echo esc_attr($slug); ?>" class="pxl-popup">
-        <div class="pxl-popup-inner">
+    <div id="<?php echo esc_attr($slug); ?>" class="rmt-popup">
+        <div class="rmt-popup-inner">
             <?php echo \Elementor\Plugin::$instance->frontend->get_builder_content_for_display($post_id); ?>
         </div>
     </div>
@@ -354,7 +354,7 @@ function portfoliocraft_hook_anchor_popup($args) {
  * 
  * @return void
  */
-add_action('pxl_anchor_target', 'portfoliocraft_hook_anchor_templates_page_popup');
+add_action('rmt_anchor_target', 'portfoliocraft_hook_anchor_templates_page_popup');
 function portfoliocraft_hook_anchor_templates_page_popup() {
     $page_popup_templates = portfoliocraft_get_templates_slug('page-popup');
     if(empty($page_popup_templates)) return;
@@ -379,8 +379,8 @@ function portfoliocraft_hook_anchor_page_popup($args) {
     $slug = $args['slug'];
     $post_id = $args['post_id'];
     ?>
-    <div id="<?php echo esc_attr($slug); ?>" class="pxl-page-popup">
-        <div class="pxl-page-popup-inner">
+    <div id="<?php echo esc_attr($slug); ?>" class="rmt-page-popup">
+        <div class="rmt-page-popup-inner">
             <?php echo \Elementor\Plugin::$instance->frontend->get_builder_content_for_display($post_id); ?>
         </div>
     </div>
@@ -395,13 +395,13 @@ function portfoliocraft_hook_anchor_page_popup($args) {
  * 
  * @return void
  */
-add_action('pxl_anchor_target', 'portfoliocraft_hook_anchor_cart');
+add_action('rmt_anchor_target', 'portfoliocraft_hook_anchor_cart');
 function portfoliocraft_hook_anchor_cart() {
     if (!class_exists('WooCommerce')) return;
     if (is_cart()) {
         ?>
-        <div id="pxl-cart" class="pxl-cart">
-            <div class="pxl-cart-inner">
+        <div id="rmt-cart" class="rmt-cart">
+            <div class="rmt-cart-inner">
                 <?php woocommerce_mini_cart(); ?>
             </div>
         </div>
@@ -449,8 +449,8 @@ add_action('wp_footer', 'portfoliocraft_cart_hidden_sidebar');
 function portfoliocraft_cart_hidden_sidebar() {
     if (!class_exists('WooCommerce')) return;
     ?>
-    <div id="pxl-cart-sidebar" class="pxl-cart-sidebar">
-        <div class="pxl-cart-sidebar-inner">
+    <div id="rmt-cart-sidebar" class="rmt-cart-sidebar">
+        <div class="rmt-cart-sidebar-inner">
             <?php woocommerce_mini_cart(); ?>
         </div>
     </div>
@@ -567,7 +567,7 @@ add_action('wp_head', function() {
     }
     $side = $position === 'left' ? 'left' : 'right';
     if (portfoliocraft()->get_opt('back_to_top', false)) {
-        echo '<style>:root{--pxl-back-to-top-bg:' . esc_attr($bg) . ';--pxl-back-to-top-color:' . esc_attr($color) . ';--pxl-back-to-top-bg-hover:' . esc_attr($bg_hover) . ';--pxl-back-to-top-color-hover:' . esc_attr($color_hover) . ';--pxl-back-to-top-width:' . esc_attr($width) . ';--pxl-back-to-top-height:' . esc_attr($height) . ';--pxl-back-to-top-side:' . esc_attr($side) . ';}</style>';
+        echo '<style>:root{--rmt-back-to-top-bg:' . esc_attr($bg) . ';--rmt-back-to-top-color:' . esc_attr($color) . ';--rmt-back-to-top-bg-hover:' . esc_attr($bg_hover) . ';--rmt-back-to-top-color-hover:' . esc_attr($color_hover) . ';--rmt-back-to-top-width:' . esc_attr($width) . ';--rmt-back-to-top-height:' . esc_attr($height) . ';--rmt-back-to-top-side:' . esc_attr($side) . ';}</style>';
     }
 });
 

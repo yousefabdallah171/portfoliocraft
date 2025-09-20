@@ -26,12 +26,12 @@
         p {
             display: flex;
             flex-wrap: wrap;
-            margin-inline: calc(-1 * var(--pxl-spacing-inline));
+            margin-inline: calc(-1 * var(--rmt-spacing-inline));
             .wpcf7-form-control-wrap {
                 display: flex;
                 flex-wrap: wrap;
                 width: 100%;
-                padding-inline: var(--pxl-spacing-inline);
+                padding-inline: var(--rmt-spacing-inline);
                 &:last-of-type {
                     margin: 0 !important;
                     flex-basis: 100% ;
@@ -155,7 +155,7 @@
                 height: 102px;
             }
         }
-        &.pxl-wpcf7-3426 {
+        &.rmt-wpcf7-3426 {
             --width-xs : 100%;
             --width-sm : 50%;
             --width-md : 50%;
@@ -163,7 +163,7 @@
             --width-xl : 50%;
             --width-xxl: 50%;
             p {
-                --pxl-spacing-inline: 21.5px;
+                --rmt-spacing-inline: 21.5px;
                 .wpcf7-form-control-wrap {
                     margin-bottom: 94px;
                     &:nth-last-of-type(1) {
@@ -176,7 +176,7 @@
                 }
             }
         }
-        &.pxl-wpcf7-4794 {
+        &.rmt-wpcf7-4794 {
             --width-xs : 100%;
             --width-sm : 50%;
             --width-md : 100%;
@@ -184,7 +184,7 @@
             --width-xl : 50%;
             --width-xxl: 50%;
             p {
-                --pxl-spacing-inline: 12px;
+                --rmt-spacing-inline: 12px;
                 .wpcf7-form-control-wrap {
                     margin-bottom: 25px;
                     &:nth-last-of-type(1), &:nth-last-of-type(2) {

@@ -162,16 +162,16 @@ add_action('woocommerce_review_order_after_submit', function() {
 });
 
 function custom_place_order_button_html($button) {
-    $custom_button = '<button type="submit" class="button alt pxl-btn-split custom-place-order-btn" name="woocommerce_checkout_place_order" id="place_order" value="Place order">
-        <span class="pxl-btn-icon icon-duplicated">
+    $custom_button = '<button type="submit" class="button alt rmt-btn-split custom-place-order-btn" name="woocommerce_checkout_place_order" id="place_order" value="Place order">
+        <span class="rmt-btn-icon icon-duplicated">
             <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 38 38" fill="none">
                 <path d="M26.6745 23.8894L26.5892 12.0397C26.5892 11.5282 26.1914 11.1304 25.6799 11.1304L13.8302 11.0451C13.3187 11.0451 12.9208 11.443 12.9208 11.9545C12.9208 12.466 13.3187 12.8638 13.8302 12.8638L23.4634 12.9491L11.3864 25.0261C11.0454 25.3671 11.0454 25.9354 11.3864 26.2764C11.7274 26.6174 12.3241 26.6458 12.6651 26.3048L24.799 14.171L24.8842 23.9178C24.8842 24.1452 24.9979 24.3725 25.1684 24.543C25.3389 24.7135 25.5662 24.8272 25.822 24.7988C26.2766 24.7988 26.7029 24.3725 26.6745 23.8894Z" fill="currentcolor"/>
             </svg>
         </span>
-        <span class="pxl-btn-text">
+        <span class="rmt-btn-text">
             Place order now
         </span>
-        <span class="pxl-btn-icon icon-main">
+        <span class="rmt-btn-icon icon-main">
             <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 38 38" fill="none">
                 <path d="M26.6745 23.8894L26.5892 12.0397C26.5892 11.5282 26.1914 11.1304 25.6799 11.1304L13.8302 11.0451C13.3187 11.0451 12.9208 11.443 12.9208 11.9545C12.9208 12.466 13.3187 12.8638 13.8302 12.8638L23.4634 12.9491L11.3864 25.0261C11.0454 25.3671 11.0454 25.9354 11.3864 26.2764C11.7274 26.6174 12.3241 26.6458 12.6651 26.3048L24.799 14.171L24.8842 23.9178C24.8842 24.1452 24.9979 24.3725 25.1684 24.543C25.3389 24.7135 25.5662 24.8272 25.822 24.7988C26.2766 24.7988 26.7029 24.3725 26.6745 23.8894Z" fill="currentcolor"/>
             </svg>
@@ -208,7 +208,7 @@ function portfoliocraft_woo_mini_cart_item_fragment( $fragments ) {
     ?>
     <div class="widget_shopping_cart">
     	<div class="widget_shopping_head">
-    		<div class="pxl-item--close pxl-close pxl-cursor--cta"></div>
+    		<div class="rmt-item--close rmt-close rmt-cursor--cta"></div>
 	    	<div class="widget_shopping_title">
 	    		<?php echo esc_html__( 'Cart', 'portfoliocraft' ); ?> <span class="widget_cart_counter">(<?php echo sprintf (_n( '%d item', '%d items', WC()->cart->cart_contents_count, 'portfoliocraft' ), WC()->cart->cart_contents_count ); ?>)</span>
 	    	</div>
@@ -244,7 +244,7 @@ function portfoliocraft_woo_mini_cart_item_fragment( $fragments ) {
 									<?php echo apply_filters( 'woocommerce_widget_cart_item_quantity', '<span class="quantity">' . sprintf( '%s &times; %s', $cart_item['quantity'], $product_price ) . '</span>', $cart_item, $cart_item_key ); ?>
 									<?php
 										echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf(
-											'<a href="%s" class="remove_from_cart_button pxl-close" aria-label="%s" data-product_id="%s" data-cart_item_key="%s" data-product_sku="%s"></a>',
+											'<a href="%s" class="remove_from_cart_button rmt-close" aria-label="%s" data-product_id="%s" data-cart_item_key="%s" data-product_sku="%s"></a>',
 											esc_url( wc_get_cart_remove_url( $cart_item_key ) ),
 											esc_attr__( 'Remove this item', 'portfoliocraft' ),
 											esc_attr( $product_id ),

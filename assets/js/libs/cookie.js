@@ -119,12 +119,12 @@
 /* portfoliocraft Theme */
 jQuery(document).ready(function () {
   if (!jQuery("body").hasClass("bd-landing-page")) {
-    jQuery(".pxl-cookie-policy .pxl-item--close").click(function () {
-      jQuery(".pxl-cookie-policy").addClass("pxl-hidden");
+    jQuery(".rmt-cookie-policy .rmt-item--close").click(function () {
+      jQuery(".rmt-cookie-policy").addClass("rmt-hidden");
     });
 
-    jQuery(".pxl-subscribe-popup .pxl-popup--close").click(function () {
-      jQuery(".pxl-subscribe-popup").removeClass("pxl-active");
+    jQuery(".rmt-subscribe-popup .rmt-popup--close").click(function () {
+      jQuery(".rmt-subscribe-popup").removeClass("rmt-active");
     });
 
     var visits = jQuery.cookie("visits") || 0;
@@ -134,21 +134,21 @@ jQuery(document).ready(function () {
 
     /* Cookie */
     if (jQuery.cookie("visits") > 1) {
-      jQuery(".pxl-cookie-policy").hide();
+      jQuery(".rmt-cookie-policy").hide();
     } else {
-      jQuery(".pxl-cookie-policy").addClass("pxl-active");
+      jQuery(".rmt-cookie-policy").addClass("rmt-active");
     }
 
     if (jQuery.cookie("noShowWelcome")) {
-      jQuery(".pxl-cookie-policy").hide();
+      jQuery(".rmt-cookie-policy").hide();
     }
 
     /* Subscribe */
     if (jQuery.cookie("visits") > 1) {
-      jQuery(".pxl-subscribe-popup").hide();
+      jQuery(".rmt-subscribe-popup").hide();
     } else {
       setTimeout(function () {
-        jQuery(".pxl-subscribe-popup").addClass("pxl-active");
+        jQuery(".rmt-subscribe-popup").addClass("rmt-active");
       }, 5000);
     }
   }

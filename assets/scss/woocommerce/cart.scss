@@ -523,7 +523,7 @@
 }
 
 // Cart Sidebar
-#pxl-cart-sidebar {
+#rmt-cart-sidebar {
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -531,7 +531,7 @@
 	height: 100%;
 	z-index: 9999;
 	visibility: hidden;
-	.pxl-popup--overlay {
+	.rmt-popup--overlay {
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -540,7 +540,7 @@
 		background-color: rgba(31, 32, 34, 0.8);
 		cursor: pointer;
 	}
-	.pxl-item--close {
+	.rmt-item--close {
 		top: 50%;
 		left: auto;
 		right: 35px;
@@ -550,7 +550,7 @@
 			background-color: #666;
 		}
 	}
-	.pxl-widget-cart-sidebar {
+	.rmt-widget-cart-sidebar {
 		padding-bottom: 137px;
 		background-color: #fff;
 		position: fixed;
@@ -723,7 +723,7 @@
 	}
 	&.active {
 		visibility: visible;
-		.pxl-widget-cart-sidebar {
+		.rmt-widget-cart-sidebar {
 			@include transform(translateY(0%));
 		}
 	}

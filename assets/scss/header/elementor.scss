@@ -1,17 +1,17 @@
 // Header Elementor
-#pxl-header-elementor {
+#rmt-header-elementor {
 	min-height: auto !important;
-	#pxl-header-desktop {
+	#rmt-header-desktop {
 		@media #{$max-lg} {
 			display: none;
 		}
 	}
-	#pxl-header-mobile {
+	#rmt-header-mobile {
 		display: none;
 		@media #{$max-lg} {
 			display: block;
 		}
-        .pxl-header-inner {
+        .rmt-header-inner {
             padding-inline: 15px;
         }
 	}

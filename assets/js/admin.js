@@ -1,16 +1,16 @@
 (function($) {
     "use strict";
-    var pxl_ajax_url = '', api_url = '', theme_slug = '';
+    var rmt_ajax_url = '', api_url = '', theme_slug = '';
     $(document).ready(function () {
         if( typeof merlin_params !== 'undefined'){
-            pxl_ajax_url = merlin_params.ajaxurl;
+            rmt_ajax_url = merlin_params.ajaxurl;
             api_url = merlin_params.api_url;
             theme_slug = merlin_params.theme_slug;
         }
-        if(  typeof pxlart_admin !== 'undefined'){
-            pxl_ajax_url = pxlart_admin.ajaxurl;
-            api_url = pxlart_admin.api_url;
-            theme_slug = pxlart_admin.theme_slug;
+        if(  typeof rmtart_admin !== 'undefined'){
+            rmt_ajax_url = rmtart_admin.ajaxurl;
+            api_url = rmtart_admin.api_url;
+            theme_slug = rmtart_admin.theme_slug;
         }
         initTabs();
         // Demo import functionality removed - using OCDI system instead
@@ -19,12 +19,12 @@
     });
 
     function initTabs(){
-        $(document).on('click','.pxl-tab-nav > ul > li > a',function(){
+        $(document).on('click','.rmt-tab-nav > ul > li > a',function(){
             var data_filter = $(this).attr('data-filter');
             $(this).closest('ul').find('a').removeClass('active');
             $(this).addClass('active');
-            $(this).closest('.pxl-demos').find('.pxl-col:not(.'+data_filter+')').css('display','none');
-            $(this).closest('.pxl-demos').find('.pxl-col.'+data_filter).css('display','flex');
+            $(this).closest('.rmt-demos').find('.rmt-col:not(.'+data_filter+')').css('display','none');
+            $(this).closest('.rmt-demos').find('.rmt-col.'+data_filter).css('display','flex');
         });
     }
 
@@ -35,7 +35,7 @@
         setTimeout(function(){ location.reload(); }, 5000);
     }
 
-    function pxlPluginManager(){
+    function rmtPluginManager(){
         var complete;
         var items_completed     = 0;
         var current_item        = "";
@@ -44,7 +44,7 @@
 
         function ajax_callback(response){  
             var currentSpan = $current_node.find("h3>span"); 
-            var current_btn = $current_node.find(".pxl-button"); 
+            var current_btn = $current_node.find(".rmt-button"); 
             var new_text = current_btn.attr('data-text-active');
             var new_href = current_btn.attr('data-deactive-url');
 
@@ -81,9 +81,9 @@
         function process_current(){ 
             if(current_item){
                 $current_node.addClass("current");    
-                jQuery.post(pxl_ajax_url, {
+                jQuery.post(rmt_ajax_url, {
                     action: "merlin_plugins",
-                    wpnonce: pxlart_admin.wpnonce,
+                    wpnonce: rmtart_admin.wpnonce,
                     slug: current_item,
                 }, ajax_callback).fail(ajax_callback);
                 
@@ -93,18 +93,18 @@
 
         function find_next(){  
             if($current_node){ 
-                if(!$current_node.hasClass("pxl-dsb-plugin-active")){
+                if(!$current_node.hasClass("rmt-dsb-plugin-active")){
                     items_completed++;
-                    $current_node.addClass("pxl-dsb-plugin-active");
+                    $current_node.addClass("rmt-dsb-plugin-active");
                 }
             }
 
-            var $plus_item = $('.pxl-plugin-inst');
+            var $plus_item = $('.rmt-plugin-inst');
             if( $plus_item.length > 0 ){
                 $plus_item.each(function(){
-                    var $item = $(this).closest('.pxl-dsb-plugin');
+                    var $item = $(this).closest('.rmt-dsb-plugin');
 
-                    if ( $item.hasClass("pxl-dsb-plugin-active") ) {
+                    if ( $item.hasClass("rmt-dsb-plugin-active") ) {
                         return true;
                     }
                     
@@ -124,13 +124,13 @@
         return {
             init: function(){
  
-                $('.pxl-install-all-plugin').addClass("installing");
-                $('.pxl-dsb-plugin:not(.pxl-dsb-plugin-active)').addClass("installing");
+                $('.rmt-install-all-plugin').addClass("installing");
+                $('.rmt-dsb-plugin:not(.rmt-dsb-plugin-active)').addClass("installing");
                 complete = function(){
 
                     setTimeout(function(){
-                        $(".pxl-dashboard-wrap").addClass('js-plugin-finished');
-                        $('.pxl-install-all-plugin').removeClass("installing");
+                        $(".rmt-dashboard-wrap").addClass('js-plugin-finished');
+                        $('.rmt-install-all-plugin').removeClass("installing");
                     },1000);
  
                 };
@@ -140,15 +140,15 @@
     }
 
     function initPlugin(){
-        $(".pxl-install-all-plugin").on( "click", function(e) {
+        $(".rmt-install-all-plugin").on( "click", function(e) {
             e.preventDefault();
-            var plugins = new pxlPluginManager();
+            var plugins = new rmtPluginManager();
             plugins.init();
         });
     }
 
     function initUserProfile(){
-        $(document).on('click', '.pxl-select-image',  function (e) {
+        $(document).on('click', '.rmt-select-image',  function (e) {
             e.preventDefault();
             var $this = $(this);
             var image = wp.media({
@@ -163,26 +163,26 @@
                     var image_url = uploaded_image.toJSON().id;
                     // Let's assign the url value to the input field
                     $this.parent().find('.hide-image-url').val(image_url);
-                    $this.parent().find('.pxl-show-image').empty();
-                    $this.parent().find('.pxl-show-image').append('<img src = "' + uploaded_image.toJSON().url + '">');
+                    $this.parent().find('.rmt-show-image').empty();
+                    $this.parent().find('.rmt-show-image').append('<img src = "' + uploaded_image.toJSON().url + '">');
                     $this.hide();
-                    $this.parent().find('.pxl-remove-image').show();
+                    $this.parent().find('.rmt-remove-image').show();
                     $this.parents('form').find('input[name="savewidget"]').removeAttr('disabled');
                 });
         });
 
-        $(document).on('click', '.pxl-remove-image', function (e) {
+        $(document).on('click', '.rmt-remove-image', function (e) {
             e.preventDefault();
             var $this = $(this);
             $this.parent().find('.hide-image-url').val('');
-            $this.parent().find('.pxl-show-image').empty();
+            $this.parent().find('.rmt-show-image').empty();
             $this.hide();
-            $this.parent().find('.pxl-select-image').show();
+            $this.parent().find('.rmt-select-image').show();
             $this.parents('form').find('input[name="savewidget"]').removeAttr('disabled');
         });
     }
 
-    function pxl_esc_js(str){
+    function rmt_esc_js(str){
         return String(str).replace(/[^\w. ]/gi, function(c){
             return '&#'+c.charCodeAt(0)+';';
         });
@@ -190,21 +190,21 @@
 
     // Dark/Light Mode Toggle for Dashboard
     $(document).ready(function() {
-        var btn = document.getElementById('pxl-mode-toggle');
+        var btn = document.getElementById('rmt-mode-toggle');
         if (!btn) return;
         var body = document.body;
         // Set initial mode from localStorage
-        if(localStorage.getItem('pxl-dashboard-mode') === 'light') {
-            body.classList.add('pxl-light-mode');
+        if(localStorage.getItem('rmt-dashboard-mode') === 'light') {
+            body.classList.add('rmt-light-mode');
             btn.textContent = 'Switch to Dark Mode';
             btn.setAttribute('aria-pressed', 'true');
         }
         btn.addEventListener('click', function() {
-            body.classList.toggle('pxl-light-mode');
-            var isLight = body.classList.contains('pxl-light-mode');
+            body.classList.toggle('rmt-light-mode');
+            var isLight = body.classList.contains('rmt-light-mode');
             btn.textContent = isLight ? 'Switch to Dark Mode' : 'Switch to Light Mode';
             btn.setAttribute('aria-pressed', isLight ? 'true' : 'false');
-            localStorage.setItem('pxl-dashboard-mode', isLight ? 'light' : 'dark');
+            localStorage.setItem('rmt-dashboard-mode', isLight ? 'light' : 'dark');
         });
     });
 
@@ -214,15 +214,15 @@
     });
 
     function initTemplateKitImport() {
-        var $uploadZone = $('#pxl-upload-zone');
-        var $fileInput = $('#pxl-kit-file-input');
-        var $selectBtn = $('#pxl-select-kit-file');
-        var $progress = $('#pxl-kit-progress');
-        var $progressFill = $('#pxl-kit-progress-fill');
-        var $progressText = $('#pxl-kit-progress-text');
-        var $importOptions = $('#pxl-kit-import-options');
-        var $importBtn = $('#pxl-start-kit-import');
-        var $status = $('#pxl-kit-status');
+        var $uploadZone = $('#rmt-upload-zone');
+        var $fileInput = $('#rmt-kit-file-input');
+        var $selectBtn = $('#rmt-select-kit-file');
+        var $progress = $('#rmt-kit-progress');
+        var $progressFill = $('#rmt-kit-progress-fill');
+        var $progressText = $('#rmt-kit-progress-text');
+        var $importOptions = $('#rmt-kit-import-options');
+        var $importBtn = $('#rmt-start-kit-import');
+        var $status = $('#rmt-kit-status');
         var uploadedFilePath = '';
 
         // File selection
@@ -241,19 +241,19 @@
         $uploadZone.on('dragover dragenter', function(e) {
             e.preventDefault();
             e.stopPropagation();
-            $(this).addClass('pxl-drag-over');
+            $(this).addClass('rmt-drag-over');
         });
 
         $uploadZone.on('dragleave dragend', function(e) {
             e.preventDefault();
             e.stopPropagation();
-            $(this).removeClass('pxl-drag-over');
+            $(this).removeClass('rmt-drag-over');
         });
 
         $uploadZone.on('drop', function(e) {
             e.preventDefault();
             e.stopPropagation();
-            $(this).removeClass('pxl-drag-over');
+            $(this).removeClass('rmt-drag-over');
             
             var files = e.originalEvent.dataTransfer.files;
             if (files.length > 0) {
@@ -283,14 +283,14 @@
         function uploadKitFile(file) {
             var formData = new FormData();
             formData.append('action', 'rakmyat_upload_kit');
-            formData.append('nonce', pxlart_admin.nonce);
+            formData.append('nonce', rmtart_admin.nonce);
             formData.append('kit_file', file);
 
             $progress.show();
             updateKitProgress(0, 'Uploading...');
 
             $.ajax({
-                url: pxl_ajax_url,
+                url: rmt_ajax_url,
                 type: 'POST',
                 data: formData,
                 processData: false,
@@ -325,21 +325,21 @@
 
         function startKitImport() {
             var importOptions = {
-                import_site_settings: $('#pxl-kit-site-settings').is(':checked'),
-                import_global_colors: $('#pxl-kit-global-colors').is(':checked'),
-                import_global_fonts: $('#pxl-kit-global-fonts').is(':checked'),
-                import_templates: $('#pxl-kit-templates').is(':checked')
+                import_site_settings: $('#rmt-kit-site-settings').is(':checked'),
+                import_global_colors: $('#rmt-kit-global-colors').is(':checked'),
+                import_global_fonts: $('#rmt-kit-global-fonts').is(':checked'),
+                import_templates: $('#rmt-kit-templates').is(':checked')
             };
 
             $importBtn.prop('disabled', true).find('span').text('Importing...');
-            $status.show().html('<div class="pxl-kit-importing">Importing Template Kit...</div>');
+            $status.show().html('<div class="rmt-kit-importing">Importing Template Kit...</div>');
 
             $.ajax({
-                url: pxl_ajax_url,
+                url: rmt_ajax_url,
                 type: 'POST',
                 data: {
                     action: 'rakmyat_import_kit',
-                    nonce: pxlart_admin.nonce,
+                    nonce: rmtart_admin.nonce,
                     kit_path: uploadedFilePath,
                     import_options: importOptions
                 },
@@ -347,16 +347,16 @@
                     $importBtn.prop('disabled', false).find('span').text('Import Template Kit');
                     
                     if (response.success) {
-                        $status.html('<div class="pxl-kit-success"><h6>Import Successful!</h6><p>' + response.data.message + '</p></div>');
+                        $status.html('<div class="rmt-kit-success"><h6>Import Successful!</h6><p>' + response.data.message + '</p></div>');
                         showKitMessage('Template Kit imported successfully!', 'success');
                     } else {
-                        $status.html('<div class="pxl-kit-error"><h6>Import Failed</h6><p>' + response.data.message + '</p></div>');
+                        $status.html('<div class="rmt-kit-error"><h6>Import Failed</h6><p>' + response.data.message + '</p></div>');
                         showKitMessage(response.data.message || 'Import failed', 'error');
                     }
                 },
                 error: function() {
                     $importBtn.prop('disabled', false).find('span').text('Import Template Kit');
-                    $status.html('<div class="pxl-kit-error"><h6>Import Failed</h6><p>Network error occurred</p></div>');
+                    $status.html('<div class="rmt-kit-error"><h6>Import Failed</h6><p>Network error occurred</p></div>');
                     showKitMessage('Import failed. Please try again.', 'error');
                 }
             });
@@ -368,11 +368,11 @@
         }
 
         function showKitMessage(message, type) {
-            var messageClass = 'pxl-kit-message pxl-kit-' + type;
+            var messageClass = 'rmt-kit-message rmt-kit-' + type;
             var messageHtml = '<div class="' + messageClass + '">' + message + '</div>';
             
             // Remove existing messages
-            $('.pxl-kit-message').remove();
+            $('.rmt-kit-message').remove();
             
             // Add new message
             $status.prepend(messageHtml);
@@ -380,7 +380,7 @@
             // Auto-hide success messages
             if (type === 'success') {
                 setTimeout(function() {
-                    $('.pxl-kit-message.pxl-kit-success').fadeOut();
+                    $('.rmt-kit-message.rmt-kit-success').fadeOut();
                 }, 5000);
             }
         }

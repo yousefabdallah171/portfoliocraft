@@ -34,42 +34,42 @@
    ========================================================================== */
 
 /* Main Search Page Layout */
-.search #pxl-main {
+.search #rmt-main {
     padding-block: 176px 179px;
 }
 
 @media screen and (max-width: 1199px) {
-    .search #pxl-main {
+    .search #rmt-main {
         padding-block: 150px;
     }
 }
 
 @media screen and (max-width: 767px) {
-    .search #pxl-main {
+    .search #rmt-main {
         padding-block: 100px;
     }
 }
 
 /* Search Results Layout */
-.search.search-results #pxl-main {
+.search.search-results #rmt-main {
     padding-block: 176px 179px;
 }
 
 @media screen and (max-width: 1199px) {
-    .search.search-results #pxl-main {
+    .search.search-results #rmt-main {
         padding-block: 150px;
     }
 }
 
 @media screen and (max-width: 767px) {
-    .search.search-results #pxl-main {
+    .search.search-results #rmt-main {
         padding-block: 100px;
     }
 }
 
 /* No Sidebar Layout - Full Width */
-.no-sidebar #pxl-content-area,
-.search .no-sidebar #pxl-content-area {
+.no-sidebar #rmt-content-area,
+.search .no-sidebar #rmt-content-area {
     width: 100% !important;
     max-width: none !important;
     flex: none !important;
@@ -335,7 +335,7 @@
 /* Search Result Items */
 .search-result-item,
 .portfoliocraft-search-results article,
-.search .pxl-post-item {
+.search .rmt-post-item {
     background: var(--body-bg-color);
     border-radius: 12px;
     padding: 2rem;
@@ -349,7 +349,7 @@
 
 .search-result-item:hover,
 .portfoliocraft-search-results article:hover,
-.search .pxl-post-item:hover {
+.search .rmt-post-item:hover {
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
     transform: translateY(-4px);
     border-color: var(--primary-color);
@@ -357,7 +357,7 @@
 
 .search-result-item::before,
 .portfoliocraft-search-results article::before,
-.search .pxl-post-item::before {
+.search .rmt-post-item::before {
     content: '';
     position: absolute;
     top: 0;
@@ -371,14 +371,14 @@
 
 .search-result-item:hover::before,
 .portfoliocraft-search-results article:hover::before,
-.search .pxl-post-item:hover::before {
+.search .rmt-post-item:hover::before {
     opacity: 1;
 }
 
 /* Search Result Meta */
 .search-result-meta,
 .portfoliocraft-search-results .entry-meta,
-.search .pxl-post-date {
+.search .rmt-post-date {
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -401,7 +401,7 @@
 
 .search-result-meta .post-date,
 .portfoliocraft-search-results .entry-meta .post-date,
-.search .pxl-post-date span {
+.search .rmt-post-date span {
     display: flex;
     align-items: center;
     gap: 0.25rem;
@@ -409,20 +409,20 @@
 }
 
 /* Search Result Titles */
-.search-result-item .pxl-post-title,
+.search-result-item .rmt-post-title,
 .search-result-item .entry-title,
-.portfoliocraft-search-results .pxl-post-title,
+.portfoliocraft-search-results .rmt-post-title,
 .portfoliocraft-search-results .entry-title,
-.search .pxl-post-title {
+.search .rmt-post-title {
     margin-bottom: 1rem !important;
 }
 
-.search-result-item .pxl-title-text,
+.search-result-item .rmt-title-text,
 .search-result-item .entry-title a,
-.portfoliocraft-search-results .pxl-title-text,
+.portfoliocraft-search-results .rmt-title-text,
 .portfoliocraft-search-results .entry-title a,
-.search .pxl-post-title a,
-.search .pxl-title-text {
+.search .rmt-post-title a,
+.search .rmt-title-text {
     color: var(--post-title-color) !important;
     text-decoration: none;
     font-size: 1.5rem !important;
@@ -432,12 +432,12 @@
     display: block;
 }
 
-.search-result-item .pxl-title-text:hover,
+.search-result-item .rmt-title-text:hover,
 .search-result-item .entry-title a:hover,
-.portfoliocraft-search-results .pxl-title-text:hover,
+.portfoliocraft-search-results .rmt-title-text:hover,
 .portfoliocraft-search-results .entry-title a:hover,
-.search .pxl-post-title a:hover,
-.search .pxl-title-text:hover {
+.search .rmt-post-title a:hover,
+.search .rmt-title-text:hover {
     color: var(--primary-color) !important;
     text-decoration: underline;
     text-underline-offset: 4px;
@@ -448,7 +448,7 @@
 .search-result-content,
 .portfoliocraft-search-results .entry-summary,
 .portfoliocraft-search-results .entry-content,
-.search .pxl-post-excerpt {
+.search .rmt-post-excerpt {
     color: var(--body-text-color);
     line-height: 1.6;
     margin-bottom: 1.5rem;
@@ -514,17 +514,17 @@
 @media (max-width: 768px) {
     .search-result-item,
     .portfoliocraft-search-results article,
-    .search .pxl-post-item {
+    .search .rmt-post-item {
         padding: 1.5rem;
         margin-bottom: 1.5rem;
     }
     
-    .search-result-item .pxl-title-text,
+    .search-result-item .rmt-title-text,
     .search-result-item .entry-title a,
-    .portfoliocraft-search-results .pxl-title-text,
+    .portfoliocraft-search-results .rmt-title-text,
     .portfoliocraft-search-results .entry-title a,
-    .search .pxl-post-title a,
-    .search .pxl-title-text {
+    .search .rmt-post-title a,
+    .search .rmt-title-text {
         font-size: 1.25rem !important;
     }
     
@@ -536,7 +536,7 @@
     
     .search-result-meta,
     .portfoliocraft-search-results .entry-meta,
-    .search .pxl-post-date {
+    .search .rmt-post-date {
         flex-direction: column;
         align-items: flex-start;
         gap: 0.5rem;
@@ -547,18 +547,18 @@
    NO SEARCH RESULTS
    ========================================================================== */
 
-.search.search-no-results #pxl-main {
+.search.search-no-results #rmt-main {
     padding-block: 176px 176px;
 }
 
 @media screen and (max-width: 1199px) {
-    .search.search-no-results #pxl-main {
+    .search.search-no-results #rmt-main {
         padding-block: 150px;
     }
 }
 
 @media screen and (max-width: 767px) {
-    .search.search-no-results #pxl-main {
+    .search.search-no-results #rmt-main {
         padding-block: 100px;
     }
 }
@@ -622,7 +622,7 @@
 }
 
 .search.search-no-results .search-form-control .search-submit {
-    --pxl-box-size: 56px;
+    --rmt-box-size: 56px;
     background-color: var(--primary-color);
     position: absolute;
     right: 8px;
@@ -764,7 +764,7 @@
 .portfoliocraft-search-results + nav,
 .search-pagination,
 .pagination,
-.search .pxl-pagination-wrap {
+.search .rmt-pagination-wrap {
     margin: 3rem 0;
     text-align: center;
 }
@@ -816,7 +816,7 @@
 }
 
 .widget.widget_search .search-submit {
-    --pxl-box-size: 56px;
+    --rmt-box-size: 56px;
     background-color: var(--primary-color);
     position: absolute;
     right: 8px;
@@ -873,7 +873,7 @@
 }
 
 .widget_block.widget_search .wp-block-search__inside-wrapper .wp-block-search__button {
-    --pxl-box-size: 56px;
+    --rmt-box-size: 56px;
     background-color: var(--primary-color);
     position: absolute;
     right: 8px;
@@ -940,15 +940,15 @@
 }
 
 /* Header Search */
-.pxl-header .pxl-header-search {
+.rmt-header .rmt-header-search {
     margin-bottom: 30px;
 }
 
-.pxl-header .pxl-header-search form {
+.rmt-header .rmt-header-search form {
     position: relative;
 }
 
-.pxl-header .pxl-header-search .search-field {
+.rmt-header .rmt-header-search .search-field {
     line-height: 48px;
     border: thin solid #d5d5d5;
     font-size: 14px;
@@ -959,15 +959,15 @@
     padding-block: 0;
 }
 
-.pxl-header .pxl-header-search .search-field:hover,
-.pxl-header .pxl-header-search .search-field:focus {
+.rmt-header .rmt-header-search .search-field:hover,
+.rmt-header .rmt-header-search .search-field:focus {
     border-color: var(--primary-color);
     color: var(--body-text-color);
     outline: none;
 }
 
-.pxl-header .pxl-header-search .search-submit {
-    --pxl-box-size: 50px;
+.rmt-header .rmt-header-search .search-submit {
+    --rmt-box-size: 50px;
     position: absolute;
     top: 0;
     right: 0;
@@ -978,17 +978,17 @@
     border-radius: 6px;
 }
 
-.pxl-header .pxl-header-search .search-submit:hover {
+.rmt-header .rmt-header-search .search-submit:hover {
     background-color: var(--secondary-color);
     border-color: var(--secondary-color);
 }
 
-/* PXL Search Form Wrapper */
-.pxl-search-form-wrapper .search-form {
+/* rmt Search Form Wrapper */
+.rmt-search-form-wrapper .search-form {
     position: relative;
 }
 
-.pxl-search-form-wrapper .search-field {
+.rmt-search-form-wrapper .search-field {
     border: none;
     border-bottom: thin solid var(--primary-color);
     padding-block: 10px 15px;
@@ -998,13 +998,13 @@
     color: var(--body-text-color);
 }
 
-.pxl-search-form-wrapper .search-field:focus {
+.rmt-search-form-wrapper .search-field:focus {
     outline: none;
     border-bottom-color: var(--secondary-color);
 }
 
-.pxl-search-form-wrapper .search-submit {
-    --pxl-box-size: 40px;
+.rmt-search-form-wrapper .search-submit {
+    --rmt-box-size: 40px;
     position: absolute;
     right: 5px;
     top: 50%;
@@ -1017,7 +1017,7 @@
     transition: all 0.25s linear;
 }
 
-.pxl-search-form-wrapper .search-submit:before {
+.rmt-search-form-wrapper .search-submit:before {
     content: '';
     position: absolute;
     inset: 1px;
@@ -1029,21 +1029,21 @@
     transition: scale 0.25s linear;
 }
 
-.pxl-search-form-wrapper .search-submit:hover {
+.rmt-search-form-wrapper .search-submit:hover {
     color: var(--primary-color);
 }
 
-.pxl-search-form-wrapper .search-submit:hover:before {
+.rmt-search-form-wrapper .search-submit:hover:before {
     scale: 1;
 }
 
-.pxl-search-form-wrapper .search-submit:hover i {
+.rmt-search-form-wrapper .search-submit:hover i {
     animation: circular-motion 3.5s linear infinite;
 }
 
 /* Search Button */
-.btn.pxl-search-button,
-button.pxl-search-button {
+.btn.rmt-search-button,
+button.rmt-search-button {
     font-family: var(--secondary-font);
     height: 26px;
     gap: 7px;
@@ -1054,21 +1054,21 @@ button.pxl-search-button {
     transition: all 0.3s ease;
 }
 
-.btn.pxl-search-button:hover,
-button.pxl-search-button:hover {
+.btn.rmt-search-button:hover,
+button.rmt-search-button:hover {
     color: var(--primary-color);
 }
 
-.btn.pxl-search-button .pxl-btn-icon,
-button.pxl-search-button .pxl-btn-icon {
-    --pxl-translate-x: 5px;
-    --pxl-translate-y: 5px;
-    --pxl-rotate: 0deg;
+.btn.rmt-search-button .rmt-btn-icon,
+button.rmt-search-button .rmt-btn-icon {
+    --rmt-translate-x: 5px;
+    --rmt-translate-y: 5px;
+    --rmt-rotate: 0deg;
     transition: transform 0.3s ease;
 }
 
-.btn.pxl-search-button:hover .pxl-btn-icon,
-button.pxl-search-button:hover .pxl-btn-icon {
+.btn.rmt-search-button:hover .rmt-btn-icon,
+button.rmt-search-button:hover .rmt-btn-icon {
     animation: circular-motion 3.5s linear infinite;
 }
 
@@ -1076,7 +1076,7 @@ button.pxl-search-button:hover .pxl-btn-icon {
    WOOCOMMERCE SEARCH
    ========================================================================== */
 
-.woocommerce #pxl-sidebar-area .widget_product_search button {
+.woocommerce #rmt-sidebar-area .widget_product_search button {
     padding: 0;
     width: 53px;
     height: 50px;
@@ -1089,7 +1089,7 @@ button.pxl-search-button:hover .pxl-btn-icon {
     box-shadow: none;
 }
 
-.woocommerce #pxl-sidebar-area .widget_product_search button:after {
+.woocommerce #rmt-sidebar-area .widget_product_search button:after {
     content: "\f002";
     position: absolute;
     top: 50%;
@@ -1102,13 +1102,13 @@ button.pxl-search-button:hover .pxl-btn-icon {
     text-indent: 0px;
 }
 
-.woocommerce #pxl-sidebar-area .widget_product_search button:hover {
+.woocommerce #rmt-sidebar-area .widget_product_search button:hover {
     background-color: var(--secondary-color);
     border-color: var(--secondary-color);
     color: var(--white-text-color);
 }
 
-.woocommerce #pxl-sidebar-area .widget_product_search .search-field {
+.woocommerce #rmt-sidebar-area .widget_product_search .search-field {
     height: 50px;
     color: var(--body-text-color);
     border-color: #ececf0;
@@ -1116,12 +1116,12 @@ button.pxl-search-button:hover .pxl-btn-icon {
     background: var(--body-bg-color);
 }
 
-.woocommerce #pxl-sidebar-area .widget_product_search .search-field:focus {
+.woocommerce #rmt-sidebar-area .widget_product_search .search-field:focus {
     border-color: var(--primary-color);
     outline: none;
 }
 
-.woocommerce #pxl-sidebar-area .widget_product_search .search-field:focus + button {
+.woocommerce #rmt-sidebar-area .widget_product_search .search-field:focus + button {
     border-color: var(--primary-color);
 }
 
@@ -1163,9 +1163,9 @@ input[type="search"]::placeholder {
    ACCESSIBILITY & FOCUS STATES
    ========================================================================== */
 
-.search-result-item .pxl-title-text:focus,
+.search-result-item .rmt-title-text:focus,
 .search-result-item .entry-title a:focus,
-.portfoliocraft-search-results .pxl-title-text:focus,
+.portfoliocraft-search-results .rmt-title-text:focus,
 .portfoliocraft-search-results .entry-title a:focus,
 .search-result-read-more:focus,
 .category-link:focus,
@@ -1188,9 +1188,9 @@ input[type="search"]::placeholder {
     .page-numbers,
     .portfoliocraft-search-form-wrapper .search-submit,
     .search-submit,
-    .pxl-search-form-wrapper .search-submit,
-    .btn.pxl-search-button,
-    button.pxl-search-button {
+    .rmt-search-form-wrapper .search-submit,
+    .btn.rmt-search-button,
+    button.rmt-search-button {
         transition: none;
         animation: none;
     }
@@ -1200,9 +1200,9 @@ input[type="search"]::placeholder {
         transform: none;
     }
     
-    .pxl-search-form-wrapper .search-submit:hover i,
-    .btn.pxl-search-button:hover .pxl-btn-icon,
-    button.pxl-search-button:hover .pxl-btn-icon {
+    .rmt-search-form-wrapper .search-submit:hover i,
+    .btn.rmt-search-button:hover .rmt-btn-icon,
+    button.rmt-search-button:hover .rmt-btn-icon {
         animation: none;
     }
 }
@@ -1228,7 +1228,7 @@ input[type="search"]::placeholder {
     
     .search-result-item,
     .portfoliocraft-search-results article,
-    .search .pxl-post-item {
+    .search .rmt-post-item {
         background: rgba(255, 255, 255, 0.05);
         border-color: rgba(255, 255, 255, 0.1);
     }
@@ -1241,7 +1241,7 @@ input[type="search"]::placeholder {
 @media (prefers-contrast: high) {
     .search-result-item,
     .portfoliocraft-search-results article,
-    .search .pxl-post-item,
+    .search .rmt-post-item,
     .portfoliocraft-no-results,
     .search.search-no-results .no-results.not-found {
         border: 2px solid var(--primary-color);
@@ -1250,7 +1250,7 @@ input[type="search"]::placeholder {
     .search-submit,
     .widget.widget_search .search-submit,
     .widget_block.widget_search .wp-block-search__button,
-    .pxl-search-form-wrapper .search-submit {
+    .rmt-search-form-wrapper .search-submit {
         border: 2px solid var(--white-text-color);
     }
 }
@@ -1442,30 +1442,30 @@ form[role="search"] {
     max-width: 1200px !important;
 }
 
-.search #pxl-content-area {
+.search #rmt-content-area {
     width: 100% !important;
     flex: none !important;
 }
 
 /* Override any existing search result styling */
-.search .pxl-post-title,
+.search .rmt-post-title,
 .search .entry-title {
     margin-bottom: 1rem !important;
 }
 
-.search .pxl-post-title a,
+.search .rmt-post-title a,
 .search .entry-title a {
     color: var(--post-title-color) !important;
     font-size: 1.5rem !important;
     font-weight: 700 !important;
 }
 
-.search .pxl-post-title a:hover,
+.search .rmt-post-title a:hover,
 .search .entry-title a:hover {
     color: var(--primary-color) !important;
 }
 
 /* Hide author info widget in search sidebar if it exists */
-.search.search-results #pxl-main .container #pxl-sidebar-area .widget_pxl_author_info {
+.search.search-results #rmt-main .container #rmt-sidebar-area .widget_rmt_author_info {
     display: none;
 }

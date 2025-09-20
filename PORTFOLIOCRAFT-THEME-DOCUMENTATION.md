@@ -459,7 +459,7 @@ PortfolioCraft is a modern, multipurpose WordPress theme designed for businesses
   - `add_action()` - WordPress action wrapper
   - `add_filter()` - WordPress filter wrapper
 - **Helper Functions:**
-  - `pxl_action()` - Custom theme action trigger
+  - `rmt_action()` - Custom theme action trigger
 
 #### `class-page.php` - Page Handler
 - **Purpose:** Page-related functionality

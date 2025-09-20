@@ -54,7 +54,7 @@ function portfoliocraft_body_classes($classes) {
     
     // Check if Redux Framework is active for enhanced theme options
     if (class_exists('ReduxFramework')) {
-        $classes[] = 'pxl-redux-page';
+        $classes[] = 'rmt-redux-page';
 
         // Handle footer fixed state with page-level override support
         $footer_fixed = portfoliocraft()->get_theme_opt('footer_fixed');
@@ -67,7 +67,7 @@ function portfoliocraft_body_classes($classes) {
 
         // Add footer fixed class if enabled
         if (isset($footer_fixed) && $footer_fixed === 'on') {
-            $classes[] = 'pxl-footer-fixed';
+            $classes[] = 'rmt-footer-fixed';
         }
 
         // Add header type class for styling variations
@@ -132,7 +132,7 @@ function portfoliocraft_add_cpt_support() {
         'portfolio',         // Theme portfolio content
         'Services',            // Theme Services/job listings
         'footer',            // Theme footer templates
-        'pxl-template',      // Theme custom templates
+        'rmt-template',      // Theme custom templates
         'product',           // WooCommerce products
         'elementor_library'  // Elementor template library
     ];
@@ -172,7 +172,7 @@ function portfoliocraft_support_default_cpt($postypes) {
     // This can be customized to add or remove default support
     return $postypes;
 }
-add_filter('pxl_support_default_cpt', 'portfoliocraft_support_default_cpt');
+add_filter('rmt_support_default_cpt', 'portfoliocraft_support_default_cpt');
 
 /**
  * Add custom post types to the theme
@@ -270,7 +270,7 @@ function portfoliocraft_add_post_type($postypes) {
   
     return $postypes;
 }
-add_filter('pxl_extra_post_types', 'portfoliocraft_add_post_type');
+add_filter('rmt_extra_post_types', 'portfoliocraft_add_post_type');
 
 /* ==========================================================================
    Custom Taxonomy Management
@@ -337,7 +337,7 @@ function portfoliocraft_add_tax($taxonomies) {
     
     return $taxonomies;
 }
-add_filter('pxl_extra_taxonomies', 'portfoliocraft_add_tax');
+add_filter('rmt_extra_taxonomies', 'portfoliocraft_add_tax');
 
 /* ==========================================================================
    Archive Link Customization
@@ -419,7 +419,7 @@ function portfoliocraft_theme_builder_post_type($postypes) {
     // Can be modified to add custom template types
     return $postypes;
 }
-add_filter('pxl_theme_builder_post_types', 'portfoliocraft_theme_builder_post_type');
+add_filter('rmt_theme_builder_post_types', 'portfoliocraft_theme_builder_post_type');
 
 /**
  * Filter theme builder layout IDs
@@ -509,7 +509,7 @@ function portfoliocraft_theme_builder_layout_id($layout_ids) {
     // Remove duplicates and return
     return array_unique(array_filter($layout_ids));
 }
-add_filter('pxl_theme_builder_layout_ids', 'portfoliocraft_theme_builder_layout_id');
+add_filter('rmt_theme_builder_layout_ids', 'portfoliocraft_theme_builder_layout_id');
 
 /**
  * Configure widget source builder data
@@ -537,7 +537,7 @@ function portfoliocraft_wg_get_source_builder($wg_datas) {
     
     return $wg_datas;
 }
-add_filter('pxl_wg_get_source_id_builder', 'portfoliocraft_wg_get_source_builder');
+add_filter('rmt_wg_get_source_id_builder', 'portfoliocraft_wg_get_source_builder');
 
 /* ==========================================================================
    Elementor Editor Enhancements
@@ -681,7 +681,7 @@ add_filter('comment_form_fields', 'portfoliocraft_comment_field_to_bottom');
 function portfoliocraft_enable_pagepopup() {
     return false;
 }
-add_filter('pxl_enable_pagepopup', 'portfoliocraft_enable_pagepopup');
+add_filter('rmt_enable_pagepopup', 'portfoliocraft_enable_pagepopup');
 
 /**
  * Control mega menu feature availability
@@ -694,7 +694,7 @@ add_filter('pxl_enable_pagepopup', 'portfoliocraft_enable_pagepopup');
 function portfoliocraft_enable_megamenu() {
     return false;
 }
-add_filter('pxl_enable_megamenu', 'portfoliocraft_enable_megamenu');
+add_filter('rmt_enable_megamenu', 'portfoliocraft_enable_megamenu');
 
 /**
  * Control one-page navigation feature availability
@@ -708,7 +708,7 @@ add_filter('pxl_enable_megamenu', 'portfoliocraft_enable_megamenu');
 function portfoliocraft_enable_onepage() {
     return true;
 }
-add_filter('pxl_enable_onepage', 'portfoliocraft_enable_onepage');
+add_filter('rmt_enable_onepage', 'portfoliocraft_enable_onepage');
 
 /**
  * Control Font Awesome Pro support
@@ -722,7 +722,7 @@ add_filter('pxl_enable_onepage', 'portfoliocraft_enable_onepage');
 function portfoliocraft_support_awesome_pro() {
     return false;
 }
-add_filter('pxl_support_awesome_pro', 'portfoliocraft_support_awesome_pro');
+add_filter('rmt_support_awesome_pro', 'portfoliocraft_support_awesome_pro');
 
 /* ==========================================================================
    Icon Management
@@ -738,7 +738,7 @@ add_filter('pxl_support_awesome_pro', 'portfoliocraft_support_awesome_pro');
  * @return array Modified array with custom icons added
  * @since 1.0.0
  */
-function portfoliocraft_add_icons_to_pxl_iconpicker_field($icons) {
+function portfoliocraft_add_icons_to_rmt_iconpicker_field($icons) {
     // Custom icons array - add custom icon sets here
     $custom_icons = []; // Using only GPL-compatible icons
     
@@ -747,7 +747,7 @@ function portfoliocraft_add_icons_to_pxl_iconpicker_field($icons) {
     
     return $icons;
 }
-add_filter('redux_pxl_iconpicker_field/get_icons', 'portfoliocraft_add_icons_to_pxl_iconpicker_field');
+add_filter('redux_rmt_iconpicker_field/get_icons', 'portfoliocraft_add_icons_to_rmt_iconpicker_field');
 
 /**
  * Add custom icons to mega menu
@@ -768,7 +768,7 @@ function portfoliocraft_add_icons_to_megamenu($icons) {
     
     return $icons;
 }
-add_filter("pxl_mega_menu/get_icons", "portfoliocraft_add_icons_to_megamenu");
+add_filter("rmt_mega_menu/get_icons", "portfoliocraft_add_icons_to_megamenu");
 
 /* ==========================================================================
    Performance and Optimization
@@ -805,7 +805,7 @@ function portfoliocraft_export_wp_settings($wp_options) {
     
     return $wp_options;
 }
-add_filter('pxl_export_wp_settings', 'portfoliocraft_export_wp_settings');
+add_filter('rmt_export_wp_settings', 'portfoliocraft_export_wp_settings');
 
 /* ==========================================================================
    Theme Information and Support
@@ -836,7 +836,7 @@ function portfoliocraft_add_server_info($infos) {
     
     return $infos;
 }
-add_filter('pxl_server_info', 'portfoliocraft_add_server_info');
+add_filter('rmt_server_info', 'portfoliocraft_add_server_info');
 
 /* ==========================================================================
    Search Functionality Enhancement
@@ -881,8 +881,8 @@ add_action('pre_get_posts', 'portfoliocraft_custom_post_types_in_search_results'
  * @since 1.0.0
  */
 function portfoliocraft_update_elementor_font_groups_control($font_groups) {
-    $pxlfonts_group = array('pxlfonts' => esc_html__('portfoliocraft Fonts', 'portfoliocraft'));
-    return array_merge($pxlfonts_group, $font_groups);
+    $rmtfonts_group = array('rmtfonts' => esc_html__('portfoliocraft Fonts', 'portfoliocraft'));
+    return array_merge($rmtfonts_group, $font_groups);
 }
 add_filter('elementor/fonts/groups', 'portfoliocraft_update_elementor_font_groups_control');
 
@@ -898,7 +898,7 @@ add_filter('elementor/fonts/groups', 'portfoliocraft_update_elementor_font_group
  */
 function portfoliocraft_update_elementor_font_control($additional_fonts) {
     // Add custom theme fonts to Elementor
-    $additional_fonts['Julietta-Messie'] = 'pxlfonts';
+    $additional_fonts['Julietta-Messie'] = 'rmtfonts';
     
     return $additional_fonts;
 }

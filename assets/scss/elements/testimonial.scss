@@ -1,5 +1,5 @@
-.pxl-layout-testimonial1 {
-    .pxl-testimonial-item {
+.rmt-layout-testimonial1 {
+    .rmt-testimonial-item {
         text-align: center;
         width: 100%;
         max-width: 1110px;
@@ -9,7 +9,7 @@
             padding-inline: 0;
         }
     }
-    .pxl-testimonial-content {
+    .rmt-testimonial-content {
         display: block;
         color:#FFF;
         font-family: var(--secondary-font);
@@ -30,7 +30,7 @@
             font-size: 22px;
         }
     }
-    .pxl-testimonial-user {
+    .rmt-testimonial-user {
         display: block;
         color: #FFF;
         font-family: var(--secondary-font);
@@ -45,27 +45,27 @@
         justify-content: space-between;
         pointer-events: none;
         margin: 0;
-        .pxl-swiper-button {
+        .rmt-swiper-button {
             pointer-events: visible;
         }
     }
     @extend .navigation-show-on-hover--sm
 }
 
-.pxl-testimonial-carousel2 {
-    .pxl-testimonial-user {
+.rmt-testimonial-carousel2 {
+    .rmt-testimonial-user {
         display: flex;
         align-items: center;
         gap: 38px;
         margin-bottom: 38px;
-        .pxl-user-image {
+        .rmt-user-image {
             position: relative;
             img {
                 position: relative;
-                --pxl-box-size: 98px;
-                @extend .pxl-round-box;
+                --rmt-box-size: 98px;
+                @extend .rmt-round-box;
                 @media #{$max-xs} {
-                    --pxl-box-size: 80px;
+                    --rmt-box-size: 80px;
                 }
                 &::after {
                     content: '';
@@ -81,7 +81,7 @@
                 }
             }
         }
-        .pxl-user-name {
+        .rmt-user-name {
             display: block;
             color: #FFF;
             font-family: 'Sora';
@@ -96,7 +96,7 @@
                 font-size: 20px;
             }
         }
-        .pxl-user-title {
+        .rmt-user-title {
             color:#D5D5D5;
             font-size: 22px;
             font-weight: 300;
@@ -109,7 +109,7 @@
             }
         }
     }
-    .pxl-testimonial-content {
+    .rmt-testimonial-content {
         color: #FFF;
         font-size: 24px;
         font-weight: 300;
@@ -123,7 +123,7 @@
     }
 }
 
-.pxl-testimonial-carousel3 {
+.rmt-testimonial-carousel3 {
     .swiper-navigation {
         margin: 0;
         position: absolute;
@@ -132,13 +132,13 @@
         width: fit-content;
         gap: 12px;
     }
-    .pxl-testimonial-rating {
+    .rmt-testimonial-rating {
         display: flex;
         align-items: center;
         gap: 4px;
         margin-bottom: 30px;
     }
-    .pxl-testimonial-content {
+    .rmt-testimonial-content {
         font-size: 22px;
         font-weight: 300;
         line-height: 1.59091;
@@ -147,27 +147,27 @@
             font-size: 20px;
         }
     }
-    .pxl-testimonial-divider {
+    .rmt-testimonial-divider {
         width: 100%;
         border: none;
         height: 1px;
         background-color: rgba($color: #000000, $alpha: .4);
         margin-bottom: 36px;
     }
-    .pxl-testimonial-user {
+    .rmt-testimonial-user {
         display: flex;
         align-items: center;
         gap: 19px;
-        .pxl-user-image {
+        .rmt-user-image {
             display: block;
             img {
-                --pxl-box-size: 72px;
-                @extend .pxl-round-box;
+                --rmt-box-size: 72px;
+                @extend .rmt-round-box;
                 border: 3px solid rgba($color: #FFF, $alpha: .6);
 
             }
         }
-        .pxl-user-name {
+        .rmt-user-name {
             display: block;
             color: #000;
             font-family: 'Sora';
@@ -178,7 +178,7 @@
                 font-size: 20px;
             }
         }
-        .pxl-user-address {
+        .rmt-user-address {
             display: block;
             color: #000;
             font-size: 18px;
@@ -188,9 +188,9 @@
     }
 }
 
-.pxl-layout-testimonial4 {
-    .pxl-testimonial-user {
-        .pxl-user-name {
+.rmt-layout-testimonial4 {
+    .rmt-testimonial-user {
+        .rmt-user-name {
             display: block;
             color: #FFF;
             font-family: "Plus Jakarta Sans";
@@ -200,37 +200,37 @@
             text-transform: uppercase;
             margin-bottom: 7px;
         }
-        .pxl-user-title {
+        .rmt-user-title {
             color: #FFF;
             font-family: 'Inter';
             font-size: 22px;
             line-height: 1.59091;
         }
         @media #{$max-lg} {
-            .pxl-user-name {
+            .rmt-user-name {
                 font-size: 34px;
             }
         }
         @media #{$max-md} {
-            .pxl-user-name {
+            .rmt-user-name {
                 font-size: 32px;
             }
         }
         @media #{$max-md} {
-            .pxl-user-name {
+            .rmt-user-name {
                 font-size: 30px;
             }
-            .pxl-user-title {
+            .rmt-user-title {
                 font-size: 20px;
             }
         }
         @media #{$max-sm} {
-            .pxl-user-name {
+            .rmt-user-name {
                 font-size: 28px;
             }
         }
     }
-    .pxl-testimonial-divider {
+    .rmt-testimonial-divider {
         display: block;
         background-color: rgba($color: #FFF, $alpha: .17);
         height: 2px;
@@ -241,7 +241,7 @@
         }
     }
 
-    .pxl-testimonial-content {
+    .rmt-testimonial-content {
         color: #FFF;
         font-family: 'Inter';
         font-size: 28px;
@@ -256,11 +256,11 @@
             margin-bottom: 30px;
         }
     }
-    .pxl-testimonial-rating {
+    .rmt-testimonial-rating {
         display: flex;
         align-items: center;
         gap: 11px;
-        .pxl-rating-label {
+        .rmt-rating-label {
             color: #FFF;
             font-family: "Plus Jakarta Sans";
             font-size: 30px;
@@ -274,7 +274,7 @@
                 font-size: 24;
             }
         }
-        .pxl-rating-star {
+        .rmt-rating-star {
             padding: 7px 15px 10px;
             gap: 5.5px;
             display: inline-flex;
@@ -297,15 +297,15 @@
     }
 }
 
-.pxl-testimonial-carousel5 {
-    .pxl-testimonial-item {
+.rmt-testimonial-carousel5 {
+    .rmt-testimonial-item {
         padding: 55px 37px 57px;
         border-radius: 7px;
         border: thin solid #363636;
         background-color: rgba($color: #3d3d3d, $alpha: .26);
         text-align: center;
         &:hover {
-            .pxl-user-image {
+            .rmt-user-image {
                 img {
                     filter: grayscale(0);
                 }
@@ -315,12 +315,12 @@
             padding: 55px 30px;
         }
     }
-    .pxl-testimonial-icon {
+    .rmt-testimonial-icon {
         display: block;
         color: rgba($color: #FFF, $alpha: .1);
         margin-bottom: 36px;
     }
-    .pxl-testimonial-content {
+    .rmt-testimonial-content {
         color: #FFF;
         text-align: center;
         font-family: "Plus Jakarta Sans";
@@ -329,25 +329,25 @@
         letter-spacing: -0.2px;
         margin-bottom: 37px;
     }
-    .pxl-rating-star {
+    .rmt-rating-star {
         display: flex;
         justify-content: center;
         gap: 3px;
         margin-bottom: 19px;
         color: #D7FF37;
     }
-    .pxl-user-image {
+    .rmt-user-image {
         display: block;
         margin-bottom: 15px;
         img {
-            --pxl-box-size: 73px;
-            @extend .pxl-round-box;
+            --rmt-box-size: 73px;
+            @extend .rmt-round-box;
             border: 3.07px solid #989898;
             filter: grayscale(1);
             transition: .25s;
         }
     }
-    .pxl-user-name {
+    .rmt-user-name {
         display: block;
         color: #FFF;
         text-align: center;
@@ -357,7 +357,7 @@
         line-height: 1.5;
         letter-spacing: -0.2px;
     }
-    .pxl-user-title {
+    .rmt-user-title {
         display: block;
         color:#FFF;
         text-align: center;

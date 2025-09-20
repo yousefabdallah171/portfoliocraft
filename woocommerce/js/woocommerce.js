@@ -86,7 +86,7 @@
             }
         });
 
-        $('.pxl-item--attr .pxl-button--info').on('click', function () {
+        $('.rmt-item--attr .rmt-button--info').on('click', function () {
             $(this).toggleClass('active');
         });
     });
@@ -110,7 +110,7 @@
 
 jQuery( document ).on( 'qv_loader_stop', function () {
     jQuery( this ).ready( function ( $ ) {
-        $('#yith-quick-view-modal .quantity').append('<span class="quantity-icon quantity-down pxl-icon--caretdown"></span><span class="quantity-icon quantity-up pxl-icon--caretup"></span>');
+        $('#yith-quick-view-modal .quantity').append('<span class="quantity-icon quantity-down rmt-icon--caretdown"></span><span class="quantity-icon quantity-up rmt-icon--caretup"></span>');
         $('#yith-quick-view-modal .quantity-up').on('click', function () {
             $(this).parents('.quantity').find('input[type="number"]').get(0).stepUp();
         });

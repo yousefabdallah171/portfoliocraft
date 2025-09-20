@@ -6,7 +6,7 @@ This document explains all the color controls available in the portfoliocraft th
 
 The theme now has comprehensive color controls for ALL text elements throughout the site, including the specific elements you mentioned:
 - `.title-text` (comments section titles)
-- `.pxl-title-text` (post titles)  
+- `.rmt-title-text` (post titles)  
 - `.comment-reply-title` (comment form titles)
 
 ## Theme Options Location
@@ -53,7 +53,7 @@ You'll find these sections:
 **Control**: Comments Title Color
 **CSS Variable**: `--comments-title-color`
 
-### ✅ `.pxl-title-text` - Post Titles
+### ✅ `.rmt-title-text` - Post Titles
 **Location**: Single post titles, archive titles
 **Control**: Post Title Color
 **CSS Variable**: `--post-title-color`
@@ -77,7 +77,7 @@ You'll find these sections:
     /* Main Text Colors */
     --body-text-color: #333333;
     --heading-text-color: #1a1a1a;
-    --post-title-color: #1a1a1a;      /* Controls .pxl-title-text */
+    --post-title-color: #1a1a1a;      /* Controls .rmt-title-text */
     --subtitle-text-color: #666666;
     --meta-text-color: #999999;
     
@@ -100,9 +100,9 @@ You'll find these sections:
 
 ## How The Controls Work
 
-### Post Titles (`.pxl-title-text`)
+### Post Titles (`.rmt-title-text`)
 ```css
-.pxl-title-text,
+.rmt-title-text,
 .title-text {
     color: var(--post-title-color, #1a1a1a) !important;
 }
@@ -220,7 +220,7 @@ Add to `portfoliocraft_configs` function:
 ## Summary
 
 ✅ **Problem Solved**: All text elements now have color controls  
-✅ **Specific Elements Fixed**: `.title-text`, `.pxl-title-text`, `.comment-reply-title`  
+✅ **Specific Elements Fixed**: `.title-text`, `.rmt-title-text`, `.comment-reply-title`  
 ✅ **Comprehensive Coverage**: 13 total color controls for all text types  
 ✅ **Easy to Use**: Simple controls in Theme Options → Global Colors  
 ✅ **Future Proof**: CSS variables system allows easy expansion

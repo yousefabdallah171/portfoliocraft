@@ -1,17 +1,17 @@
-.pxl-counterslide {
+.rmt-counterslide {
     display: -moz-inline-box;
     -moz-box-orient: vertical;
     display: inline-flex;
     vertical-align: middle;
     *vertical-align: auto;
     position: relative;
-    .pxl-counterslide-inside {
+    .rmt-counterslide-inside {
       display: inline-flex;
     }
-    .pxl-counterslide-digit-spacer {
+    .rmt-counterslide-digit-spacer {
         visibility: hidden;
     }
-    .pxl-counterslide-digit, .pxl-counterslide-digit-spacer {
+    .rmt-counterslide-digit, .rmt-counterslide-digit-spacer {
         display: -moz-inline-box;
         -moz-box-orient: vertical;
         display: inline-flex;
@@ -19,7 +19,7 @@
         *vertical-align: auto;
         position: relative;
     }
-    .pxl-counterslide-digit-inner {
+    .rmt-counterslide-digit-inner {
         position: absolute;
         top: 0;
         left: 0;
@@ -27,42 +27,42 @@
         bottom: 0;
         overflow: hidden;
     }
-    .pxl-counterslide-ribbon {
+    .rmt-counterslide-ribbon {
         display: block;
     }
-    .pxl-counterslide-ribbon-inner {
+    .rmt-counterslide-ribbon-inner {
         display: block;
         -webkit-backface-visibility: hidden;
     }
-    .pxl-counterslide-value {
+    .rmt-counterslide-value {
         display: block;
         -webkit-transform: translateZ(0);
     }
-    .pxl-counterslide-value.pxl-counterslide-last-value {
+    .rmt-counterslide-value.rmt-counterslide-last-value {
         position: absolute;
     }
-    &.pxl-counterslide-animating-up .pxl-counterslide-ribbon-inner {
+    &.rmt-counterslide-animating-up .rmt-counterslide-ribbon-inner {
         -webkit-transition: -webkit-transform 2s;
         -moz-transition: -moz-transform 2s;
         -ms-transition: -ms-transform 2s;
         -o-transition: -o-transform 2s;
         transition: transform 2s;
     }
-    &.pxl-counterslide-animating-up.pxl-counterslide-animating .pxl-counterslide-ribbon-inner {
+    &.rmt-counterslide-animating-up.rmt-counterslide-animating .rmt-counterslide-ribbon-inner {
         -webkit-transform: translateY(-100%);
         -moz-transform: translateY(-100%);
         -ms-transform: translateY(-100%);
         -o-transform: translateY(-100%);
         transform: translateY(-100%);
     }
-    &.pxl-counterslide-animating-down .pxl-counterslide-ribbon-inner {
+    &.rmt-counterslide-animating-down .rmt-counterslide-ribbon-inner {
         -webkit-transform: translateY(-100%);
         -moz-transform: translateY(-100%);
         -ms-transform: translateY(-100%);
         -o-transform: translateY(-100%);
         transform: translateY(-100%);
     }
-    &.pxl-counterslide-animating-down.pxl-counterslide-animating .pxl-counterslide-ribbon-inner {
+    &.rmt-counterslide-animating-down.rmt-counterslide-animating .rmt-counterslide-ribbon-inner {
         -webkit-transition: -webkit-transform 2s;
         -moz-transition: -moz-transform 2s;
         -ms-transition: -ms-transform 2s;
@@ -92,8 +92,8 @@
     100% {
       stroke-dasharray: 100% 0%; 
       stroke-dashoffset: 0%;  
-      fill: var(--pxl-color);
-      color: var(--pxl-color);
+      fill: var(--rmt-color);
+      color: var(--rmt-color);
     }
   }
   
@@ -101,23 +101,23 @@
     @include animation(animated-text-stroke 2s ease forwards);
 }
 
-.pxl-counter-wrapper {
-    --pxl-flex-direction: column;
+.rmt-counter-wrapper {
+    --rmt-flex-direction: column;
     width: 100%;
     position: relative;
-    @extend .pxl-flex-center;
-    flex-direction: var(--pxl-flex-direction);
-    .pxl-counter-number {
+    @extend .rmt-flex-center;
+    flex-direction: var(--rmt-flex-direction);
+    .rmt-counter-number {
         position: relative;
-        --pxl-font-size: 18px;
-        --pxl-color: transparent;
+        --rmt-font-size: 18px;
+        --rmt-color: transparent;
         display: flex;
         align-items: center;
         width: fit-content;
-        font-size: var(--pxl-font-size);
+        font-size: var(--rmt-font-size);
         white-space: nowrap;
-        color: var(--pxl-color);
-        .pxl-number-suffix {
+        color: var(--rmt-color);
+        .rmt-number-suffix {
             line-height: 1;
         }
         svg {
@@ -125,7 +125,7 @@
             display: inline-block;
             width: auto;
             max-width: 100%;
-            height: var(--pxl-font-size);
+            height: var(--rmt-font-size);
             white-space: nowrap;
             text {
                 color: currentColor;
@@ -139,28 +139,28 @@
     }
 }
 
-.pxl-counter-wrapper1 {
+.rmt-counter-wrapper1 {
     &.counter-default {
-        .pxl-counter-number {
-            --pxl-font-size: 100px;
+        .rmt-counter-number {
+            --rmt-font-size: 100px;
             font-family: 'Inter';
             font-weight: 600;
             line-height: 1;
             align-items: center;
             @media #{$max-lg} {
-                --pxl-font-size: 86px;
+                --rmt-font-size: 86px;
             }
             @media #{$max-md} {
-                --pxl-font-size: 82px;
+                --rmt-font-size: 82px;
             }
             @media #{$max-sm} {
-                --pxl-font-size: 76px;
+                --rmt-font-size: 76px;
             }
             @media #{$max-xs} {
-                --pxl-font-size: 70px;
+                --rmt-font-size: 70px;
             }
         }
-        .pxl-counter-title {
+        .rmt-counter-title {
             color: #FFF;
             font-family: "Plus Jakarta Sans";
             font-size: 20px;
@@ -174,33 +174,33 @@
     }
     &.counter-stroke1 {
         gap: 5px;
-        .pxl-counter-number {
-            --pxl-font-size: 100px;
+        .rmt-counter-number {
+            --rmt-font-size: 100px;
             font-family: var(--secondary-font);
             font-weight: 700;
             letter-spacing: 4px;
             text-transform: uppercase;
 
         }
-        .pxl-counter-title {
+        .rmt-counter-title {
             display: inline-block;
             color: #FFF;
         }
     }
 
     &.counter-style1 {
-        --pxl-flex-direction: row;
+        --rmt-flex-direction: row;
         gap: 10px;
         align-items: end;
         justify-content: start;
-        .pxl-counter-number {
-            --pxl-color: #000;
+        .rmt-counter-number {
+            --rmt-color: #000;
             position: relative;
             font-family: 'Sora';
             font-size: 128px;
             letter-spacing: -6.4px;
             line-height: 105px;
-            .pxl-number-suffix {
+            .rmt-number-suffix {
                 position: absolute;
                 right: -30px;
                 top: -13px;
@@ -208,7 +208,7 @@
                 line-height: 1;
             }
         }
-        .pxl-counter-title {
+        .rmt-counter-title {
             color:#000;
             font-family: 'Sora';
             font-size: 22px;

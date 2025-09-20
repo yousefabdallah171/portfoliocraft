@@ -41,7 +41,7 @@
 
     const Cursor = (function() {
 
-    const cursor = document.querySelector(".pxl-js-cursor");
+    const cursor = document.querySelector(".rmt-js-cursor");
     let follower;
     let label;
     let drap;
@@ -57,10 +57,10 @@
 
     function variables() {
 
-      follower = cursor.querySelector(".pxl-js-follower");
-      label = cursor.querySelector(".pxl-js-label");
-      drap = cursor.querySelector(".pxl-js-drap");
-      icon = cursor.querySelector(".pxl-js-icon");
+      follower = cursor.querySelector(".rmt-js-follower");
+      label = cursor.querySelector(".rmt-js-label");
+      drap = cursor.querySelector(".rmt-js-drap");
+      icon = cursor.querySelector(".rmt-js-icon");
 
       clientX = -100;
       clientY = -100;
@@ -172,9 +172,9 @@
       if (!cursor) return;
 
       cursorTriggers = document.querySelectorAll([
-        ".pxl-cursor--cta",
-        ".pxl-cursor-remove",
-        ".pxl-close",
+        ".rmt-cursor--cta",
+        ".rmt-cursor-remove",
+        ".rmt-close",
         "button",
         "a",
         "input",
@@ -189,7 +189,7 @@
       ]);
 
       cursorTriggersSection = document.querySelectorAll([
-        ".pxl-mouse-animation-yes"
+        ".rmt-mouse-animation-yes"
       ]);
       
       cursorTriggers.forEach(el => {

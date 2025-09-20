@@ -67,35 +67,35 @@
 }
 .rotate3d-in-top .direction-item {
     transform-origin: 50% 0%;
-    animation: rotate3d-in-top $pxl-duration $pxl-transition-tf 0ms 1 forwards;
+    animation: rotate3d-in-top $rmt-duration $rmt-transition-tf 0ms 1 forwards;
  }
 .rotate3d-in-right .direction-item {
     transform-origin: 100% 0%;
-    animation: rotate3d-in-right $pxl-duration $pxl-transition-tf 0ms 1 forwards;
+    animation: rotate3d-in-right $rmt-duration $rmt-transition-tf 0ms 1 forwards;
 }
 .rotate3d-in-bottom .direction-item {
     transform-origin: 50% 100%;
-    animation: rotate3d-in-bottom $pxl-duration $pxl-transition-tf 0ms 1 forwards;
+    animation: rotate3d-in-bottom $rmt-duration $rmt-transition-tf 0ms 1 forwards;
 }
 .rotate3d-in-left .direction-item {
     transform-origin: 0% 0%;
-    animation: rotate3d-in-left $pxl-duration $pxl-transition-tf 0ms 1 forwards;
+    animation: rotate3d-in-left $rmt-duration $rmt-transition-tf 0ms 1 forwards;
 }
 .rotate3d-out-top .direction-item {
     transform-origin: 50% 0%;
-    animation: rotate3d-out-top $pxl-duration $pxl-transition-tf 0ms 1 forwards;
+    animation: rotate3d-out-top $rmt-duration $rmt-transition-tf 0ms 1 forwards;
 }
 .rotate3d-out-right .direction-item {
     transform-origin: 100% 50%;
-    animation: rotate3d-out-right $pxl-duration $pxl-transition-tf 0ms 1 forwards;
+    animation: rotate3d-out-right $rmt-duration $rmt-transition-tf 0ms 1 forwards;
 }
 .rotate3d-out-bottom .direction-item {
     transform-origin: 50% 100%;
-    animation: rotate3d-out-bottom $pxl-duration $pxl-transition-tf 0ms 1 forwards;
+    animation: rotate3d-out-bottom $rmt-duration $rmt-transition-tf 0ms 1 forwards;
 }
 .rotate3d-out-left .direction-item {
     transform-origin: 0% 0%;
-    animation: rotate3d-out-left $pxl-duration $pxl-transition-tf 0ms 1 forwards;
+    animation: rotate3d-out-left $rmt-duration $rmt-transition-tf 0ms 1 forwards;
 }
 
 // Translate Direction Hover 
@@ -140,42 +140,42 @@
 }
 .translate3d-in-top .direction-item {
     transform-origin: 50% 0%;
-    animation: translate3d-in-top $pxl-duration $pxl-transition-tf 0ms 1 forwards;
+    animation: translate3d-in-top $rmt-duration $rmt-transition-tf 0ms 1 forwards;
 }
 
 .translate3d-in-right .direction-item {
     transform-origin: 100% 0%;
-    animation: translate3d-in-right $pxl-duration $pxl-transition-tf 0ms 1 forwards;
+    animation: translate3d-in-right $rmt-duration $rmt-transition-tf 0ms 1 forwards;
 }
 
 .translate3d-in-bottom .direction-item {
     transform-origin: 50% 100%;
-    animation: translate3d-in-bottom $pxl-duration $pxl-transition-tf 0ms 1 forwards;
+    animation: translate3d-in-bottom $rmt-duration $rmt-transition-tf 0ms 1 forwards;
 }
 
 .translate3d-in-left .direction-item {
     transform-origin: 0% 0%;
-    animation: translate3d-in-left $pxl-duration $pxl-transition-tf 0ms 1 forwards;
+    animation: translate3d-in-left $rmt-duration $rmt-transition-tf 0ms 1 forwards;
 }
 
 .translate3d-out-top .direction-item {
     transform-origin: 50% 0%;
-    animation: translate3d-out-top $pxl-duration $pxl-transition-tf 0ms 1 forwards;
+    animation: translate3d-out-top $rmt-duration $rmt-transition-tf 0ms 1 forwards;
 }
 
 .translate3d-out-right .direction-item {
     transform-origin: 100% 50%;
-    animation: translate3d-out-right $pxl-duration $pxl-transition-tf 0ms 1 forwards;
+    animation: translate3d-out-right $rmt-duration $rmt-transition-tf 0ms 1 forwards;
 }
 
 .translate3d-out-bottom .direction-item {
     transform-origin: 50% 100%;
-    animation: translate3d-out-bottom $pxl-duration $pxl-transition-tf 0ms 1 forwards;
+    animation: translate3d-out-bottom $rmt-duration $rmt-transition-tf 0ms 1 forwards;
 }
 
 .translate3d-out-left .direction-item {
     transform-origin: 0% 0%;
-    animation: translate3d-out-left $pxl-duration $pxl-transition-tf 0ms 1 forwards;
+    animation: translate3d-out-left $rmt-duration $rmt-transition-tf 0ms 1 forwards;
 }
 
 .text-effect-rotatex-in {
@@ -184,16 +184,16 @@
 
 .text-effect-slide-in,
 .text-effect-slide-out  {
-    .pxl-line {
+    .rmt-line {
         overflow: hidden;
         display: inline-flex !important;
         flex-wrap: wrap;
     }
-    .pxl-word {
+    .rmt-word {
         overflow: hidden;
             display: inline-flex !important;
     }
-    .pxl-char {
+    .rmt-char {
         overflow: hidden;
             display: inline-flex !important;
     }
@@ -223,12 +223,12 @@
         transform: rotate(0deg) ;
     }
     to {
-        transform: rotate(var(--pxl-rotate)) ;
+        transform: rotate(var(--rmt-rotate)) ;
     }
 }
 
 .spin-animated {
-    --pxl-rotate: 360deg;
+    --rmt-rotate: 360deg;
     @include animation(spin 20s linear infinite);
 }
 
@@ -238,20 +238,20 @@
       transform: translate(0, 0) rotate(0deg);
     }
     20% {
-      transform: translate( var(--pxl-translate-x), 0px ) rotate( var(--pxl-rotate) );
+      transform: translate( var(--rmt-translate-x), 0px ) rotate( var(--rmt-rotate) );
     }
     40% {
-      transform: translate( 0px, calc(-1 * var(--pxl-translate-y) )) rotate( calc(-1 * var(--pxl-rotate) ));
+      transform: translate( 0px, calc(-1 * var(--rmt-translate-y) )) rotate( calc(-1 * var(--rmt-rotate) ));
     }
     60% {
-      transform: translate( calc(-1 * var(--pxl-translate-x) ), 0px ) rotate( var(--pxl-rotate) );
+      transform: translate( calc(-1 * var(--rmt-translate-x) ), 0px ) rotate( var(--rmt-rotate) );
     }
     80% {
-      transform: translate( 0px, var(--pxl-translate-y) ) rotate( calc( -1 * var(--pxl-rotate) ) );
+      transform: translate( 0px, var(--rmt-translate-y) ) rotate( calc( -1 * var(--rmt-rotate) ) );
     }
 }
   
-.pxl-circular-motion {
+.rmt-circular-motion {
     @include animation('circular-motion 3.5s linear infinite');
 }
 
@@ -303,31 +303,31 @@
         transform: translateX(0) translateY(0);
     }
     50% {
-        transform: translateX(var(--pxl-translate-x)) translateY(var(--pxl-translate-y));
+        transform: translateX(var(--rmt-translate-x)) translateY(var(--rmt-translate-y));
     }
 }
 
 .slide-ltr-animated {
-    --pxl-translate-x: 100px;
-    --pxl-translate-y: 0;
+    --rmt-translate-x: 100px;
+    --rmt-translate-y: 0;
     animation: slide-to-slide 10s linear infinite;
     -webkit-animation: slide-to-slide 10s linear infinite;
 }
 .slide-rtl-animated {
-    --pxl-translate-x: -100px;
-    --pxl-translate-y: 0;
+    --rmt-translate-x: -100px;
+    --rmt-translate-y: 0;
     animation: slide-to-slide 10s linear infinite;
     -webkit-animation: slide-to-slide 10s linear infinite;
 }
 .slide-ttb-animated {
-    --pxl-translate-x: 0;
-    --pxl-translate-y: 100px;
+    --rmt-translate-x: 0;
+    --rmt-translate-y: 100px;
     animation: slide-to-slide 10s linear infinite;
     -webkit-animation: slide-to-slide 10s linear infinite;
 }
 .slide-btt-animated {
-    --pxl-translate-x: 0;
-    --pxl-translate-y: -100px;
+    --rmt-translate-x: 0;
+    --rmt-translate-y: -100px;
     animation: slide-to-slide 10s linear infinite;
     -webkit-animation: slide-to-slide 10s linear infinite;
 }

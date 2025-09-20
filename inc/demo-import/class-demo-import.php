@@ -440,7 +440,7 @@ class Universal_Demo_Import {
             'theme_options',
             $this->theme_slug . '_options',
             'redux_options',
-            'pxl_theme_options'
+            'rmt_theme_options'
         );
         
         foreach ($common_names as $name) {

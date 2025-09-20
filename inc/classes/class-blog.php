@@ -50,7 +50,7 @@ if (!class_exists('portfoliocraft_Blog')) {
             
             // Only display meta container if at least one meta element is enabled
             if($post_author || $post_date || $post_comment) : ?>
-                <div class="pxl-post-metas">
+                <div class="rmt-post-metas">
                     
                     <?php 
                     /**
@@ -58,15 +58,15 @@ if (!class_exists('portfoliocraft_Blog')) {
                      * Displays author avatar and name with proper escaping
                      */
                     if($post_author) : ?>
-                        <div class="pxl-post-author pxl-meta-info">
-                            <span class="pxl-author-avatar">
+                        <div class="rmt-post-author rmt-meta-info">
+                            <span class="rmt-author-avatar">
                                 <?php 
                                 // Display author avatar with 280px size
                                 echo get_avatar( get_the_author_meta('ID'), 280 ); 
                                 ?>
                             </span>
-                            <span class="pxl-author-name pxl-meta-text">
-                                <span class="pxl-text-highlight"><?php echo esc_html__('By ', 'portfoliocraft'); ?></span>
+                            <span class="rmt-author-name rmt-meta-text">
+                                <span class="rmt-text-highlight"><?php echo esc_html__('By ', 'portfoliocraft'); ?></span>
                                 <?php 
                                 // Display author display name with proper escaping
                                 echo esc_html(get_the_author_meta('display_name')) 
@@ -81,12 +81,12 @@ if (!class_exists('portfoliocraft_Blog')) {
                      * Displays post publication date with calendar icon
                      */
                     if($post_date) : ?>
-                        <div class="pxl-post-date pxl-meta-info">
+                        <div class="rmt-post-date rmt-meta-info">
                             <!-- Calendar SVG Icon -->
                             <svg width="14" height="17" viewBox="0 0 14 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M0 15.4062V6.90625H14V15.4062C14 16.25 13.3125 16.9062 12.5 16.9062H1.5C0.65625 16.9062 0 16.25 0 15.4062ZM10 9.28125V10.5312C10 10.75 10.1562 10.9062 10.375 10.9062H11.625C11.8125 10.9062 12 10.75 12 10.5312V9.28125C12 9.09375 11.8125 8.90625 11.625 8.90625H10.375C10.1562 8.90625 10 9.09375 10 9.28125ZM10 13.2812V14.5312C10 14.75 10.1562 14.9062 10.375 14.9062H11.625C11.8125 14.9062 12 14.75 12 14.5312V13.2812C12 13.0938 11.8125 12.9062 11.625 12.9062H10.375C10.1562 12.9062 10 13.0938 10 13.2812ZM6 9.28125V10.5312C6 10.75 6.15625 10.9062 6.375 10.9062H7.625C7.8125 10.9062 8 10.75 8 10.5312V9.28125C8 9.09375 7.8125 8.90625 7.625 8.90625H6.375C6.15625 8.90625 6 9.09375 6 9.28125ZM6 13.2812V14.5312C6 14.75 6.15625 14.9062 6.375 14.9062H7.625C7.8125 14.9062 8 14.75 8 14.5312V13.2812C8 13.0938 7.8125 12.9062 7.625 12.9062H6.375C6.15625 12.9062 6 13.0938 6 13.2812ZM2 9.28125V10.5312C2 10.75 2.15625 10.9062 2.375 10.9062H3.625C3.8125 10.9062 4 10.75 4 10.5312V9.28125C4 9.09375 3.8125 8.90625 3.625 8.90625H2.375C2.15625 8.90625 2 9.09375 2 9.28125ZM2 13.2812V14.5312C2 14.75 2.15625 14.9062 2.375 14.9062H3.625C3.8125 14.9062 4 14.75 4 14.5312V13.2812C4 13.0938 3.8125 12.9062 3.625 12.9062H2.375C2.15625 12.9062 2 13.0938 2 13.2812ZM12.5 2.90625C13.3125 2.90625 14 3.59375 14 4.40625V5.90625H0V4.40625C0 3.59375 0.65625 2.90625 1.5 2.90625H3V1.40625C3 1.15625 3.21875 0.90625 3.5 0.90625H4.5C4.75 0.90625 5 1.15625 5 1.40625V2.90625H9V1.40625C9 1.15625 9.21875 0.90625 9.5 0.90625H10.5C10.75 0.90625 11 1.15625 11 1.40625V2.90625H12.5Z" fill="currentcolor"/>
                             </svg>
-                            <span class="pxl-date-text pxl-meta-text">
+                            <span class="rmt-date-text rmt-meta-text">
                                 <?php 
                                 // Display formatted post date
                                 echo get_the_date('F d,Y');
@@ -101,12 +101,12 @@ if (!class_exists('portfoliocraft_Blog')) {
                      * Displays comment count with comment icon
                      */
                     if($post_comment) : ?>
-                        <div class="pxl-post-comment pxl-meta-info">
+                        <div class="rmt-post-comment rmt-meta-info">
                             <!-- Comment SVG Icon -->
                             <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M17.991 2.70625C17.991 1.71625 17.19 0.90625 16.2 0.90625H1.8C0.81 0.90625 0 1.71625 0 2.70625V13.5062C0 14.4962 0.81 15.3062 1.8 15.3062H14.4L18 18.9062L17.991 2.70625ZM13.5 11.7062H4.5C4.005 11.7062 3.6 11.3012 3.6 10.8062C3.6 10.3112 4.005 9.90625 4.5 9.90625H13.5C13.995 9.90625 14.4 10.3112 14.4 10.8062C14.4 11.3012 13.995 11.7062 13.5 11.7062ZM13.5 9.00625H4.5C4.005 9.00625 3.6 8.60125 3.6 8.10625C3.6 7.61125 4.005 7.20625 4.5 7.20625H13.5C13.995 7.20625 14.4 7.61125 14.4 8.10625C14.4 8.60125 13.995 9.00625 13.5 9.00625ZM13.5 6.30625H4.5C4.005 6.30625 3.6 5.90125 3.6 5.40625C3.6 4.91125 4.005 4.50625 4.5 4.50625H13.5C13.995 4.50625 14.4 4.91125 14.4 5.40625C14.4 5.90125 13.995 6.30625 13.5 6.30625Z" fill="currentcolor"/>
                             </svg>
-                            <span class="pxl-cout-comment pxl-meta-text" data-panel="#comments">
+                            <span class="rmt-cout-comment rmt-meta-text" data-panel="#comments">
                                 <?php 
                                 // Display comment count with proper text formatting
                                 echo comments_number(esc_html__('0', 'portfoliocraft'),esc_html__('1', 'portfoliocraft'),esc_html__('%', 'portfoliocraft')); 
@@ -122,12 +122,12 @@ if (!class_exists('portfoliocraft_Blog')) {
                      * Always displayed regardless of theme options
                      */
                     ?>
-                    <div class="pxl-post-view pxl-meta-info">
+                    <div class="rmt-post-view rmt-meta-info">
                         <!-- Eye SVG Icon -->
                         <svg width="21" height="15" viewBox="0 0 21 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M20.9396 7.62275C20.909 7.55363 20.1679 5.9095 18.5202 4.26187C16.3249 2.0665 13.552 0.90625 10.5 0.90625C7.44799 0.90625 4.67512 2.0665 2.47974 4.26187C0.832117 5.9095 0.0874916 7.55625 0.0603666 7.62275C0.0205656 7.71227 0 7.80915 0 7.90712C0 8.0051 0.0205656 8.10198 0.0603666 8.1915C0.0909916 8.26062 0.832117 9.90388 2.47974 11.5515C4.67512 13.746 7.44799 14.9062 10.5 14.9062C13.552 14.9062 16.3249 13.746 18.5202 11.5515C20.1679 9.90388 20.909 8.26062 20.9396 8.1915C20.9794 8.10198 21 8.0051 21 7.90712C21 7.80915 20.9794 7.71227 20.9396 7.62275ZM10.5 11.4062C9.80776 11.4062 9.13107 11.201 8.5555 10.8164C7.97992 10.4318 7.53132 9.88518 7.26641 9.24564C7.00151 8.6061 6.9322 7.90237 7.06724 7.22343C7.20229 6.5445 7.53563 5.92086 8.02512 5.43138C8.5146 4.94189 9.13824 4.60855 9.81718 4.4735C10.4961 4.33845 11.1998 4.40776 11.8394 4.67267C12.4789 4.93758 13.0256 5.38618 13.4101 5.96175C13.7947 6.53733 14 7.21402 14 7.90625C14 8.83451 13.6312 9.72475 12.9749 10.3811C12.3185 11.0375 11.4283 11.4062 10.5 11.4062Z" fill="currentcolor"/>
                         </svg>
-                        <span class="pxl-count-view pxl-meta-text">
+                        <span class="rmt-count-view rmt-meta-text">
                             <?php 
                             // Display view count with proper escaping
                             echo esc_attr($count_post_view); 
@@ -199,9 +199,9 @@ if (!class_exists('portfoliocraft_Blog')) {
             $social_ins = portfoliocraft()->get_theme_opt( 'social_ins', true );
 
             ?>
-            <div class="pxl-post-social">
-                <div class="pxl-social-label"><?php echo esc_html__('Share:', 'portfoliocraft'); ?></div>
-                <div class="pxl-social-list">
+            <div class="rmt-post-social">
+                <div class="rmt-social-label"><?php echo esc_html__('Share:', 'portfoliocraft'); ?></div>
+                <div class="rmt-social-list">
                     
                     <?php 
                     /**
@@ -209,7 +209,7 @@ if (!class_exists('portfoliocraft_Blog')) {
                      * Uses Facebook's sharer.php service
                      */
                     if($social_facebook) : ?>
-                        <a class="fb-social pxl-social-item" title="<?php echo esc_attr__('Facebook', 'portfoliocraft'); ?>" target="_blank" href="http://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>">
+                        <a class="fb-social rmt-social-item" title="<?php echo esc_attr__('Facebook', 'portfoliocraft'); ?>" target="_blank" href="http://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>">
                             <?php echo esc_html('Facebook', 'portfoliocraft'); ?>
                         </a>
                     <?php endif; ?>
@@ -220,7 +220,7 @@ if (!class_exists('portfoliocraft_Blog')) {
                      * Note: Instagram doesn't have direct sharing API, links to main site
                      */
                     if($social_ins) : ?>
-                        <a class="insta-social pxl-social-item" title="<?php echo esc_attr__('Instagram', 'portfoliocraft'); ?>" target="_blank" href="https://www.instagram.com/?url=<?php the_permalink(); ?>">
+                        <a class="insta-social rmt-social-item" title="<?php echo esc_attr__('Instagram', 'portfoliocraft'); ?>" target="_blank" href="https://www.instagram.com/?url=<?php the_permalink(); ?>">
                             <?php echo esc_html('Instagram', 'portfoliocraft'); ?>
                         </a>
                     <?php endif; ?>
@@ -231,7 +231,7 @@ if (!class_exists('portfoliocraft_Blog')) {
                      * Uses LinkedIn's shareArticle service with title and URL
                      */
                     if($social_linkedin) : ?>
-                        <a class="lin-social pxl-social-item" title="<?php echo esc_attr__('LinkedIn', 'portfoliocraft'); ?>" target="_blank" href="http://www.linkedin.com/shareArticle?mini=true&url=<?php the_permalink(); ?>&title=<?php the_title(); ?>%20">
+                        <a class="lin-social rmt-social-item" title="<?php echo esc_attr__('LinkedIn', 'portfoliocraft'); ?>" target="_blank" href="http://www.linkedin.com/shareArticle?mini=true&url=<?php the_permalink(); ?>&title=<?php the_title(); ?>%20">
                             <?php echo esc_html('Linked In', 'portfoliocraft'); ?>
                         </a>
                     <?php endif; ?>
@@ -242,7 +242,7 @@ if (!class_exists('portfoliocraft_Blog')) {
                      * Includes featured image and post title for rich pins
                      */
                     if($social_pinterest) : ?>
-                        <a class="pin-social pxl-social-item" title="<?php echo esc_attr__('Pinterest', 'portfoliocraft'); ?>" target="_blank" href="http://pinterest.com/pin/create/button/?url=<?php the_permalink(); ?>&media=<?php echo esc_url($img_url[0]); ?>&description=<?php the_title(); ?>%20">
+                        <a class="pin-social rmt-social-item" title="<?php echo esc_attr__('Pinterest', 'portfoliocraft'); ?>" target="_blank" href="http://pinterest.com/pin/create/button/?url=<?php the_permalink(); ?>&media=<?php echo esc_url($img_url[0]); ?>&description=<?php the_title(); ?>%20">
                             <?php echo esc_html('Pinterest', 'portfoliocraft'); ?>
                         </a>
                     <?php endif; ?>
@@ -254,7 +254,7 @@ if (!class_exists('portfoliocraft_Blog')) {
                      * Should be updated to proper YouTube sharing if needed
                      */
                     if($social_youtube) : ?>
-                        <a class="pin-social pxl-social-item" title="<?php echo esc_attr__('Youtube', 'portfoliocraft'); ?>" target="_blank" href="http://pinterest.com/pin/create/button/?url=<?php the_permalink(); ?>&media=<?php echo esc_url($img_url[0]); ?>&description=<?php the_title(); ?>%20">
+                        <a class="pin-social rmt-social-item" title="<?php echo esc_attr__('Youtube', 'portfoliocraft'); ?>" target="_blank" href="http://pinterest.com/pin/create/button/?url=<?php the_permalink(); ?>&media=<?php echo esc_url($img_url[0]); ?>&description=<?php the_title(); ?>%20">
                             <?php echo esc_html('Youtube', 'portfoliocraft'); ?>
                         </a>
                     <?php endif; ?>
@@ -265,7 +265,7 @@ if (!class_exists('portfoliocraft_Blog')) {
                      * Currently disabled but code preserved for future use
                      */
                     if($social_twitter) : ?>
-                        <a class="tw-social pxl-social-item" title="<?php echo esc_attr__('Twitter', 'portfoliocraft'); ?>" target="_blank" href="https://twitter.com/intent/tweet?url=<?php the_permalink(); ?>&text=<?php the_title(); ?>%20"><i class="fab fa-twitter"></i></a>
+                        <a class="tw-social rmt-social-item" title="<?php echo esc_attr__('Twitter', 'portfoliocraft'); ?>" target="_blank" href="https://twitter.com/intent/tweet?url=<?php the_permalink(); ?>&text=<?php the_title(); ?>%20"><i class="fab fa-twitter"></i></a>
                     <?php endif; ?>
                 </div>
             </div>
@@ -301,7 +301,7 @@ if (!class_exists('portfoliocraft_Blog')) {
             if( !empty($next_post) || !empty($previous_post) ) { 
                 $page_for_posts = get_option( 'page_for_posts' );
                 ?>
-                <div class="pxl-post--navigation pxl-flex">
+                <div class="rmt-post--navigation rmt-flex">
                     
                     <?php 
                     /**
@@ -311,28 +311,28 @@ if (!class_exists('portfoliocraft_Blog')) {
                     if ( is_a( $previous_post , 'WP_Post' ) && get_the_title( $previous_post->ID ) != '') { 
                         // Get previous post thumbnail
                         $prev_img_id = get_post_thumbnail_id($previous_post->ID);
-                        $img_prev  = pxl_get_image_by_size( array(
+                        $img_prev  = rmt_get_image_by_size( array(
                             'attach_id'  => $prev_img_id,
                             'thumb_size' => '260x260',
                         ) );
                         $thumbnail_prev = $img_prev['url']; ?>
                         
-                        <div class="pxl-navigation--col pxl-navigation--prev">
+                        <div class="rmt-navigation--col rmt-navigation--prev">
                             <!-- Previous post thumbnail with navigation icon -->
-                            <div class="pxl-navigation--image bg-image pxl-mr-15" style="background-image: url(<?php echo esc_url($thumbnail_prev); ?>);">
-                                <div class="pxl-navigation--icon"><i class="fas fa-arrow-left"></i></div>
-                                <a href="<?php echo esc_url(get_permalink( $previous_post->ID )); ?>" class="pxl-navigation--link"></a>
+                            <div class="rmt-navigation--image bg-image rmt-mr-15" style="background-image: url(<?php echo esc_url($thumbnail_prev); ?>);">
+                                <div class="rmt-navigation--icon"><i class="fas fa-arrow-left"></i></div>
+                                <a href="<?php echo esc_url(get_permalink( $previous_post->ID )); ?>" class="rmt-navigation--link"></a>
                             </div>
                             <!-- Previous post metadata -->
-                            <div class="pxl-navigation--meta">
-                                <div class="pxl-navigation--date">
+                            <div class="rmt-navigation--meta">
+                                <div class="rmt-navigation--date">
                                     <?php 
                                     // Display previous post date using site's date format
                                     $date_formart = get_option('date_format'); 
                                     echo get_the_date($date_formart, $previous_post->ID); 
                                     ?>
                                 </div>
-                                <h5 class="pxl-navigation--title">
+                                <h5 class="rmt-navigation--title">
                                     <a href="<?php echo esc_url(get_permalink( $previous_post->ID )); ?>">
                                         <?php echo get_the_title( $previous_post->ID ); ?>
                                     </a>
@@ -349,32 +349,32 @@ if (!class_exists('portfoliocraft_Blog')) {
                     if ( is_a( $next_post , 'WP_Post' ) && get_the_title( $next_post->ID ) != '') { 
                         // Get next post thumbnail
                         $next_img_id = get_post_thumbnail_id($next_post->ID);
-                        $img_next  = pxl_get_image_by_size( array(
+                        $img_next  = rmt_get_image_by_size( array(
                             'attach_id'  => $next_img_id,
                             'thumb_size' => '260x260',
                         ) );
                         $thumbnail_next = $img_next['url']; ?>
                         
-                        <div class="pxl-navigation--col pxl-navigation--next">
+                        <div class="rmt-navigation--col rmt-navigation--next">
                             <!-- Next post metadata (right-aligned) -->
-                            <div class="pxl-navigation--meta pxl-text-right">
-                                <div class="pxl-navigation--date">
+                            <div class="rmt-navigation--meta rmt-text-right">
+                                <div class="rmt-navigation--date">
                                     <?php 
                                     // Display next post date using site's date format
                                     $date_formart = get_option('date_format'); 
                                     echo get_the_date($date_formart, $next_post->ID); 
                                     ?>
                                 </div>
-                                <h5 class="pxl-navigation--title">
+                                <h5 class="rmt-navigation--title">
                                     <a href="<?php echo esc_url(get_permalink( $next_post->ID )); ?>">
                                         <?php echo get_the_title( $next_post->ID ); ?>
                                     </a>
                                 </h5>
                             </div>
                             <!-- Next post thumbnail with navigation icon -->
-                            <div class="pxl-navigation--image bg-image pxl-ml-15" style="background-image: url(<?php echo esc_url($thumbnail_next); ?>);">
-                                <div class="pxl-navigation--icon"><i class="fas fa-arrow-right"></i></div>
-                                <a href="<?php echo esc_url(get_permalink( $next_post->ID )); ?>" class="pxl-navigation--link"></a>
+                            <div class="rmt-navigation--image bg-image rmt-ml-15" style="background-image: url(<?php echo esc_url($thumbnail_next); ?>);">
+                                <div class="rmt-navigation--icon"><i class="fas fa-arrow-right"></i></div>
+                                <a href="<?php echo esc_url(get_permalink( $next_post->ID )); ?>" class="rmt-navigation--link"></a>
                             </div>
                         </div>
                     <?php } ?>
@@ -405,29 +405,29 @@ if (!class_exists('portfoliocraft_Blog')) {
             $youtube   = get_user_meta($author_id, 'user_youtube', true);
             ?>
             
-            <div class="pxl-post-author-box">
+            <div class="rmt-post-author-box">
                 <!-- Author Avatar -->
-                <div class="pxl-author-avatar">
+                <div class="rmt-author-avatar">
                     <?php echo get_avatar( $author_id, 280 ); ?>
                 </div>
                 
                 <!-- Author Information and Social Links -->
-                <div class="pxl-author-metas">
+                <div class="rmt-author-metas">
                     <div>
                         <!-- Author Name with Link to Author Archive -->
-                        <div class="pxl-author-name">
-                            <a href="<?php echo esc_url(get_author_posts_url($author_id)); ?>" class="pxl-author-link">
+                        <div class="rmt-author-name">
+                            <a href="<?php echo esc_url(get_author_posts_url($author_id)); ?>" class="rmt-author-link">
                                 <?php echo get_the_author_meta('display_name', $author_id); ?>
                             </a>
                         </div>
                         <!-- Author Biography/Description -->
-                        <p class="pxl-author-description">
+                        <p class="rmt-author-description">
                             <?php the_author_meta( 'description' ); ?>
                         </p>
                     </div>
                     
                     <!-- Author Social Media Links -->
-                    <div class="pxl-author-social">
+                    <div class="rmt-author-social">
                         
                         <?php 
                         /**

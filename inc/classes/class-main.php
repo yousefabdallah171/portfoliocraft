@@ -45,7 +45,7 @@ if (!class_exists('portfoliocraft_Main')) {
          * Theme options name in database
          * @var string
          */
-        private $option_name = 'pxl_theme_options';
+        private $option_name = 'rmt_theme_options';
         
         /**
          * Header component instance
@@ -568,4 +568,4 @@ function portfoliocraft() {
 portfoliocraft(); 
 
 // Trigger theme initialization hook
-pxl_action('init');
+rmt_action('init');

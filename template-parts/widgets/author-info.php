@@ -5,7 +5,7 @@ if (!defined("ABSPATH")) {
 class portfoliocraft_Author_Info extends WP_Widget {
     function __construct() {
         parent::__construct(
-            'pxl_author_info', 
+            'rmt_author_info', 
             __('portfoliocraft Author Info', 'portfoliocraft'), 
             array('description' => __('Show author information. Only works in single post', 'portfoliocraft')) 
         );
@@ -40,9 +40,9 @@ class portfoliocraft_Author_Info extends WP_Widget {
     }
 }
 
-add_action( 'widgets_init', 'pxl_author_info' );
-function pxl_author_info(){
-    if(function_exists('pxl_register_wp_widget')){
-        pxl_register_wp_widget( 'portfoliocraft_Author_Info' );
+add_action( 'widgets_init', 'rmt_author_info' );
+function rmt_author_info(){
+    if(function_exists('rmt_register_wp_widget')){
+        rmt_register_wp_widget( 'portfoliocraft_Author_Info' );
     }
 }

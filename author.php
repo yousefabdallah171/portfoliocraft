@@ -14,7 +14,7 @@ if (!defined('ABSPATH')) {
 get_header();
 
 // Enqueue author archive styles
-wp_enqueue_style('portfoliocraft-author-archive', get_template_directory_uri() . '/assets/css/author-archive.css', array('pxl-style'), wp_get_theme()->get('Version'));
+wp_enqueue_style('portfoliocraft-author-archive', get_template_directory_uri() . '/assets/css/author-archive.css', array('rmt-style'), wp_get_theme()->get('Version'));
 
 // Get theme color options and set CSS variables
 $primary_color = portfoliocraft()->get_theme_opt('primary_color', '#667eea');

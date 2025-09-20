@@ -18,7 +18,7 @@ if (!defined('ABSPATH')) {
 get_header();
 
 // Enqueue consolidated search styles (includes all search-related CSS from entire theme)
-wp_enqueue_style('portfoliocraft-consolidated-search', get_template_directory_uri() . '/assets/css/consolidated-search.css', array('pxl-style'), '1.0.1');
+wp_enqueue_style('portfoliocraft-consolidated-search', get_template_directory_uri() . '/assets/css/consolidated-search.css', array('rmt-style'), '1.0.1');
 wp_add_inline_style('portfoliocraft-consolidated-search', portfoliocraft_inline_styles());
 
 // Get search query for display
@@ -66,8 +66,8 @@ $search_count = $wp_query->found_posts;
     <div class="inner no-sidebar">
         
         <!-- Primary content area -->
-        <section id="pxl-content-area" class="pxl-content-area">
-            <main id="pxl-content-main">
+        <section id="rmt-content-area" class="rmt-content-area">
+            <main id="rmt-content-main">
                 
                 <?php if (have_posts()) : ?>
                     <!-- Search results container -->

@@ -1,9 +1,9 @@
 (function ($) {
   "use strict";
 
-  var pxl_window_height;
-  var pxl_window_width;
-  var pxl_scroll_status = "";
+  var rmt_window_height;
+  var rmt_window_width;
+  var rmt_scroll_status = "";
   var lastScrollTop = 0;
 
   $(window).on("load", function () {
@@ -17,32 +17,32 @@
         $(".preloader").addClass("loaded").removeClass("loading");
       }
     }
-    $(".pxl-header-mobile-elementor, .pxl-slider").css("opacity", "1");
-    $(".pxl-gallery-scroll")
+    $(".rmt-header-mobile-elementor, .rmt-slider").css("opacity", "1");
+    $(".rmt-gallery-scroll")
       .parents("body")
       .addClass("body-overflow")
       .addClass("body-visible-sm");
-    $("blockquote:not(.pxl-blockquote)").append(
-      '<i class="pxl-blockquote-icon fas fa-quote-right text-gradient"></i>'
+    $("blockquote:not(.rmt-blockquote)").append(
+      '<i class="rmt-blockquote-icon fas fa-quote-right text-gradient"></i>'
     );
-    pxl_window_width = $(window).width();
-    pxl_window_height = $(window).height();
+    rmt_window_width = $(window).width();
+    rmt_window_height = $(window).height();
     portfoliocraft_shop_quantity();
   });
 
   $(window).on("scroll", function () {
     let scrollTop = $(this).scrollTop();
     lastScrollTop = scrollTop;
-    if (lastScrollTop <= pxl_window_height) {
-      $(".pxl-back-to-top").fadeOut();
+    if (lastScrollTop <= rmt_window_height) {
+      $(".rmt-back-to-top").fadeOut();
     } else {
-      $(".pxl-back-to-top").fadeIn();
+      $(".rmt-back-to-top").fadeIn();
     }
   });
 
   $(window).on("resize", function () {
-    pxl_window_height = $(window).height();
-    pxl_window_width = $(window).width();
+    rmt_window_height = $(window).height();
+    rmt_window_width = $(window).width();
     updateTranslateZToParentHeight();
   });
 
@@ -61,7 +61,7 @@
     }, 300);
 
     /* Scroll To Top */
-    $(".pxl-back-to-top").on("click", function () {
+    $(".rmt-back-to-top").on("click", function () {
       $("html, body").animate({ scrollTop: 0 }, 800);
       return false;
     });
@@ -70,7 +70,7 @@
 
     /* Lightbox Popup */
     setTimeout(function () {
-      $(".pxl-action-popup").magnificPopup({
+      $(".rmt-action-popup").magnificPopup({
         type: "iframe",
         mainClass: "mfp-fade",
         removalDelay: 160,
@@ -79,7 +79,7 @@
       });
     }, 300);
 
-    $(".pxl-gallery-lightbox").each(function () {
+    $(".rmt-gallery-lightbox").each(function () {
       $(this).magnificPopup({
         delegate: "a.lightbox",
         type: "image",
@@ -91,30 +91,30 @@
     });
 
     /* Cart Sidebar Popup */
-    $(".pxl-cart-sidebar-button").on("click", function () {
+    $(".rmt-cart-sidebar-button").on("click", function () {
       $("body").addClass("body-overflow");
-      $("#pxl-cart-sidebar").addClass("active");
+      $("#rmt-cart-sidebar").addClass("active");
     });
     $(
-      "#pxl-cart-sidebar .pxl-popup--overlay, #pxl-cart-sidebar .pxl-item--close, #pxl-cart-sidebar .pxl-popup--close2"
+      "#rmt-cart-sidebar .rmt-popup--overlay, #rmt-cart-sidebar .rmt-item--close, #rmt-cart-sidebar .rmt-popup--close2"
     ).on("click", function () {
       $("body").removeClass("body-overflow");
-      $("#pxl-cart-sidebar").removeClass("active");
+      $("#rmt-cart-sidebar").removeClass("active");
     });
 
     /* Select Theme Style */
     $(".wpcf7-select").each(function () {
       var $this = $(this),
         numberOfOptions = $(this).children("option").length;
-      $this.addClass("pxl-select-hidden");
-      $this.wrap('<div class="pxl-select"></div>');
-      $this.after('<div class="pxl-select-higthlight"></div>');
+      $this.addClass("rmt-select-hidden");
+      $this.wrap('<div class="rmt-select"></div>');
+      $this.after('<div class="rmt-select-higthlight"></div>');
 
-      var $styledSelect = $this.next("div.pxl-select-higthlight");
+      var $styledSelect = $this.next("div.rmt-select-higthlight");
       $styledSelect.text($this.children("option").eq(0).text());
 
       var $list = $("<ul />", {
-        class: "pxl-select-options",
+        class: "rmt-select-options",
       }).insertAfter($styledSelect);
 
       for (var i = 0; i < numberOfOptions; i++) {
@@ -128,13 +128,13 @@
 
       $styledSelect.on("click", function (e) {
         e.stopPropagation();
-        $("div.pxl-select-higthlight.active")
+        $("div.rmt-select-higthlight.active")
           .not(this)
           .each(function () {
             $(this)
               .removeClass("active")
-              .next("ul.pxl-select-options")
-              .addClass("pxl-select-lists-hide");
+              .next("ul.rmt-select-options")
+              .addClass("rmt-select-lists-hide");
           });
         $(this).toggleClass("active");
       });
@@ -152,7 +152,7 @@
 
     /* Nice Select */
     $(
-      ".woocommerce-ordering .orderby, #pxl-sidebar-area select, .variations_form.cart .variations select, .pxl-open-table select, .pxl-nice-select"
+      ".woocommerce-ordering .orderby, #rmt-sidebar-area select, .variations_form.cart .variations select, .rmt-open-table select, .rmt-nice-select"
     ).each(function () {
       $(this).niceSelect();
     });
@@ -172,8 +172,8 @@
   /* WooComerce Quantity */
   function portfoliocraft_shop_quantity() {
     "use strict";
-    $("#pxl-wrapper .quantity").append(
-      '<span class="quantity-icon quantity-down pxl-icon--caretdown"></span><span class="quantity-icon quantity-up pxl-icon--caretup"></span>'
+    $("#rmt-wrapper .quantity").append(
+      '<span class="quantity-icon quantity-down rmt-icon--caretdown"></span><span class="quantity-icon quantity-up rmt-icon--caretup"></span>'
     );
     $(".quantity-up").on("click", function () {
       $(this).parents(".quantity").find('input[type="number"]').get(0).stepUp();
@@ -246,18 +246,18 @@
     var multipleSupport = typeof $("<input/>")[0].multiple !== "undefined",
       isIE = /msie/i.test(navigator.userAgent);
 
-    $.fn.pxl_custom_type_file = function () {
+    $.fn.rmt_custom_type_file = function () {
       return this.each(function () {
-        var $file = $(this).addClass("pxl-file-upload-hidden"),
-          $wrap = $('<div class="pxl-file-upload-wrapper">'),
+        var $file = $(this).addClass("rmt-file-upload-hidden"),
+          $wrap = $('<div class="rmt-file-upload-wrapper">'),
           $button = $(
-            '<button type="button" class="pxl-file-upload-button">Choose File</button>'
+            '<button type="button" class="rmt-file-upload-button">Choose File</button>'
           ),
           $input = $(
-            '<input type="text" class="pxl-file-upload-input" placeholder="No File Choose" />'
+            '<input type="text" class="rmt-file-upload-input" placeholder="No File Choose" />'
           ),
           $label = $(
-            '<label class="pxl-file-upload-button" for="' +
+            '<label class="rmt-file-upload-button" for="' +
               $file[0].id +
               '">Choose File</label>'
           );
@@ -316,11 +316,11 @@
         });
       });
     };
-    $(".wpcf7-file[type=file]").pxl_custom_type_file();
+    $(".wpcf7-file[type=file]").rmt_custom_type_file();
   }
 
   function onClickCallActionAnchor() {
-    let anchorButtons = $(".pxl-atc-anchor");
+    let anchorButtons = $(".rmt-atc-anchor");
     if (!anchorButtons.length) return;
     $(anchorButtons).on("click", function (e) {
       e.preventDefault();
@@ -352,7 +352,7 @@
   }
 
   function onSubmitFormFromID() {
-    let btns = $(".pxl-atc-submit");
+    let btns = $(".rmt-atc-submit");
     if (!btns.length) return;
     $(btns).on("click", function (e) {
       e.preventDefault();
@@ -363,9 +363,9 @@
   }
 
   function toggleMenu() {
-    let els = $(".pxl-vertical-menu > li > a");
+    let els = $(".rmt-vertical-menu > li > a");
     if (!els.length) return;
-    $(".pxl-vertical-menu .sub-menu").animate({ height: 0 }, 0);
+    $(".rmt-vertical-menu .sub-menu").animate({ height: 0 }, 0);
     $(els).on("click", function (e) {
       e.preventDefault();
       let submenu = $(this).siblings(".sub-menu").first();
@@ -387,23 +387,23 @@
     let links = null;
     $(document).on(
       "click",
-      ".pxl-cta-button, .pxl-search-button",
+      ".rmt-cta-button, .rmt-search-button",
       function (e) {
         e.preventDefault();
         const template = $(this).attr("href");
         if ($(template).length) {
           $(template).addClass("active");
           $("body").addClass("body-overflow");
-          links = $(template).find(".pxl-links-wrapper .pxl-link-text");
+          links = $(template).find(".rmt-links-wrapper .rmt-link-text");
           $(links).addClass("text-underline-slide");
           currentTemplate = template;
         }
       }
     );
 
-    $(".pxl-post-template").on(
+    $(".rmt-post-template").on(
       "click",
-      ".pxl-close-button, .pxl-template-overlay",
+      ".rmt-close-button, .rmt-template-overlay",
       function (e) {
         $(currentTemplate).removeClass("active");
         $("body").removeClass("body-overflow");
@@ -417,7 +417,7 @@
     if (!els.length) return;
     els.each(function () {
       const height = $(this).height();
-      $(this).css({ "--pxl-translate-z": `${height / 2}px` });
+      $(this).css({ "--rmt-translate-z": `${height / 2}px` });
     });
   }
 
