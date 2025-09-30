@@ -147,38 +147,10 @@ function portfoliocraft_scripts() {
     // Enqueue core animation libraries
     wp_enqueue_script('gsap', get_template_directory_uri() . '/assets/js/gsap/gsap.min.js', array('jquery'), '3.12.5', true);
     wp_enqueue_script('scroll-trigger', get_template_directory_uri() . '/assets/js/gsap/ScrollTrigger.min.js', array('jquery'), '3.12.5', true);
-    wp_enqueue_script('threejs', get_template_directory_uri() . '/assets/js/libs/threejs.min.js', array('jquery'), '3.12.5', true);
-    wp_enqueue_script('hover-umd', get_template_directory_uri() . '/assets/js/libs/hover.umd.js', array('jquery'), '1.0.0', true);
-    
-    // Enqueue Swiper slider
-    wp_enqueue_script('swiper', get_template_directory_uri() . '/assets/js/libs/swiper.min.js', array('jquery'), '11.2.1', true);
-    wp_enqueue_style('swiper', get_template_directory_uri() . '/assets/css/swiper.min.css', array(), '11.2.1');
-
-    // Register optional libraries
-    wp_register_script('circletype', get_template_directory_uri() . '/assets/js/libs/circletype.min.js', array('jquery'), '2.3.2', true);
-    wp_register_script('tilt', get_template_directory_uri() . '/assets/js/libs/tilt.min.js', array('jquery'), '1.0.0', true);
-
-    // Enqueue Magnific Popup
-    wp_enqueue_style('magnific-popup', get_template_directory_uri() . '/assets/css/magnific-popup.css', array(), '1.1.0');
-    wp_enqueue_script('magnific-popup', get_template_directory_uri() . '/assets/js/libs/magnific-popup.min.js', array('jquery'), '1.1.0', true);
-
-    // Register Curtains.js
-    wp_register_script('curtainsjs', get_template_directory_uri() . '/assets/js/libs/curtains.min.js', array('jquery'), '6.2.2', true);
 
     // Enqueue animation libraries
     wp_enqueue_style('wow-animate', get_template_directory_uri() . '/assets/css/animate.min.css', array(), '1.1.0');
     wp_enqueue_script('wow-animate', get_template_directory_uri() . '/assets/js/libs/wow.min.js', array('jquery'), '1.0.0', true);
-
-    // Enqueue utility scripts
-    wp_enqueue_script('nice-select', get_template_directory_uri() . '/assets/js/libs/nice-select.min.js', array('jquery'), 'all', true);
-    wp_enqueue_script('modernizr', get_template_directory_uri() . '/assets/js/libs/modernizr.min.js', array('jquery'), 'all', true);
-
-    // Enqueue Font Awesome
-    wp_enqueue_style('font-awesome', get_template_directory_uri() . '/assets/fonts/font-awesome/css/all.min.css', array(), $portfoliocraft_version->get('Version'));
-
-    // Register additional utility scripts
-    wp_register_script('rmt-counter-slide', get_template_directory_uri() . '/assets/js/libs/counter-slide.min.js', array('jquery'), '1.0.0', true);
-    wp_register_script('rmt-easing', get_template_directory_uri() . '/assets/js/libs/easing.js', array('jquery'), '1.3.0', true);
 
     // Enqueue WooCommerce scripts if WooCommerce is active
     if (class_exists('WooCommerce')) {
