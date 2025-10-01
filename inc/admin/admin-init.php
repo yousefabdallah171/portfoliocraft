@@ -5,15 +5,13 @@
 
 if( !defined( 'ABSPATH' ) )
 	exit; 
-require_once get_template_directory() . '/inc/classes/class-base.php';
-require_once get_template_directory() . '/inc/admin/libs/tgmpa/class-tgm-plugin-activation.php' ; 
-require_once get_template_directory() . '/inc/admin/admin-require-plugins.php'; 
+require_once get_template_directory() . '/inc/classes/class-base.php'; 
 
 class portfoliocraft_Admin extends portfoliocraft_Base{
 
 	public function __construct() {
 
-		$this->add_action( 'init', 'init', 7 ); 
+		$this->add_action( 'init', 'init', 15 ); 
 		$this->add_action( 'admin_enqueue_scripts', 'enqueue', 99 );
 		$this->add_action( 'admin_init', 'save_plugins' );
 		$this->add_action( 'admin_menu', 'fix_parent_menu', 999 ); 
@@ -24,6 +22,8 @@ class portfoliocraft_Admin extends portfoliocraft_Base{
 	}
 
 	public function init() {
+		require_once get_template_directory() . '/inc/admin/libs/tgmpa/class-tgm-plugin-activation.php' ; 
+		require_once get_template_directory() . '/inc/admin/admin-require-plugins.php';
 		 
 		require_once get_template_directory() . '/inc/admin/libs/merlin/class-merlin.php';
 		require_once get_template_directory() . '/inc/admin/libs/merlin/merlin-config.php';

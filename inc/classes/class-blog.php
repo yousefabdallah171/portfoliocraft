@@ -186,8 +186,11 @@ if (!class_exists('portfoliocraft_Blog')) {
         public function get_socials_share() { 
             // Get featured image URL for Pinterest sharing
             $img_url = '';
-            if (has_post_thumbnail() && wp_get_attachment_image_src(get_post_thumbnail_id(), false)) {
-                $img_url = wp_get_attachment_image_src(get_post_thumbnail_id(), false);
+            if (has_post_thumbnail()) {
+                $img_data = wp_get_attachment_image_src(get_post_thumbnail_id(), false);
+                if ($img_data && is_array($img_data) && !empty($img_data[0])) {
+                    $img_url = $img_data[0];
+                }
             }
             
             // Get theme options for which social platforms to display
@@ -242,7 +245,7 @@ if (!class_exists('portfoliocraft_Blog')) {
                      * Includes featured image and post title for rich pins
                      */
                     if($social_pinterest) : ?>
-                        <a class="pin-social rmt-social-item" title="<?php echo esc_attr__('Pinterest', 'portfoliocraft'); ?>" target="_blank" href="http://pinterest.com/pin/create/button/?url=<?php the_permalink(); ?>&media=<?php echo esc_url($img_url[0]); ?>&description=<?php the_title(); ?>%20">
+                        <a class="pin-social rmt-social-item" title="<?php echo esc_attr__('Pinterest', 'portfoliocraft'); ?>" target="_blank" href="http://pinterest.com/pin/create/button/?url=<?php the_permalink(); ?>&media=<?php echo esc_url($img_url); ?>&description=<?php the_title(); ?>%20">
                             <?php echo esc_html('Pinterest', 'portfoliocraft'); ?>
                         </a>
                     <?php endif; ?>
@@ -254,7 +257,7 @@ if (!class_exists('portfoliocraft_Blog')) {
                      * Should be updated to proper YouTube sharing if needed
                      */
                     if($social_youtube) : ?>
-                        <a class="pin-social rmt-social-item" title="<?php echo esc_attr__('Youtube', 'portfoliocraft'); ?>" target="_blank" href="http://pinterest.com/pin/create/button/?url=<?php the_permalink(); ?>&media=<?php echo esc_url($img_url[0]); ?>&description=<?php the_title(); ?>%20">
+                        <a class="pin-social rmt-social-item" title="<?php echo esc_attr__('Youtube', 'portfoliocraft'); ?>" target="_blank" href="http://pinterest.com/pin/create/button/?url=<?php the_permalink(); ?>&media=<?php echo esc_url($img_url); ?>&description=<?php the_title(); ?>%20">
                             <?php echo esc_html('Youtube', 'portfoliocraft'); ?>
                         </a>
                     <?php endif; ?>
@@ -315,7 +318,7 @@ if (!class_exists('portfoliocraft_Blog')) {
                             'attach_id'  => $prev_img_id,
                             'thumb_size' => '260x260',
                         ) );
-                        $thumbnail_prev = $img_prev['url']; ?>
+                        $thumbnail_prev = (is_array($img_prev) && isset($img_prev['url'])) ? $img_prev['url'] : ''; ?>
                         
                         <div class="rmt-navigation--col rmt-navigation--prev">
                             <!-- Previous post thumbnail with navigation icon -->
@@ -353,7 +356,7 @@ if (!class_exists('portfoliocraft_Blog')) {
                             'attach_id'  => $next_img_id,
                             'thumb_size' => '260x260',
                         ) );
-                        $thumbnail_next = $img_next['url']; ?>
+                        $thumbnail_next = (is_array($img_next) && isset($img_next['url'])) ? $img_next['url'] : ''; ?>
                         
                         <div class="rmt-navigation--col rmt-navigation--next">
                             <!-- Next post metadata (right-aligned) -->

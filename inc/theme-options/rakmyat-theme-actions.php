@@ -10,27 +10,13 @@
  * @since 1.0.0
  */
 
-/**
- * Theme Setup
- * 
- * Sets up theme defaults and registers support for various WordPress features.
- * Hooked to 'after_setup_theme' to ensure it runs after theme setup.
- * 
- * This function:
- * - Loads theme text domain for translations
- * - Sets content width
- * - Adds theme support for various WordPress features
- * - Registers navigation menus
- * - Configures custom logo support
- * - Adds WooCommerce support
- * - Removes block editor widgets support
- */
+add_action('init', 'portfoliocraft_load_textdomain', 1);
+function portfoliocraft_load_textdomain(){
+    load_theme_textdomain('portfoliocraft', get_template_directory() . '/languages');
+}
+
 add_action('after_setup_theme', 'portfoliocraft_setup');
 function portfoliocraft_setup(){
-    // Load theme text domain for translations
-    load_theme_textdomain('portfoliocraft', get_template_directory() . '/languages');
-
-    // Set the content width in pixels, based on the theme's design and stylesheet
     $GLOBALS['content_width'] = apply_filters('portfoliocraft_content_width', 1200);
 
     // Add theme support for various WordPress features
@@ -516,8 +502,7 @@ function portfoliocraft_add_search_widget_to_sidebar() {
     }
 }
 
-// Call the function to add search widget only once
-add_action('init', 'portfoliocraft_add_search_widget_to_sidebar', 1);
+add_action('init', 'portfoliocraft_add_search_widget_to_sidebar', 20);
 
 // Output Back to Top button CSS variables in the head
 add_action('wp_head', function() {
