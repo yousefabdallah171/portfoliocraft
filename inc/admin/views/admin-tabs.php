@@ -154,14 +154,14 @@ $rmt_server_info = apply_filters('rmt_server_info', [
                 </a>
             </li>
             
-            <!-- 
+            <!--
                 Demo Import Tab
-                
-                Links to OCDI demo import page with active state detection
+
+                Links to demo import page with active state detection
             -->
             <li class="<?php echo (isset($_GET['page']) && 'one-click-demo-import' === sanitize_text_field($_GET['page'])) ? 'is-active' : ''; ?>">
                 <a href="<?php echo esc_url($ocdi_page_url); ?>">
-                    <span><?php esc_html_e('Import Demo', 'portfoliocraft'); ?></span>
+                    <span><?php esc_html_e('Demo Import', 'portfoliocraft'); ?></span>
                 </a>
             </li>
             

@@ -164,15 +164,15 @@ class portfoliocraft_Admin extends portfoliocraft_Base{
 	}
 
 	/**
-	 * Add Admin Navigation Tabs to OCDI (One Click Demo Import) Page
-	 * 
-	 * Displays the admin navigation tabs on the OCDI demo import page
+	 * Add Admin Navigation Tabs to Demo Import Page
+	 *
+	 * Displays the admin navigation tabs on the demo import page
 	 * for consistent navigation across all theme admin pages
 	 */
 	public function add_admin_tabs_to_ocdi_page() {
 		global $pagenow;
-		
-		// Only add tabs on the OCDI page
+
+		// Only add tabs on the demo import page
 		if ($pagenow === 'themes.php' && isset($_GET['page']) && 'one-click-demo-import' === sanitize_text_field($_GET['page'])) {
 			// Output the navigation tabs at the top of the page
 			echo '<div class="rmt-dashboard-wrap" style="margin-bottom: 20px;">';
