@@ -11,10 +11,14 @@ class portfoliocraft_Admin extends portfoliocraft_Base{
 
 	public function __construct() {
 
-		$this->add_action( 'init', 'init', 15 ); 
+		// Load TGM Plugin Activation FIRST (before init hook)
+		require_once get_template_directory() . '/inc/admin/libs/tgmpa/class-tgm-plugin-activation.php' ;
+		require_once get_template_directory() . '/inc/admin/admin-require-plugins.php';
+
+		$this->add_action( 'init', 'init', 15 );
 		$this->add_action( 'admin_enqueue_scripts', 'enqueue', 99 );
 		$this->add_action( 'admin_init', 'save_plugins' );
-		$this->add_action( 'admin_menu', 'fix_parent_menu', 999 ); 
+		$this->add_action( 'admin_menu', 'fix_parent_menu', 999 );
 		$this->add_action( 'admin_notices', 'add_admin_tabs_to_templates_page' );
 		$this->add_action( 'admin_notices', 'add_admin_tabs_to_theme_options_page' );
 		$this->add_action( 'admin_notices', 'add_admin_tabs_to_system_status_page' );
@@ -22,8 +26,7 @@ class portfoliocraft_Admin extends portfoliocraft_Base{
 	}
 
 	public function init() {
-		require_once get_template_directory() . '/inc/admin/libs/tgmpa/class-tgm-plugin-activation.php' ; 
-		require_once get_template_directory() . '/inc/admin/admin-require-plugins.php';
+		// TGM already loaded in constructor
 		 
 		require_once get_template_directory() . '/inc/admin/libs/merlin/class-merlin.php';
 		require_once get_template_directory() . '/inc/admin/libs/merlin/merlin-config.php';
@@ -38,7 +41,7 @@ class portfoliocraft_Admin extends portfoliocraft_Base{
  	
  	public function enqueue() {
 		$rmt_server_info = apply_filters( 'rmt_server_info', ['api_url' => ''] ) ;
-		wp_enqueue_style( 'rmtart-dashboard', get_template_directory_uri() . '/assets/css/dashboard.css' );
+		wp_enqueue_style( 'rmtart-dashboard', get_template_directory_uri() . '/assets/css/dashboard.css', array(), '4.0.0' );
 
 		if ( ! did_action( 'wp_enqueue_media' ) ) {
 	        wp_enqueue_media();
@@ -106,6 +109,8 @@ class portfoliocraft_Admin extends portfoliocraft_Base{
  
 		$submenu['rmtart'][0][0] = portfoliocraft()->get_name().' '.esc_html__( 'Dashboard', 'portfoliocraft' );
 
+		// Keep TGMPA menu in Appearance (standard WordPress plugins page)
+		// We have both: custom theme page + standard TGMPA page for flexibility
 		//remove_submenu_page( 'themes.php', 'tgmpa-install-plugins' );
 		remove_submenu_page( 'tools.php', 'redux-about' );
 	}

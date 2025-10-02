@@ -11,6 +11,22 @@ if (!defined('ABSPATH')) {
 }
 
 /**
+ * Suppress textdomain warnings for WordPress 6.7+
+ * This is necessary because Redux Framework and theme options load before init hook
+ */
+add_filter('doing_it_wrong_trigger_error', function($trigger, $function) {
+    if ($function === '_load_textdomain_just_in_time') {
+        return false;
+    }
+    return $trigger;
+}, 10, 2);
+
+/**
+ * Load textdomain immediately
+ */
+load_theme_textdomain('portfoliocraft', get_template_directory() . '/languages');
+
+/**
  * Load Main Theme Class
  */
 require_once get_template_directory() . '/inc/classes/class-main.php';

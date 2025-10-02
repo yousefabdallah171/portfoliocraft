@@ -94,7 +94,7 @@ function Rakmyat_register_required_plugins() {
             'source'      => 'https://assets.Rakmyat.com/plugins/rakmyat-core.zip',
             'required'    => true,
             'is_callable' => 'rmttheme_Core',
-            'logo'        => $images . '/Rakmyat-core.png',
+            'logo'        => $images . '/rakmyat-core.png',
             'description' => esc_html__('Main process and Powerful Elements Plugin, exclusively for Rakmyat WordPress Theme.', 'portfoliocraft'),
         ),
 
@@ -135,42 +135,56 @@ function Rakmyat_register_required_plugins() {
      * Controls the plugin installation interface and automation
      */
     $config = array(
-        
+
         /**
          * Default Plugin Path
-         * 
+         *
          * Local directory where premium/custom plugins are stored
          * Used for plugins that aren't available on WordPress.org
          */
         'default_path' => $default_path,
-        
+
         /**
          * Menu Slug
-         * 
+         *
          * WordPress admin menu slug for the plugin installation page
          * Creates a dedicated page for managing theme plugins
          */
         'menu' => 'tgmpa-install-plugins',
-        
+
+        /**
+         * Parent Slug
+         *
+         * Make TGM appear under Appearance menu
+         * Default: 'themes.php' (Appearance menu)
+         */
+        'parent_slug' => 'themes.php',
+
+        /**
+         * Capability Required
+         *
+         * WordPress capability required to access the plugins page
+         */
+        'capability' => 'edit_theme_options',
+
+        /**
+         * Show Admin Bar Link
+         *
+         * Display link in WordPress admin bar for quick access
+         */
+        'has_notices' => true,
+
         /**
          * Automatic Activation
-         * 
+         *
          * Whether to automatically activate plugins after installation
          * Set to false to allow users to control activation manually
          */
         'is_automatic' => false,
-        
-        /**
-         * Admin Notices
-         * 
-         * Whether to show admin notices about required plugins
-         * Helps remind users to install essential plugins
-         */
-        'has_notices' => true,
-        
+
         /**
          * Dismissible Notices
-         * 
+         *
          * Whether users can dismiss the plugin installation notices
          * Allows users to hide notices if they choose not to install
          */
@@ -263,7 +277,7 @@ function Rakmyat_register_required_plugins() {
 
     /**
      * Register Plugins with TGMPA
-     * 
+     *
      * Passes the plugin array and configuration to TGMPA
      * This creates the plugin installation interface and functionality
      */

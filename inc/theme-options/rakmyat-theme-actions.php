@@ -10,11 +10,6 @@
  * @since 1.0.0
  */
 
-add_action('init', 'portfoliocraft_load_textdomain', 1);
-function portfoliocraft_load_textdomain(){
-    load_theme_textdomain('portfoliocraft', get_template_directory() . '/languages');
-}
-
 add_action('after_setup_theme', 'portfoliocraft_setup');
 function portfoliocraft_setup(){
     $GLOBALS['content_width'] = apply_filters('portfoliocraft_content_width', 1200);
