@@ -15,7 +15,8 @@ if (!class_exists('portfoliocraft_Header')) {
             } else {
                 $args = [
                     'header_layout' => $header_layout,
-                    'header_layout_sticky' => $header_layout_sticky
+                    'header_layout_sticky' => $header_layout_sticky,
+                    'sticky_scroll' => portfoliocraft()->get_opt('sticky_scroll', 'scroll-down')
                 ];
                 get_template_part( 'template-parts/header/elementor','', $args );
             } 

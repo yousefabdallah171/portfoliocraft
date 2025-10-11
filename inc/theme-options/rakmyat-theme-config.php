@@ -27,79 +27,82 @@ if (!function_exists('portfoliocraft_configs')) {
      * @return array|string The requested configuration value
      */
     function portfoliocraft_configs($value) {
+        $primary = portfoliocraft()->get_opt('primary_color', '#FF3D00');
+        $secondary = portfoliocraft()->get_opt('secondary_color', '#010101');
+        $third = portfoliocraft()->get_opt('third_color', '#00c5fe');
+        $background = portfoliocraft()->get_page_opt('body_bg_color', '#ffffff');
+        $text = portfoliocraft()->get_opt('body_text_color', '#333333');
+        $heading = portfoliocraft()->get_opt('heading_text_color', '#1a1a1a');
+
         $configs = [
-            // Theme color scheme configuration
             'theme_colors' => [
                 'primary' => [
-                    'title' => esc_html__('Primary', 'portfoliocraft'), 
-                    'value' => portfoliocraft()->get_opt('primary_color', '#FF3D00')
+                    'title' => esc_html__('Primary', 'portfoliocraft'),
+                    'value' => $primary
                 ],
                 'secondary' => [
-                    'title' => esc_html__('Secondary', 'portfoliocraft'), 
-                    'value' => portfoliocraft()->get_opt('secondary_color', '#010101')
+                    'title' => esc_html__('Secondary', 'portfoliocraft'),
+                    'value' => $secondary
                 ],
                 'third' => [
-                    'title' => esc_html__('Third', 'portfoliocraft'), 
-                    'value' => portfoliocraft()->get_opt('third_color', '#00c5fe')
+                    'title' => esc_html__('Third', 'portfoliocraft'),
+                    'value' => $third
                 ],
                 'body-bg' => [
-                    'title' => esc_html__('Body Background Color', 'portfoliocraft'), 
-                    'value' => portfoliocraft()->get_page_opt('body_bg_color', '#fff')
+                    'title' => esc_html__('Background', 'portfoliocraft'),
+                    'value' => $background
                 ],
-                // White and light text colors
-                'white-text' => [
-                    'title' => esc_html__('White Text', 'portfoliocraft'),
-                    'value' => portfoliocraft()->get_opt('white_text_color', '#ffffff')
-                ],
-                'light-text' => [
-                    'title' => esc_html__('Light Text', 'portfoliocraft'),
-                    'value' => portfoliocraft()->get_opt('light_text_color', '#f5f5f5')
-                ],
-                'off-white' => [
-                    'title' => esc_html__('Off White', 'portfoliocraft'),
-                    'value' => portfoliocraft()->get_opt('off_white_color', '#fafafa')
-                ],
-                'light-gray-text' => [
-                    'title' => esc_html__('Light Gray Text', 'portfoliocraft'),
-                    'value' => portfoliocraft()->get_opt('light_gray_text_color', '#e0e0e0')
-                ],
-                // Main text colors
                 'body-text' => [
                     'title' => esc_html__('Body Text', 'portfoliocraft'),
-                    'value' => portfoliocraft()->get_opt('body_text_color', '#333333')
+                    'value' => $text
                 ],
                 'heading-text' => [
                     'title' => esc_html__('Heading Text', 'portfoliocraft'),
-                    'value' => portfoliocraft()->get_opt('heading_text_color', '#1a1a1a')
+                    'value' => $heading
+                ],
+                'white-text' => [
+                    'title' => esc_html__('White Text', 'portfoliocraft'),
+                    'value' => '#ffffff'
+                ],
+                'light-text' => [
+                    'title' => esc_html__('Light Text', 'portfoliocraft'),
+                    'value' => '#f5f5f5'
+                ],
+                'off-white' => [
+                    'title' => esc_html__('Off White', 'portfoliocraft'),
+                    'value' => '#fafafa'
+                ],
+                'light-gray-text' => [
+                    'title' => esc_html__('Light Gray Text', 'portfoliocraft'),
+                    'value' => '#e0e0e0'
                 ],
                 'post-title' => [
                     'title' => esc_html__('Post Title', 'portfoliocraft'),
-                    'value' => portfoliocraft()->get_opt('post_title_color', '#1a1a1a')
+                    'value' => $heading
                 ],
                 'subtitle-text' => [
                     'title' => esc_html__('Subtitle Text', 'portfoliocraft'),
-                    'value' => portfoliocraft()->get_opt('subtitle_text_color', '#666666')
+                    'value' => '#666666'
                 ],
                 'meta-text' => [
                     'title' => esc_html__('Meta Text', 'portfoliocraft'),
-                    'value' => portfoliocraft()->get_opt('meta_text_color', '#999999')
+                    'value' => '#999999'
                 ],
-                // Comments section colors
                 'comments-title' => [
                     'title' => esc_html__('Comments Title', 'portfoliocraft'),
-                    'value' => portfoliocraft()->get_opt('comments_title_color', '#1a1a1a')
+                    'value' => $heading
                 ],
                 'comment-author' => [
                     'title' => esc_html__('Comment Author', 'portfoliocraft'),
-                    'value' => portfoliocraft()->get_opt('comment_author_color', '#333333')
+                    'value' => $text
                 ],
                 'comment-text' => [
                     'title' => esc_html__('Comment Text', 'portfoliocraft'),
-                    'value' => portfoliocraft()->get_opt('comment_text_color', '#555555')
+                    'value' => '#555555'
                 ],
                 'comment-meta' => [
                     'title' => esc_html__('Comment Meta', 'portfoliocraft'),
-                    'value' => portfoliocraft()->get_opt('comment_meta_color', '#999999')
+                    'value' => '#999999'
                 ],
             ],
             // Link color states configuration

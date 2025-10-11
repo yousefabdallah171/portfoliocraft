@@ -35,13 +35,13 @@ $post_video_link = get_post_meta(get_the_ID(), 'post_video_link', true);
                     <?php echo get_the_date('d M Y', $post_id); ?>
                 </span>
             </div>
-            <h4 class="rmt-post-title hover-text-underline--slide-ltr">
+            <h2 class="rmt-post-title hover-text-underline--slide-ltr">
                 <a class="rmt-title-link" href="<?php echo esc_url(get_permalink($post_id)); ?>">
                     <span class="rmt-title-text">
                         <?php echo esc_html(get_the_title($post_id)); ?>
                     </span>
                 </a>
-            </h4>
+            </h2>
             <p class="rmt-post-excerpt">
                 <?php echo wp_trim_words( get_the_excerpt($post_id), 15, $more = null ); ?>
             </p>

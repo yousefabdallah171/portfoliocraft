@@ -1,31 +1,14 @@
-/**
- * 404 Error Page Styling
- * Modern, friendly design for 404 error pages with animations and interactivity
- * Uses CSS custom properties for easy theming
- */
-
-/* ==========================================================================
-   404 Page Variables
-   ========================================================================== */
-
 :root {
-    /* 404-specific variables */
-    --error-number-size: clamp(8rem, 20vw, 20rem);
+    --error-number-size: clamp(128px, 20vw, 320px);
     --error-gradient: linear-gradient(135deg, var(--primary-color, #667eea) 0%, var(--secondary-color, #764ba2) 100%);
     --error-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
     --error-border-radius: 20px;
     --error-animation-duration: 0.6s;
     --error-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    
-    /* Particles animation */
     --particle-count: 50;
     --particle-size: 4px;
     --particle-color: var(--primary-color, #667eea);
 }
-
-/* ==========================================================================
-   Main 404 Wrapper
-   ========================================================================== */
 
 .portfoliocraft-404-wrapper {
     min-height: 80vh;
@@ -34,12 +17,11 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 2rem;
+    padding: 100px;
     position: relative;
     overflow: hidden;
 }
 
-/* Animated background particles */
 .portfoliocraft-404-wrapper::before {
     content: '';
     position: absolute;
@@ -47,7 +29,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: 
+    background-image:
         radial-gradient(circle at 20% 80%, var(--primary-color, #667eea) 2px, transparent 2px),
         radial-gradient(circle at 80% 20%, var(--secondary-color, #764ba2) 2px, transparent 2px),
         radial-gradient(circle at 40% 40%, var(--third-color, #00c5fe) 1px, transparent 1px);
@@ -64,12 +46,8 @@
     75% { transform: translateY(-10px) rotate(-1deg); }
 }
 
-/* ==========================================================================
-   404 Number Display
-   ========================================================================== */
-
 .portfoliocraft-404-number {
-    margin-bottom: 2rem;
+    margin-bottom: 32px;
     position: relative;
     display: flex;
     align-items: center;
@@ -80,51 +58,18 @@
 .portfoliocraft-404-text {
     font-size: var(--error-number-size);
     font-weight: 900;
-    background: var(--error-gradient);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: var(--primary-color, #667eea); /* Fallback for older browsers */
+    color: var(--primary-color, #667eea);
     text-shadow: var(--error-shadow);
     position: relative;
     display: inline-block;
     animation: pulse 2s ease-in-out infinite alternate;
 }
 
-/* Glowing effect for 404 number */
-.portfoliocraft-404-text::before {
-    content: '404';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: var(--error-gradient);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    filter: blur(10px);
-    opacity: 0.5;
-    z-index: -1;
-    animation: glow 3s ease-in-out infinite alternate;
-}
-
 @keyframes bounceIn {
-    0% {
-        opacity: 0;
-        transform: scale(0.3) translateY(-50px);
-    }
-    50% {
-        opacity: 1;
-        transform: scale(1.05) translateY(0);
-    }
-    70% {
-        transform: scale(0.95);
-    }
-    100% {
-        opacity: 1;
-        transform: scale(1) translateY(0);
-    }
+    0% { opacity: 0; transform: scale(0.3) translateY(-50px); }
+    50% { opacity: 1; transform: scale(1.05) translateY(0); }
+    70% { transform: scale(0.95); }
+    100% { opacity: 1; transform: scale(1) translateY(0); }
 }
 
 @keyframes pulse {
@@ -132,69 +77,50 @@
     100% { transform: scale(1.05); }
 }
 
-@keyframes glow {
-    0% { opacity: 0.3; filter: blur(10px); }
-    100% { opacity: 0.7; filter: blur(15px); }
-}
-
-/* ==========================================================================
-   404 Content Section
-   ========================================================================== */
-
 .portfoliocraft-404-content {
     max-width: 600px;
     animation: fadeInUp 0.8s ease-out 0.2s both;
 }
 
 .portfoliocraft-404-title {
-    font-size: clamp(2rem, 5vw, 3rem);
+    font-size: clamp(32px, 5vw, 48px);
     font-weight: 700;
     color: var(--heading-text-color, #1a1a1a);
-    margin-bottom: 1.5rem;
+    margin-bottom: 24px;
     line-height: 1.2;
 }
 
 .portfoliocraft-404-description {
-    font-size: 1.2rem;
+    font-size: 19px;
     color: var(--body-text-color, #333333);
     line-height: 1.6;
-    margin-bottom: 3rem;
-    opacity: 0.8;
+    margin-bottom: 48px;
+    opacity: 0.9;
 }
 
 @keyframes fadeInUp {
-    0% {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
 }
-
-/* ==========================================================================
-   404 Action Buttons
-   ========================================================================== */
 
 .portfoliocraft-404-actions {
     display: flex;
-    gap: 1rem;
+    gap: 16px;
     justify-content: center;
     flex-wrap: wrap;
-    margin-bottom: 3rem;
+    margin-bottom: 48px;
     animation: fadeInUp 1s ease-out 0.4s both;
 }
 
 .portfoliocraft-btn {
     display: inline-flex;
     align-items: center;
-    gap: 0.75rem;
-    padding: 1rem 2rem;
+    gap: 12px;
+    padding: 16px 32px;
     border: none;
     border-radius: var(--error-border-radius);
     font-weight: 600;
-    font-size: 1rem;
+    font-size: 16px;
     text-decoration: none;
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -206,7 +132,6 @@
     justify-content: center;
 }
 
-/* Primary button (Back to Homepage) */
 .portfoliocraft-btn-primary {
     background: var(--error-gradient);
     color: var(--white-text-color, #ffffff);
@@ -219,7 +144,6 @@
     color: var(--white-text-color, #ffffff);
 }
 
-/* Secondary button (Go Back) */
 .portfoliocraft-btn-secondary {
     background: transparent;
     color: var(--body-text-color, #333333);
@@ -233,7 +157,6 @@
     box-shadow: var(--error-shadow);
 }
 
-/* Button ripple effect */
 .portfoliocraft-btn::before {
     content: '';
     position: absolute;
@@ -259,7 +182,6 @@
     z-index: 1;
 }
 
-/* Button icons animation */
 .portfoliocraft-btn i {
     transition: transform 0.3s ease;
 }
@@ -272,18 +194,14 @@
     transform: translateX(-4px) scale(1.2);
 }
 
-/* ==========================================================================
-   404 Search Section
-   ========================================================================== */
-
 .portfoliocraft-404-search {
     animation: fadeInUp 1.2s ease-out 0.6s both;
 }
 
 .portfoliocraft-search-title {
-    font-size: 1.25rem;
+    font-size: 20px;
     color: var(--heading-text-color, #1a1a1a);
-    margin-bottom: 1.5rem;
+    margin-bottom: 24px;
     font-weight: 600;
 }
 
@@ -301,8 +219,8 @@
     box-shadow: var(--error-shadow);
     transition: all 0.3s ease;
     align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem;
+    gap: 8px;
+    padding: 8px;
 }
 
 .portfoliocraft-404-search .search-form:focus-within,
@@ -316,11 +234,11 @@
 .portfoliocraft-404-search .search-field,
 .portfoliocraft-404-search .search-field-wrapper .search-field {
     flex: 1;
-    padding: 1rem 1.5rem;
+    padding: 16px 24px;
     border: none;
     background: transparent;
     color: var(--body-text-color, #333333);
-    font-size: 1rem;
+    font-size: 16px;
     outline: none;
     width: 100%;
 }
@@ -331,7 +249,7 @@
 }
 
 .portfoliocraft-404-search .search-submit {
-    padding: 1rem 1.5rem;
+    padding: 16px 24px;
     background: var(--primary-color, #667eea);
     color: var(--white-text-color, #ffffff);
     border: none;
@@ -341,7 +259,7 @@
     border-radius: 8px;
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 8px;
 }
 
 .portfoliocraft-404-search .search-submit:hover {
@@ -357,14 +275,14 @@
 
 .portfoliocraft-404-search .search-clear {
     position: absolute;
-    right: 0.5rem;
+    right: 8px;
     top: 50%;
     transform: translateY(-50%);
     background: none;
     border: none;
     color: var(--meta-text-color, #999999);
     cursor: pointer;
-    padding: 0.25rem;
+    padding: 4px;
     border-radius: 50%;
     transition: all 0.3s ease;
 }
@@ -375,19 +293,14 @@
 }
 
 .portfoliocraft-404-search .search-submit .search-text {
-    font-size: 0.9rem;
+    font-size: 14px;
     font-weight: 600;
 }
 
 .portfoliocraft-404-search .search-submit i {
-    font-size: 0.9rem;
+    font-size: 14px;
 }
 
-/* ==========================================================================
-   Interactive Elements
-   ========================================================================== */
-
-/* Floating elements around the page */
 .floating-element {
     position: absolute;
     pointer-events: none;
@@ -398,7 +311,7 @@
 .floating-element-1 {
     top: 10%;
     left: 10%;
-    font-size: 2rem;
+    font-size: 32px;
     color: var(--primary-color, #667eea);
     animation-delay: 0s;
 }
@@ -406,7 +319,7 @@
 .floating-element-2 {
     top: 20%;
     right: 15%;
-    font-size: 1.5rem;
+    font-size: 24px;
     color: var(--secondary-color, #764ba2);
     animation-delay: -5s;
 }
@@ -414,7 +327,7 @@
 .floating-element-3 {
     bottom: 20%;
     left: 20%;
-    font-size: 3rem;
+    font-size: 48px;
     color: var(--third-color, #00c5fe);
     animation-delay: -10s;
 }
@@ -427,52 +340,48 @@
     100% { transform: translate(0, 0) rotate(360deg); }
 }
 
-/* ==========================================================================
-   Responsive Design
-   ========================================================================== */
-
 @media (max-width: 768px) {
     .portfoliocraft-404-wrapper {
-        padding: 1rem;
+        padding: 16px;
         min-height: 70vh;
     }
-    
+
     .portfoliocraft-404-number {
-        margin-bottom: 1.5rem;
+        margin-bottom: 24px;
     }
-    
+
     .portfoliocraft-404-title {
-        font-size: 2rem;
+        font-size: 32px;
     }
-    
+
     .portfoliocraft-404-description {
-        font-size: 1rem;
-        margin-bottom: 2rem;
+        font-size: 16px;
+        margin-bottom: 32px;
     }
-    
+
     .portfoliocraft-404-actions {
         flex-direction: column;
         align-items: center;
-        gap: 1rem;
-        margin-bottom: 2rem;
+        gap: 16px;
+        margin-bottom: 32px;
     }
-    
+
     .portfoliocraft-btn {
         min-width: 200px;
         width: 100%;
         max-width: 300px;
     }
-    
+
     .portfoliocraft-404-search .search-form {
         flex-direction: column;
     }
-    
+
     .portfoliocraft-404-search .search-field {
         border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     }
-    
+
     .portfoliocraft-404-search .search-submit {
-        padding: 1rem;
+        padding: 16px;
     }
 }
 
@@ -480,31 +389,26 @@
     .portfoliocraft-404-wrapper {
         min-height: 60vh;
     }
-    
+
     .portfoliocraft-404-title {
-        font-size: 1.75rem;
-        margin-bottom: 1rem;
+        font-size: 28px;
+        margin-bottom: 16px;
     }
-    
+
     .portfoliocraft-404-description {
-        margin-bottom: 1.5rem;
+        margin-bottom: 24px;
     }
-    
+
     .portfoliocraft-btn {
-        padding: 0.875rem 1.5rem;
-        font-size: 0.95rem;
+        padding: 14px 24px;
+        font-size: 15px;
     }
-    
+
     .floating-element {
-        display: none; /* Hide floating elements on very small screens */
+        display: none;
     }
 }
 
-/* ==========================================================================
-   Accessibility & Reduced Motion
-   ========================================================================== */
-
-/* Focus states */
 .portfoliocraft-btn:focus,
 .portfoliocraft-404-search .search-field:focus,
 .portfoliocraft-404-search .search-submit:focus {
@@ -512,7 +416,6 @@
     outline-offset: 2px;
 }
 
-/* Reduced motion support */
 @media (prefers-reduced-motion: reduce) {
     .portfoliocraft-404-number,
     .portfoliocraft-404-content,
@@ -522,42 +425,33 @@
     .portfoliocraft-404-wrapper::before {
         animation: none;
     }
-    
+
     .portfoliocraft-btn:hover,
     .portfoliocraft-404-search .search-form:focus-within {
         transform: none;
     }
-    
-    .portfoliocraft-404-text::before {
-        display: none;
-    }
 }
 
-/* High contrast mode support */
 @media (prefers-contrast: high) {
     .portfoliocraft-404-text {
         -webkit-text-fill-color: unset;
         color: var(--primary-color, #667eea);
     }
-    
+
     .portfoliocraft-btn {
         border-width: 3px;
     }
 }
 
-/* ==========================================================================
-   Dark Mode Support
-   ========================================================================== */
-
 @media (prefers-color-scheme: dark) {
     :root {
         --error-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
     }
-    
+
     .portfoliocraft-404-wrapper::before {
         opacity: 0.05;
     }
-    
+
     .portfoliocraft-404-search .search-form {
         background: rgba(255, 255, 255, 0.05);
         border-color: rgba(255, 255, 255, 0.1);

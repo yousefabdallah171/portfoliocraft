@@ -53,7 +53,7 @@ $post_video_link = get_post_meta(get_the_ID(), 'post_video_link', true);
         
         <?php if ($post_tag && $tags_list) : ?>
             <div class="rmt-post-tags">
-                <h4 class="rmt-tags-title"><?php esc_html_e('Tags:', 'portfoliocraft'); ?></h4>
+                <h3 class="rmt-tags-title"><?php esc_html_e('Tags:', 'portfoliocraft'); ?></h3>
                 <div class="rmt-tags-list">
                     <?php echo wp_kses_post($tags_list); ?>
                 </div>

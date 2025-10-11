@@ -70,25 +70,31 @@
 
     /* Lightbox Popup */
     setTimeout(function () {
-      $(".rmt-action-popup").magnificPopup({
-        type: "iframe",
-        mainClass: "mfp-fade",
-        removalDelay: 160,
-        preloader: false,
-        fixedContentPos: false,
-      });
+      // Check if magnificPopup is available before using it
+      if (typeof $.fn.magnificPopup !== 'undefined') {
+        $(".rmt-action-popup").magnificPopup({
+          type: "iframe",
+          mainClass: "mfp-fade",
+          removalDelay: 160,
+          preloader: false,
+          fixedContentPos: false,
+        });
+      }
     }, 300);
 
-    $(".rmt-gallery-lightbox").each(function () {
-      $(this).magnificPopup({
-        delegate: "a.lightbox",
-        type: "image",
-        gallery: {
-          enabled: true,
-        },
-        mainClass: "mfp-fade",
+    // Check if magnificPopup is available
+    if (typeof $.fn.magnificPopup !== 'undefined') {
+      $(".rmt-gallery-lightbox").each(function () {
+        $(this).magnificPopup({
+          delegate: "a.lightbox",
+          type: "image",
+          gallery: {
+            enabled: true,
+          },
+          mainClass: "mfp-fade",
+        });
       });
-    });
+    }
 
     /* Cart Sidebar Popup */
     $(".rmt-cart-sidebar-button").on("click", function () {

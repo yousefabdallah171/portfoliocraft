@@ -27,6 +27,17 @@ add_filter('doing_it_wrong_trigger_error', function($trigger, $function) {
 load_theme_textdomain('portfoliocraft', get_template_directory() . '/languages');
 
 /**
+ * Disable jQuery Migrate warnings in production
+ * Performance optimization - reduces console noise
+ */
+add_action('wp_default_scripts', function($scripts) {
+    if (!is_admin() && !WP_DEBUG) {
+        $scripts->remove('jquery');
+        $scripts->add('jquery', false, array('jquery-core'), '3.7.1');
+    }
+});
+
+/**
  * Load Main Theme Class
  */
 require_once get_template_directory() . '/inc/classes/class-main.php';

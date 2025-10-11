@@ -10944,12 +10944,12 @@ button.rmt-btn-normal {
 .btn.rmt-btn-split,
 button.rmt-btn-split {
   --rmt-height: 60px;
-  --rmt-background-color: #ffcd4d;
+  --rmt-background-color: var(--primary-color);
   height: var(--rmt-height);
   font-size: 14px;
   font-weight: 500;
   font-family: "Inter";
-  color: #010101;
+  color: var(--white-text-color);
   background-color: transparent;
   padding-inline: 0 var(--rmt-height);
   line-height: 1;
@@ -10972,6 +10972,12 @@ button.rmt-btn-split .rmt-btn-icon {
   position: absolute;
   right: 0;
   top: 0;
+}
+
+.btn.rmt-btn-split .rmt-btn-icon svg,
+button.rmt-btn-split .rmt-btn-icon svg {
+  color: var(--white-text-color);
+  fill: var(--white-text-color);
 }
 
 .btn.rmt-btn-split .rmt-btn-icon.icon-duplicated,
@@ -16464,7 +16470,8 @@ button.rmt-search-button .rmt-btn-icon {
 }
 
 .single.single-post #rmt-content-area .rmt-post-metas .rmt-meta-info svg {
-  color: var(--subtitle-text-color);
+  color: var(--primary-color);
+  fill: var(--primary-color);
 }
 
 .single.single-post #rmt-content-area .rmt-post-metas .rmt-meta-info .rmt-meta-text {
@@ -16498,7 +16505,7 @@ button.rmt-search-button .rmt-btn-icon {
 
 .single.single-post #rmt-content-area .rmt-post-social .rmt-social-list .rmt-social-item {
   cursor: pointer;
-  color: #010101;
+  color: var(--white-text-color);
   font-family: "Public Sans";
   font-size: 12px;
   font-style: normal;
@@ -16509,13 +16516,13 @@ button.rmt-search-button .rmt-btn-icon {
   display: inline-block;
   padding: 7px 18px;
   border-radius: 25px;
-  background-color: var(--subtitle-text-color);
+  background-color: var(--primary-color);
   text-transform: uppercase;
 }
 
 .single.single-post #rmt-content-area .rmt-post-social .rmt-social-list .rmt-social-item:hover {
-  background-color: #010101;
-  color: #d7ff37;
+  background-color: var(--secondary-color);
+  color: var(--white-text-color);
 }
 
 .single.single-post #rmt-content-area .rmt-post-author-box {
@@ -16874,7 +16881,18 @@ button.rmt-search-button .rmt-btn-icon {
 }
 
 .single.single-post #comments #respond .form-submit .btn {
-  --rmt-background-color: var(--subtitle-text-color);
+  --rmt-background-color: var(--primary-color);
+  color: var(--white-text-color);
+}
+
+.single.single-post #comments #respond .form-submit .btn .rmt-btn-icon svg,
+.single.single-post #comments #respond .form-submit .btn .rmt-btn-icon svg path {
+  color: var(--white-text-color);
+  fill: var(--white-text-color);
+}
+
+.single.single-post #comments #respond .form-submit .btn .rmt-btn-text {
+  color: var(--white-text-color);
 }
 
 .error404 .rmt-footer {

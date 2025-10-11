@@ -17,7 +17,27 @@ if (!defined('ABSPATH')) {
 <head>
     <!-- Meta tags for character encoding and responsive viewport -->
     <meta charset="<?php bloginfo( 'charset' ); ?>">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <?php
+    // Add meta description for SEO
+    if (is_singular()) {
+        $post_excerpt = get_the_excerpt();
+        if (!empty($post_excerpt)) {
+            echo '<meta name="description" content="' . esc_attr(wp_trim_words($post_excerpt, 30, '...')) . '">' . "\n    ";
+        }
+    } elseif (is_archive() || is_home()) {
+        $archive_description = get_the_archive_description();
+        if (!empty($archive_description)) {
+            echo '<meta name="description" content="' . esc_attr(wp_strip_all_tags($archive_description)) . '">' . "\n    ";
+        } else {
+            echo '<meta name="description" content="' . esc_attr(get_bloginfo('description')) . '">' . "\n    ";
+        }
+    } elseif (is_search()) {
+        echo '<meta name="description" content="' . esc_attr(sprintf(__('Search results for: %s', 'portfoliocraft'), get_search_query())) . '">' . "\n    ";
+    } else {
+        echo '<meta name="description" content="' . esc_attr(get_bloginfo('description')) . '">' . "\n    ";
+    }
+    ?>
     <link rel="profile" href="//gmpg.org/xfn/11">
     <?php wp_head(); ?>
 </head>
