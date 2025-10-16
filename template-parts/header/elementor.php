@@ -12,7 +12,14 @@ $sticky_scroll = isset($args['sticky_scroll']) ? $args['sticky_scroll'] : 'scrol
         <?php if(isset($args['header_layout']) && $args['header_layout'] > 0) : ?>
             <div class="rmt-header-main">
                 <div class="rmt-header-inner">
-                    <?php echo Elementor\Plugin::$instance->frontend->get_builder_content_for_display( $args['header_layout']); ?>
+                    <?php
+                    // Use cached template for performance (prevents FOUC for normal users)
+                    if (function_exists('rmt_get_cached_elementor_template')) {
+                        echo rmt_get_cached_elementor_template($args['header_layout'], 'desktop');
+                    } else {
+                        echo Elementor\Plugin::$instance->frontend->get_builder_content_for_display($args['header_layout']);
+                    }
+                    ?>
                 </div>
             </div>
         <?php endif; ?>
@@ -21,7 +28,14 @@ $sticky_scroll = isset($args['sticky_scroll']) ? $args['sticky_scroll'] : 'scrol
         <?php if(isset($args['header_layout']) && $args['header_layout'] > 0) : ?>
             <div class="rmt-header-main">
                 <div class="rmt-header-inner">
-                    <?php echo Elementor\Plugin::$instance->frontend->get_builder_content_for_display( $args['header_layout']); ?>
+                    <?php
+                    // Use cached template for performance (prevents FOUC for normal users)
+                    if (function_exists('rmt_get_cached_elementor_template')) {
+                        echo rmt_get_cached_elementor_template($args['header_layout'], 'mobile');
+                    } else {
+                        echo Elementor\Plugin::$instance->frontend->get_builder_content_for_display($args['header_layout']);
+                    }
+                    ?>
                 </div>
             </div>
         <?php endif; ?>
@@ -29,7 +43,14 @@ $sticky_scroll = isset($args['sticky_scroll']) ? $args['sticky_scroll'] : 'scrol
     <?php if($has_header_sticky) : ?>
         <div class="rmt-header-sticky <?php echo esc_attr($sticky_scroll); ?>">
             <div class="rmt-header-inner">
-                <?php echo Elementor\Plugin::$instance->frontend->get_builder_content_for_display( $args['header_layout_sticky']); ?>
+                <?php
+                // Use cached template for performance (prevents FOUC for normal users)
+                if (function_exists('rmt_get_cached_elementor_template')) {
+                    echo rmt_get_cached_elementor_template($args['header_layout_sticky'], 'sticky');
+                } else {
+                    echo Elementor\Plugin::$instance->frontend->get_builder_content_for_display($args['header_layout_sticky']);
+                }
+                ?>
             </div>
         </div>
     <?php endif; ?>
