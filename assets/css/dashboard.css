@@ -1,3 +1,14 @@
+/**
+ * Dashboard Color Mode System
+ *
+ * Default Mode: LIGHT MODE (changed from dark)
+ * - The dashboard now defaults to light mode
+ * - Users can toggle between light and dark modes
+ * - Mode preference is saved in localStorage and persists across sessions
+ * - Light mode styles are applied via body.rmt-light-mode class (see line 3056+)
+ * - Dark mode styles use the base variables below
+ */
+
 :root {
   --primary: #667eea;
   --secondary: #764ba2;
@@ -4114,8 +4125,8 @@ body.rmt-light-mode.edit-php.post-type-rmt-template .page-title-action {
   transition: var(--transition) !important;
   box-shadow: 0 4px 15px rgba(79, 70, 229, 0.2) !important;
   transform: none !important;
-  padding: 8px 16px !important;
-  font-size: 13px !important;
+  padding: 6px 15px !important;
+  font-size: 10px !important;
 }
 
 body.rmt-light-mode.edit-php.post-type-rmt-template .page-title-action:hover {

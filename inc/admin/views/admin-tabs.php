@@ -41,17 +41,33 @@ $templates_page_url = admin_url('edit.php?post_type=rmt-template');
 
 /**
  * Server Information Configuration
- * 
+ *
  * Defines external resource URLs with filter support for customization
  * Allows child themes or plugins to modify these URLs as needed
  */
 $rmt_server_info = apply_filters('rmt_server_info', [
     'video_url' => 'https://doc.portfoliocraft-themes.net/video-guide/',
     'demo_url' => 'https://demo.portfoliocraft-themes.net/',
-    'docs_url' => 'https://doc.portfoliocraft-themes.net/', 
+    'docs_url' => 'https://doc.portfoliocraft-themes.net/',
     'support_url' => 'https://portfoliocraft-themes.ticksy.com/'
-]); 
+]);
 ?>
+
+<!-- Inline script to prevent FOUC (Flash of Unstyled Content) -->
+<script>
+(function() {
+    var savedMode = localStorage.getItem('rmt-dashboard-mode');
+    // Default to light mode if no preference is saved
+    if (!savedMode) {
+        savedMode = 'light';
+        localStorage.setItem('rmt-dashboard-mode', 'light');
+    }
+    // Apply mode immediately to body before page renders
+    if (savedMode === 'light') {
+        document.body.classList.add('rmt-light-mode');
+    }
+})();
+</script>
 
 <!-- 
     Admin Dashboard Navigation Bar
@@ -109,8 +125,8 @@ $rmt_server_info = apply_filters('rmt_server_info', [
     </div>
 
     <!-- Dark/Light Mode Toggle Button -->
-    <button id="rmt-mode-toggle" class="rmt-btn" type="button" aria-pressed="false" style="margin-left:auto;">
-      Switch to Light Mode
+    <button id="rmt-mode-toggle" class="rmt-btn" type="button" aria-pressed="true" style="margin-left:auto;">
+      Switch to Dark Mode
     </button>
 
     <!-- 

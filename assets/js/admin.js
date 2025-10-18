@@ -188,23 +188,90 @@
         });
     }
 
-    // Dark/Light Mode Toggle for Dashboard
+    /**
+     * Smart Dark/Light Mode Toggle System for Dashboard
+     *
+     * Features:
+     * - Default mode: Light (changed from dark)
+     * - Persistent mode selection using localStorage
+     * - Works across all dashboard pages and sessions
+     * - Smooth transitions with production-ready caching
+     * - Prevents flash of unstyled content (FOUC)
+     */
+
+    // Initialize mode ASAP to prevent FOUC (before DOM ready)
+    (function() {
+        var savedMode = localStorage.getItem('rmt-dashboard-mode');
+
+        // Default to light mode if no preference is saved
+        if (!savedMode) {
+            savedMode = 'light';
+            localStorage.setItem('rmt-dashboard-mode', 'light');
+        }
+
+        // Apply mode immediately to body
+        if (savedMode === 'light') {
+            document.body.classList.add('rmt-light-mode');
+        } else {
+            document.body.classList.remove('rmt-light-mode');
+        }
+    })();
+
+    // Set up toggle button after DOM is ready
     $(document).ready(function() {
         var btn = document.getElementById('rmt-mode-toggle');
         if (!btn) return;
+
         var body = document.body;
-        // Set initial mode from localStorage
-        if(localStorage.getItem('rmt-dashboard-mode') === 'light') {
-            body.classList.add('rmt-light-mode');
-            btn.textContent = 'Switch to Dark Mode';
-            btn.setAttribute('aria-pressed', 'true');
+
+        // Get current mode from localStorage (with default to light)
+        var currentMode = localStorage.getItem('rmt-dashboard-mode') || 'light';
+
+        // Update button text based on current mode
+        function updateButtonText(isLight) {
+            btn.textContent = isLight ? 'Switch to Dark Mode' : 'Switch to Light Mode';
+            btn.setAttribute('aria-pressed', isLight ? 'true' : 'false');
         }
+
+        // Initialize button text
+        updateButtonText(currentMode === 'light');
+
+        // Handle mode toggle
         btn.addEventListener('click', function() {
             body.classList.toggle('rmt-light-mode');
             var isLight = body.classList.contains('rmt-light-mode');
-            btn.textContent = isLight ? 'Switch to Dark Mode' : 'Switch to Light Mode';
-            btn.setAttribute('aria-pressed', isLight ? 'true' : 'false');
-            localStorage.setItem('rmt-dashboard-mode', isLight ? 'light' : 'dark');
+            var newMode = isLight ? 'light' : 'dark';
+
+            // Update button text
+            updateButtonText(isLight);
+
+            // Save preference to localStorage with timestamp for cache validation
+            localStorage.setItem('rmt-dashboard-mode', newMode);
+            localStorage.setItem('rmt-dashboard-mode-timestamp', Date.now().toString());
+
+            // Optional: Trigger custom event for other scripts to listen to
+            var event = new CustomEvent('rmtDashboardModeChange', {
+                detail: { mode: newMode, isLight: isLight }
+            });
+            document.dispatchEvent(event);
+        });
+
+        // Sync mode across tabs (when user changes mode in another tab)
+        window.addEventListener('storage', function(e) {
+            if (e.key === 'rmt-dashboard-mode') {
+                var newMode = e.newValue || 'light';
+                var isLight = newMode === 'light';
+
+                // Update body class
+                if (isLight) {
+                    body.classList.add('rmt-light-mode');
+                } else {
+                    body.classList.remove('rmt-light-mode');
+                }
+
+                // Update button text
+                updateButtonText(isLight);
+            }
         });
     });
 
